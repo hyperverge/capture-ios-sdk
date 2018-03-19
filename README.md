@@ -41,8 +41,7 @@ To add them to your app, just call them just like any other ViewController but b
 **For Face Capture:**
 
 Swift:
-    
-        ```
+     
         //Instantiate the ViewController
         let bundle = Bundle(for: HyperSnapSDK.self)
         let vc = UIStoryboard(name: HyperSnapSDK.StoryBoardName, bundle:bundle).instantiateViewController(withIdentifier: "HVFaceViewController") as! HVFaceViewController
@@ -52,11 +51,10 @@ Swift:
             
         //Present the ViewController
         self.present(vc, animated: true, completion: nil)
-        ```
+        
     
 Objective C:
     
-    ```
         //Instantiate the ViewController
         NSBundle *bundle  = [NSBundle bundleForClass:[HyperSnapSDK self]];
 
@@ -75,13 +73,12 @@ Objective C:
     
         //Present the ViewController
         [self presentViewController:vc animated:YES completion:nil];
-    ```
+    
     
 **For Document Capture:**
 
 Swift:
     
-    ```
         //Instantiate the ViewController
         let bundle = Bundle(for: HVFaceViewController.self)
         let vc = UIStoryboard(name: HyperSnapSDK.StoryBoardName, bundle:bundle).instantiateViewController(withIdentifier: "HVDocsViewController") as! HVDocsViewController
@@ -95,11 +92,9 @@ Swift:
         //Present the ViewController
         self.present(vc, animated: true, completion: nil)
 
-        ```
         
 Objective C:
     
-    ```        
         //Instantiate the ViewController
         NSBundle *bundle  = [NSBundle bundleForClass:[HyperSnapSDK self]];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:HyperSnapSDK.StoryBoardName bundle: bundle];
@@ -118,7 +113,7 @@ Objective C:
     
         //Present the ViewController
         [self presentViewController:vc animated:YES completion:nil];
-    ```
+
 
 ##### Properties
 These are the properties to be set while initializing the ViewController
