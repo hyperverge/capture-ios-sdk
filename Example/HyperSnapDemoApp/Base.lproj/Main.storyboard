@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QU8-iN-X7G">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HyperScanVietnamParentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kcE-43-60p">
+                                <rect key="frame" x="0.0" y="144" width="375" height="443"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMP-ru-WTF">
+                                        <rect key="frame" x="141.5" y="0.0" width="92" height="46"/>
+                                        <state key="normal" title="Face Capture"/>
+                                        <connections>
+                                            <action selector="FaceCaptureTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Fh-ms-fDu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Q1-1b-GvY">
+                                        <rect key="frame" x="150" y="66" width="75" height="46.5"/>
+                                        <state key="normal" title="National ID"/>
+                                        <connections>
+                                            <action selector="nationalIDTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bv6-rf-SeH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDi-7v-g7a">
+                                        <rect key="frame" x="141.5" y="132.5" width="92" height="46"/>
+                                        <state key="normal" title="Electricity Bill"/>
+                                        <connections>
+                                            <action selector="electricityBillTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h0d-A6-kTe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvz-rU-6Bh">
+                                        <rect key="frame" x="133" y="198.5" width="109" height="46"/>
+                                        <state key="normal" title="Bank Statement"/>
+                                        <connections>
+                                            <action selector="bankStatementTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pIR-cv-QAw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86E-Ba-6Fs">
+                                        <rect key="frame" x="126" y="264.5" width="123" height="46"/>
+                                        <state key="normal" title="Insurance Receipt"/>
+                                        <connections>
+                                            <action selector="insuranceReceiptTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ou9-cf-m3y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ged-P2-pcB">
+                                        <rect key="frame" x="134.5" y="330.5" width="106" height="46.5"/>
+                                        <state key="normal" title="Driving License"/>
+                                        <connections>
+                                            <action selector="drivingLicenseTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mkm-Z7-LaF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIN-nj-im1">
+                                        <rect key="frame" x="86" y="397" width="203" height="46"/>
+                                        <state key="normal" title="Motor Registration Certificate"/>
+                                        <connections>
+                                            <action selector="MRCTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3FG-Eu-Rgf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yzy-QC-Rus" userLabel="Switch language stack">
+                                <rect key="frame" x="113" y="616" width="149.5" height="31"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sdY-rL-MPG">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="languageSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="lFD-7e-y9c"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vietnamese" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y53-QV-hDD">
+                                        <rect key="frame" x="59" y="0.0" width="90.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kcE-43-60p" secondAttribute="bottom" constant="80" id="7HV-xj-PMG"/>
+                            <constraint firstItem="yzy-QC-Rus" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TQP-0p-mDE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yzy-QC-Rus" secondAttribute="bottom" constant="20" id="UVa-6U-hH8"/>
+                            <constraint firstItem="kcE-43-60p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aOw-jh-SOG"/>
+                            <constraint firstItem="kcE-43-60p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="v35-xz-Byq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kcE-43-60p" secondAttribute="trailing" id="x6q-9M-wFn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t7Z-dY-t6W"/>
+                    <connections>
+                        <outlet property="languageSwitch" destination="sdY-rL-MPG" id="rzT-iy-5XC"/>
+                        <outlet property="nationalID" destination="4Q1-1b-GvY" id="b1f-Cw-pHy"/>
+                        <segue destination="eLy-tJ-aOi" kind="show" identifier="showResults" id="cH7-Mn-n4J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="582" y="52"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="d2i-XF-7Hd">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="eLy-tJ-aOi" customClass="ResultsViewController" customModule="HyperScanVietnamParentApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FfE-20-y4C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aw2-XY-P3w">
+                                <rect key="frame" x="0.0" y="53" width="375" height="564"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P4-oS-1MF">
+                                <rect key="frame" x="150" y="622" width="75" height="30"/>
+                                <state key="normal" title="Start again"/>
+                                <connections>
+                                    <segue destination="QU8-iN-X7G" kind="show" id="Ng3-ag-PBF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4P4-oS-1MF" firstAttribute="centerX" secondItem="50U-SJ-K9k" secondAttribute="centerX" id="SyH-QE-drj"/>
+                            <constraint firstItem="50U-SJ-K9k" firstAttribute="bottom" secondItem="aw2-XY-P3w" secondAttribute="bottom" constant="50" id="VfQ-GU-l3O"/>
+                            <constraint firstItem="aw2-XY-P3w" firstAttribute="centerX" secondItem="50U-SJ-K9k" secondAttribute="centerX" id="YKc-1n-xzK"/>
+                            <constraint firstItem="50U-SJ-K9k" firstAttribute="top" secondItem="aw2-XY-P3w" secondAttribute="top" constant="11" id="hYY-7A-21J"/>
+                            <constraint firstItem="aw2-XY-P3w" firstAttribute="leading" secondItem="50U-SJ-K9k" secondAttribute="leading" id="w4A-Zu-BAR"/>
+                            <constraint firstItem="50U-SJ-K9k" firstAttribute="bottom" secondItem="4P4-oS-1MF" secondAttribute="bottom" constant="15" id="zVv-yB-fnZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="50U-SJ-K9k"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="aw2-XY-P3w" id="B2X-f5-4XA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZ8-fC-XHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="52"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qkn-FZ-tuA">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waw-iL-EUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="rootnav" automaticallyAdjustsScrollViewInsets="NO" id="QU8-iN-X7G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ATL-ew-qLg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vM5-hK-3Za"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-127" y="127"/>
+        </scene>
+    </scenes>
+</document>

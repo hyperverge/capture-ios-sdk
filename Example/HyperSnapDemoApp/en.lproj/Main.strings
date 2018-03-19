@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; normalTitle = "Start again"; ObjectID = "4P4-oS-1MF"; */
+"4P4-oS-1MF.normalTitle" = "Start again";
+
+/* Class = "UIButton"; normalTitle = "National ID"; ObjectID = "4Q1-1b-GvY"; */
+"4Q1-1b-GvY.normalTitle" = "National ID";
+
+/* Class = "UIButton"; normalTitle = "Insurance Receipt"; ObjectID = "86E-Ba-6Fs"; */
+"86E-Ba-6Fs.normalTitle" = "Insurance Receipt";
+
+/* Class = "UIButton"; normalTitle = "Motor Registration Certificate"; ObjectID = "BIN-nj-im1"; */
+"BIN-nj-im1.normalTitle" = "Motor Registration Certificate";
+
+/* Class = "UIButton"; normalTitle = "ElectricityBill"; ObjectID = "LDi-7v-g7a"; */
+"LDi-7v-g7a.normalTitle" = "ElectricityBill";
+
+/* Class = "UIButton"; normalTitle = "Bank Statement"; ObjectID = "Yvz-rU-6Bh"; */
+"Yvz-rU-6Bh.normalTitle" = "Bank Statement";
+
+/* Class = "UIButton"; normalTitle = "Driving License"; ObjectID = "ged-P2-pcB"; */
+"ged-P2-pcB.normalTitle" = "Driving License";
+
+/* Class = "UIButton"; normalTitle = "Face Capture"; ObjectID = "yMP-ru-WTF"; */
+"yMP-ru-WTF.normalTitle" = "Face Capture";
