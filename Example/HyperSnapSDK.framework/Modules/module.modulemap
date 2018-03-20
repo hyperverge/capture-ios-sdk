@@ -1,4 +1,0 @@
-framework module HyperSnapSDK {
-    header "HyperSnapSDK-Swift.h"
-    requires objc
-}
