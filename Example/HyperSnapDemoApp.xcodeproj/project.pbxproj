@@ -11,8 +11,8 @@
 		046644E0204FF9FD001908A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 046644E2204FF9FD001908A9 /* Localizable.strings */; };
 		046644E5204FFCAF001908A9 /* SwitchLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046644E4204FFCAF001908A9 /* SwitchLanguage.swift */; };
 		046644E720500295001908A9 /* HyperSnapDemoAppLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046644E620500295001908A9 /* HyperSnapDemoAppLocalizer.swift */; };
-		04E1ABC3206013BF00A50271 /* HyperSnapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E1ABC1206013B500A50271 /* HyperSnapSDK.framework */; };
-		04E1ABC4206013BF00A50271 /* HyperSnapSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04E1ABC1206013B500A50271 /* HyperSnapSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04E1DEF02060B60D002F23FC /* HyperSnapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E1DEEE2060B606002F23FC /* HyperSnapSDK.framework */; };
+		04E1DEF12060B60D002F23FC /* HyperSnapSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04E1DEEE2060B606002F23FC /* HyperSnapSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		04F0333C2045A3F900596B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0333B2045A3F900596B54 /* AppDelegate.swift */; };
 		04F0333E2045A3F900596B54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0333D2045A3F900596B54 /* ViewController.swift */; };
 		04F033412045A3F900596B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F0333F2045A3F900596B54 /* Main.storyboard */; };
@@ -27,7 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				04E1ABC4206013BF00A50271 /* HyperSnapSDK.framework in Embed Frameworks */,
+				04E1DEF12060B60D002F23FC /* HyperSnapSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +42,7 @@
 		046644E3204FFA01001908A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		046644E4204FFCAF001908A9 /* SwitchLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchLanguage.swift; sourceTree = "<group>"; };
 		046644E620500295001908A9 /* HyperSnapDemoAppLocalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperSnapDemoAppLocalizer.swift; sourceTree = "<group>"; };
-		04E1ABC1206013B500A50271 /* HyperSnapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperSnapSDK.framework; sourceTree = "<group>"; };
+		04E1DEEE2060B606002F23FC /* HyperSnapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperSnapSDK.framework; sourceTree = "<group>"; };
 		04F033382045A3F900596B54 /* HyperSnapDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSnapDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F0333B2045A3F900596B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F0333D2045A3F900596B54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E1ABC3206013BF00A50271 /* HyperSnapSDK.framework in Frameworks */,
+				04E1DEF02060B60D002F23FC /* HyperSnapSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +67,7 @@
 		04F0332F2045A3F900596B54 = {
 			isa = PBXGroup;
 			children = (
-				04E1ABC1206013B500A50271 /* HyperSnapSDK.framework */,
+				04E1DEEE2060B606002F23FC /* HyperSnapSDK.framework */,
 				04F0333A2045A3F900596B54 /* HyperSnapDemoApp */,
 				04F033392045A3F900596B54 /* Products */,
 			);
