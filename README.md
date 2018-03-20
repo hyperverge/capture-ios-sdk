@@ -151,3 +151,16 @@ Please note that when an error occurs, the ViewController is dismissed and the c
 |3|Operation Cancelled By User|When the user taps on cancel button before capture|Try again.|
 |4|Camera Permission Denied|Occurs when SDK has not been initialized properly.|Check if the initialization of SDK is happening before any functionality is being used.|
 |5|Hardware Error|Occurs when SDK has not been initialized properly.|Check if the initialization of SDK is happening before any functionality is being used.|
+
+
+#### Localization
+
+The framework currently supports English(Base) and Vietnamese. To set the text of topLabel or bottomLabel when the application's language is other than English, add relavent entries in Localizable.strings files and use the corresponding key while setting topText or bottomText. Please refer to the example project for more details.
+
+   Swift:
+    
+        vc.bottomText = NSLocalizedString("bottomText", comment: "")
+        
+   Objective C:
+    
+        vc.bottomText = NSLocalizedString(@"bottomText", comment: "");
