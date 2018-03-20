@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/srinija/Documents/Hyperverge/HyperScanVietnamParentApp/HyperSnapDemoApp.xcodeproj">
+      location = "self:HyperSnapDemoApp.xcodeproj">
    </FileRef>
 </Workspace>

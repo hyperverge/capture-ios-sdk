@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  HyperSecureDocsParentApp
+//  HyperSnapDemoApp
 //
 //  Created by Srinija on 27/02/18.
 //  Copyright © 2018 hyperverge. All rights reserved.

@@ -11,14 +11,17 @@
 /* Class = "UIButton"; normalTitle = "Motor Registration Certificate"; ObjectID = "BIN-nj-im1"; */
 "BIN-nj-im1.normalTitle" = "Motor Registration Certificate";
 
-/* Class = "UIButton"; normalTitle = "ElectricityBill"; ObjectID = "LDi-7v-g7a"; */
-"LDi-7v-g7a.normalTitle" = "ElectricityBill";
+/* Class = "UIButton"; normalTitle = "Electricity Bill"; ObjectID = "LDi-7v-g7a"; */
+"LDi-7v-g7a.normalTitle" = "Electricity Bill";
 
 /* Class = "UIButton"; normalTitle = "Bank Statement"; ObjectID = "Yvz-rU-6Bh"; */
 "Yvz-rU-6Bh.normalTitle" = "Bank Statement";
 
 /* Class = "UIButton"; normalTitle = "Driving License"; ObjectID = "ged-P2-pcB"; */
 "ged-P2-pcB.normalTitle" = "Driving License";
+
+/* Class = "UILabel"; text = "Vietnamese"; ObjectID = "y53-QV-hDD"; */
+"y53-QV-hDD.text" = "Vietnamese";
 
 /* Class = "UIButton"; normalTitle = "Face Capture"; ObjectID = "yMP-ru-WTF"; */
 "yMP-ru-WTF.normalTitle" = "Face Capture";

@@ -7,135 +7,159 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		041BC94C2047E85300A8EDD7 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BC94B2047E85300A8EDD7 /* ResultsViewController.swift */; };
-		046644E0204FF9FD001908A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 046644E2204FF9FD001908A9 /* Localizable.strings */; };
-		046644E5204FFCAF001908A9 /* SwitchLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046644E4204FFCAF001908A9 /* SwitchLanguage.swift */; };
-		046644E720500295001908A9 /* HyperSnapDemoAppLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046644E620500295001908A9 /* HyperSnapDemoAppLocalizer.swift */; };
-		04E1DEF02060B60D002F23FC /* HyperSnapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E1DEEE2060B606002F23FC /* HyperSnapSDK.framework */; };
-		04E1DEF12060B60D002F23FC /* HyperSnapSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04E1DEEE2060B606002F23FC /* HyperSnapSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		04F0333C2045A3F900596B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0333B2045A3F900596B54 /* AppDelegate.swift */; };
-		04F0333E2045A3F900596B54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0333D2045A3F900596B54 /* ViewController.swift */; };
-		04F033412045A3F900596B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F0333F2045A3F900596B54 /* Main.storyboard */; };
-		04F033432045A3F900596B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F033422045A3F900596B54 /* Assets.xcassets */; };
-		04F033462045A3F900596B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F033442045A3F900596B54 /* LaunchScreen.storyboard */; };
+		04E1DF592060E34E002F23FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF4E2060E34D002F23FC /* ViewController.swift */; };
+		04E1DF5A2060E34E002F23FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF4F2060E34D002F23FC /* AppDelegate.swift */; };
+		04E1DF5B2060E34E002F23FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF512060E34E002F23FC /* Localizable.strings */; };
+		04E1DF5C2060E34E002F23FC /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF532060E34E002F23FC /* Main.strings */; };
+		04E1DF5D2060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF552060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift */; };
+		04E1DF5E2060E34E002F23FC /* SwitchLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF562060E34E002F23FC /* SwitchLanguage.swift */; };
+		04E1DF5F2060E34E002F23FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF572060E34E002F23FC /* Assets.xcassets */; };
+		04E1DF602060E34E002F23FC /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF582060E34E002F23FC /* ResultsViewController.swift */; };
+		04E1DF662060E40A002F23FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF642060E40A002F23FC /* LaunchScreen.storyboard */; };
+		04E1DF6A2060E448002F23FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF682060E448002F23FC /* Main.storyboard */; };
+		04E1DF712060E46E002F23FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF6F2060E46E002F23FC /* Localizable.strings */; };
+		4A5250A169189FEF2C29BA88 /* Pods_HyperSnapDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC39EFF213FDD4C1CB131D1 /* Pods_HyperSnapDemoApp.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		04AF8DDC204811BA00410DAF /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				04E1DEF12060B60D002F23FC /* HyperSnapSDK.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		041BC94B2047E85300A8EDD7 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		046644D9204FF87B001908A9 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
-		046644DD204FF987001908A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		046644E1204FF9FD001908A9 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		046644E3204FFA01001908A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		046644E4204FFCAF001908A9 /* SwitchLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchLanguage.swift; sourceTree = "<group>"; };
-		046644E620500295001908A9 /* HyperSnapDemoAppLocalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyperSnapDemoAppLocalizer.swift; sourceTree = "<group>"; };
-		04E1DEEE2060B606002F23FC /* HyperSnapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperSnapSDK.framework; sourceTree = "<group>"; };
-		04F033382045A3F900596B54 /* HyperSnapDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSnapDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04F0333B2045A3F900596B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04F0333D2045A3F900596B54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04F033402045A3F900596B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		04F033422045A3F900596B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04F033452045A3F900596B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		04F033472045A3F900596B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01D993F383ABCF917E18C4C3 /* Pods-HyperSnapDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSnapDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		04E1DF192060DEE4002F23FC /* HyperSnapDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSnapDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04E1DF282060DEE4002F23FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E1DF2E2060DFD0002F23FC /* HyperSnapDemoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HyperSnapDemoApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		04E1DF4E2060E34D002F23FC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04E1DF4F2060E34D002F23FC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04E1DF522060E34E002F23FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		04E1DF542060E34E002F23FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Main.strings; sourceTree = "<group>"; };
+		04E1DF552060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyperSnapDemoAppLocalizer.swift; sourceTree = "<group>"; };
+		04E1DF562060E34E002F23FC /* SwitchLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchLanguage.swift; sourceTree = "<group>"; };
+		04E1DF572060E34E002F23FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04E1DF582060E34E002F23FC /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		04E1DF652060E40A002F23FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04E1DF692060E448002F23FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04E1DF6C2060E451002F23FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		04E1DF6E2060E452002F23FC /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		04E1DF702060E46E002F23FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		04E1DF722060E472002F23FC /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABC39EFF213FDD4C1CB131D1 /* Pods_HyperSnapDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperSnapDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE39B11BD73E16379B1EB601 /* Pods-HyperSnapDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSnapDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		04F033352045A3F900596B54 /* Frameworks */ = {
+		04E1DF162060DEE4002F23FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E1DEF02060B60D002F23FC /* HyperSnapSDK.framework in Frameworks */,
+				4A5250A169189FEF2C29BA88 /* Pods_HyperSnapDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04F0332F2045A3F900596B54 = {
+		04E1DF102060DEE4002F23FC = {
 			isa = PBXGroup;
 			children = (
-				04E1DEEE2060B606002F23FC /* HyperSnapSDK.framework */,
-				04F0333A2045A3F900596B54 /* HyperSnapDemoApp */,
-				04F033392045A3F900596B54 /* Products */,
+				04E1DF1B2060DEE4002F23FC /* HyperSnapDemoApp */,
+				04E1DF1A2060DEE4002F23FC /* Products */,
+				5F1A98B747E529164B59BAB8 /* Pods */,
+				80A258EC81913E5347DD61B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		04F033392045A3F900596B54 /* Products */ = {
+		04E1DF1A2060DEE4002F23FC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04F033382045A3F900596B54 /* HyperSnapDemoApp.app */,
+				04E1DF192060DEE4002F23FC /* HyperSnapDemoApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		04F0333A2045A3F900596B54 /* HyperSnapDemoApp */ = {
+		04E1DF1B2060DEE4002F23FC /* HyperSnapDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				04F0333B2045A3F900596B54 /* AppDelegate.swift */,
-				046644E4204FFCAF001908A9 /* SwitchLanguage.swift */,
-				04F0333D2045A3F900596B54 /* ViewController.swift */,
-				046644E620500295001908A9 /* HyperSnapDemoAppLocalizer.swift */,
-				046644E2204FF9FD001908A9 /* Localizable.strings */,
-				041BC94B2047E85300A8EDD7 /* ResultsViewController.swift */,
-				04F0333F2045A3F900596B54 /* Main.storyboard */,
-				04F033422045A3F900596B54 /* Assets.xcassets */,
-				04F033442045A3F900596B54 /* LaunchScreen.storyboard */,
-				04F033472045A3F900596B54 /* Info.plist */,
+				04E1DF4F2060E34D002F23FC /* AppDelegate.swift */,
+				04E1DF572060E34E002F23FC /* Assets.xcassets */,
+				04E1DF502060E34D002F23FC /* en.lproj */,
+				04E1DF552060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift */,
+				04E1DF582060E34E002F23FC /* ResultsViewController.swift */,
+				04E1DF562060E34E002F23FC /* SwitchLanguage.swift */,
+				04E1DF4E2060E34D002F23FC /* ViewController.swift */,
+				04E1DF6F2060E46E002F23FC /* Localizable.strings */,
+				04E1DF642060E40A002F23FC /* LaunchScreen.storyboard */,
+				04E1DF682060E448002F23FC /* Main.storyboard */,
+				04E1DF282060DEE4002F23FC /* Info.plist */,
+				04E1DF2E2060DFD0002F23FC /* HyperSnapDemoApp-Bridging-Header.h */,
 			);
 			path = HyperSnapDemoApp;
+			sourceTree = "<group>";
+		};
+		04E1DF502060E34D002F23FC /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				04E1DF512060E34E002F23FC /* Localizable.strings */,
+				04E1DF532060E34E002F23FC /* Main.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		5F1A98B747E529164B59BAB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01D993F383ABCF917E18C4C3 /* Pods-HyperSnapDemoApp.debug.xcconfig */,
+				EE39B11BD73E16379B1EB601 /* Pods-HyperSnapDemoApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		80A258EC81913E5347DD61B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABC39EFF213FDD4C1CB131D1 /* Pods_HyperSnapDemoApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04F033372045A3F900596B54 /* HyperScanVietnamParentApp */ = {
+		04E1DF182060DEE4002F23FC /* HyperSnapDemoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04F0334A2045A3F900596B54 /* Build configuration list for PBXNativeTarget "HyperScanVietnamParentApp" */;
+			buildConfigurationList = 04E1DF2B2060DEE4002F23FC /* Build configuration list for PBXNativeTarget "HyperSnapDemoApp" */;
 			buildPhases = (
-				04F033342045A3F900596B54 /* Sources */,
-				04F033352045A3F900596B54 /* Frameworks */,
-				04F033362045A3F900596B54 /* Resources */,
-				04AF8DDC204811BA00410DAF /* Embed Frameworks */,
+				5C33CFD2816EE8D6410C0412 /* [CP] Check Pods Manifest.lock */,
+				04E1DF152060DEE4002F23FC /* Sources */,
+				04E1DF162060DEE4002F23FC /* Frameworks */,
+				04E1DF172060DEE4002F23FC /* Resources */,
+				C49D17648E4AAB3824C7807F /* [CP] Embed Pods Frameworks */,
+				B3F32BD755A6214F67E280A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = HyperScanVietnamParentApp;
-			productName = HyperSecureDocsParentApp;
-			productReference = 04F033382045A3F900596B54 /* HyperSnapDemoApp.app */;
+			name = HyperSnapDemoApp;
+			productName = HyperSnapDemoApp;
+			productReference = 04E1DF192060DEE4002F23FC /* HyperSnapDemoApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		04F033302045A3F900596B54 /* Project object */ = {
+		04E1DF112060DEE4002F23FC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = hyperverge;
 				TargetAttributes = {
-					04F033372045A3F900596B54 = {
+					04E1DF182060DEE4002F23FC = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 04F033332045A3F900596B54 /* Build configuration list for PBXProject "HyperSnapDemoApp" */;
+			buildConfigurationList = 04E1DF142060DEE4002F23FC /* Build configuration list for PBXProject "HyperSnapDemoApp" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -144,77 +168,149 @@
 				Base,
 				vi,
 			);
-			mainGroup = 04F0332F2045A3F900596B54;
-			productRefGroup = 04F033392045A3F900596B54 /* Products */;
+			mainGroup = 04E1DF102060DEE4002F23FC;
+			productRefGroup = 04E1DF1A2060DEE4002F23FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04F033372045A3F900596B54 /* HyperScanVietnamParentApp */,
+				04E1DF182060DEE4002F23FC /* HyperSnapDemoApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		04F033362045A3F900596B54 /* Resources */ = {
+		04E1DF172060DEE4002F23FC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046644E0204FF9FD001908A9 /* Localizable.strings in Resources */,
-				04F033462045A3F900596B54 /* LaunchScreen.storyboard in Resources */,
-				04F033432045A3F900596B54 /* Assets.xcassets in Resources */,
-				04F033412045A3F900596B54 /* Main.storyboard in Resources */,
+				04E1DF5B2060E34E002F23FC /* Localizable.strings in Resources */,
+				04E1DF712060E46E002F23FC /* Localizable.strings in Resources */,
+				04E1DF662060E40A002F23FC /* LaunchScreen.storyboard in Resources */,
+				04E1DF6A2060E448002F23FC /* Main.storyboard in Resources */,
+				04E1DF5C2060E34E002F23FC /* Main.strings in Resources */,
+				04E1DF5F2060E34E002F23FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C33CFD2816EE8D6410C0412 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HyperSnapDemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3F32BD755A6214F67E280A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C49D17648E4AAB3824C7807F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-frameworks.sh",
+				"${PODS_ROOT}/HyperSnapSDK/HyperSnapSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyperSnapSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		04F033342045A3F900596B54 /* Sources */ = {
+		04E1DF152060DEE4002F23FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				041BC94C2047E85300A8EDD7 /* ResultsViewController.swift in Sources */,
-				046644E5204FFCAF001908A9 /* SwitchLanguage.swift in Sources */,
-				04F0333E2045A3F900596B54 /* ViewController.swift in Sources */,
-				04F0333C2045A3F900596B54 /* AppDelegate.swift in Sources */,
-				046644E720500295001908A9 /* HyperSnapDemoAppLocalizer.swift in Sources */,
+				04E1DF592060E34E002F23FC /* ViewController.swift in Sources */,
+				04E1DF602060E34E002F23FC /* ResultsViewController.swift in Sources */,
+				04E1DF5A2060E34E002F23FC /* AppDelegate.swift in Sources */,
+				04E1DF5E2060E34E002F23FC /* SwitchLanguage.swift in Sources */,
+				04E1DF5D2060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		046644E2204FF9FD001908A9 /* Localizable.strings */ = {
+		04E1DF512060E34E002F23FC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				046644E1204FF9FD001908A9 /* vi */,
-				046644E3204FFA01001908A9 /* en */,
+				04E1DF522060E34E002F23FC /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		04F0333F2045A3F900596B54 /* Main.storyboard */ = {
+		04E1DF532060E34E002F23FC /* Main.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04F033402045A3F900596B54 /* Base */,
-				046644D9204FF87B001908A9 /* vi */,
-				046644DD204FF987001908A9 /* en */,
+				04E1DF542060E34E002F23FC /* en */,
+			);
+			name = Main.strings;
+			sourceTree = "<group>";
+		};
+		04E1DF642060E40A002F23FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04E1DF652060E40A002F23FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		04E1DF682060E448002F23FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04E1DF692060E448002F23FC /* Base */,
+				04E1DF6C2060E451002F23FC /* en */,
+				04E1DF6E2060E452002F23FC /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		04F033442045A3F900596B54 /* LaunchScreen.storyboard */ = {
+		04E1DF6F2060E46E002F23FC /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04F033452045A3F900596B54 /* Base */,
+				04E1DF702060E46E002F23FC /* en */,
+				04E1DF722060E472002F23FC /* vi */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		04F033482045A3F900596B54 /* Debug */ = {
+		04E1DF292060DEE4002F23FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,7 +368,7 @@
 			};
 			name = Debug;
 		};
-		04F033492045A3F900596B54 /* Release */ = {
+		04E1DF2A2060DEE4002F23FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -323,43 +419,40 @@
 			};
 			name = Release;
 		};
-		04F0334B2045A3F900596B54 /* Debug */ = {
+		04E1DF2C2060DEE4002F23FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01D993F383ABCF917E18C4C3 /* Pods-HyperSnapDemoApp.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CEEYYY3J3;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = HyperSnapDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hyperverge.HyperSnapDemoApp;
-				PRODUCT_NAME = HyperSnapDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HyperSnapDemoApp/HyperSnapDemoApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		04F0334C2045A3F900596B54 /* Release */ = {
+		04E1DF2D2060DEE4002F23FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE39B11BD73E16379B1EB601 /* Pods-HyperSnapDemoApp.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7CEEYYY3J3;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = HyperSnapDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hyperverge.HyperSnapDemoApp;
-				PRODUCT_NAME = HyperSnapDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HyperSnapDemoApp/HyperSnapDemoApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -368,25 +461,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04F033332045A3F900596B54 /* Build configuration list for PBXProject "HyperSnapDemoApp" */ = {
+		04E1DF142060DEE4002F23FC /* Build configuration list for PBXProject "HyperSnapDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04F033482045A3F900596B54 /* Debug */,
-				04F033492045A3F900596B54 /* Release */,
+				04E1DF292060DEE4002F23FC /* Debug */,
+				04E1DF2A2060DEE4002F23FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04F0334A2045A3F900596B54 /* Build configuration list for PBXNativeTarget "HyperScanVietnamParentApp" */ = {
+		04E1DF2B2060DEE4002F23FC /* Build configuration list for PBXNativeTarget "HyperSnapDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04F0334B2045A3F900596B54 /* Debug */,
-				04F0334C2045A3F900596B54 /* Release */,
+				04E1DF2C2060DEE4002F23FC /* Debug */,
+				04E1DF2D2060DEE4002F23FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 04F033302045A3F900596B54 /* Project object */;
+	rootObject = 04E1DF112060DEE4002F23FC /* Project object */;
 }
