@@ -8,15 +8,25 @@ HyperSnapSDK is HyperVerge's documents + face capture framework that captures im
 
 ### Example Project
 - Please refer to the example app provided in the repo to get an understanding of the implementation process.
-- To run the app, clone/download the repo and open example/HyperSnapSDKDemoApp.xcodeproj.
+- To run the app, clone/download the repo and open example/HyperSnapSDKDemoApp.xcworkspace.
 - Build and run the app.
 
 ### Integration Steps
 
+
+##### Via CocoaPods
+
+HyperSnapSDK is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+```
+pod 'HyperSnapSDK'
+```
+
+##### Manually
+
 - Download 'HyperSnapSDK.framework' and add it to your Xcode project
 - Navigate to Targets -> General and include the framework under 'Embedded Binaries' and 'Linked Frameworks and Libraries'.
 - Navigate to Targets -> 'Your App name' -> Build Settings. Ensure that 'Always Embed Swift Standard Libraries' is set to 'Yes'.
-
 
 
 ##### Permissions
