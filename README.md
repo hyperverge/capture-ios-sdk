@@ -149,8 +149,8 @@ Please note that when an error occurs, the ViewController is dismissed and the c
 |----------|-----------|-----------|------|
 |2|Internal SDK Error|Occurs when an unexpected error has happened with the HyperSnapSDK.|Notify HyperVerge|
 |3|Operation Cancelled By User|When the user taps on cancel button before capture|Try again.|
-|4|Camera Permission Denied|Occurs when SDK has not been initialized properly.|Check if the initialization of SDK is happening before any functionality is being used.|
-|5|Hardware Error|Occurs when SDK has not been initialized properly.|Check if the initialization of SDK is happening before any functionality is being used.|
+|4|Camera Permission Denied|Occurs when the user has denied permission to access camera.|In the settings app, give permission to access camera and try again.|
+|5|Hardware Error|Occurs when there is an error setting up the camera.|Make sure the camera is accessible.|
 
 
 #### Localization
