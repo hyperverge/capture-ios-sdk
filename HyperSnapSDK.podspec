@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HyperSnapSDK"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "HyperSecure is HyperVerge's iOS Framework for capturing documents and faces at a resolution appropriate for our proprietary Deep Learning OCR and Face Recognition Engines."
   # s.description  = "HyperSecure is an iOS Framework of HyperVerge's Face Recognition based Identity and Access Management (IAM) System."
   s.homepage     = "https://github.com/hyperverge/capture-ios-sdk"
