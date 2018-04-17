@@ -135,7 +135,7 @@ These are the properties to be set while initializing the ViewController
 - document:(HVDocsViewController) - optional: This is the type of the document to be captured. The type determines the aspect ratio of the document. It is an enum with these values:
     - `.card`- Aspect ratio : 0.625. Example: Vietnamese National ID, Driving License, Motor Registration Certificate
     - `.a4`- Aspect ratio: 1.4. Example: Bank statement, insurance receipt
-    - `.passport`- Aspect ratio: 0.78. Example: Passports
+    - `.passport`- Aspect ratio: 0.68. Example: Passports
     - `.other`- This is for aspect ratios that don't fall in the above categories. In this case, the aspect ratio should be set in the next line by calling `vc.document.aspectRatio = <Aspect Ratio>`
 - topText, bottomText, topLabelFont & bottomLabelFont (HVDocsViewController) - optional: The titles at the top and bottom in the View and their fonts respectively.
     
