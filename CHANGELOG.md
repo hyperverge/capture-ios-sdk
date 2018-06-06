@@ -8,4 +8,13 @@
 - Minor UI change
 - Minor issue with rotation fixed
 
+#### Version 2.0.0
+
+- Added Liveness Module
+- UI revamp in both document and face capture ViewControllers
+- Moved the 'Document' class to 'HyperSnapSDK.Document' and the 'DocumentType' enum to 'HyperSnapSDK.DocumentType'
+- Exposed an enum for errors - 'HyperSnapSDK.Error'
+- Minor change in completionHandler structure for HVFaceViewController
+
+
 

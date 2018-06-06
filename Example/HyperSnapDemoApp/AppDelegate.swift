@@ -13,26 +13,14 @@ import HyperSnapSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    public var isLivenessNeeded = true
-    public var isGestureLivenessNeeded = true
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         HyperSnapDemoAppLocalizer.DoTheSwizzling()
         
         
-        let livenessNeeded = UserDefaults.standard.value(forKey: "isLivenessNeeded") as? Bool
-        let gestureLivenessNeeded = UserDefaults.standard.value(forKey: "isGestureLivenessNeeded") as? Bool
-        
-        if let livenessNeeded = livenessNeeded {
-            isLivenessNeeded = livenessNeeded
-        }
-        if let gestureLivenessNeeded = gestureLivenessNeeded {
-            isGestureLivenessNeeded = gestureLivenessNeeded
-        }
-        
-        HyperSnapSDK.initialize(appId: "demoHV", appKey: "demoHV", region: HyperSnapParams.Region.AsiaPacific, product: HyperSnapParams.Product.faceID)
+        HyperSnapSDK.initialize(appId: "", appKey: "", region: HyperSnapParams.Region.AsiaPacific, product: HyperSnapParams.Product.faceID)
         
         return true
     }

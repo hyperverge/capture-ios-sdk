@@ -39,6 +39,9 @@ class ResultsViewController: UIViewController {
         
         if let error = error {
             errorTextLabel.text = error.userInfo[NSLocalizedDescriptionKey] as? String
+            if error.code == 103 {
+                errorTextLabel.text = "\(error.userInfo[NSLocalizedDescriptionKey] ?? "") - Make sure appId and appKey are set in AppDelegate"
+            }
         }else{
             errorTextLabel.isHidden = true
         }

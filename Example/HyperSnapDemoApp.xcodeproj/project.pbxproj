@@ -7,39 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04E1DF592060E34E002F23FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF4E2060E34D002F23FC /* ViewController.swift */; };
-		04E1DF5A2060E34E002F23FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF4F2060E34D002F23FC /* AppDelegate.swift */; };
-		04E1DF5B2060E34E002F23FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF512060E34E002F23FC /* Localizable.strings */; };
-		04E1DF5C2060E34E002F23FC /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF532060E34E002F23FC /* Main.strings */; };
-		04E1DF5D2060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF552060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift */; };
-		04E1DF5E2060E34E002F23FC /* SwitchLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF562060E34E002F23FC /* SwitchLanguage.swift */; };
-		04E1DF5F2060E34E002F23FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF572060E34E002F23FC /* Assets.xcassets */; };
-		04E1DF602060E34E002F23FC /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DF582060E34E002F23FC /* ResultsViewController.swift */; };
-		04E1DF662060E40A002F23FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF642060E40A002F23FC /* LaunchScreen.storyboard */; };
-		04E1DF6A2060E448002F23FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF682060E448002F23FC /* Main.storyboard */; };
-		04E1DF712060E46E002F23FC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DF6F2060E46E002F23FC /* Localizable.strings */; };
+		044E323820C843F800AEAB5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044E323020C843F700AEAB5C /* Main.storyboard */; };
+		044E323920C843F800AEAB5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E323120C843F700AEAB5C /* ViewController.swift */; };
+		044E323A20C843F800AEAB5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E323220C843F700AEAB5C /* AppDelegate.swift */; };
+		044E323B20C843F800AEAB5C /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E323320C843F800AEAB5C /* ResultsViewController.swift */; };
+		044E323C20C843F800AEAB5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044E323420C843F800AEAB5C /* LaunchScreen.storyboard */; };
+		044E323E20C843F800AEAB5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044E323620C843F800AEAB5C /* Assets.xcassets */; };
+		044E323F20C843F800AEAB5C /* SwitchLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E323720C843F800AEAB5C /* SwitchLanguage.swift */; };
+		044E324120C8473D00AEAB5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 044E324320C8473D00AEAB5C /* Localizable.strings */; };
 		4A5250A169189FEF2C29BA88 /* Pods_HyperSnapDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC39EFF213FDD4C1CB131D1 /* Pods_HyperSnapDemoApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01D993F383ABCF917E18C4C3 /* Pods-HyperSnapDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSnapDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		044E323020C843F700AEAB5C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		044E323120C843F700AEAB5C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		044E323220C843F700AEAB5C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		044E323320C843F800AEAB5C /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		044E323420C843F800AEAB5C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		044E323620C843F800AEAB5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		044E323720C843F800AEAB5C /* SwitchLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchLanguage.swift; sourceTree = "<group>"; };
+		044E324220C8473D00AEAB5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		044E324420C8474800AEAB5C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04E1DF192060DEE4002F23FC /* HyperSnapDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSnapDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E1DF282060DEE4002F23FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04E1DF2E2060DFD0002F23FC /* HyperSnapDemoApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HyperSnapDemoApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		04E1DF4E2060E34D002F23FC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04E1DF4F2060E34D002F23FC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04E1DF522060E34E002F23FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
-		04E1DF542060E34E002F23FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Main.strings; sourceTree = "<group>"; };
-		04E1DF552060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HyperSnapDemoAppLocalizer.swift; sourceTree = "<group>"; };
-		04E1DF562060E34E002F23FC /* SwitchLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchLanguage.swift; sourceTree = "<group>"; };
-		04E1DF572060E34E002F23FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04E1DF582060E34E002F23FC /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		04E1DF652060E40A002F23FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		04E1DF692060E448002F23FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		04E1DF6C2060E451002F23FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		04E1DF6E2060E452002F23FC /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
-		04E1DF702060E46E002F23FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		04E1DF722060E472002F23FC /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ABC39EFF213FDD4C1CB131D1 /* Pods_HyperSnapDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperSnapDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE39B11BD73E16379B1EB601 /* Pods-HyperSnapDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSnapDemoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,29 +68,17 @@
 		04E1DF1B2060DEE4002F23FC /* HyperSnapDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				04E1DF4F2060E34D002F23FC /* AppDelegate.swift */,
-				04E1DF572060E34E002F23FC /* Assets.xcassets */,
-				04E1DF502060E34D002F23FC /* en.lproj */,
-				04E1DF552060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift */,
-				04E1DF582060E34E002F23FC /* ResultsViewController.swift */,
-				04E1DF562060E34E002F23FC /* SwitchLanguage.swift */,
-				04E1DF4E2060E34D002F23FC /* ViewController.swift */,
-				04E1DF6F2060E46E002F23FC /* Localizable.strings */,
-				04E1DF642060E40A002F23FC /* LaunchScreen.storyboard */,
-				04E1DF682060E448002F23FC /* Main.storyboard */,
+				044E323220C843F700AEAB5C /* AppDelegate.swift */,
+				044E323620C843F800AEAB5C /* Assets.xcassets */,
+				044E323420C843F800AEAB5C /* LaunchScreen.storyboard */,
+				044E324320C8473D00AEAB5C /* Localizable.strings */,
+				044E323020C843F700AEAB5C /* Main.storyboard */,
+				044E323320C843F800AEAB5C /* ResultsViewController.swift */,
+				044E323720C843F800AEAB5C /* SwitchLanguage.swift */,
+				044E323120C843F700AEAB5C /* ViewController.swift */,
 				04E1DF282060DEE4002F23FC /* Info.plist */,
-				04E1DF2E2060DFD0002F23FC /* HyperSnapDemoApp-Bridging-Header.h */,
 			);
 			path = HyperSnapDemoApp;
-			sourceTree = "<group>";
-		};
-		04E1DF502060E34D002F23FC /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				04E1DF512060E34E002F23FC /* Localizable.strings */,
-				04E1DF532060E34E002F23FC /* Main.strings */,
-			);
-			path = en.lproj;
 			sourceTree = "<group>";
 		};
 		5F1A98B747E529164B59BAB8 /* Pods */ = {
@@ -182,12 +161,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E1DF5B2060E34E002F23FC /* Localizable.strings in Resources */,
-				04E1DF712060E46E002F23FC /* Localizable.strings in Resources */,
-				04E1DF662060E40A002F23FC /* LaunchScreen.storyboard in Resources */,
-				04E1DF6A2060E448002F23FC /* Main.storyboard in Resources */,
-				04E1DF5C2060E34E002F23FC /* Main.strings in Resources */,
-				04E1DF5F2060E34E002F23FC /* Assets.xcassets in Resources */,
+				044E323820C843F800AEAB5C /* Main.storyboard in Resources */,
+				044E324120C8473D00AEAB5C /* Localizable.strings in Resources */,
+				044E323E20C843F800AEAB5C /* Assets.xcassets in Resources */,
+				044E323C20C843F800AEAB5C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,56 +214,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04E1DF592060E34E002F23FC /* ViewController.swift in Sources */,
-				04E1DF602060E34E002F23FC /* ResultsViewController.swift in Sources */,
-				04E1DF5A2060E34E002F23FC /* AppDelegate.swift in Sources */,
-				04E1DF5E2060E34E002F23FC /* SwitchLanguage.swift in Sources */,
-				04E1DF5D2060E34E002F23FC /* HyperSnapDemoAppLocalizer.swift in Sources */,
+				044E323A20C843F800AEAB5C /* AppDelegate.swift in Sources */,
+				044E323F20C843F800AEAB5C /* SwitchLanguage.swift in Sources */,
+				044E323920C843F800AEAB5C /* ViewController.swift in Sources */,
+				044E323B20C843F800AEAB5C /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		04E1DF512060E34E002F23FC /* Localizable.strings */ = {
+		044E324320C8473D00AEAB5C /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04E1DF522060E34E002F23FC /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		04E1DF532060E34E002F23FC /* Main.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04E1DF542060E34E002F23FC /* en */,
-			);
-			name = Main.strings;
-			sourceTree = "<group>";
-		};
-		04E1DF642060E40A002F23FC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04E1DF652060E40A002F23FC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		04E1DF682060E448002F23FC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04E1DF692060E448002F23FC /* Base */,
-				04E1DF6C2060E451002F23FC /* en */,
-				04E1DF6E2060E452002F23FC /* vi */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		04E1DF6F2060E46E002F23FC /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04E1DF702060E46E002F23FC /* en */,
-				04E1DF722060E472002F23FC /* vi */,
+				044E324220C8473D00AEAB5C /* en */,
+				044E324420C8474800AEAB5C /* vi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -416,7 +358,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hyperverge.HyperSnapDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HyperSnapDemoApp/HyperSnapDemoApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -436,7 +378,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.hyperverge.HyperSnapDemoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HyperSnapDemoApp/HyperSnapDemoApp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
