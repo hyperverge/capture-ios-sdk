@@ -1,21 +1,39 @@
 //
 //  AppDelegate.swift
-//  HyperSnapDemoApp
+//  HyperSecureDocsParentApp
 //
 //  Created by Srinija on 27/02/18.
 //  Copyright © 2018 hyperverge. All rights reserved.
 //
 
 import UIKit
+import HyperSnapSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    public var isLivenessNeeded = true
+    public var isGestureLivenessNeeded = true
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
         HyperSnapDemoAppLocalizer.DoTheSwizzling()
+        
+        
+        let livenessNeeded = UserDefaults.standard.value(forKey: "isLivenessNeeded") as? Bool
+        let gestureLivenessNeeded = UserDefaults.standard.value(forKey: "isGestureLivenessNeeded") as? Bool
+        
+        if let livenessNeeded = livenessNeeded {
+            isLivenessNeeded = livenessNeeded
+        }
+        if let gestureLivenessNeeded = gestureLivenessNeeded {
+            isGestureLivenessNeeded = gestureLivenessNeeded
+        }
+        
+        HyperSnapSDK.initialize(appId: "demoHV", appKey: "demoHV", region: HyperSnapParams.Region.AsiaPacific, product: HyperSnapParams.Product.faceID)
+        
         return true
     }
 

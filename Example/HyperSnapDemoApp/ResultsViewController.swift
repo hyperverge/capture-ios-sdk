@@ -9,10 +9,15 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-
-    @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var livenessStatusLabel: UILabel!
+    
+    @IBOutlet weak var errorTextLabel: UILabel!
     var image:UIImage?
+    var isLivenessSuccessful: Bool?
+    var error:NSError?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +27,24 @@ class ResultsViewController: UIViewController {
         if let image = image {
             imageView.image = image
         }
+        if let isLivenessSuccessful = isLivenessSuccessful {
+            if isLivenessSuccessful {
+                livenessStatusLabel.text = "Liveness Successful!"
+            }else{
+                livenessStatusLabel.text = "Liveness Failed"
+            }
+        }else{
+            livenessStatusLabel.isHidden = true
+        }
+        
+        if let error = error {
+            errorTextLabel.text = error.userInfo[NSLocalizedDescriptionKey] as? String
+        }else{
+            errorTextLabel.isHidden = true
+        }
+        
+        
     }
-
-
+    
+    
 }

@@ -6,4 +6,7 @@
   Copyright © 2018 hyperverge. All rights reserved.
 */
 
-descriptionText = "Place the document inside the box";
+descriptionText = "Đặt tài liệu bên trong hộp";
+
+
+lookStraight = "Place your face within the circle";
