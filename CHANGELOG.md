@@ -12,8 +12,8 @@
 
 - Added Liveness Module
 - UI revamp in both document and face capture ViewControllers
-- Moved the 'Document' class to 'HyperSnapSDK.Document' and the 'DocumentType' enum to 'HyperSnapSDK.DocumentType'
-- Exposed an enum for errors - 'HyperSnapSDK.Error'
+- Moved the 'Document' class to 'HyperSnapParams.Document' and the 'DocumentType' enum to 'HyperSnapParams.DocumentType'
+- Exposed an enum for errors - 'HyperSnapParams.Error'
 - Minor change in completionHandler structure for HVFaceViewController
 
 
