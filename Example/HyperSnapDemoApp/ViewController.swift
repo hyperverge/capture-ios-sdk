@@ -58,8 +58,11 @@ class ViewController: UIViewController {
     
     @IBAction func FaceCaptureTapped(_ sender: UIButton) {
         let bundle = Bundle(for: HyperSnapSDK.self)
+        
+        //Instantiate the ViewController
         let vc = UIStoryboard(name: HyperSnapSDK.StoryBoardName, bundle:bundle).instantiateViewController(withIdentifier: "HVFaceViewController") as! HVFaceViewController
         
+        //Set ViewController properties
         vc.setLivenessMode(livenessMode)
         
         vc.completionHandler = {error, result,vcNew in
@@ -85,14 +88,18 @@ class ViewController: UIViewController {
 
             
         }
+        //Present the ViewController
         self.present(vc, animated: true, completion: nil)
     }
     
     
     func presentDocCamera(_ document:HyperSnapParams.Document, topText:String){
         let bundle = Bundle(for: HVFaceViewController.self)
+        
+        //Instantiate the ViewController
         let vc = UIStoryboard(name: HyperSnapSDK.StoryBoardName, bundle:bundle).instantiateViewController(withIdentifier: "HVDocsViewController") as! HVDocsViewController
         
+        //Set ViewController properties
         vc.document = document
         vc.topText = topText
         vc.bottomText = NSLocalizedString("descriptionText", comment: "no comments")
@@ -113,6 +120,7 @@ class ViewController: UIViewController {
             vc.present(resultsViewController, animated: true, completion: nil)
             
         }
+        //Present the ViewController
         self.present(vc, animated: true, completion: nil)
     }
     

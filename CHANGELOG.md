@@ -16,5 +16,10 @@
 - Exposed an enum for errors - 'HyperSnapParams.Error'
 - Minor change in completionHandler structure for HVFaceViewController
 
+#### Version 2.1.1
+
+- Added an option to optimize the liveness call.
+- Minor bug fixes
+- Minor UI updates
 
 

@@ -241,6 +241,14 @@ If all the gestures are succefully performed and the face matches are sucessful,
 - `live`: String with values 'yes'/'no'. Tells whether the selfie is live or not.
 
 <br/>
+#### Optimize Texture Liveness
+If bandwidth is low/limited or the time taken by the API call is a constraint, add the following line while initializing the HVFaceViewController to optimize the liveness calls. Please note that this process has a slightly lower accuracy compared to the non-optimized one. By default the non-optimized process would be used.
+
+```
+vc.shouldOptimizeLivenessCall(true)
+```
+
+<br/>
 
 ## Error Codes
 

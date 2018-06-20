@@ -224,6 +224,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
+- (void)shouldOptimizeLivenessCall:(BOOL)shouldOptimize;
 - (void)viewWillLayoutSubviews;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;

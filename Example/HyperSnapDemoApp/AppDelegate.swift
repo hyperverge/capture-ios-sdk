@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         HyperSnapDemoAppLocalizer.DoTheSwizzling()
         
-        
+        //Initializes the SDK. Please set the 'appId' and 'appKey' provided by HyperVerge
         HyperSnapSDK.initialize(appId: "", appKey: "", region: HyperSnapParams.Region.AsiaPacific, product: HyperSnapParams.Product.faceID)
         
         return true
