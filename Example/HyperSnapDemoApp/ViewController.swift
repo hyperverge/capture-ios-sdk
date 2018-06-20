@@ -9,7 +9,7 @@
 import UIKit
 import HyperSnapSDK
 
- 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var languageSwitch: UISwitch!
@@ -79,8 +79,6 @@ class ViewController: UIViewController {
                 resultsViewController.isLivenessSuccessful = isLive
                 }
                 
-            }else{
-                print("No image Uri received")
             }
             
             vcNew.present(resultsViewController, animated: true, completion: nil)
@@ -99,20 +97,21 @@ class ViewController: UIViewController {
         vc.topText = topText
         vc.bottomText = NSLocalizedString("descriptionText", comment: "no comments")
         
+        let resultsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
+        
+        
         vc.completionHandler = {error, result in
-            guard error == nil else{
-                print(error!)
-                return
+            if error != nil {
+                print("Error received - Code:\(error!.code), Description:\(error!.userInfo[NSLocalizedDescriptionKey] ?? "No Description")")
+                resultsViewController.error = error
             }
             
             if let result = result, let imageUri = result["imageUri"] as? String, let image = UIImage(contentsOfFile: imageUri){
-                let resultsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
                 resultsViewController.image = image
-                vc.present(resultsViewController, animated: true, completion: nil)
-                
-            }else{
-                print("No image Uri?")
             }
+            
+            vc.present(resultsViewController, animated: true, completion: nil)
+            
         }
         self.present(vc, animated: true, completion: nil)
     }
@@ -144,7 +143,7 @@ class ViewController: UIViewController {
         default:
             break
         }
-
+        
         setDocumentButtonUI()
     }
     
