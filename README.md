@@ -1,5 +1,6 @@
 
-## HyperSnapSDK Framework Documentation
+  
+## HyperSnapSDK Documentation for iOS
 
 ## Overview
 HyperSnapSDK is HyperVerge's documents + face capture framework that captures images at a resolution appropriate for our proprietary Deep Learning OCR and Face Recognition Engines.
@@ -8,7 +9,7 @@ The framework provides a liveness feature that uses our advanced AI Engines to t
 
 ### Requirements
 - Minimum iOS Deployment Target - iOS 9.0
--  Xcode 9.3
+-  Xcode 9.3 - 9.4.1
 
 
 ## Table of contents
@@ -30,6 +31,7 @@ The framework provides a liveness feature that uses our advanced AI Engines to t
 		- [For Face Capture](#for-face-capture)
 			- [Properties](#properties)
 	- [Integrating Liveness in Face Capture](#integrating-liveness-in-face-capture)
+		- [Optimized Texture Liveness](#optimized-texture-liveness)
 - [Error Codes](#error-codes)
 - [Advanced](#advanced)
 	- [Localization](#localization)
@@ -41,6 +43,7 @@ The framework provides a liveness feature that uses our advanced AI Engines to t
 ## Example Project
 - Please refer to the example app provided in the repo to get an understanding of the implementation process.
 - To run the app, clone/download the repo and open example/HyperSnapSDKDemoApp.xcworkspace.
+- Set appId and appKey in 'Constants.swift' file.
 - Build and run the app.
 
 ## Integration Steps
@@ -87,21 +90,21 @@ import HyperSnapSDK
 
 ### 4. Initializing the SDK
 
-Add the following line to your code for initializing the Library. This must be called before launching the camera. So, preferably in `viewDidLoad` of the `ViewController` or `applicationDidFinishLaunching` in the `AppDelegate`.</br>
-
- Objective C:
- ```
- [HyperSnapSDK initializeWithAppId:@<appId> appKey:@<appKey> region: <region> product: <product>];
- ```
+To initialize the SDK, call the `HyperSnapSDK.initialize` method. This must be done before launching the camera. So, preferably in `viewDidLoad` of the `ViewController` or `applicationDidFinishLaunching` in the `AppDelegate`.</br>
 
  Swift:
  ```
- HyperSecureSDK.initialize(appId: <appId>, appKey: <appKey>,region: <region>, product: <product>)
+ HyperSecureSDK.initialize(appId: <appId>, appKey: <appKey>,region: HyperSnapParams.Region.AsiaPacific, product: HyperSnapParams.Product.faceID)
+ ```
+ 
+ Objective C:
+ ```
+ [HyperSnapSDK initializeWithAppId:@"<appID>" appKey:@"<appKey>" region:RegionAsiaPacific product:ProductFaceID];
  ```
 Where,
 - appId, appKey are given by HyperVerge
 - region: This is an enum, `HypeSnapParams.Region` with three values - `AsiaPacific`, `India` and `UnitedStates`.
-- product: This is an enum, `HyperSnapParams.Product` with two values - `faceID` annd `faceIAM`. 
+- product: This is an enum, `HyperSnapParams.Product` with two values - `faceID` annd `faceIAM`. Right now, only `faceID` is supported.
 
 >**Note**: Please note that this step is required only if liveness is used.
 
@@ -136,6 +139,7 @@ Objective C:
         HVDocsViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"HVDocsViewController"];
         
         //Set ViewController properties (described later)
+        vc.document = [[Document alloc] initWithType:DocumentTypeCard];
         vc.topText = @"National ID";
         vc.bottomText = @"Please place your document inside the box";
         vc.completionHandler = ^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result){
@@ -153,7 +157,7 @@ Objective C:
 ##### Properties
 These are the properties to be set while initializing the ViewController
 
-- completionHandler (required): This is to be a closure of type `error:NSError?, result:[String:AnyObject]?) -> Void`. It is called when a capture is successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
+- completionHandler (required): This is a closure of type `error:NSError?, result:[String:AnyObject]?) -> Void`. It is called when a capture is successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
     - `error`: If the capture is successful, the error is set to `nil`. Otherwise, it is an `NSError` object with following information
         - `code`: Error code stating type of error. (discussed later)
         - `userInfo`: A dictionary of type `[String:Any]`.
@@ -164,6 +168,7 @@ These are the properties to be set while initializing the ViewController
     - `.a4`- Aspect ratio: 1.4. Example: Bank statement, insurance receipt
     - `.passport`- Aspect ratio: 0.68. Example: Passports
     - `.other`- This is for custom aspect ratio. In this case, the aspect ratio should be set in the next line by calling `vc.document.aspectRatio = <Aspect Ratio>`
+If the document is not set, it defaults to `.card`.
 - `topText`, `bottomText`, `topLabelFont` & `bottomLabelFont` (optional): The titles at the top and bottom in the View and their fonts respectively.
 
 #### For Face Capture
@@ -175,7 +180,13 @@ Swift:
         let vc = UIStoryboard(name: HyperSnapSDK.StoryBoardName, bundle:bundle).instantiateViewController(withIdentifier: "HVFaceViewController") as! HVFaceViewController
             
         //Set ViewController properties (described later)
-        vc.completionHandler = completionHandler
+        vc.completionHandler = {error, result,vcNew in
+			if(error != nil){ 
+				print("Error!")
+			 }else{
+				print("Success")
+			}
+		}
             
         //Present the ViewController
         self.present(vc, animated: true, completion: nil)
@@ -210,7 +221,7 @@ These are the properties to be set while initializing the HVFaceViewController
         - `code`: Error code stating type of error. (discussed later)
         - `userInfo`: A dictionary of type `[String:Any]`.
             - The key `NSLocalizedDescriptionKey`  in `userInfo` has the error description.
-    - `result`: This is a dictionary of type `[String:AnyObject]`. If the capture failed, this is set to `nil` and a corresponding error is set in `error`. If a capture was successful but there was an error in a later step (only when liveness in enabled - discussed later) or when the capture was successful and the liveness is disabled, the result has a single key-value pair. The key being `imageUri` and the value being the local path of the captured image. 
+    - `result`: This is a dictionary of type `[String:AnyObject]`. If the capture failed, this is set to `nil` and a corresponding error is set in `error`. If a capture was successful but there was an error in a later step (possible only when liveness in enabled - discussed later) or when the capture was successful and the liveness is disabled, the result has a single key-value pair. The key being `imageUri` and the value being the local path of the captured image. 
     - `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController or dismiss it.
     > **Note:**  The `vc` could be a `HVFaceViewController` or a `HVGestureViewController`(if gesture liveness is enabled)
     
@@ -218,7 +229,7 @@ These are the properties to be set while initializing the HVFaceViewController
 
 ### Integrating Liveness in Face Capture
 
-The framework has two liveness detection methods. Texture liveness and Gesture Liveness. This can be set while initializing HVFaceViewController by calling the 'setLivenessMode' method before presenting the ViewController.
+The framework has two liveness detection methods. Texture liveness and Gesture Liveness. This can be set while initializing HVFaceViewController by calling the 'setLivenessMode' method, before presenting the ViewController.
 
         vc.setLivenessMode(livenessMode)
 
@@ -241,7 +252,8 @@ If all the gestures are succefully performed and the face matches are sucessful,
 - `live`: String with values 'yes'/'no'. Tells whether the selfie is live or not.
 
 <br/>
-#### Optimize Texture Liveness
+
+#### Optimized Texture Liveness
 If bandwidth is low/limited or the time taken by the API call is a constraint, add the following line while initializing the HVFaceViewController to optimize the liveness calls. Please note that this process has a slightly lower accuracy compared to the non-optimized one. By default the non-optimized process would be used.
 
 ```
@@ -255,13 +267,13 @@ vc.shouldOptimizeLivenessCall(true)
 Descriptions of the error codes returned in the completion handler are given here. 
 Please note that when an error occurs, the ViewController is dismissed and the completionHandler is called with the error.
 
-You could compare the error codes you receive directly with a hardcoded value or  with the `HyperSnapSDK.Error` enum values.
+You could compare the error codes you receive directly with a hardcoded value or  with the `HyperSnapParams.Error` enum values.
 eg:.  
 ```
-	switch HyperSnapSDK.Error(rawValue:error!.code)! {
-		case HyperSnapSDK.Error.operationCancelledByUser:
+	switch HyperSnapParams.Error.getError(error!.code)! {
+		case HyperSnapParams.Error.operationCancelledByUser:
 			print("Operation cancelled by user")
-		case HyperSnapSDK.Error.cameraPermissionDenied:
+		case HyperSnapParams.Error.cameraPermissionDenied:
 			print("Camera permissions denied")
 		default:
 			break
@@ -286,7 +298,7 @@ eg:.
 
 ### Localization
 
-The framework currently supports English(Base) and Vietnamese. 
+The framework currently supports localization for all the text it shows. 
 
 #### Document Capture
  While initializing document capture flow, to set the text of topLabel or bottomLabel with localisation support, add relavent entries in Localizable.strings files and use the corresponding key while setting topText or bottomText. Please refer to the example project for more details.
@@ -305,6 +317,7 @@ While initializing face capture flow (all liveness modes), please add relavent e
 
 |Key|Default Value|View Controller|
 |----------|-----------|-----------|
+|activityText|Processing|HVFaceViewController, HVGestureViewController|
 |captureNow|Capture Now|HVFaceViewController|
 |placeFaceInCircle|Place your face inside the circle|HVFaceViewController, HVGestureViewController|
 |faceNotFoundToast|Face not detected. Please try again|HVFaceViewController|
