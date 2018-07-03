@@ -163,10 +163,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
-@import ObjectiveC;
 @import UIKit;
-@import CoreGraphics;
-@import AVFoundation;
+@import ObjectiveC;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -184,17 +183,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-enum Type : NSInteger;
-
-SWIFT_CLASS("_TtC12HyperSnapSDK8Document")
-@interface Document : NSObject
-@property (nonatomic) enum Type type;
-- (nonnull instancetype)initWithType:(enum Type)type OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
-@end
-
 @class UIFont;
+@class Document;
 @class NSError;
 @class NSCoder;
 @class NSBundle;
@@ -210,7 +200,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 @property (nonatomic, strong) Document * _Nullable document;
 @property (nonatomic, copy) void (^ _Nonnull callback)(NSDictionary<NSString *, NSString *> * _Nonnull);
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable);
-@property (nonatomic) BOOL dataLogging;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
@@ -224,55 +213,79 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
 @end
 
-
-SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceCamera")
-@interface HVFaceCamera : UIView
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger SUCCESS_CLEAR_CAPTURED_IMAGES;)
-+ (NSInteger)SUCCESS_CLEAR_CAPTURED_IMAGES SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CLEAR_CAPTURED_IMAGES_INVALID_MODE;)
-+ (NSInteger)ERROR_CLEAR_CAPTURED_IMAGES_INVALID_MODE SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CLEAR_CAPTURED_IMAGES_CAMERA_NOT_FREE;)
-+ (NSInteger)ERROR_CLEAR_CAPTURED_IMAGES_CAMERA_NOT_FREE SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CLEAR_CAPTURED_IMAGES_PROCESSING_STARTED;)
-+ (NSInteger)ERROR_CLEAR_CAPTURED_IMAGES_PROCESSING_STARTED SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrontCam:(BOOL)frontCam;
-- (void)awakeFromNib;
-- (void)startCameraWithCompletionHandler:(void (^ _Nonnull)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
-- (NSArray<NSString *> * _Nonnull)getlocalImagePaths SWIFT_WARN_UNUSED_RESULT;
-- (void)setTimeout:(NSInteger)timeout;
-- (void)enableDisableFullBrightnessWithShouldEnable:(BOOL)shouldEnable;
-- (void)pauseFR;
-- (void)resumeFR;
-- (void)stopCamera;
-- (void)updateCameraOrientation;
-- (void)capture:(void (^ _Nonnull)(NSError * _Nullable, BOOL))onCaptureHandler;
-@end
-
-@class AVCaptureMetadataOutput;
-@class AVMetadataObject;
-@class AVCaptureConnection;
-
-@interface HVFaceCamera (SWIFT_EXTENSION(HyperSnapSDK)) <AVCaptureMetadataOutputObjectsDelegate>
-- (void)captureOutput:(AVCaptureMetadataOutput * _Nonnull)output didOutputMetadataObjects:(NSArray<AVMetadataObject *> * _Nonnull)metadataObjects fromConnection:(AVCaptureConnection * _Nonnull)connection;
-@end
-
+enum LivenessMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 @interface HVFaceViewController : UIViewController
-@property (nonatomic, copy) void (^ _Nonnull completionHandler)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable);
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
-@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+- (void)setLivenessMode:(enum LivenessMode)livenessMode;
+- (void)shouldOptimizeLivenessCall:(BOOL)shouldOptimize;
 - (void)viewWillLayoutSubviews;
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+- (void)viewWillDisappear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK15HyperSnapParams")
+@interface HyperSnapParams : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+/// Documents types
+typedef SWIFT_ENUM(NSInteger, DocumentType) {
+  DocumentTypeCard = 0,
+  DocumentTypeA4 = 1,
+  DocumentTypePassport = 2,
+  DocumentTypeOther = 3,
+};
+
+typedef SWIFT_ENUM(NSInteger, Region) {
+  RegionAsiaPacific = 0,
+  RegionUnitedStates = 1,
+  RegionIndia = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, Product) {
+  ProductFaceID = 0,
+  ProductIAM = 1,
+};
+
+typedef SWIFT_ENUM(NSInteger, LivenessMode) {
+  LivenessModeNone = 0,
+  LivenessModeTextureLiveness = 1,
+  LivenessModeTextureAndGestureLiveness = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, Error) {
+  ErrorInternalSDK = 2,
+  ErrorOperationCancelledByUser = 3,
+  ErrorCameraPermissionDenied = 4,
+  ErrorHardware = 5,
+  ErrorInitialization = 6,
+  ErrorNetwork = 102,
+  ErrorAuthentication = 103,
+  ErrorInternalServer = 104,
+  ErrorFaceMatch = 201,
+  ErrorFaceDetection = 202,
+  ErrorFaceNotFoundInternal = 300,
+};
+
+
+SWIFT_CLASS("_TtCC12HyperSnapSDK15HyperSnapParams8Document")
+@interface Document : NSObject
+- (nonnull instancetype)initWithType:(enum DocumentType)type OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
 
@@ -280,16 +293,15 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HyperSnapSDK")
 @interface HyperSnapSDK : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull StoryBoardName;)
 + (NSString * _Nonnull)StoryBoardName SWIFT_WARN_UNUSED_RESULT;
++ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region product:(enum Product)product;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-/// Documents types
-typedef SWIFT_ENUM(NSInteger, Type) {
-  TypeCard = 0,
-  TypeA4 = 1,
-  TypePassport = 2,
-  TypeOther = 3,
-};
+
+
+
+
+
 
 
 

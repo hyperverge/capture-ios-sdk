@@ -1,14 +1,14 @@
-#### Version 1.0.2
+#### Version 1.0.2 [12 April 2018]
 - Temporary release with Swift 4.0.3
 
 
-#### Version 1.0.3
+#### Version 1.0.3 [17 April 2018]
 
 - Compiled with Swift 4.1 (was 4.0.3)
 - Minor UI change
 - Minor issue with rotation fixed
 
-#### Version 2.0.0
+#### Version 2.0.0 [06 June 2018]
 
 - Added Liveness Module
 - UI revamp in both document and face capture ViewControllers
@@ -16,10 +16,17 @@
 - Exposed an enum for errors - 'HyperSnapParams.Error'
 - Minor change in completionHandler structure for HVFaceViewController
 
-#### Version 2.1.1
+#### Version 2.1.1 [20 June 2018]
 
 - Added an option to optimize the liveness call.
 - Minor bug fixes
 - Minor UI updates
+
+
+#### Version 2.1.2 [02 July 2018]
+
+- Minor bug fixes
+- `aspectRatio`  of documents has been changed from `CGFloat` to `Double`
+
 
 
