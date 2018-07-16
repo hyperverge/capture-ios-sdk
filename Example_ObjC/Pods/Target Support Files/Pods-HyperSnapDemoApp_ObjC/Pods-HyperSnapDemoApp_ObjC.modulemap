@@ -1,0 +1,6 @@
+framework module Pods_HyperSnapDemoApp_ObjC {
+  umbrella header "Pods-HyperSnapDemoApp_ObjC-umbrella.h"
+
+  export *
+  module * { export * }
+}
