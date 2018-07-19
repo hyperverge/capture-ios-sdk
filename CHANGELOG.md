@@ -29,4 +29,7 @@
 - `aspectRatio`  of documents has been changed from `CGFloat` to `Double`
 
 
+#### Version 2.1.3 [19 July 2018]
+
+- Performance improvement in liveness
 

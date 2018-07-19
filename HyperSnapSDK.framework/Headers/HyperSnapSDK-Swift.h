@@ -223,6 +223,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidLayoutSubviews;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)shouldOptimizeLivenessCall:(BOOL)shouldOptimize;
 - (void)viewWillLayoutSubviews;
