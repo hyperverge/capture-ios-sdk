@@ -2,7 +2,8 @@
 
 
 
-## HyperSnapSDK Documentation for iOS
+
+# HyperSnapSDK Documentation for iOS
 
 ## Overview
 HyperSnapSDK is HyperVerge's documents + face capture framework that captures images at a resolution appropriate for our proprietary Deep Learning OCR and Face Recognition Engines.
@@ -20,32 +21,33 @@ You can find the ChangeLog in the [CHANGELOG.md](CHANGELOG.md) file
 
 ## Table of contents
 
-- [Overview](#overview)
-	- [Requirements](#requirements)
-	-  [ChangeLog](#changelog)
-- [Table of contents](#table-of-contents)
-- [Example Project](#example-project)
-- [Integration Steps](#integration-steps)
-	- [1. Adding the SDK to your project](#1-adding-the-sdk-to-your-project)
-		- [Via CocoaPods](#via-cocoapods)
-		- [Manual](#manual)
-	- [2. App Permissions](#2-app-permissions)
-	- [3. Import Statements](#3-import-statements)
-	- [4. Initializing the SDK](#4-initializing-the-sdk)
-	- [5. Presenting the ViewControllers](#5-presenting-the-viewcontrollers)
-		- [For Document Capture](#for-document-capture)
-			- [Properties](#properties)
-		- [For Face Capture](#for-face-capture)
-			- [Properties](#properties)
-	- [Liveness in Face Capture](#liveness-in-face-capture)
-		- [Optimized Texture Liveness](#optimized-texture-liveness)
-- [Error Codes](#error-codes)
-- [Advanced](#advanced)
-	- [Localization](#localization)
-		- [Document Capture](#document-capture)
-		- [Face Capture](#face-capture)
-- [TroubleShooting](#troubleshooting)
-- [Contact Us](#contact-us)
+
+- [HyperSnapSDK Documentation for iOS](#hypersnapsdk-documentation-for-ios)
+	- [Overview](#overview)
+		- [Requirements](#requirements)
+		- [ChangeLog](#changelog)
+	- [Table of contents](#table-of-contents)
+	- [Example Project](#example-project)
+	- [Integration Steps](#integration-steps)
+		- [1. Adding the SDK to your project](#1-adding-the-sdk-to-your-project)
+			- [Via CocoaPods](#via-cocoapods)
+			- [Manual](#manual)
+		- [2. App Permissions](#2-app-permissions)
+		- [3. Import Statements](#3-import-statements)
+		- [4. Initializing the SDK](#4-initializing-the-sdk)
+		- [5. Presenting the ViewControllers](#5-presenting-the-viewcontrollers)
+			- [For Document Capture](#for-document-capture)
+				- [Parameters](#parameters)
+			- [For Face Capture](#for-face-capture)
+				- [Parameters](#parameters)
+			- [Liveness in Face Capture](#liveness-in-face-capture)
+			- [Optimized Texture Liveness](#optimized-texture-liveness)
+	- [Error Codes](#error-codes)
+	- [Advanced](#advanced)
+		- [Localization](#localization)
+		- [Styles](#styles)
+	- [TroubleShooting](#troubleshooting)
+	- [Contact Us](#contact-us)
 
 
 
@@ -117,93 +119,88 @@ To initialize the SDK, call the `HyperSnapSDK.initialize` method. This must be d
 Where,
 - appId, appKey are given by HyperVerge
 - region: This is an enum, `HypeSnapParams.Region` with three values - `AsiaPacific`, `India` and `UnitedStates`.
-- product: This is an enum, `HyperSnapParams.Product` with two values - `faceID` annd `faceIAM`. Right now, only `faceID` is supported.
+- product: This is an enum, `HyperSnapParams.Product` with two values - `faceID` and `faceIAM`. Right now, only `faceID` is supported.
 
 >**Note**: This step is required only if liveness is used.
 
 ### 5. Presenting the ViewControllers
 
-The ViewControllers for both document capture and face capture have been provided in a StoryBoard in the framework. They are called 'HVDocsViewController' and 'HVFaceViewController' respectively.
-To add them to your app, just call them like any other ViewController. The only difference is that the bundle ID should be that of the  framework.
+The ViewControllers for both document capture and face capture have been provided in a StoryBoard in the framework. They are called 'HVDocsViewController' and 'HVFaceViewController' respectively. To add them to your app, call the 'start' method of the respective ViewControllers.
 
 #### For Document Capture
 
 Swift:
 
-        //Instantiate the ViewController
-        let bundle = Bundle(for: HyperSnapSDK.self)
-        let vc = UIStoryboard(name: HyperSnapSDK.StoryBoardName, bundle:bundle).instantiateViewController(withIdentifier: "HVDocsViewController") as! HVDocsViewController
+        //1. Set properties
+        let hvDocConfig = HVDocConfig()
+        hvDocConfig.setDocumentType(HyperSnapParams.DocumentType.card)
+        hvDocConfig.setShowReviewPage(true)
+        hvDocConfig.setCapturePageTitleText("ID Card")
+        hvDocConfig.setCapturePageDescriptionText("Place front of your ID Card in the box")
 
-        //Set ViewController properties (described later)
-        vc.document = HyperSnapSDK.Document(type: .card)
-        vc.topText = "ID Card"
-        vc.bottomText = "Place your National ID inside the box"
-        vc.completionHandler = {error, result in
+		//2. Create completionHandler
+        let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result, vcNew in
 			if(error != nil){
 				print("Error Received: \(error!.userInfo[NSLocalizedDescriptionKey]!)");
 			}else{
 				print("Results: \(result!.debugDescription)");
 			}
-
-			vc.dismiss(animated: true, completion: nil)
 		}
 
-        //Present the ViewController
-        self.present(vc, animated: true, completion: nil)
+	//3. Call start method
+	HVDocsViewController.start(self, hvDocConfig: hvDocConfig, completionHandler: completionHandler)
 
 
 Objective C:
+```
+    HVDocConfig *docConfig = [HVDocConfig new];
+	[docConfig setDocumentType:DocumentTypeA4];
+	[docConfig setShowReviewPage:true];
+	[docConfig setShowInstructionsPage:true];
+	[HVDocsViewController start:self hvDocConfig:docConfig completionHandler:^(NSError* 	error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
+		if(error != nil){
+			NSLog(@"Error Received: %@",  error);
+		}else{
+			NSLog(@"Results: %@", result);
+		}
+	}];
 
-        //Instantiate the ViewController
-        NSBundle *bundle  = [NSBundle bundleForClass:[HyperSnapSDK self]];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:HyperSnapSDK.StoryBoardName bundle: bundle];
-        HVDocsViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"HVDocsViewController"];
+```
+##### Parameters
+The start method takes a `HVDocConfig` object and a completion handler.
 
-        //Set ViewController properties (described later)
-        vc.document = [[Document alloc] initWithType:DocumentTypeCard];
-        vc.topText = @"ID Card";
-        vc.bottomText = @"Please place your document inside the box";
-        vc.completionHandler = ^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result){
-            if(error != nil){
-            	NSLog(@"Error Received: %@",  error);
-            }else{
-           	 NSLog(@"Results: %@", result);
-            }
-			[vc dismissViewControllerAnimated:true  completion:nil];
-         };
-
-        //Present the ViewController
-        [self presentViewController:vc animated:YES completion:nil];
-
-
-##### Properties
-These are the properties to be set while initializing the ViewController
-
-- completionHandler (required): This is a closure of type `error:NSError?, result:[String:AnyObject]?) -> Void`. It is called when a capture is successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
+- `completionHandler`: This is a closure of type `error:NSError?, result:[String:AnyObject]?), vc:UIViewController -> Void`. It is called when a capture is successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
     - `error`: If the capture is successful, the error is set to `nil`. Otherwise, it is an `NSError` object with following information
         - `code`: Error code stating type of error. (discussed later)
         - `userInfo`: A dictionary of type `[String:Any]`.
             - The key `NSLocalizedDescriptionKey`  has the error description.
     - `result`: If the capture failed, this is set to `nil`. Otherwise, it is of type `[String:AnyObject]`. This has a single key-value pair. The key being 'imageUri' and the value is the local path of the captured image.
-- document (optional): This is the type of the document to be captured. It is of type `HyperSnapParams.Document`. The `type` in the init method determines the aspect ratio of the document. It is an enum, `HyperSnapParams.DocumentType`, with these values:
-    - `.card`- Aspect ratio : 0.625. Example: Vietnamese National ID, Driving License, Motor Registration Certificate
-    - `.a4`- Aspect ratio: 1.4. Example: Bank statement, insurance receipt
-    - `.passport`- Aspect ratio: 0.68. Example: Passports
-    - `.other`- This is for custom aspect ratio. In this case, the aspect ratio should be set in the next line by calling `vc.document.aspectRatio = <Aspect Ratio>`
-If the document is not set, it defaults to `.card`.
-- `topText`, `bottomText`, `topLabelFont` & `bottomLabelFont` (optional): The titles at the top and bottom in the View and their fonts respectively.
+    -  `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController.
+ Note: To dismiss the VC, please call `vc.dismiss`  or `vc.presentingViewController?.presentingViewController?.dimiss` etc depending on the number of view controllers on the stack (eg:. 2 VCs in instructions page is shown).
+- `hvDocConfig` : This is an object of type `HVDocConfig`. Its properties can be set with the setter methods provided for them. These are the various properties provided:
+	- `documentType`: It is an enum of type, `HyperSnapParams.DocumentType`.  It can be set with the `setDocumentType(_:)` method. The document type is used to determine the aspect ratio of the capture area. The enum has these values:
+	    - `.card`- Aspect ratio : 0.625. Example: Vietnamese National ID, Driving License, Motor Registration Certificate
+	    - `.a4`- Aspect ratio: 1.4. Example: Bank statement, insurance receipt
+	    - `.passport`- Aspect ratio: 0.68. Example: Passports
+	    - `.other`- This is for custom aspect ratio. In this case, the aspect ratio should be set in the next line by calling `hvDocConfig.setAspectRatio(_:)`.
+	If the documentType is not set, it defaults to `.card`.
+	- showReviewPage: (Boolean) To determine if the document review page should be shown after capture page. It defaults to `false`.
+	- showInstructionsPage: (Boolean) To determine if the instructions page should be shown before capture page. It defaults to `false`.
+	- showFlashButton: (Boolean) Setting this to true will add a flash toggle button at the top right corner of the screen. It defaults to `false`.
+	- `capturePageTitleText`, `capturePageDescriptionText`, `reviewPageTitleText`, `reviewPageDescriptionText` and `capturePageSubText` : Explained here.
+
 
 #### For Face Capture
 
 Swift:
 
-        //Instantiate the ViewController
-        let bundle = Bundle(for: HyperSnapSDK.self)
-        let vc = UIStoryboard(name: HyperSnapSDK.StoryBoardName, bundle:bundle).instantiateViewController(withIdentifier: "HVFaceViewController") as! HVFaceViewController
+        //1. Set properties
+	    let hvFaceConfig = HVFaceConfig()
+		hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
+		hvFaceConfig.setShowInstructionsPage(true)
 
-        //Set ViewController properties (described later)
-		vc.setLivenessMode(livenessMode)
-        vc.completionHandler = {error, result,vcNew in
+		//2. Create completionHandler
+        let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result,vcNew in
 			if(error != nil){
 				print("Error Received: \(error!.userInfo[NSLocalizedDescriptionKey]!)");
 			}else{
@@ -212,49 +209,46 @@ Swift:
 			vcNew.dismiss(animated: true, completion: nil)
 		}
 
-        //Present the ViewController
-        self.present(vc, animated: true, completion: nil)
+	//3. Call start method
+	HVFaceViewController.start(self, hvFaceConfig: hvFaceConfig, completionHandler: completionHandler)
 
 
 Objective C:
 
-        //Instantiate the ViewController
-        NSBundle *bundle  = [NSBundle bundleForClass:[HyperSnapSDK self]];
+	 HVFaceConfig *faceConfig = [HVFaceConfig  new];
+	[faceConfig setLivenessMode:LivenessModeTextureLiveness];
+	[HVFaceViewController start:self hvFaceConfig:faceConfig completionHandler:^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
+		if(error != nil){
+			NSLog(@"Error Received: %@",  error);
+		}else{
+			NSLog(@"Results: %@", result);
+		}
+	}];
 
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:HyperSnapSDK.StoryBoardName bundle: bundle];
-        HVFaceViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"HVFaceViewController"];
+##### Parameters
+The start method takes a `HVFaceConfig` object and a completion handler.
 
-        //Set ViewController properties (described later)
-		[vc setLivenessMode:LivenessModeTextureLiveness];
-        vc.completionHandler = ^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
-            if(error != nil){
-            	NSLog(@"Error Received: %@",  error);
-            }else{
-            	NSLog(@"Results: %@", result);
-            }
-            [vcNew dismissViewControllerAnimated:true  completion:nil];
-
-         };
-
-        //Present the ViewController
-        [self presentViewController:vc animated:YES completion:nil];
-
-
-##### Properties
-These are the properties to be set while initializing the HVFaceViewController
-
-- completionHandler - required: This is a closure of type `error:NSError?, result:[String:AnyObject]?,vc:UIViewController) -> Void`. It is called when a capture is successful or when an error has occured. The value of `error` received by the closure determine whether the call was a success or failure. </br>
-    - `error`: If the process was successful, the error is set to `nil`. Otherwise, it is an `NSError` object with following information
+- `completionHandler`: This is a closure of type `error:NSError?, result:[String:AnyObject]?), vc:UIViewController -> Void`. It is called when a capture was successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
+    - `error`: If the capture is successful, the error is set to `nil`. Otherwise, it is an `NSError` object with following information
         - `code`: Error code stating type of error. (discussed later)
         - `userInfo`: A dictionary of type `[String:Any]`.
-            - The key `NSLocalizedDescriptionKey`  in `userInfo` has the error description.
-    - `result`: This is a dictionary of type `[String:AnyObject]`. If the capture failed, this is set to `nil` and a corresponding error is set in `error`. If a capture was successful but there was an error in a later step (possible only when liveness in enabled - discussed later) or when the capture was successful and the liveness is disabled, the result has a single key-value pair. The key being `imageUri` and the value being the local path of the captured image.
-    - `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController or dismiss it.
-- liveness - optional: Next section
+            - The key `NSLocalizedDescriptionKey`  has the error description.
+    -   `result`: This is a dictionary of type  `[String:AnyObject]`. If the capture failed, this is set to  `nil`  and a corresponding error is set in  `error`. If a capture was successful but there was an error in a later step (possible only when liveness in enabled - discussed later) or when the capture was successful and the liveness is disabled, the result has a single key-value pair. The key being  `imageUri`  and the value being the local path of the captured image.
+    -  `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController.
+Note: To dismiss the VC, please call `vc.dismiss`  or `vc.presentingViewController?.presentingViewController?.dimiss` depending on whether the instructions page is shown.
+- `hvFaceConfig` : This is an object of type `HVFaceConfig`. Its properties can be set with the setter methods provided for them. These are the various properties provided:
+	- `livenessMode`: Explained here.
+	- `optimizeLivenessCall`: Explained here.
+	- `showInstructionsPage`: (Boolean) To determine if the instructions page should be shown before capture page. It defaults to `false`.
+	- `clientId`: (String) This is an optional parameter that could be sent with the liveness call.
 
 
 #### Liveness in Face Capture
-The framwork offers a liveness feature which can be set using the `setLivenessMode(livenessMode)` method before presenting the HVFaceViewController. Here `livenessMode` is of type `HypeSnapParams.LivenessMode`. The structure of the result dictionary depends on the Liveness Mode.
+The framwork offers a liveness feature which can be set in the `HVFaceConfig` object before calling `HVFaceViewController`. Here `livenessMode` is of type `HypeSnapParams.LivenessMode`.
+```
+hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
+```
+The structure of the result dictionary depends on the Liveness Mode:
 
 **.none**: No liveness test is performed. The selfie that is captured is simply returned. If successful, the result dictionary in the completionHandler has one key-value pair.
 	- `imageUri` : local path of the image captured
@@ -272,10 +266,10 @@ The framwork offers a liveness feature which can be set using the `setLivenessMo
 <br/>
 
 #### Optimized Texture Liveness
-If bandwidth is low/limited or the time taken by the API call is a constraint, add the following line while initializing the HVFaceViewController to optimize the liveness calls. Please note that this process has a slightly lower accuracy compared to the non-optimized one. By default the non-optimized process would be used.
+If bandwidth is low/limited or the time taken by the API call is a constraint, set the following property in `HVFaceConfig` object to optimize the liveness calls. Please note that this process has a slightly lower accuracy compared to the non-optimized one. By default the non-optimized process would be used.
 
 ```
-vc.shouldOptimizeLivenessCall(true)
+hvFaceConfig.setOptimizeLivenessCall(true)
 ```
 
 <br/>
@@ -306,7 +300,7 @@ eg:.
 |4|Camera Permission Denied|Occurs when the user has denied permission to access camera.|In the settings app, give permission to access camera and try again.|
 |5|Hardware Error|Occurs when there is an error setting up the camera.|Make sure the camera is accessible.|
 |101|Initialization Error|Occurs when SDK has not been initialized properly.|Make sure HyperSnapSDK.initialise method is called before using the capture functionality|
-|102|Network Error|Occurs when the internet is either non-existant or very patchy.|Check internet and try again. If Internet is proper, contact HyperVerge|
+|102|Network Error|Occurs when the internet is either non-existent or very patchy.|Check internet and try again. If Internet is proper, contact HyperVerge|
 |103|Authentication Error|Occurs when the request to the server could not be Authenticated/Authorized.|Make sure appId and appKey set in the initialization method are correct|
 |104|Internal Server Error|Occurs when there is an internal error at the server.|Notify HyperVerge|
 |201|Face Match Error|Occurs when one or more faces captured in the gestures flow do not match the selfie|This is equivalent to liveness fail. Take corresponding action|
@@ -315,31 +309,130 @@ eg:.
 
 ## Advanced
 
+Customisation support has been provided to most of the labels and buttons in the framework's user interface.
+
+Please note that using these features is completely optional.
+
 ### Localization
 
 The framework supports localization for all the text it shows.
 
-#### Document Capture
- While presenting HVDocsViewController, to set the text of `topLabel` or `bottomLabel` with localisation support, add relevant entries in Localizable.strings files and use the corresponding key to set the topText or bottomText.
+To implement localization, please add the relevant key - values in your app's `Localizable.Strings` files. While setting the texts, the framework will pick up the value for the corresponding key. If the values are not found, default values in the framework would be used.
 
-   Swift:
+|View Controller|Key|Default Value|
+|---------|----------|-----------|
+|HVDocInstructionsViewController|docInstructionsTitle|ID Capture Tips|
+|HVDocInstructionsViewController|docInstructions1|Place within the box|
+|HVDocInstructionsViewController|docInstructions2|Do not place outside|
+|HVDocInstructionsViewController|docInstructions3|Avoid Glare|
+|HVFaceInstructionsViewController|docInstructionsProceed|Proceed to Take Selfie|
+|HVDocsViewController|docCaptureTitle|ID Card|
+|HVDocsViewController|docCaptureDescription|Make sure your document is without any glare and is fully inside|
+|HVDocsViewController|docCaptureSubText|Front Side|
+|HVDocReviewViewController|docReviewTitle|Review This Page|
+|HVDocReviewViewController|docReviewDescription|Make sure the image is clear and glare free|
+|HVDocReviewViewController|docReviewRetakeButton|Retake|
+|HVDocReviewViewController|docReviewContinueButton|Use This Photo|
+|HVFaceInstructionsViewController|faceInstructionsTitle|Selfie Tips|
+|HVFaceInstructionsViewController|faceInstructionsTop1|Good lighting on your face|
+|HVFaceInstructionsViewController|faceInstructionsTop2|Hold phone in front of you|
+|HVFaceInstructionsViewController|faceInstructionsBrightLight|Bright Light|
+|HVFaceInstructionsViewController|faceInstructionsNoGlasses|No Glasses|
+|HVFaceInstructionsViewController|faceInstructionsNoHat|No Hat|
+|HVFaceInstructionsViewController|faceInstructionsProceed|Proceed to Capture ID|
+|HVFaceViewController|faceCaptureTitle|Selfie Capture|
+|HVFaceViewController|faceCaptureActivity|Processing|
+|HVFaceViewController|faceCaptureFaceFound|Capture Now|
+|HVFaceViewController|faceCaptureFaceNotFound|Place your face inside the circle|
+|HVFaceViewController|faceCapturefaceNotFoundToast|Face not detected. Please try again|
+|HVFaceViewController|faceCaptureMoveAway|Please move away from the screen|
+|HVFaceViewController|faceCaptureWrongOrientation|Please hold the phone upright|
 
-        vc.bottomText = NSLocalizedString("bottomText", comment: "")
 
-   Objective C:
+Additional level of customisation has been given to the title and description texts in document capture and document review pages. This is to facilitate change of text based on the type of document.
 
-        vc.bottomText = NSLocalizedString(@"bottomText", comment: "");
+For this, use the setter methods in `HVDocConfig` while initializing `HVDocsViewController`. The following are the variable names for the texts.
+ - `docCaptureTitle`
+ - `docCaptureDescription`
+ - `docReviewTitle`
+ - `docReviewDescription`
+ - `docCaptureSubText`
 
-#### Face Capture
+Example:
+```
+hvDocConfig.setDocCaptureTitle("ID Card")
+```
 
- While presenting HVFaceViewController, please add relevant entries in the `Localization.Strings` files for the following keys. The framework will pick up the value for the corresponding key. If the values are not set, default values in the framework would be used.
+This inturn supports localization:
+```
+hvDocConfig.setCapturePageTitleText(NSLocalizedString("IDCardText", comment: ""))
+```
 
-|Key|Default Value|
-|----------|-----------|
-|activityText|Processing|
-|captureNow|Capture Now|
-|placeFaceInCircle|Place your face inside the circle|
-|faceNotFoundToast|Face not detected. Please try again|
+Please note that if you set any of the above 5 texts in both `Localizable.strings` files and in `HVDocConfig`, the values in `HVDocConfig` would be considered.
+
+
+### Styles
+
+All prominent labels and buttons are objects of custom classes. Customisation of styles is available for these classes.
+
+To set a style to an object, you call the setter method on the object's class. This style would be applied to all the objects of that class.
+
+Note: Please make sure all the styles are set **before** initialising the ViewControllers.
+Eg:. In the AppDelegates's applicationDidFinishLaunching(_:) or the viewDidLoad of the calling ViewController.
+
+Here is an implementation example for setting some of the styles to achive the default UI:
+
+```
+let buttonColor = UIColor(red: 42.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1)
+let textColor = UIColor(red: 115.0/255.0, green: 115.0/255.0, blue: 115.0/255.0, alpha: 1)
+HVCameraButton.setImageTintColor(buttonColor)
+HVDocReviewContinueButton.setBorderColor(buttonColor.cgColor)
+HVDocReviewContinueButton.setBackgroundColor(buttonColor.cgColor)
+HVDocReviewRetakeButton.setBorderWidth(2.0)
+HVTitleLabel.setTextColor(textColor)
+HVDocDescriptionLabel.setTextColor(textColor)
+```
+These are all the available classes:
+
+|Class|Description|
+|-----|-----------|
+|HVCameraButton|Camera button in HVDocViewController and HVFaceViewController|
+|HVDocReviewRetakeButton|Retake button in HVDocReviewViewController|
+|HVDocReviewContinueButton|Continue button in HVDocReviewViewController|
+|HVInstructionsProceedButton|'Proceed to Capture' buttons in HVDocInstructionsViewController and HVFaceInstructionsViewController|
+|HVTitleLabel|Title labels in all ViewControllers|
+|HVFaceInstructionTopLabel|The top two instructions in HVFaceInstructionsViewController|
+|HVFaceInstructionBottomLabel|The bottom three instructions in HVFaceInstructionsViewController (no bright light, no glasses and no hat)|
+|HVDocInstructionsLabel|All the instructions in HVDocInstructionsViewController|
+|HVDocDescriptionLabel|Description label for aspect ratios < 1 in HVDocViewController and HVDocReviewViewController|
+|HVDocDescriptionA4Label|Description label for aspect ratios > 1 in HVDocViewController and HVDocReviewViewController|
+|HVFaceDescriptionLabel|Description label in HVFaceViewController|
+|HVDocSubTextLabel|Label at the bottom end of the capture area in HVDocViewController that tells which side of the document to use|
+
+- #### Buttons
+
+|Object|Feature|Method Name|
+|---------|----------|-----------|
+|HVCameraButton|TintColor|setImageTintColor|
+|HVDocReviewRetakeButton, HVDocReviewContinueButton|BorderColor|setBorderColor|
+|HVDocReviewRetakeButton, HVDocReviewContinueButton|BackgroundColor|setBackgroundColor|
+|HVDocReviewRetakeButton, HVDocReviewContinueButton|BorderWidth|setBorderWidth|
+|HVDocReviewRetakeButton, HVDocReviewContinueButton|TitleColor|setTitleColor|
+|HVDocReviewRetakeButton, HVDocReviewContinueButton|TitleShadowColor|setTitleShadowColor|
+|HVDocReviewRetakeButton, HVDocReviewContinueButton|TitleShadowOffset|setTitleShadowOffset|
+
+- #### Labels
+
+|Object|Feature|Method Name|
+|---------|----------|-----------|
+|All Labels|Font|setFont|
+|All Labels|Alignment|setTextAlignment|
+|All Labels|TextColor|setTextColor|
+|All Labels|ShadowColor|setShadowColor|
+|All Labels|ShadowOffset|setShadowOffset|
+
+
+
 
 ## TroubleShooting
 You can find our TroubleShooting guide [here](https://github.com/hyperverge/capture-ios-sdk/wiki/Troubleshooting)

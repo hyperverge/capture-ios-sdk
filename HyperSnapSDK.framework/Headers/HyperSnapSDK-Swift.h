@@ -164,6 +164,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import UIKit;
+@import CoreGraphics;
 @import ObjectiveC;
 @import Foundation;
 #endif
@@ -183,24 +184,118 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class UIFont;
-@class Document;
-@class NSError;
 @class NSCoder;
+@class UIColor;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
+@interface HVCameraButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setImageTintColor:(UIColor * _Nonnull)color;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+enum DocumentType : NSInteger;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
+@interface HVDocConfig : NSObject
+- (void)setDocumentType:(enum DocumentType)document;
+- (void)setAspectRatio:(double)aspectRatio;
+- (void)setDocCaptureTitle:(NSString * _Nonnull)text;
+- (void)setDocCaptureDescription:(NSString * _Nonnull)text;
+- (void)setDocReviewTitle:(NSString * _Nonnull)text;
+- (void)setDocReviewDescription:(NSString * _Nonnull)text;
+- (void)setDocCaptureSubText:(NSString * _Nonnull)text;
+- (void)setShowReviewPage:(BOOL)shouldShow;
+- (void)setShowInstructionsPage:(BOOL)shouldShow;
+- (void)setShowFlashButton:(BOOL)shouldShow;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIFont;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocDescriptionA4Label")
+@interface HVDocDescriptionA4Label : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVDocDescriptionLabel")
+@interface HVDocDescriptionLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK22HVDocInstructionsLabel")
+@interface HVDocInstructionsLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK25HVDocReviewContinueButton")
+@interface HVDocReviewContinueButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocReviewRetakeButton")
+@interface HVDocReviewRetakeButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel")
+@interface HVDocSubTextLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+@class NSError;
 @class NSBundle;
 
 /// DocCameraViewController is the base class which will be used from outside.
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 @interface HVDocsViewController : UIViewController
-@property (nonatomic, strong) UIFont * _Nonnull topLabelFont;
-@property (nonatomic, strong) UIFont * _Nonnull bottomLabelFont;
-@property (nonatomic, copy) NSString * _Nonnull topText;
-@property (nonatomic, copy) NSString * _Nonnull bottomText;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
-@property (nonatomic, strong) Document * _Nonnull document;
-@property (nonatomic, copy) void (^ _Nonnull callback)(NSDictionary<NSString *, NSString *> * _Nonnull);
-@property (nonatomic, copy) void (^ _Nonnull completionHandler)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable);
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)start:(UIViewController * _Nonnull)callingVC hvDocConfig:(HVDocConfig * _Nonnull)hvDocConfig completionHandler:(void (^ _Nonnull)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull))completionHandler;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
@@ -218,14 +313,57 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 
 enum LivenessMode : NSInteger;
 
+SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
+@interface HVFaceConfig : NSObject
+- (void)setLivenessMode:(enum LivenessMode)livenessMode;
+- (void)setOptimizeLivenessCall:(BOOL)shouldOptimize;
+- (void)setClientIDWithClientId:(NSString * _Nonnull)clientId;
+- (void)setShowInstructionsPage:(BOOL)shouldShow;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK22HVFaceDescriptionLabel")
+@interface HVFaceDescriptionLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK28HVFaceInstructionBottomLabel")
+@interface HVFaceInstructionBottomLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK25HVFaceInstructionTopLabel")
+@interface HVFaceInstructionTopLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 @interface HVFaceViewController : UIViewController
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
++ (void)start:(UIViewController * _Nonnull)callingVC hvFaceConfig:(HVFaceConfig * _Nonnull)hvFaceConfig completionHandler:(void (^ _Nonnull)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull))completionHandler;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLayoutSubviews;
-- (void)setLivenessMode:(enum LivenessMode)livenessMode;
-- (void)shouldOptimizeLivenessCall:(BOOL)shouldOptimize;
 - (void)viewWillLayoutSubviews;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
@@ -234,6 +372,30 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 - (void)viewWillDisappear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK27HVInstructionsProceedButton")
+@interface HVInstructionsProceedButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK12HVTitleLabel")
+@interface HVTitleLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
@@ -282,15 +444,6 @@ typedef SWIFT_ENUM(NSInteger, Error) {
 };
 
 
-SWIFT_CLASS("_TtCC12HyperSnapSDK15HyperSnapParams8Document")
-@interface Document : NSObject
-@property (nonatomic) double aspectRatio;
-- (nonnull instancetype)initWithType:(enum DocumentType)type OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
-@end
-
-
 SWIFT_CLASS("_TtC12HyperSnapSDK12HyperSnapSDK")
 @interface HyperSnapSDK : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull StoryBoardName;)
@@ -298,6 +451,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region product:(enum Product)product;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+
+
+
 
 
 

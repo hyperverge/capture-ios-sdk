@@ -26,9 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var a4Button: UIButton!
     @IBOutlet weak var otherButton: UIButton!
     
-    
-    var document:HyperSnapParams.Document?
-    
+        
     var documentType = HyperSnapParams.DocumentType.card
     var topText = "ID Card"
     
@@ -61,79 +59,73 @@ class ViewController: UIViewController {
     
     
     @IBAction func FaceCaptureTapped(_ sender: UIButton) {
-        let bundle = Bundle(for: HyperSnapSDK.self)
         
-        //Instantiate the ViewController
-        let vc = UIStoryboard(name: HyperSnapSDK.StoryBoardName, bundle:bundle).instantiateViewController(withIdentifier: "HVFaceViewController") as! HVFaceViewController
+        let hvFaceConfig = HVFaceConfig()
+        hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
+        hvFaceConfig.setShowInstructionsPage(true)
+        hvFaceConfig.setOptimizeLivenessCall(true)
         
-        //Set ViewController properties
-        vc.setLivenessMode(livenessMode)
-//        vc.shouldOptimizeLivenessCall(true)
-        
-        vc.completionHandler = {error, result,vcNew in
+        let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result,vcNew in
             
-        let resultsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
+            let resultsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
             
             if error != nil {
                 
                 print("Error received - Code:\(error!.code), Description:\(error!.userInfo[NSLocalizedDescriptionKey] ?? "No Description")")
-                    resultsViewController.error = error
-                            }
+                resultsViewController.error = error
+            }
             
             if let result = result, let imageUri = result["imageUri"] as? String,let image = UIImage(contentsOfFile: imageUri) {
                 resultsViewController.image = image
                 if let live = result["live"] as? String{
                     let isLive = live == "yes" ? true : false
-                resultsViewController.isLivenessSuccessful = isLive
+                    resultsViewController.isLivenessSuccessful = isLive
                 }
                 
+            }else{
+                print("No image Uri received")
             }
             
             vcNew.present(resultsViewController, animated: true, completion: nil)
-
+            
             
         }
-        //Present the ViewController
-        self.present(vc, animated: true, completion: nil)
+        HVFaceViewController.start(self, hvFaceConfig: hvFaceConfig, completionHandler: completionHandler)
     }
     
     
-    func presentDocCamera(_ document:HyperSnapParams.Document, topText:String){
-        let bundle = Bundle(for: HVFaceViewController.self)
+    func presentDocCamera(_ documentType:HyperSnapParams.DocumentType, topText:String){
         
-        //Instantiate the ViewController
-        let vc = UIStoryboard(name: HyperSnapSDK.StoryBoardName, bundle:bundle).instantiateViewController(withIdentifier: "HVDocsViewController") as! HVDocsViewController
+        let hvDocConfig = HVDocConfig()
+        hvDocConfig.setDocumentType(documentType)
+        hvDocConfig.setShowReviewPage(true)
+        hvDocConfig.setShowInstructionsPage(true)
+        //        hvDocConfig.setCapturePageDescriptionText("Place front of your ID Card in the box")
+        //        hvDocConfig.setCapturePageSubText("sub in config")
+        hvDocConfig.setShowFlashButton(true)
         
-        //Set ViewController properties
-        vc.document = document
-        vc.topText = topText
-        vc.bottomText = NSLocalizedString("descriptionText", comment: "no comments")
-        
-        let resultsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
-        
-        
-        vc.completionHandler = {error, result in
-            if error != nil {
-                print("Error received - Code:\(error!.code), Description:\(error!.userInfo[NSLocalizedDescriptionKey] ?? "No Description")")
-                resultsViewController.error = error
+        let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result, vcNew in
+            guard error == nil else{
+                print(error!)
+                return
             }
             
             if let result = result, let imageUri = result["imageUri"] as? String, let image = UIImage(contentsOfFile: imageUri){
+                let resultsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
                 resultsViewController.image = image
+                vcNew.present(resultsViewController, animated: true, completion: nil)
+                
+            }else{
+                print("No image Uri?")
             }
-            
-            vc.present(resultsViewController, animated: true, completion: nil)
-            
         }
-        //Present the ViewController
-        self.present(vc, animated: true, completion: nil)
+        HVDocsViewController.start(self, hvDocConfig: hvDocConfig, completionHandler: completionHandler)
     }
-    
     
     
     
     @IBAction func documentCaptureTapped(_ sender: UIButton) {
-        presentDocCamera(HyperSnapParams.Document(type: documentType),topText: topText)
+        presentDocCamera(documentType,topText: topText)
     }
     
     

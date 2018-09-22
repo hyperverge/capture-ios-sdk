@@ -31,53 +31,39 @@ NSString* appKey = @"";
 
 
 - (IBAction)faceCaptureTapped:(UIButton *)sender {
-    //Instantiate the ViewController
-    NSBundle *bundle  = [NSBundle bundleForClass:[HyperSnapSDK self]];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:HyperSnapSDK.StoryBoardName bundle: bundle];
-    __weak HVFaceViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"HVFaceViewController"];
     
-    //Set ViewController properties (described later)
-    [vc setLivenessMode:LivenessModeTextureLiveness];
-    vc.completionHandler = ^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* newVC){
-        if(error != nil){
-            NSLog(@"Error Received: %@",  error);
-            self->_resultLabel.text = error.localizedDescription;
-        }else{
-            NSLog(@"Results: %@", result);
-            self->_resultLabel.text = result.debugDescription;
-        }
-        [newVC dismissViewControllerAnimated:true completion:nil];
-    };
+        HVFaceConfig *faceConfig = [HVFaceConfig new];
+        [faceConfig setLivenessMode:LivenessModeTextureLiveness];
     
-    //Present the ViewController
-    [self presentViewController:vc animated:YES completion:nil];
+    
+        [HVFaceViewController start:self hvFaceConfig:faceConfig completionHandler:^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
+            if(error != nil){
+                NSLog(@"Error Received: %@",  error);
+            }else{
+                NSLog(@"Results: %@", result);
+            }
+            [vcNew dismissViewControllerAnimated:true  completion:nil];
+    
+        }];
 }
 
 
 - (IBAction)documentCaptureTapped:(UIButton *)sender {
-    //Instantiate the ViewController
-    NSBundle *bundle  = [NSBundle bundleForClass:[HyperSnapSDK self]];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:HyperSnapSDK.StoryBoardName bundle: bundle];
-    __weak HVDocsViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"HVDocsViewController"];
+    HVDocConfig *docConfig = [HVDocConfig new];
+    [docConfig setDocumentType:DocumentTypeCard];
+    [docConfig setShowReviewPage:true];
+    [docConfig setShowInstructionsPage:true];
     
-    //Set ViewController properties (described later)
-    vc.document = [[Document alloc] initWithType:DocumentTypeCard];
-    vc.topText = @"ID Card";
-    vc.bottomText = @"Please place your document inside the box";
-    vc.completionHandler = ^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result){
+    [HVDocsViewController start:self hvDocConfig:docConfig completionHandler:^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
         if(error != nil){
             NSLog(@"Error Received: %@",  error);
-            self->_resultLabel.text = error.localizedDescription;
         }else{
             NSLog(@"Results: %@", result);
-            self->_resultLabel.text = result.debugDescription;
         }
-        [vc dismissViewControllerAnimated:true completion:nil];
-    };
-    
-    //Present the ViewController
-    [self presentViewController:vc animated:YES completion:nil];
+        [vcNew dismissViewControllerAnimated:true  completion:nil];
+        
+    }];
 }
 
 @end
