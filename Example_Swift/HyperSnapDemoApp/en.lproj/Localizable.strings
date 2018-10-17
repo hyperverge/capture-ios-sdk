@@ -6,4 +6,4 @@
   Copyright © 2018 hyperverge. All rights reserved.
 */
 
-descriptionText = "Place the document inside the box";
+docCaptureDescription = "Place the document inside the box";

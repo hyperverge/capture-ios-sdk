@@ -1,18 +1,23 @@
 
-
-
-
-
 # HyperSnapSDK Documentation for iOS
 
 ## Overview
 HyperSnapSDK is HyperVerge's documents + face capture framework that captures images at a resolution appropriate for our proprietary Deep Learning OCR and Face Recognition Engines.
 
-The framework provides a liveness feature that uses our advanced AI Engines to differentiate between a real user capturing his/her selfie from a photo/video recording.
+The framework provides a liveness feature that uses our advanced AI Engines to differentiate between a real user capturing their selfie from a photo/video recording.
+
+The framework also provides optional Instructions pages for Document and Face capture and a Review page for Document capture.
+
+Please Note that the SDK's functionalities are only to capture images and check liveness . You have to use our APIs for face match or OCR.
+
+![Screenshots](resources/screenshots.png?raw=true)
+
+
+
 
 ### Requirements
 - Minimum iOS Deployment Target - iOS 9.0
--  Xcode 9.3 - 9.4.1
+-  Xcode 10.0
 
 ### ChangeLog
 
@@ -26,11 +31,10 @@ You can find the ChangeLog in the [CHANGELOG.md](CHANGELOG.md) file
 	- [Overview](#overview)
 		- [Requirements](#requirements)
 		- [ChangeLog](#changelog)
-	- [Table of contents](#table-of-contents)
 	- [Example Project](#example-project)
 	- [Integration Steps](#integration-steps)
 		- [1. Adding the SDK to your project](#1-adding-the-sdk-to-your-project)
-			- [Via CocoaPods](#via-cocoapods)
+			- [CocoaPods](#via-cocoapods-recommended)
 			- [Manual](#manual)
 		- [2. App Permissions](#2-app-permissions)
 		- [3. Import Statements](#3-import-statements)
@@ -45,7 +49,9 @@ You can find the ChangeLog in the [CHANGELOG.md](CHANGELOG.md) file
 	- [Error Codes](#error-codes)
 	- [Advanced](#advanced)
 		- [Localization](#localization)
+			- [Document Based Customisation](#document-based-customisation)
 		- [Styles](#styles)
+		- [EXIF Data](#exif-data)
 	- [TroubleShooting](#troubleshooting)
 	- [Contact Us](#contact-us)
 
@@ -63,7 +69,7 @@ To run the app:
 
 ### 1. Adding the SDK to your project
 
-#### Via CocoaPods
+#### Via CocoaPods (Recommended)
 
 HyperSnapSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -105,7 +111,7 @@ import HyperSnapSDK
 
 ### 4. Initializing the SDK
 
-To initialize the SDK, call the `HyperSnapSDK.initialize` method. This must be done before launching the camera. So, preferably in `viewDidLoad` of the `ViewController` or `applicationDidFinishLaunching` in the `AppDelegate`.</br>
+To initialize the SDK, call the `HyperSnapSDK.initialize` method. This must be done before launching the camera. So, preferably in `applicationDidFinishLaunching` in the `AppDelegate` or `viewDidLoad` of the `ViewController` </br>
 
  Swift:
  ```
@@ -121,7 +127,6 @@ Where,
 - region: This is an enum, `HypeSnapParams.Region` with three values - `AsiaPacific`, `India` and `UnitedStates`.
 - product: This is an enum, `HyperSnapParams.Product` with two values - `faceID` and `faceIAM`. Right now, only `faceID` is supported.
 
->**Note**: This step is required only if liveness is used.
 
 ### 5. Presenting the ViewControllers
 
@@ -134,7 +139,7 @@ Swift:
         //1. Set properties
         let hvDocConfig = HVDocConfig()
         hvDocConfig.setDocumentType(HyperSnapParams.DocumentType.card)
-        hvDocConfig.setShowReviewPage(true)
+        hvDocConfig.setShouldShowReviewPage(true)
         hvDocConfig.setCapturePageTitleText("ID Card")
         hvDocConfig.setCapturePageDescriptionText("Place front of your ID Card in the box")
 
@@ -155,8 +160,8 @@ Objective C:
 ```
     HVDocConfig *docConfig = [HVDocConfig new];
 	[docConfig setDocumentType:DocumentTypeA4];
-	[docConfig setShowReviewPage:true];
-	[docConfig setShowInstructionsPage:true];
+	[docConfig setShouldShowReviewPage:true];
+	[docConfig setshouldShowInstructionsPage:true];
 	[HVDocsViewController start:self hvDocConfig:docConfig completionHandler:^(NSError* 	error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
 		if(error != nil){
 			NSLog(@"Error Received: %@",  error);
@@ -171,23 +176,33 @@ The start method takes a `HVDocConfig` object and a completion handler.
 
 - `completionHandler`: This is a closure of type `error:NSError?, result:[String:AnyObject]?), vc:UIViewController -> Void`. It is called when a capture is successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
     - `error`: If the capture is successful, the error is set to `nil`. Otherwise, it is an `NSError` object with following information
-        - `code`: Error code stating type of error. (discussed later)
+        - `code`: Error code stating type of error. ([discussed here](#error-codes))
         - `userInfo`: A dictionary of type `[String:Any]`.
             - The key `NSLocalizedDescriptionKey`  has the error description.
-    - `result`: If the capture failed, this is set to `nil`. Otherwise, it is of type `[String:AnyObject]`. This has a single key-value pair. The key being 'imageUri' and the value is the local path of the captured image.
-    -  `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController.
- Note: To dismiss the VC, please call `vc.dismiss`  or `vc.presentingViewController?.presentingViewController?.dimiss` etc depending on the number of view controllers on the stack (eg:. 2 VCs in instructions page is shown).
-- `hvDocConfig` : This is an object of type `HVDocConfig`. Its properties can be set with the setter methods provided for them. These are the various properties provided:
-	- `documentType`: It is an enum of type, `HyperSnapParams.DocumentType`.  It can be set with the `setDocumentType(_:)` method. The document type is used to determine the aspect ratio of the capture area. The enum has these values:
+    - `result`: If the capture failed, this is set to `nil`. Otherwise, it is of type `[String:AnyObject]`. This has a single key-value pair. The key is 'imageUri' and the value is the local path of the captured and processed image.
+
+ -  `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController.
+ Note: To dismiss the VC, please call `vc.dismiss`   if `shouldShowInstructionsPage`  is `false` and `vc.presentingViewController?.presentingViewController?.dimiss` if `shouldShowInstructionsPage`  is `true`.
+
+- `hvDocConfig` : This is an object of type `HVDocConfig`. Its properties can be set with the setter methods provided for them.
+	- `setDocumentType(_ type : HyperSnapParams.DocumentType)` The document type is used to determine the aspect ratio of the capture area.
+	The `DocumentType` enum has four values:
 	    - `.card`- Aspect ratio : 0.625. Example: Vietnamese National ID, Driving License, Motor Registration Certificate
 	    - `.a4`- Aspect ratio: 1.4. Example: Bank statement, insurance receipt
 	    - `.passport`- Aspect ratio: 0.68. Example: Passports
 	    - `.other`- This is for custom aspect ratio. In this case, the aspect ratio should be set in the next line by calling `hvDocConfig.setAspectRatio(_:)`.
 	If the documentType is not set, it defaults to `.card`.
-	- showReviewPage: (Boolean) To determine if the document review page should be shown after capture page. It defaults to `false`.
-	- showInstructionsPage: (Boolean) To determine if the instructions page should be shown before capture page. It defaults to `false`.
-	- showFlashButton: (Boolean) Setting this to true will add a flash toggle button at the top right corner of the screen. It defaults to `false`.
-	- `capturePageTitleText`, `capturePageDescriptionText`, `reviewPageTitleText`, `reviewPageDescriptionText` and `capturePageSubText` : Explained here.
+	- `setshouldShowInstructionsPage(_ shouldShow : Bool)` To determine if the instructions page should be shown before capture page. Defaults to `false`.
+	- `setShouldShowReviewPage(_ shouldShow : Bool)` To determine if the document review page should be shown after capture page. Defaults to `false`.
+	- `setShouldShowFlashButton(_ shouldShow : Bool)` Setting this to true will add a flash toggle button at the top right corner of the screen. It defaults to `false`.
+	- `setShouldAddPadding(_ shouldAdd : Bool)` By default, padding is added around the document shown in the capture/review page. If this is not needed set this value to `false`.
+	-  Label texts:
+		- `setDocCaptureTitle(_ text : String)`
+		- `setDocCaptureDescription(_ text : String)`
+		- `setDocReviewTitle(_ text : String)`
+		- `setDocReviewDescription(_ text : String)`
+		- `setDocCaptureSubText(_ text : String)`
+	These are the texts shown in the Capture page and the Review page. More customisations for the text and default values of these labels can be [found here](#localization)
 
 
 #### For Face Capture
@@ -235,12 +250,13 @@ The start method takes a `HVFaceConfig` object and a completion handler.
             - The key `NSLocalizedDescriptionKey`  has the error description.
     -   `result`: This is a dictionary of type  `[String:AnyObject]`. If the capture failed, this is set to  `nil`  and a corresponding error is set in  `error`. If a capture was successful but there was an error in a later step (possible only when liveness in enabled - discussed later) or when the capture was successful and the liveness is disabled, the result has a single key-value pair. The key being  `imageUri`  and the value being the local path of the captured image.
     -  `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController.
-Note: To dismiss the VC, please call `vc.dismiss`  or `vc.presentingViewController?.presentingViewController?.dimiss` depending on whether the instructions page is shown.
-- `hvFaceConfig` : This is an object of type `HVFaceConfig`. Its properties can be set with the setter methods provided for them. These are the various properties provided:
-	- `livenessMode`: Explained here.
-	- `optimizeLivenessCall`: Explained here.
-	- `showInstructionsPage`: (Boolean) To determine if the instructions page should be shown before capture page. It defaults to `false`.
-	- `clientId`: (String) This is an optional parameter that could be sent with the liveness call.
+ Note: To dismiss the VC, please call `vc.dismiss`   if `shouldShowInstructionsPage`  is `false` and `vc.presentingViewController?.presentingViewController?.dimiss` if `shouldShowInstructionsPage`  is `true`.
+
+- `hvFaceConfig` : This is an object of type `HVFaceConfig`. Its properties can be set with the setter methods provided for them.
+	- `setLivenessMode(_ livenessMode : HyperSnapParams.LivenessMode)`: [Explained here](#liveness-in-face-capture).
+	- `setShouldOptimizeLivenessCall(_ shouldOptimize : Bool)`: [Explained here](#optimized-texture-liveness).
+	- `setshouldShowInstructionsPage(_ shouldShow : Bool)`:  To determine if the instructions page should be shown before capture page. It defaults to `false`.
+	- `setClientID(clientId : String)`: This is an optional parameter that could be sent with the liveness API call for  analytics purpose.
 
 
 #### Liveness in Face Capture
@@ -253,8 +269,7 @@ The structure of the result dictionary depends on the Liveness Mode:
 **.none**: No liveness test is performed. The selfie that is captured is simply returned. If successful, the result dictionary in the completionHandler has one key-value pair.
 	- `imageUri` : local path of the image captured
 
-**.textureLiveness** : Texture liveness test is performed on the selfie captured.  If the livenessMode is not set by the app, the framework defaults to this mode. If the call is successful, a result dictionary with the following key-value pairs is returned in the completionHandler
-
+**.textureLiveness** : Texture liveness test is performed on the selfie captured.  If livenessMode parameter is not set in `HVFaceConfig`, the framework defaults to this mode. If the call is successful, a result dictionary with the following key-value pairs is returned in the completionHandler
 - `imageUri` : String. Local path of the image captured <br/>
 - `live`: String with values 'yes'/'no'. Tells whether the selfie is live or not.
 - `liveness-score`: Float with values between 0 and 1. The confidence score for the liveness prediction.
@@ -349,6 +364,7 @@ To implement localization, please add the relevant key - values in your app's `L
 |HVFaceViewController|faceCaptureWrongOrientation|Please hold the phone upright|
 
 
+#### Document Based Customisation
 Additional level of customisation has been given to the title and description texts in document capture and document review pages. This is to facilitate change of text based on the type of document.
 
 For this, use the setter methods in `HVDocConfig` while initializing `HVDocsViewController`. The following are the variable names for the texts.
@@ -385,6 +401,7 @@ Here is an implementation example for setting some of the styles to achive the d
 ```
 let buttonColor = UIColor(red: 42.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1)
 let textColor = UIColor(red: 115.0/255.0, green: 115.0/255.0, blue: 115.0/255.0, alpha: 1)
+
 HVCameraButton.setImageTintColor(buttonColor)
 HVDocReviewContinueButton.setBorderColor(buttonColor.cgColor)
 HVDocReviewContinueButton.setBackgroundColor(buttonColor.cgColor)
@@ -408,35 +425,44 @@ These are all the available classes:
 |HVDocDescriptionA4Label|Description label for aspect ratios > 1 in HVDocViewController and HVDocReviewViewController|
 |HVFaceDescriptionLabel|Description label in HVFaceViewController|
 |HVDocSubTextLabel|Label at the bottom end of the capture area in HVDocViewController that tells which side of the document to use|
+|HVFaceActivityLabel|Label in the processing dialog shown while awaiting liveness response|
+|HVFaceActivityIndicator|Activity indicator in the processing dialog shown while awaiting liveness response|
 
-- #### Buttons
+<br/>
+These are the available methods for the above mentioned classes.
 
-|Object|Feature|Method Name|
+|Feature|Method Name|Classes|
 |---------|----------|-----------|
-|HVCameraButton|TintColor|setImageTintColor|
-|HVDocReviewRetakeButton, HVDocReviewContinueButton|BorderColor|setBorderColor|
-|HVDocReviewRetakeButton, HVDocReviewContinueButton|BackgroundColor|setBackgroundColor|
-|HVDocReviewRetakeButton, HVDocReviewContinueButton|BorderWidth|setBorderWidth|
-|HVDocReviewRetakeButton, HVDocReviewContinueButton|TitleColor|setTitleColor|
-|HVDocReviewRetakeButton, HVDocReviewContinueButton|TitleShadowColor|setTitleShadowColor|
-|HVDocReviewRetakeButton, HVDocReviewContinueButton|TitleShadowOffset|setTitleShadowOffset|
+|TintColor|setImageTintColor|HVCameraButton|
+|BorderColor|setBorderColor|HVDocReviewRetakeButton, HVDocReviewContinueButton|
+|BackgroundColor|setBackgroundColor|HVDocReviewRetakeButton, HVDocReviewContinueButton|
+|BorderWidth|setBorderWidth|HVDocReviewRetakeButton, HVDocReviewContinueButton|
+|TitleColor|setTitleColor|HVDocReviewRetakeButton, HVDocReviewContinueButton|
+|TitleShadowColor|setTitleShadowColor|HVDocReviewRetakeButton, HVDocReviewContinueButton|
+|TitleShadowOffset|setTitleShadowOffset|HVDocReviewRetakeButton, HVDocReviewContinueButton|
+|Font|setFont|All Labels|
+|Alignment|setTextAlignment|All Labels|
+|TextColor|setTextColor|All Labels|
+|ShadowColor|setShadowColor|All Labels|
+|ShadowOffset|setShadowOffset|All Labels|
+|Style|setStyle|HVFaceActivityIndicator|
+|Color|setColor|HVFaceActivityIndicator|
 
-- #### Labels
+### EXIF Data
+Both Face and Document images returned by the SDK have EXIF data stored in them.
+If the app has permissions to access location, the EXIF data would also contain the 'GPS' data of the image.
+Please note that, if GPS data is needed, location permissions should be handled by the app before launching the SDK.
 
-|Object|Feature|Method Name|
-|---------|----------|-----------|
-|All Labels|Font|setFont|
-|All Labels|Alignment|setTextAlignment|
-|All Labels|TextColor|setTextColor|
-|All Labels|ShadowColor|setShadowColor|
-|All Labels|ShadowOffset|setShadowOffset|
-
-
-
-
+To get the EXIF data, use the following code on the `imageUri` returned by the SDK
+ ```
+let imageCFData = try! (Data(contentsOf: URL(fileURLWithPath: imageUri))) as CFData
+if let cgImage = CGImageSourceCreateWithData(imageCFData, nil), let metaDict: NSDictionary = CGImageSourceCopyPropertiesAtIndex(cgImage, 0, nil) {
+	print(metaDict)
+}
+ ```
 ## TroubleShooting
-You can find our TroubleShooting guide [here](https://github.com/hyperverge/capture-ios-sdk/wiki/Troubleshooting)
+You can find the TroubleShooting guide [here](https://github.com/hyperverge/capture-ios-sdk/wiki/Troubleshooting)
 
 
 ## Contact Us
-If you are interested in integrating this framework, please send us a mail at  [contact@hyperverge.co](mailto:contact@hyperverge.co). Learn more about HyperVerge [here](http://hyperverge.co/).
+If you are interested in integrating this framework, please contact us at  [contact@hyperverge.co](mailto:contact@hyperverge.co). <br/>Learn more about HyperVerge [here](http://hyperverge.co/).

@@ -52,8 +52,8 @@ NSString* appKey = @"";
 - (IBAction)documentCaptureTapped:(UIButton *)sender {
     HVDocConfig *docConfig = [HVDocConfig new];
     [docConfig setDocumentType:DocumentTypeCard];
-    [docConfig setShowReviewPage:true];
-    [docConfig setShowInstructionsPage:true];
+    [docConfig setShouldShowReviewPage:true];
+    [docConfig setShouldShowInstructionsPage:true];
     
     [HVDocsViewController start:self hvDocConfig:docConfig completionHandler:^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
         if(error != nil){

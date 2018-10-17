@@ -62,8 +62,8 @@ class ViewController: UIViewController {
         
         let hvFaceConfig = HVFaceConfig()
         hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
-        hvFaceConfig.setShowInstructionsPage(true)
-        hvFaceConfig.setOptimizeLivenessCall(true)
+        hvFaceConfig.setShouldShowInstructionsPage(true)
+        hvFaceConfig.setShouldOptimizeLivenessCall(true)
         
         let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result,vcNew in
             
@@ -98,11 +98,11 @@ class ViewController: UIViewController {
         
         let hvDocConfig = HVDocConfig()
         hvDocConfig.setDocumentType(documentType)
-        hvDocConfig.setShowReviewPage(true)
-        hvDocConfig.setShowInstructionsPage(true)
-        //        hvDocConfig.setCapturePageDescriptionText("Place front of your ID Card in the box")
+        hvDocConfig.setShouldShowReviewPage(true)
+        hvDocConfig.setShouldShowInstructionsPage(true)
+//        hvDocConfig.setDocCaptureDescription("Place front page of your ID Card in the box")
         //        hvDocConfig.setCapturePageSubText("sub in config")
-        hvDocConfig.setShowFlashButton(true)
+        hvDocConfig.setShouldShowFlashButton(true)
         
         let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result, vcNew in
             guard error == nil else{

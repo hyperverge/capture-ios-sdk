@@ -1,4 +1,9 @@
-#### Version 2.2.0 [21 September 2018]
+#### Version 2.3.0 [12 October 2018]
+
+- Moved support to Xcode 10.0 and Swift 4.2
+- Exif data added to images returned in Face and Document capture
+
+#### Version 2.2.1 [21 September 2018]
 
 - Added optional Instruction Pages for Face and Document Capture
 - Added Review Page for Document capture
