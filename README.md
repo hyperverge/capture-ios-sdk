@@ -140,8 +140,8 @@ Swift:
         let hvDocConfig = HVDocConfig()
         hvDocConfig.setDocumentType(HyperSnapParams.DocumentType.card)
         hvDocConfig.setShouldShowReviewPage(true)
-        hvDocConfig.setCapturePageTitleText("ID Card")
-        hvDocConfig.setCapturePageDescriptionText("Place front of your ID Card in the box")
+        hvDocConfig.setDocCaptureTitle("ID Card")
+        hvDocConfig.setDocCaptureDescription("Place front of your ID Card in the box")
 
 		//2. Create completionHandler
         let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result, vcNew in
@@ -248,7 +248,7 @@ The start method takes a `HVFaceConfig` object and a completion handler.
         - `code`: Error code stating type of error. (discussed later)
         - `userInfo`: A dictionary of type `[String:Any]`.
             - The key `NSLocalizedDescriptionKey`  has the error description.
-    -   `result`: This is a dictionary of type  `[String:AnyObject]`. If the capture failed, this is set to  `nil`  and a corresponding error is set in  `error`. If a capture was successful but there was an error in a later step (possible only when liveness in enabled - discussed later) or when the capture was successful and the liveness is disabled, the result has a single key-value pair. The key being  `imageUri`  and the value being the local path of the captured image.
+    -   `result`: This is a dictionary of type  `[String:AnyObject]`. If the capture failed, this is set to  `nil`  and a corresponding error is set in  `error`. If a capture was successful but there was an error in a later step (possible only when [liveness](#liveness-in-face-capture) in enabled) or when the capture was successful and the liveness is disabled, the result has a single key-value pair. The key is `imageUri` and the value is the local path of the captured image.
     -  `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController.
  Note: To dismiss the VC, please call `vc.dismiss`   if `shouldShowInstructionsPage`  is `false` and `vc.presentingViewController?.presentingViewController?.dimiss` if `shouldShowInstructionsPage`  is `true`.
 
@@ -381,7 +381,7 @@ hvDocConfig.setDocCaptureTitle("ID Card")
 
 This inturn supports localization:
 ```
-hvDocConfig.setCapturePageTitleText(NSLocalizedString("IDCardText", comment: ""))
+hvDocConfig.setDocCaptureTitle(NSLocalizedString("IDCardText", comment: ""))
 ```
 
 Please note that if you set any of the above 5 texts in both `Localizable.strings` files and in `HVDocConfig`, the values in `HVDocConfig` would be considered.
