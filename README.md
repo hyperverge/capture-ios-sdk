@@ -115,7 +115,7 @@ To initialize the SDK, call the `HyperSnapSDK.initialize` method. This must be d
 
  Swift:
  ```
- HyperSecureSDK.initialize(appId: <appId>, appKey: <appKey>,region: HyperSnapParams.Region.AsiaPacific, product: HyperSnapParams.Product.faceID)
+ HyperSnapSDK.initialize(appId: <appId>, appKey: <appKey>,region: HyperSnapParams.Region.AsiaPacific, product: HyperSnapParams.Product.faceID)
  ```
 
  Objective C:
