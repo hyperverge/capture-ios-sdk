@@ -7,19 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B569953ADA1B3A4674C328615FE0D34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		ADFEFDDB1DC682E72E5C223403995BFD /* Pods-HyperSnapDemoApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3719106C131AF78524C738CE630FC69 /* Pods-HyperSnapDemoApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E933AF10903BB5DDEAC5C4E7557B6608 /* Pods-HyperSnapDemoApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 669536F8003A3D9418CC4CBE2FB555F4 /* Pods-HyperSnapDemoApp-dummy.m */; };
+		1310C7D70EE634D9FF805BBC2A37FACB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		6BD19BC76196FFAFFE23CAD6DD90FB42 /* Pods-HyperSnapDemoApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 669536F8003A3D9418CC4CBE2FB555F4 /* Pods-HyperSnapDemoApp-dummy.m */; };
+		BDB4F6583864CA00410F4B26BADFB812 /* Pods-HyperSnapDemoApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3719106C131AF78524C738CE630FC69 /* Pods-HyperSnapDemoApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23D7C6106F350F77F0121594907BBB14 /* Pods-HyperSnapDemoApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HyperSnapDemoApp-resources.sh"; sourceTree = "<group>"; };
 		2498E0D117D29D82B228EDAE30C64CBD /* Pods-HyperSnapDemoApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HyperSnapDemoApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4AB9DFC1011BE1329C5D1944A71E188B /* HyperSnapSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = HyperSnapSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4EA59AC832ECB68037E44EC0B955BD80 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		50BF6EBFF6FFB8219C243427073779ED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		559A9619144297E558F3CECC8E55E2B5 /* Pods-HyperSnapDemoApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HyperSnapDemoApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		56DB2136F81192881C4C6349DA5E5635 /* HyperSnapSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = HyperSnapSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		669536F8003A3D9418CC4CBE2FB555F4 /* Pods-HyperSnapDemoApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HyperSnapDemoApp-dummy.m"; sourceTree = "<group>"; };
 		689CA04000445035E5BDFCEE90D660AF /* Pods-HyperSnapDemoApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HyperSnapDemoApp-frameworks.sh"; sourceTree = "<group>"; };
 		7CBFA3E4DC88EE8984F72EC0F28DE41C /* Pods-HyperSnapDemoApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HyperSnapDemoApp.modulemap"; sourceTree = "<group>"; };
@@ -27,38 +25,31 @@
 		8603A5A532A130418281D239CE95C278 /* Pods-HyperSnapDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HyperSnapDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A3719106C131AF78524C738CE630FC69 /* Pods-HyperSnapDemoApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HyperSnapDemoApp-umbrella.h"; sourceTree = "<group>"; };
+		B8D70A885A04496A8ABC3A866A038B6F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		CB4704FEF0FBD2DED755B65B1BEC9DA3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E93D980F0CB155F14179A521E799A4EC /* Pods-HyperSnapDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HyperSnapDemoApp.release.xcconfig"; sourceTree = "<group>"; };
-		FF7FA5553148FEEF33252A05E1CE5795 /* HyperSnapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperSnapSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0A29B34B28AFBC531DA61051E65F034F /* Frameworks */ = {
+		5380DBF58E395B1A494A5049C175F27C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B569953ADA1B3A4674C328615FE0D34 /* Foundation.framework in Frameworks */,
+				1310C7D70EE634D9FF805BBC2A37FACB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A2A119DC4C68BF2500CCE90AD4BD3C3 /* HyperSnapSDK */ = {
+		1026EFF3FD50F25A290AC01EB270D0B3 /* HyperSnapSDK */ = {
 			isa = PBXGroup;
 			children = (
-				1509ACD49331414A6B8631A602A24470 /* Frameworks */,
-				DB68F1272EA2BC3DBFCF8144FF2EAE3E /* Pod */,
+				414FCE0EF295FCC9921C4EE380B52206 /* Pod */,
 			);
 			name = HyperSnapSDK;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		1509ACD49331414A6B8631A602A24470 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FF7FA5553148FEEF33252A05E1CE5795 /* HyperSnapSDK.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1BEFC992F4AED5EF21C9938CF209079D /* Targets Support Files */ = {
@@ -77,19 +68,37 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7AC9A1A93B6A5EE61468B72D9E9F57BE /* Development Pods */ = {
+		414FCE0EF295FCC9921C4EE380B52206 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				0A2A119DC4C68BF2500CCE90AD4BD3C3 /* HyperSnapSDK */,
+				56DB2136F81192881C4C6349DA5E5635 /* HyperSnapSDK.podspec */,
+				B8D70A885A04496A8ABC3A866A038B6F /* LICENSE */,
+				CB4704FEF0FBD2DED755B65B1BEC9DA3 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		42B8BDF5B7CF057AF223CE4FB4DE147E /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1026EFF3FD50F25A290AC01EB270D0B3 /* HyperSnapSDK */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		44D5347904CF754D6785B84253F2574A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				7AC9A1A93B6A5EE61468B72D9E9F57BE /* Development Pods */,
+				42B8BDF5B7CF057AF223CE4FB4DE147E /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				2EF0AFE0B9C8FCF10DC5ECE35F671204 /* Products */,
 				1BEFC992F4AED5EF21C9938CF209079D /* Targets Support Files */,
@@ -117,49 +126,33 @@
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				44D5347904CF754D6785B84253F2574A /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		DB68F1272EA2BC3DBFCF8144FF2EAE3E /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				4AB9DFC1011BE1329C5D1944A71E188B /* HyperSnapSDK.podspec */,
-				4EA59AC832ECB68037E44EC0B955BD80 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9FD7FEA8EBF107A4012D6930F949AE29 /* Headers */ = {
+		93D5D835745E477E8C1B36FCDE0F1B4D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADFEFDDB1DC682E72E5C223403995BFD /* Pods-HyperSnapDemoApp-umbrella.h in Headers */,
+				BDB4F6583864CA00410F4B26BADFB812 /* Pods-HyperSnapDemoApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		000FD807D58D28C63B9BA765223BE314 /* Pods-HyperSnapDemoApp */ = {
+		B8AD0BC7DE37091C4E24C23BA076F9E0 /* Pods-HyperSnapDemoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1301EEB944911868DCC8D414C940AE97 /* Build configuration list for PBXNativeTarget "Pods-HyperSnapDemoApp" */;
+			buildConfigurationList = AC449516DEBBCF4C0F269AE69EC1EBAC /* Build configuration list for PBXNativeTarget "Pods-HyperSnapDemoApp" */;
 			buildPhases = (
-				A40B8CE0B8D7FC05C704CA410C6F75CA /* Sources */,
-				0A29B34B28AFBC531DA61051E65F034F /* Frameworks */,
-				9FD7FEA8EBF107A4012D6930F949AE29 /* Headers */,
+				93D5D835745E477E8C1B36FCDE0F1B4D /* Headers */,
+				53639C428DBD44E88E6EC103487ADD4F /* Sources */,
+				5380DBF58E395B1A494A5049C175F27C /* Frameworks */,
+				BA15F16F35EA433A210A54678F45A199 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -191,24 +184,96 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				000FD807D58D28C63B9BA765223BE314 /* Pods-HyperSnapDemoApp */,
+				B8AD0BC7DE37091C4E24C23BA076F9E0 /* Pods-HyperSnapDemoApp */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		BA15F16F35EA433A210A54678F45A199 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		A40B8CE0B8D7FC05C704CA410C6F75CA /* Sources */ = {
+		53639C428DBD44E88E6EC103487ADD4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E933AF10903BB5DDEAC5C4E7557B6608 /* Pods-HyperSnapDemoApp-dummy.m in Sources */,
+				6BD19BC76196FFAFFE23CAD6DD90FB42 /* Pods-HyperSnapDemoApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+		5DE19CECB206ACCCACF04D62F93FFDA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		858D01EEFE984249A9581D18DBEA53F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,16 +327,19 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		C1F84C0206174795E8BFF10422919244 /* Release */ = {
+		E03603338ED702265A357AE9B0060BA2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E93D980F0CB155F14179A521E799A4EC /* Pods-HyperSnapDemoApp.release.xcconfig */;
 			buildSettings = {
@@ -305,65 +373,7 @@
 			};
 			name = Release;
 		};
-		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		FEC0F223CAC979E8CB685DA612982B13 /* Debug */ = {
+		F48B835CFE50101BA4D10FCBBB9C45F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8603A5A532A130418281D239CE95C278 /* Pods-HyperSnapDemoApp.debug.xcconfig */;
 			buildSettings = {
@@ -399,20 +409,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1301EEB944911868DCC8D414C940AE97 /* Build configuration list for PBXNativeTarget "Pods-HyperSnapDemoApp" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FEC0F223CAC979E8CB685DA612982B13 /* Debug */,
-				C1F84C0206174795E8BFF10422919244 /* Release */,
+				858D01EEFE984249A9581D18DBEA53F1 /* Debug */,
+				5DE19CECB206ACCCACF04D62F93FFDA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		AC449516DEBBCF4C0F269AE69EC1EBAC /* Build configuration list for PBXNativeTarget "Pods-HyperSnapDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
-				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+				F48B835CFE50101BA4D10FCBBB9C45F0 /* Debug */,
+				E03603338ED702265A357AE9B0060BA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

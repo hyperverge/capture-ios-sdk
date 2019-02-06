@@ -351,6 +351,11 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setShouldOptimizeLivenessCall:(BOOL)shouldOptimize;
 - (void)setClientIDWithClientId:(NSString * _Nonnull)clientId;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
+- (void)setShouldReturnFullImageUri:(BOOL)shouldReturn;
+- (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
+- (void)setLivenessAPIHeaders:(NSDictionary<NSString *, NSString *> * _Nonnull)headers;
+- (void)setShouldUseBackCamera:(BOOL)shouldUse;
+- (void)setShouldShowCameraSwitchButton:(BOOL)shouldShow;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

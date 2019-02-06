@@ -1,3 +1,7 @@
+#### Versionn 2.3.1 [06 February 2019]
+
+- Added provision for liveness using back camera(beta)
+
 #### Version 2.3.0 [12 October 2018]
 
 - Moved support to Xcode 10.0 and Swift 4.2
