@@ -16,6 +16,8 @@
 			<key>FooterText</key>
 			<string>© Copyright 2018 HyperVerge, Inc. All rights reserved.
 </string>
+			<key>License</key>
+			<string>Custom</string>
 			<key>Title</key>
 			<string>HyperSnapSDK</string>
 			<key>Type</key>

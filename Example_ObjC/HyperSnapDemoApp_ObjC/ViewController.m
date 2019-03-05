@@ -35,11 +35,11 @@ NSString* appKey = @"";
     
         HVFaceConfig *faceConfig = [HVFaceConfig new];
         [faceConfig setLivenessMode:LivenessModeTextureLiveness];
+    [faceConfig setShouldShowInstructionsPage:true];
     
-    
-        [HVFaceViewController start:self hvFaceConfig:faceConfig completionHandler:^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
+        [HVFaceViewController start:self hvFaceConfig:faceConfig completionHandler:^(HVError* error,NSDictionary<NSString *,id> * _Nonnull result, NSDictionary<NSString *,NSString *> * _Nonnull headers,UIViewController* vcNew){
             if(error != nil){
-                NSLog(@"Error Received: %@",  error);
+                NSLog(@"Error Received: %@",  error.getErrorMessage);
             }else{
                 NSLog(@"Results: %@", result);
             }
@@ -55,7 +55,7 @@ NSString* appKey = @"";
     [docConfig setShouldShowReviewPage:true];
     [docConfig setShouldShowInstructionsPage:true];
     
-    [HVDocsViewController start:self hvDocConfig:docConfig completionHandler:^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
+    [HVDocsViewController start:self hvDocConfig:docConfig completionHandler:^(HVError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
         if(error != nil){
             NSLog(@"Error Received: %@",  error);
         }else{

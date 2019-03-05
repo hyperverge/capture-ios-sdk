@@ -1,4 +1,5 @@
 
+
 # HyperSnapSDK Documentation for iOS
 
 ## Overview
@@ -8,16 +9,13 @@ The framework provides a liveness feature that uses our advanced AI Engines to d
 
 The framework also provides optional Instructions pages for Document and Face capture and a Review page for Document capture.
 
-Please Note that the SDK's functionalities are only to capture images and check liveness . You have to use our APIs for face match or OCR.
 
 ![Screenshots](resources/screenshots.png?raw=true)
 
 
-
-
 ### Requirements
 - Minimum iOS Deployment Target - iOS 9.0
--  Xcode 10.0
+-  Xcode 10.1
 
 ### ChangeLog
 
@@ -45,8 +43,7 @@ You can find the ChangeLog in the [CHANGELOG.md](CHANGELOG.md) file
 			- [For Face Capture](#for-face-capture)
 				- [Parameters](#parameters)
 			- [Liveness in Face Capture](#liveness-in-face-capture)
-			- [Optimized Texture Liveness](#optimized-texture-liveness)
-	- [Error Codes](#error-codes)
+	- [Error Handling](#hverror)
 	- [Advanced](#advanced)
 		- [Localization](#localization)
 			- [Document Based Customisation](#document-based-customisation)
@@ -62,7 +59,7 @@ Please refer to the example app provided in the repo to get an understanding of 
 
 To run the app:
   - clone/download the repo and open Example_Swift/HyperSnapSDKDemoApp.xcworkspace or Example_objC/HyperSnapDemoApp_ObjC.xcworkspace.
-  - Set `appId` and `appKey` values in the ViewController to the ones received from HyperVerge.
+  - Set `appId`, `appKey` and `region` values in the Global.swift file to the ones received from HyperVerge.
   - Build and run the app.
 
 ## Integration Steps
@@ -81,8 +78,9 @@ pod 'HyperSnapSDK'
 
 #### Manual
 
-- Download 'HyperSnapSDK.framework' and add it to your Xcode project
+- [Download](https://github.com/hyperverge/capture-ios-sdk/blob/master/HyperSnapSDK.zip?raw=true) 'HyperSnapSDK.framework' and add it to your Xcode project
 - Navigate to Targets -> General and include the framework under 'Embedded Binaries' and 'Linked Frameworks and Libraries'.
+
 - Navigate to Targets -> 'Your App name' -> Build Settings. Ensure that 'Always Embed Swift Standard Libraries' is set to 'Yes'.
 
 
@@ -115,22 +113,21 @@ To initialize the SDK, call the `HyperSnapSDK.initialize` method. This must be d
 
  Swift:
  ```
- HyperSnapSDK.initialize(appId: <appId>, appKey: <appKey>,region: HyperSnapParams.Region.AsiaPacific, product: HyperSnapParams.Product.faceID)
+ HyperSnapSDK.initialize(appId: <appId>, appKey: <appKey>,region: HyperSnapParams.Region.AsiaPacific)
  ```
 
  Objective C:
  ```
- [HyperSnapSDK initializeWithAppId:@"<appID>" appKey:@"<appKey>" region:RegionAsiaPacific product:ProductFaceID];
+ [HyperSnapSDK initializeWithAppId:@"<appID>" appKey:@"<appKey>" region:RegionAsiaPacific];
  ```
 Where,
 - appId, appKey are given by HyperVerge
 - region: This is an enum, `HypeSnapParams.Region` with three values - `AsiaPacific`, `India` and `UnitedStates`.
-- product: This is an enum, `HyperSnapParams.Product` with two values - `faceID` and `faceIAM`. Right now, only `faceID` is supported.
 
 
 ### 5. Presenting the ViewControllers
 
-The ViewControllers for both document capture and face capture have been provided in a StoryBoard in the framework. They are called 'HVDocsViewController' and 'HVFaceViewController' respectively. To add them to your app, call the 'start' method of the respective ViewControllers.
+The ViewControllers for both document capture and face capture have been provided in a StoryBoard in the framework. They are called `HVDocsViewController` and `HVFaceViewController` respectively. To add them to your app, call the `start` method of the respective ViewControllers.
 
 #### For Document Capture
 
@@ -140,18 +137,15 @@ Swift:
         let hvDocConfig = HVDocConfig()
         hvDocConfig.setDocumentType(HyperSnapParams.DocumentType.card)
         hvDocConfig.setShouldShowReviewPage(true)
-        hvDocConfig.setDocCaptureTitle("ID Card")
-        hvDocConfig.setDocCaptureDescription("Place front of your ID Card in the box")
 
 		//2. Create completionHandler
-        let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result, vcNew in
+        let completionHandler:(_ HVError?,_ result:[String:AnyObject]?,_ headers:[String:String]?, _ viewController:UIViewController)->Void = {error, result, headers, vcNew in
 			if(error != nil){
-				print("Error Received: \(error!.userInfo[NSLocalizedDescriptionKey]!)");
+				print("Error Received: \(error!.getErrorMessage()");
 			}else{
 				print("Results: \(result!.debugDescription)");
 			}
 		}
-
 	//3. Call start method
 	HVDocsViewController.start(self, hvDocConfig: hvDocConfig, completionHandler: completionHandler)
 
@@ -161,24 +155,19 @@ Objective C:
     HVDocConfig *docConfig = [HVDocConfig new];
 	[docConfig setDocumentType:DocumentTypeA4];
 	[docConfig setShouldShowReviewPage:true];
-	[docConfig setshouldShowInstructionsPage:true];
-	[HVDocsViewController start:self hvDocConfig:docConfig completionHandler:^(NSError* 	error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
+	[HVDocsViewController start:self hvDocConfig:docConfig completionHandler:^(HVError* error,NSDictionary<NSString *,id> * _Nonnull result, NSDictionary<NSString *,NSString *> * _Nonnull headers, UIViewController* vcNew){
 		if(error != nil){
 			NSLog(@"Error Received: %@",  error);
 		}else{
 			NSLog(@"Results: %@", result);
 		}
 	}];
-
 ```
 ##### Parameters
 The start method takes a `HVDocConfig` object and a completion handler.
 
-- `completionHandler`: This is a closure of type `error:NSError?, result:[String:AnyObject]?), vc:UIViewController -> Void`. It is called when a capture is successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
-    - `error`: If the capture is successful, the error is set to `nil`. Otherwise, it is an `NSError` object with following information
-        - `code`: Error code stating type of error. ([discussed here](#error-codes))
-        - `userInfo`: A dictionary of type `[String:Any]`.
-            - The key `NSLocalizedDescriptionKey`  has the error description.
+- `completionHandler`: This is a closure of type `HVError?, result:[String:AnyObject]?, vc:UIViewController -> Void`. It is called when a capture is successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
+    - `error`: If the capture is successful, the error is set to `nil`. Otherwise, it is an object of type [HVError](#hverror)
     - `result`: If the capture failed, this is set to `nil`. Otherwise, it is of type `[String:AnyObject]`. This has a single key-value pair. The key is 'imageUri' and the value is the local path of the captured and processed image.
 
  -  `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController.
@@ -187,7 +176,7 @@ The start method takes a `HVDocConfig` object and a completion handler.
 - `hvDocConfig` : This is an object of type `HVDocConfig`. Its properties can be set with the setter methods provided for them.
 	- `setDocumentType(_ type : HyperSnapParams.DocumentType)` The document type is used to determine the aspect ratio of the capture area.
 	The `DocumentType` enum has four values:
-	    - `.card`- Aspect ratio : 0.625. Example: Vietnamese National ID, Driving License, Motor Registration Certificate
+	    - `.card`- Aspect ratio : 0.625. Example: Aadhaar Card, Vietnamese National ID, Driving License.
 	    - `.a4`- Aspect ratio: 1.4. Example: Bank statement, insurance receipt
 	    - `.passport`- Aspect ratio: 0.68. Example: Passports
 	    - `.other`- This is for custom aspect ratio. In this case, the aspect ratio should be set in the next line by calling `hvDocConfig.setAspectRatio(_:)`.
@@ -212,12 +201,11 @@ Swift:
         //1. Set properties
 	    let hvFaceConfig = HVFaceConfig()
 		hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
-		hvFaceConfig.setShowInstructionsPage(true)
 
 		//2. Create completionHandler
-        let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result,vcNew in
+        let completionHandler:(_ error:HVError?,_ result:[String:AnyObject]?,_ headers:[String:String]?, _ viewController:UIViewController)->Void = {error, result,headers, vcNew in
 			if(error != nil){
-				print("Error Received: \(error!.userInfo[NSLocalizedDescriptionKey]!)");
+				print("Error Received: \(error!.getErrorMessage())");
 			}else{
 				print("Results: \(result!.debugDescription)");
 			}
@@ -231,95 +219,152 @@ Swift:
 Objective C:
 
 	 HVFaceConfig *faceConfig = [HVFaceConfig  new];
-	[faceConfig setLivenessMode:LivenessModeTextureLiveness];
-	[HVFaceViewController start:self hvFaceConfig:faceConfig completionHandler:^(NSError* error,NSDictionary<NSString *,id> * _Nonnull result, UIViewController* vcNew){
-		if(error != nil){
-			NSLog(@"Error Received: %@",  error);
-		}else{
-			NSLog(@"Results: %@", result);
-		}
-	}];
+	[HVFaceViewController start:self hvFaceConfig:faceConfig completionHandler:^(HVError* error,NSDictionary<NSString *,id> * _Nonnull result, NSDictionary<NSString *,NSString *> * _Nonnull headers,UIViewController* vcNew){
+	if(error != nil){
+		NSLog(@"Error Received: %@",  error.getErrorMessage);
+	}else{
+		NSLog(@"Results: %@", result);
+	}
+	[vcNew dismissViewControllerAnimated:true completion:nil];
+	}]
 
 ##### Parameters
 The start method takes a `HVFaceConfig` object and a completion handler.
 
-- `completionHandler`: This is a closure of type `error:NSError?, result:[String:AnyObject]?), vc:UIViewController -> Void`. It is called when a capture was successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
-    - `error`: If the capture is successful, the error is set to `nil`. Otherwise, it is an `NSError` object with following information
-        - `code`: Error code stating type of error. (discussed later)
-        - `userInfo`: A dictionary of type `[String:Any]`.
-            - The key `NSLocalizedDescriptionKey`  has the error description.
-    -   `result`: This is a dictionary of type  `[String:AnyObject]`. If the capture failed, this is set to  `nil`  and a corresponding error is set in  `error`. If a capture was successful but there was an error in a later step (possible only when [liveness](#liveness-in-face-capture) in enabled) or when the capture was successful and the liveness is disabled, the result has a single key-value pair. The key is `imageUri` and the value is the local path of the captured image.
+- `completionHandler`: This is a closure of type `error:NSError?, result:[String:AnyObject]?, vc:UIViewController -> Void`. It is called when a capture was successful or when an error has occured. The values of `error` and  `result` received by the closure determine whether the call was a success or failure. </br>
+    - `error`: If the capture is successful, the error is set to `nil`. Otherwise, it is an object of type [HVError](#hverror).
+    -   `result`: This is a dictionary of type  `[String:AnyObject]?`. If the capture failed, this is set to  `nil`  and a corresponding error is set in  `error`. For successful capture, response could be found [here](#liveness-in-face-capture).
     -  `vc`: This is the ViewController that is currently active. You could choose to use this to present your next ViewController.
  Note: To dismiss the VC, please call `vc.dismiss`   if `shouldShowInstructionsPage`  is `false` and `vc.presentingViewController?.presentingViewController?.dimiss` if `shouldShowInstructionsPage`  is `true`.
 
 - `hvFaceConfig` : This is an object of type `HVFaceConfig`. Its properties can be set with the setter methods provided for them.
 	- `setLivenessMode(_ livenessMode : HyperSnapParams.LivenessMode)`: [Explained here](#liveness-in-face-capture).
-	- `setShouldOptimizeLivenessCall(_ shouldOptimize : Bool)`: [Explained here](#optimized-texture-liveness).
 	- `setshouldShowInstructionsPage(_ shouldShow : Bool)`:  To determine if the instructions page should be shown before capture page. It defaults to `false`.
-	- `setClientID(clientId : String)`: This is an optional parameter that could be sent with the liveness API call for  analytics purpose.
+	- `setLivenessAPIHeaders(_ headers : [String:String])` : Any additional headers you want to send with the Liveness API Call. Following are headers that could be sent.
+		 - *referenceId*: (String) This is a unique identifier that is assigned to the end customer by the API user. It would be the same for the different API calls made for the same customer. This would facilitate better analysis of user flow etc.
+	-  `setLivenessAPIParameters(_ parameters : [String:AnyObject])` : Any additional parameters you want to send with the Liveness API Call. Following are parameters that could be sent.
+		-  *dataLogging*: (String - "yes"/"no")  If you want HyperVerge to temporarily store the image to access the QC dashboard or for debugging purposes, please set this to "yes".
+		- *allowEyesClosed*:(String - "yes"/"no") If this is set to 'no',  a error would be thrown when eyes are closed in the user photo. By default, closed eyes are allowed.
 
 
 #### Liveness in Face Capture
-The framwork offers a liveness feature which can be set in the `HVFaceConfig` object before calling `HVFaceViewController`. Here `livenessMode` is of type `HypeSnapParams.LivenessMode`.
+The framework provides a liveness feature that uses our advanced AI Engines to differentiate between a real user capturing their selfie from a photo/video recording.
+The liveness is enabled by default. To turn it off and on, use the `setLivenessMode` method in `HVConfig`.
 ```
 hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
 ```
-The structure of the result dictionary depends on the Liveness Mode:
+The structure of the result dictionary returned after Face Capture depends on the Liveness Mode:
 
 **.none**: No liveness test is performed. The selfie that is captured is simply returned. If successful, the result dictionary in the completionHandler has one key-value pair.
 	- `imageUri` : local path of the image captured
 
-**.textureLiveness** : Texture liveness test is performed on the selfie captured.  If livenessMode parameter is not set in `HVFaceConfig`, the framework defaults to this mode. If the call is successful, a result dictionary with the following key-value pairs is returned in the completionHandler
+**.textureLiveness** :  Liveness test is performed on the selfie captured.  If livenessMode parameter is not set in `HVFaceConfig`, the framework defaults to this mode. If the call is successful, the API response is returned as the `result` dictionary in the completion handler. Apart from status code and success message, the result dictionary has the following fields:
 - `imageUri` : String. Local path of the image captured <br/>
 - `live`: String with values 'yes'/'no'. Tells whether the selfie is live or not.
 - `liveness-score`: Float with values between 0 and 1. The confidence score for the liveness prediction.
 - `to-be-reviewed`: String with values 'yes'/'no'. 'Yes' indicates that it is flagged for manual review.
 
-**.textureAndGestureLiveness**: In this mode, based on the results of the texture Liveness call, the user might be asked to do a series of gestures to confirm liveness.
- This mode is currently in beta. It is highly recommended to not use it in production.
-
 <br/>
 
-#### Optimized Texture Liveness
-If bandwidth is low/limited or the time taken by the API call is a constraint, set the following property in `HVFaceConfig` object to optimize the liveness calls. Please note that this process has a slightly lower accuracy compared to the non-optimized one. By default the non-optimized process would be used.
+## API Calls
+
+### OCR API Call
+ To make OCR API calls directly from the App, use the following method:
+ ```swift
+HVNetworkHelper.makeOCRCall(endpoint:apiEndpoint, documentUri: docImageUri, parameters: params, headers: headers, completionHandler: completionHandler)
+ ```
+ where:
+
+   - **parameters**: ([String:AnyObject]?) Optional.  Any additonal parameters to be sent with the API Call. Following are parameters that could be sent.
+	  - *dataLogging*: (String - "yes"/"no")  If you want HyperVerge to temporarily store the image to access the QC dashboard or for debugging purposes, please set this to "yes".
+   - **headers**: ([String:String]?) Optional.  Any additional headers to be sent with the API Call. Following are headers that could be sent.
+	 - *referenceId*: (String) This is a unique identifier that is assigned to the end customer by the API user. It would be the same for the different API calls made for the same customer. This would facilitate better analysis of user flow etc.
+   - **documentUri**: (String) The `imageUri` received in the completionHandler after Document Capture.
+   - **completionHandler**: This is the callback which is used to return the results back after making the network request. Explained [here](#api-completionhandler).     
+   - **endpoint**: (String)
+        - For India KYC, these are the supported endpoints
+	        - https://ind.docs.hyperverge.co/v1-1/readKYC
+			- https://ind.docs.hyperverge.co/v1-1/readPAN
+			- https://ind.docs.hyperverge.co/v1-1/readAadhaar
+			- https://ind.docs.hyperverge.co/v1-1/readPassport
+	        -  Please find the full documentation [here](https://github.com/hyperverge/kyc-india-rest-api)
+
+	  - For Vietnam KYC, these are the supported endpoints
+		- https://apac.docs.hyperverge.co/v1.1/readNID
+		- https://apac.docs.hyperverge.co/v1.1/readMRC
+		- https://apac.docs.hyperverge.co/v1.1/readDL
+		- https://apac.docs.hyperverge.co/v1.1/verifyEVN
+        - Please find the full documentation [here](https://github.com/hyperverge/kyc-vietnam-rest-api)
+
+### Face Match Call
+ To make Face ID match call directly from the App, use the following method:
+  ```swift
+     HVNetworkHelper.makeFaceMatchCall(endpoint:apiEndpoint, documentUri: docImageUri, faceUri:faceImageUri, parameters: params, headers: headers, completionHandler: completionHandler)
+  ```
+
+  where:
+   * **endpoint**: (String)
+	   - India: https://ind-faceid.hyperverge.co/v1/photo/verifyPair
+      - Asia Pacific: https://apac.faceid.hyperverge.co/v1/photo/verifyPair
+
+For more information, please check out the documentation [here](https://github.com/hyperverge/face-match-rest-api)
+   - **parameters**: ([String:AnyObject]?) Optional.  It could have additonal parameters to be sent with the API Call. Following are parameters that could be sent.
+	  - *dataLogging*: (String - "yes"/"no")  If you want HyperVerge to temporarily store the image to access the QC dashboard or for debugging purposes, please set this to "yes".
+	  - *allowMultipleFaces*:(String - "yes"/"no") Set this to 'no' to have an error thrown when multiple faces are detected in the user photo. By default, multiple faces are allowed.
+   - **headers**: ([String:String]?) Optional.  It could have additional headers to be sent with the API Call. Following are headers that could be sent.
+	 - *referenceId*: (String) This is a unique identifier that is assigned to the end customer by the API user. It would be the same for the different API calls made for the same customer. This would facilitate better analysis of user flow etc.
+- **faceUri**: (String) The `imageUri` received in the CompletionHandler after Face Capture.
+- **documentUri**: (String) The `imageUri` received in the completionHandler after Document Capture.
+ - **completionHandler**: This is the callback which is used to return the results back after making the network request. Explained [here](#api-completionhandler).  
+
+## API CompletionHandler
+This is of the type,
+`(_ error: HVError?, _ result: [String: AnyObject]?, _ headers: [String:String]?)`
+
+Where,
+
+- **error** : Object of type [HVError](#hverror)
+- **result** : `[String:AnyObject]?` If the API call was successful, this has the full API results. Otherwise, it is null.
+- **headers** : `[String:String]?` This has any additional headers returned by HyperVerge's backend. If there are no such headers, it is null.
+
+## HVError
+
+HVError is the error object returned in case of failure in Face Capture, Document Capture, liveness call, makeOCRCall or makeFaceMatchCall.
+
+It has two variables :  `errorCode`  and  `errorMessage`. These can be accessed with the following method:
 
 ```
-hvFaceConfig.setOptimizeLivenessCall(true)
+let errorCode = hvError.getErrorCode()
+let errorMessage = hvError.getErrorMessage()
 ```
 
-<br/>
+Here are the various error codes returned by the SDK.
 
-
-## Error Codes
-
-Descriptions of the error codes returned in the completion handler are given here.
-Please note that when an error occurs, the ViewController is dismissed and the completionHandler is called with the error.
-
-You could compare the error codes you receive directly with a hardcoded value or  with the `HyperSnapParams.Error` enum values.
-eg:.  
-```
-	switch HyperSnapParams.Error.getError(error!.code)! {
-		case HyperSnapParams.Error.operationCancelledByUser:
-			print("Operation cancelled by user")
-		case HyperSnapParams.Error.cameraPermissionDenied:
-			print("Camera permissions denied")
-		default:
-			break
-	}
-```
-
-|Error Code|Description|Explanation|Action|
-|----------|-----------|-----------|------|
+|Code|Description|Explanation|Action|
+|-----|------|-----------|------|
 |2|Internal SDK Error|Occurs when an unexpected error has happened with the HyperSnapSDK.|Notify HyperVerge|
 |3|Operation Cancelled By User|When the user taps on cancel button before capture|Try again.|
 |4|Camera Permission Denied|Occurs when the user has denied permission to access camera.|In the settings app, give permission to access camera and try again.|
-|5|Hardware Error|Occurs when there is an error setting up the camera.|Make sure the camera is accessible.|
-|101|Initialization Error|Occurs when SDK has not been initialized properly.|Make sure HyperSnapSDK.initialise method is called before using the capture functionality|
-|102|Network Error|Occurs when the internet is either non-existent or very patchy.|Check internet and try again. If Internet is proper, contact HyperVerge|
-|103|Authentication Error|Occurs when the request to the server could not be Authenticated/Authorized.|Make sure appId and appKey set in the initialization method are correct|
-|104|Internal Server Error|Occurs when there is an internal error at the server.|Notify HyperVerge|
-|201|Face Match Error|Occurs when one or more faces captured in the gestures flow do not match the selfie|This is equivalent to liveness fail. Take corresponding action|
-|202|Face Detection Error|Occurs when a face couldn't be detected in an image by the server|Try capture again|
+|5|Hardware Error|Occurs when camera could not be initialized|Try again|
+|6|Input Error|Occurs when the input needed by the start method/HVNetworkHelper method is not correct|Read error message for more details|
+|11|Initialization Error|Occurs when SDK has not been initialized properly|Make sure HyperSnapSDK.initialise method is called before using the capture functionality|
+|12|Network Error|Occurs when the internet is either non-existant or very patchy|Check internet and try again. If Internet is proper, contact HyperVerge|
+|14|Internal Server Error|Occurs when there is an internal error at the server|Notify HyperVerge|
+|22|Face Detection Error|Occurs when a face couldn't be detected in an image by the server|Try capture again|
+
+Apart from the above errors, if the server returns a non 200 status code for any of the API calls (Liveness, Face Match and OCR), the status code is as it is returned as the error code and the corresponding message is returned as the error message.
+
+These are the possible error codes that could be received from the server:
+
+|Code|Description|Explanation|Action|
+|-----|------|-----------|------|
+|400|Invalid Request|Something is wrong with the input|Check the error message/API documentation|
+|401|Authentication Error|Credentials provided in the initialization step are wrong|Check credentails. If they seem correct, contact HyperVerge|
+|404|Endpoint not found|Endpoint sent to makeFaceMatchCall or makeOCRCall is not correct|Check API documentation|
+|423|No supported KYC document found(OCR Call), <br/> Multiple Faces Found(Face Match Call), <br/> EyesClosed(Liveness Call)|Please check the API documentations for more details|Capture again|
+|501, 502|Server Error|Internal server error has occured|Notify HyperVerge|
+|503|Server Busy|Server Busy|Notify HyperVerge|
+
 
 
 ## Advanced

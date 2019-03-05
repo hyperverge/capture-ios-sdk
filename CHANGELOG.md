@@ -1,6 +1,10 @@
-#### Versionn 2.3.1 [06 February 2019]
+#### Versionn 2.4.0 [4 March 2018]
 
-- Added provision for liveness using back camera(beta)
+- Added methods to make Face Match and OCR calls
+- Added 'HVError' class
+- Response structure of liveness call changed to return full API response and headers
+- Optimised SDK size 
+
 
 #### Version 2.3.0 [12 October 2018]
 

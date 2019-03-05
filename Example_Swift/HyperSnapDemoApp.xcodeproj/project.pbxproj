@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0401F14F222D471E00A152AA /* DocumentSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401F14E222D471E00A152AA /* DocumentSelectionViewController.swift */; };
+		0401F151222D473F00A152AA /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401F150222D473F00A152AA /* Global.swift */; };
 		044E323820C843F800AEAB5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044E323020C843F700AEAB5C /* Main.storyboard */; };
 		044E323920C843F800AEAB5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E323120C843F700AEAB5C /* ViewController.swift */; };
 		044E323A20C843F800AEAB5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E323220C843F700AEAB5C /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0401F14E222D471E00A152AA /* DocumentSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSelectionViewController.swift; sourceTree = "<group>"; };
+		0401F150222D473F00A152AA /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		044E323020C843F700AEAB5C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		044E323120C843F700AEAB5C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		044E323220C843F700AEAB5C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 				044E323720C843F800AEAB5C /* SwitchLanguage.swift */,
 				044E323120C843F700AEAB5C /* ViewController.swift */,
 				04E1DF282060DEE4002F23FC /* Info.plist */,
+				0401F14E222D471E00A152AA /* DocumentSelectionViewController.swift */,
+				0401F150222D473F00A152AA /* Global.swift */,
 			);
 			path = HyperSnapDemoApp;
 			sourceTree = "<group>";
@@ -109,6 +115,7 @@
 				04E1DF152060DEE4002F23FC /* Sources */,
 				04E1DF162060DEE4002F23FC /* Frameworks */,
 				04E1DF172060DEE4002F23FC /* Resources */,
+				5596246798EDE3D48A8BDFC7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +195,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5596246798EDE3D48A8BDFC7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-frameworks.sh",
+				"${PODS_ROOT}/../../HyperSnapSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyperSnapSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -197,8 +226,10 @@
 			files = (
 				044E323A20C843F800AEAB5C /* AppDelegate.swift in Sources */,
 				044E323F20C843F800AEAB5C /* SwitchLanguage.swift in Sources */,
+				0401F151222D473F00A152AA /* Global.swift in Sources */,
 				044E323920C843F800AEAB5C /* ViewController.swift in Sources */,
 				044E323B20C843F800AEAB5C /* ResultsViewController.swift in Sources */,
+				0401F14F222D471E00A152AA /* DocumentSelectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

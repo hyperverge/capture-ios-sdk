@@ -6,212 +6,223 @@
 //  Copyright © 2018 hyperverge. All rights reserved.
 //
 
+
 import UIKit
 import HyperSnapSDK
+import CoreLocation
 
+//Landing Screen of the sample app. You can find implementation steps for face capture, liveness check and document capture here. For OCR Call and Face Match methods, please refer to 'ResultsViewController.swift'
 class ViewController: UIViewController {
     
+    @IBOutlet weak var onlyFaceCaptureButton: UIButton!
     
-    let appId = ""
-    let appKey = ""
+    @IBOutlet weak var livenessButton: UIButton!
     
+    @IBOutlet weak var faceMatchButton: UIButton!
     
-    @IBOutlet weak var languageSwitch: UISwitch!
-    @IBOutlet weak var noLivenessButton: UIButton!
+    @IBOutlet weak var livenessFaceMatchOCRButton: UIButton!
     
-    @IBOutlet weak var textureLivenessButton: UIButton!
+    @IBOutlet weak var onlyDocCaptureButton: UIButton!
     
-    @IBOutlet weak var cardButton: UIButton!
-    @IBOutlet weak var passportButton: UIButton!
-    @IBOutlet weak var a4Button: UIButton!
-    @IBOutlet weak var otherButton: UIButton!
+    @IBOutlet weak var docCaptureAndOCRButton: UIButton!
     
-        
-    var documentType = HyperSnapParams.DocumentType.card
-    var topText = "ID Card"
+    @IBOutlet weak var changeDocumentButton: UIButton!
     
-    var livenessMode = HyperSnapParams.LivenessMode.textureLiveness
+    @IBOutlet weak var documentLabel: UILabel!
     
     
-
+    var shouldMakeOCRCall = false
+    var shouldMakeFaceMatchCall = false
+    var shouldMakeLivenessCall = false
+    var faceCapture = true
+    
+    
+    var livenessResult : [String:AnyObject]? = nil
+    var faceMatchResult : [String:AnyObject]? = nil
+    var ocrResult : [String:AnyObject]? = nil
+    
+    var livenessError : HVError? = nil
+    var faceMatchError : HVError? = nil
+    var ocrError : HVError? = nil
+    
+    var livenessHeader : [String:String]? = nil
+    var faceMatchHeader : [String:String]? = nil
+    var ocrHeader : [String:String]? = nil
+    
+    var faceImageUri : String?
+    var docImageUri : String?
+    
+    let locationManager: CLLocationManager = CLLocationManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Initializes the SDK. Please use the 'appId' and 'appKey' values provided by HyperVerge
-        HyperSnapSDK.initialize(appId: appId, appKey: appKey, region: HyperSnapParams.Region.AsiaPacific, product: HyperSnapParams.Product.faceID)
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        documentLabel.text = "OCR - \(Global.shared.currentDocument.getNameString())"
         
-        let livenessMode = UserDefaults.standard.value(forKey: "livenessMode") as? Int
+        let oldTag = UserDefaults.standard.integer(forKey: "captureConfigTag")
         
-        if let livenessMode = livenessMode {
-            setLivenessMode(mode: livenessMode)
-        }
-        
-        setDocumentButtonUI()
-        
-        navigationController?.navigationBar.isHidden = true
-        
+        setUpConfig(tag: oldTag)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        //SDK initialisation is required before calling any SDK method. Please check AppDeletegate.swift for the implementation
+        if(Global.shared.appID == nil || Global.shared.appKey == nil || Global.shared.region == nil){
+            let alert = UIAlertController.init(title: "Initialise SDK", message: "Please set SDK credentials in 'Global.swift'", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     
-    
-    @IBAction func FaceCaptureTapped(_ sender: UIButton) {
+    //MARK: Implementation for Face capture by HyperSnapSDK
+    func startFaceCapture(_ callingVC: UIViewController) {
         
         let hvFaceConfig = HVFaceConfig()
-        hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
         hvFaceConfig.setShouldShowInstructionsPage(true)
-        hvFaceConfig.setShouldOptimizeLivenessCall(true)
-        
-        let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result,vcNew in
-            
-            let resultsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
-            
-            if error != nil {
-                
-                print("Error received - Code:\(error!.code), Description:\(error!.userInfo[NSLocalizedDescriptionKey] ?? "No Description")")
-                resultsViewController.error = error
-            }
-            
-            if let result = result, let imageUri = result["imageUri"] as? String,let image = UIImage(contentsOfFile: imageUri) {
-                resultsViewController.image = image
-                if let live = result["live"] as? String{
-                    let isLive = live == "yes" ? true : false
-                    resultsViewController.isLivenessSuccessful = isLive
-                }
-                
-            }else{
-                print("No image Uri received")
-            }
-            
-            vcNew.present(resultsViewController, animated: true, completion: nil)
-            
-            
+        let headers = ["referenceid":"test"]
+        if shouldMakeLivenessCall {
+            hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
+        }else{
+            hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.none)
         }
-        HVFaceViewController.start(self, hvFaceConfig: hvFaceConfig, completionHandler: completionHandler)
+        hvFaceConfig.setLivenessAPIHeaders(headers)
+        
+        let params = ["dataLogging":"yes"] as [String:AnyObject]
+        
+        hvFaceConfig.setLivenessAPIParameters(params)
+        
+        let completionHandler:(_ error: HVError?, _ result: [String: AnyObject]?, _ headers: [String:String]?, _ viewController: UIViewController) -> Void = {error, result, headers, vcNew in
+            
+            if self.shouldMakeLivenessCall {
+                self.livenessResult = result
+                self.livenessHeader = headers
+                self.livenessError = error
+            }
+            
+            if let result = result, let imageUri = result["imageUri"] as? String {
+                self.faceImageUri = imageUri
+            }
+            if self.shouldMakeFaceMatchCall {
+                self.startDocumentCapture(vcNew)
+            }else {
+                self.showResultsPage(vcNew)
+            }
+        }
+        HVFaceViewController.start(callingVC, hvFaceConfig: hvFaceConfig, completionHandler: completionHandler)
     }
     
     
-    func presentDocCamera(_ documentType:HyperSnapParams.DocumentType, topText:String){
+    //MARK: Implementation for Document capture by HyperSnapSDK
+    func startDocumentCapture(_ presentingVC : UIViewController){
         
         let hvDocConfig = HVDocConfig()
-        hvDocConfig.setDocumentType(documentType)
+        hvDocConfig.setDocumentType(Global.shared.currentDocument.getDocumentType())
+        if Global.shared.currentDocument.getDocumentType() == .other{
+            hvDocConfig.setAspectRatio(Global.shared.currentDocument.getAspectRatio())
+        }
         hvDocConfig.setShouldShowReviewPage(true)
-        hvDocConfig.setShouldShowInstructionsPage(true)
-//        hvDocConfig.setDocCaptureDescription("Place front page of your ID Card in the box")
-        //        hvDocConfig.setCapturePageSubText("sub in config")
-        hvDocConfig.setShouldShowFlashButton(true)
+        hvDocConfig.setDocumentType(HyperSnapParams.DocumentType.other)
+
         
-        let completionHandler:(_ error:NSError?,_ result:[String:AnyObject]?,_ viewController:UIViewController)->Void = {error, result, vcNew in
-            guard error == nil else{
-                print(error!)
-                return
+        let completionHandler:(_ error: HVError?, _ result: [String: AnyObject]?, _ viewController: UIViewController) -> Void = {error, result, vcNew in
+            
+            if let result = result, let imageUri = result["imageUri"] as? String {
+                self.docImageUri = imageUri
             }
-            
-            if let result = result, let imageUri = result["imageUri"] as? String, let image = UIImage(contentsOfFile: imageUri){
-                let resultsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
-                resultsViewController.image = image
-                vcNew.present(resultsViewController, animated: true, completion: nil)
-                
-            }else{
-                print("No image Uri?")
-            }
+            self.showResultsPage(vcNew)
         }
-        HVDocsViewController.start(self, hvDocConfig: hvDocConfig, completionHandler: completionHandler)
+        HVDocsViewController.start(presentingVC, hvDocConfig: hvDocConfig, completionHandler: completionHandler)
     }
     
     
-    
-    @IBAction func documentCaptureTapped(_ sender: UIButton) {
-        presentDocCamera(documentType,topText: topText)
+    @IBAction func startCapture(_ sender: UIButton){
+        faceCapture ? startFaceCapture(self) : startDocumentCapture(self)
     }
     
+    @IBAction func captureConfigSelected(_ sender: UIButton) {
+        setUpConfig(tag: sender.tag)
+    }
     
-    @IBAction func documentTypeSelected(_ sender: UIButton) {
+    func setUpConfig(tag:Int){
+        onlyFaceCaptureButton.setImage(UIImage(named: "tick_off"), for: .normal)
+        livenessButton.setImage(UIImage(named: "tick_off"), for: .normal)
+        faceMatchButton.setImage(UIImage(named: "tick_off"), for: .normal)
+        onlyDocCaptureButton.setImage(UIImage(named: "tick_off"), for: .normal)
+        docCaptureAndOCRButton.setImage(UIImage(named: "tick_off"), for: .normal)
+        livenessFaceMatchOCRButton.setImage(UIImage(named: "tick_off"), for: .normal)
         
-        switch sender.tag {
-        case 0:
-            documentType = .card
-            topText = "ID Card"
-        case 1:
-            documentType = .passport
-            topText = "Passport"
-        case 2:
-            documentType = .a4
-            topText = "A4 Document"
-        case 3:
-            documentType = .other
-            topText = "Custom Document"
-        default:
-            break
+        
+        if tag == 0 { //Only Face Capture
+            shouldMakeLivenessCall = false
+            shouldMakeFaceMatchCall = false
+            shouldMakeOCRCall = false
+            faceCapture = true
+            onlyFaceCaptureButton.setImage(UIImage(named: "tick_on"), for: .normal)
+        }
+        if tag == 1 {//Only Document Capture
+            shouldMakeOCRCall = false
+            shouldMakeLivenessCall = false
+            shouldMakeFaceMatchCall = false
+            faceCapture = false
+            onlyDocCaptureButton.setImage(UIImage(named: "tick_on"), for: .normal)
         }
         
-        setDocumentButtonUI()
-    }
-    
-    
-    
-    @IBAction func livenessModeSelected(_ sender: UIButton) {
-        setLivenessMode(mode: sender.tag)
-    }
-
-    func setDocumentButtonUI(){
-        cardButton.setImage(#imageLiteral(resourceName: "tick_off"), for: .normal)
-        passportButton.setImage(#imageLiteral(resourceName: "tick_off"), for: .normal)
-        a4Button.setImage(#imageLiteral(resourceName: "tick_off"), for: .normal)
-        otherButton.setImage(#imageLiteral(resourceName: "tick_off"), for: .normal)
-
-        switch documentType {
-        case .card:
-            cardButton.setImage(#imageLiteral(resourceName: "tick_on"), for: .normal)
-        case .a4:
-            a4Button.setImage(#imageLiteral(resourceName: "tick_on"), for: .normal)
-        case .passport:
-            passportButton.setImage(#imageLiteral(resourceName: "tick_on"), for: .normal)
-        case .other:
-            otherButton.setImage(#imageLiteral(resourceName: "tick_on"), for: .normal)
+        if tag == 2 { //Liveness
+            shouldMakeLivenessCall = true
+            shouldMakeFaceMatchCall = false
+            shouldMakeOCRCall = false
+            faceCapture = true
+            livenessButton.setImage(UIImage(named: "tick_on"), for: .normal)
         }
-    }
-    
-    func setLivenessMode(mode:Int){
-        noLivenessButton.setImage(#imageLiteral(resourceName: "tick_off"), for: .normal)
-        textureLivenessButton.setImage(#imageLiteral(resourceName: "tick_off"), for: .normal)
-        if mode == 0 {
-            livenessMode = HyperSnapParams.LivenessMode.none
-            noLivenessButton.setImage(#imageLiteral(resourceName: "tick_on"), for: .normal)
-        }else{
-            livenessMode = HyperSnapParams.LivenessMode.textureLiveness
-            textureLivenessButton.setImage(#imageLiteral(resourceName: "tick_on"), for: .normal)
-        }
-
         
-        UserDefaults.standard.set(mode, forKey: "livenessMode")
+        if tag ==  3{//Face Match
+            shouldMakeLivenessCall = false
+            shouldMakeFaceMatchCall = true
+            shouldMakeOCRCall = false
+            faceCapture = true
+            faceMatchButton.setImage(UIImage(named: "tick_on"), for: .normal)
+        }
+        
+        if tag == 4 { //OCR
+            shouldMakeOCRCall = true
+            shouldMakeLivenessCall = false
+            shouldMakeFaceMatchCall = false
+            faceCapture = false
+            docCaptureAndOCRButton.setImage(UIImage(named: "tick_on"), for: .normal)
+        }
+        
+        
+        if tag == 5 { //Liveness, FaceMatch and OCR
+            shouldMakeLivenessCall = true
+            shouldMakeFaceMatchCall = true
+            shouldMakeOCRCall = true
+            faceCapture = true
+            livenessFaceMatchOCRButton.setImage(UIImage(named: "tick_on"), for: .normal)
+        }
+        
+        UserDefaults.standard.set(tag, forKey: "captureConfigTag")
         
     }
     
     
-    
-    /** Localisation methods.
-    Please add necessary strings in Localization.Strings files or try other languages.
-    Right now, only the bottom text in document capture will change language on flipping this switch.
-     */
-    @IBAction func languageSwitch(_ sender: UISwitch) {
-        if sender.isOn {
-            HyperSnapDemoAppLanguage.setAppleLanguageTo(lang: "vi")
-            UserDefaults.standard.synchronize()
-            
-        }else{
-            HyperSnapDemoAppLanguage.setAppleLanguageTo(lang: "en")
-            UserDefaults.standard.synchronize()
-            
+    func showResultsPage(_ presentingVC : UIViewController){
+        guard let resultsVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as? ResultsViewController else {
+            return
         }
+        resultsVC.shouldMakeOCRCall = shouldMakeOCRCall
+        resultsVC.shouldMakeFaceMatchCall = shouldMakeFaceMatchCall
+        
+        resultsVC.docImageUri = docImageUri
+        resultsVC.faceImageUri = faceImageUri
+        
+        resultsVC.livenessResult = livenessResult
+        resultsVC.livenessHeader = livenessHeader
+        resultsVC.livenessError = livenessError
+        
+        presentingVC.present(resultsVC, animated: true, completion: nil)
         
     }
-
-
     
 }
-
-
