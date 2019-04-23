@@ -1,0 +1,4 @@
+framework module HyperDocsSDK {
+    header "HyperDocsSDK-Swift.h"
+    requires objc
+}

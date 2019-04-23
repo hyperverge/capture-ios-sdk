@@ -112,7 +112,7 @@ class ResultsViewController: UIViewController {
         let headers = ["referenceId":"test"]
         let params = ["dataLogging":"yes"] as [String:AnyObject]
         
-        HVNetworkHelper.makeFaceMatchCall(endpoint: Global.shared.getFaceMatchEndpoint(), documentUri: docImageUri ?? "", faceUri:faceImageUri ?? "", parameters: params, headers: headers, completionHandler: completionHandler)
+        HVNetworkHelper.makeFaceMatchCall(endpoint: Global.shared.getFaceMatchEndpoint(), faceUri:faceImageUri ?? "", documentUri: docImageUri ?? "", parameters: params, headers: headers, completionHandler: completionHandler)
     }
     
     

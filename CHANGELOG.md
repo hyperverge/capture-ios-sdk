@@ -1,4 +1,9 @@
-#### Versionn 2.4.0 [4 March 2018]
+#### Version 2.4.1 [23 April 2018]
+- Moved support to Xcode 10.2 and Swift 5
+- Multiple faces detection in face capture
+
+
+#### Version 2.4.0 [4 March 2018]
 
 - Added methods to make Face Match and OCR calls
 - Added 'HVError' class

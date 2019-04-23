@@ -7,4 +7,6 @@ target 'HyperSnapDemoApp_ObjC' do
 
   # Pods for HyperSnapDemoApp_ObjC
   pod 'HyperSnapSDK', :path => '../'
+ # pod 'HyperSnapSDK_Instructions', :path => '../'
+
 end

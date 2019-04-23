@@ -1,0 +1,21 @@
+{
+  "name": "HyperSnapSDK-Instructions",
+  "version": "1.0.0",
+  "summary": "Optional submodule of HyperSnapSDK",
+  "description": "Optional submodule of HyperSnapSDK. Contains capture instructions screens for face and document capture",
+  "homepage": "https://github.com/hyperverge/capture-ios-sdk",
+  "authors": "HyperVerge",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "license": {
+    "type": "Custom",
+    "file": "LICENSE"
+  },
+  "source": {
+    "http": "https://github.com/hyperverge/capture-ios-sdk/blob/master/HyperSnapSDK_Instructions.zip?raw=true"
+  },
+  "ios": {
+    "vendored_frameworks": "HyperSnapSDK_Instructions.framework"
+  }
+}
