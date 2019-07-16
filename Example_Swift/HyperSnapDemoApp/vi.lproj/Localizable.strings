@@ -7,3 +7,9 @@
 */
 
 docCaptureDescription = "Đặt tài liệu bên trong hộp";
+docReviewRetakeButton = "Thi lại";
+"Current Language" = "Language - Vietnamese";
+docReviewContinueButton="Chính xác";
+docReviewDescription="Hãy chắc chắn rằng hình ảnh rõ ràng và không bị lóa";
+faceCaptureFaceNotFound="Đặt khuôn mặt của bạn trong vòng tròn";
+faceCaptureFaceFound="Chụp ngay";

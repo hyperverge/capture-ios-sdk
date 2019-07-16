@@ -6,4 +6,10 @@
   Copyright © 2018 hyperverge. All rights reserved.
 */
 
+"Current Language" = "Language - English";
 docCaptureDescription = "Place the document inside the box";
+docReviewRetakeButton = "Retake";
+docReviewContinueButton="Use This Photo";
+docReviewDescription="Make sure the image is clear and glare free";
+faceCaptureFaceNotFound="Place your face inside the circle";
+faceCaptureFaceFound="Capture Now";

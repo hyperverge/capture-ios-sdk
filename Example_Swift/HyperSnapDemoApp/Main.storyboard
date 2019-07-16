@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PZ6-2z-DFf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PZ6-2z-DFf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--Results View Controller-->
         <scene sceneID="x2A-sQ-A4i">
             <objects>
-                <viewController storyboardIdentifier="ResultsViewController" id="svW-Oo-1FN" customClass="ResultsViewController" customModule="LivenessNew" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsViewController" id="svW-Oo-1FN" customClass="ResultsViewController" customModule="HyperSnapDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qWq-Oi-09A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +219,7 @@
         <!--View Controller-->
         <scene sceneID="vej-Tp-4dZ">
             <objects>
-                <viewController id="PZ6-2z-DFf" customClass="ViewController" customModule="LivenessNew" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rootvc" id="PZ6-2z-DFf" customClass="ViewController" customModule="HyperSnapDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MxB-OD-sdb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -372,10 +372,19 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ng9-Y5-Da7">
+                                <rect key="frame" x="125.5" y="576" width="124" height="30"/>
+                                <state key="normal" title="Current Language"/>
+                                <connections>
+                                    <action selector="switchLanguageWithSender:" destination="PZ6-2z-DFf" eventType="touchUpInside" id="ae2-1L-mbV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="F8j-Cv-XTb" firstAttribute="bottom" secondItem="ng9-Y5-Da7" secondAttribute="bottom" constant="61" id="0W9-0T-530"/>
                             <constraint firstItem="uOg-wp-GaI" firstAttribute="centerY" secondItem="F8j-Cv-XTb" secondAttribute="centerY" id="2Kt-bC-f0a"/>
+                            <constraint firstItem="ng9-Y5-Da7" firstAttribute="centerX" secondItem="F8j-Cv-XTb" secondAttribute="centerX" id="LeL-Hh-N5p"/>
                             <constraint firstItem="uOg-wp-GaI" firstAttribute="centerX" secondItem="F8j-Cv-XTb" secondAttribute="centerX" id="vXu-jv-KWb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F8j-Cv-XTb"/>
@@ -385,20 +394,22 @@
                         <outlet property="docCaptureAndOCRButton" destination="T0e-4d-KdB" id="cv5-EU-rGb"/>
                         <outlet property="documentLabel" destination="bRR-07-gHj" id="uHT-yR-Upf"/>
                         <outlet property="faceMatchButton" destination="5if-ze-bn9" id="fC3-ta-BeW"/>
+                        <outlet property="languageButton" destination="ng9-Y5-Da7" id="9rc-re-WKk"/>
                         <outlet property="livenessButton" destination="Z1T-9y-tW0" id="6Af-G7-2yd"/>
                         <outlet property="livenessFaceMatchOCRButton" destination="Ky5-sV-CIB" id="Clw-H0-Hyc"/>
                         <outlet property="onlyDocCaptureButton" destination="AIv-gs-OTE" id="3dJ-qO-h0m"/>
                         <outlet property="onlyFaceCaptureButton" destination="B4R-Ul-7uS" id="Yvf-Xn-Wcf"/>
+                        <outlet property="startCaptureButton" destination="c0O-nB-4R1" id="yqL-ew-QhC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hN-A1-ase" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982" y="52"/>
+            <point key="canvasLocation" x="1981.5999999999999" y="51.724137931034484"/>
         </scene>
         <!--Document Selection View Controller-->
         <scene sceneID="dPN-EH-Xjz">
             <objects>
-                <viewController id="aHP-Wj-WXS" customClass="DocumentSelectionViewController" customModule="LivenessNew" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aHP-Wj-WXS" customClass="DocumentSelectionViewController" customModule="HyperSnapDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="khM-26-FVA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,7 +424,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DocumentTableViewCell" rowHeight="57" id="Pw8-JL-yLH" customClass="DocumentTableViewCell" customModule="LivenessNew" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DocumentTableViewCell" rowHeight="57" id="Pw8-JL-yLH" customClass="DocumentTableViewCell" customModule="HyperSnapDemoApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pw8-JL-yLH" id="kiW-sO-5l3">

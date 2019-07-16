@@ -1,0 +1,11 @@
+/* 
+  Localized.strings
+  HyperSnapDemoApp
+
+  Created by Srinija on 07/03/18.
+  Copyright © 2018 hyperverge. All rights reserved.
+*/
+
+docCaptureDescription = "Place the document english";
+docReviewRetakeButton = "english";
+"text" = "english english";

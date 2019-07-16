@@ -13,7 +13,11 @@ import CoreLocation
 
 //Landing Screen of the sample app. You can find implementation steps for face capture, liveness check and document capture here. For OCR Call and Face Match methods, please refer to 'ResultsViewController.swift'
 class ViewController: UIViewController {
+    @IBOutlet weak var startCaptureButton: UIButton!
     
+    @IBOutlet weak var languageButton: UIButton!
+    
+    @IBOutlet weak var onlyDocCaptureLabel: UILabel!
     @IBOutlet weak var onlyFaceCaptureButton: UIButton!
     
     @IBOutlet weak var livenessButton: UIButton!
@@ -64,8 +68,9 @@ class ViewController: UIViewController {
         documentLabel.text = "OCR - \(Global.shared.currentDocument.getNameString())"
         
         let oldTag = UserDefaults.standard.integer(forKey: "captureConfigTag")
-        
-        setUpConfig(tag: oldTag)
+        setUpConfig(tag: oldTag)        
+        languageButton.setTitle(NSLocalizedString("Current Language", comment: ""), for: .normal)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,6 +79,8 @@ class ViewController: UIViewController {
             let alert = UIAlertController.init(title: "Initialise SDK", message: "Please set SDK credentials in 'Global.swift'", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
         }
+    
+//        onlyDocCaptureButton.setTitle(NSLocalizedString("text", comment: ""), for: .normal)
     }
     
     //MARK: Implementation for Face capture by HyperSnapSDK
@@ -223,6 +230,25 @@ class ViewController: UIViewController {
         
         presentingVC.present(resultsVC, animated: true, completion: nil)
         
+    }
+    
+    
+    @IBAction func switchLanguage(sender: UIButton) {
+        if HyperSnapDemoAppLanguage.currentAppleLanguage() == "en" {
+            HyperSnapDemoAppLanguage.setAppleLanguageTo("vi")
+            languageButton.setTitle("Language - Vietnamese", for: .normal)
+        }else {
+            HyperSnapDemoAppLanguage.setAppleLanguageTo("en")
+            languageButton.setTitle("Language - English", for: .normal)
+        }
+        
+        let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+        rootviewcontroller.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "rootvc")
+        let mainwindow = (UIApplication.shared.delegate?.window!)!
+        mainwindow.backgroundColor = UIColor(hue: 0.6477, saturation: 0.6314, brightness: 0.6077, alpha: 0.8)
+        UIView.transition(with: mainwindow, duration: 0.55001, options: .transitionFlipFromLeft, animations: { () -> Void in
+        }) { (finished) -> Void in
+        }
     }
     
 }

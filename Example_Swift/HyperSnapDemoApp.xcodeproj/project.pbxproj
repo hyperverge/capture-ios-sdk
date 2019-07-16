@@ -204,7 +204,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-frameworks.sh",
-				"${PODS_ROOT}/../../HyperSnapSDK.framework",
+				"${PODS_ROOT}/HyperSnapSDK/HyperSnapSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
