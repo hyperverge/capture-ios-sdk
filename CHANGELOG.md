@@ -1,4 +1,8 @@
-#### Version 2.4.1 [23 April 2018]
+#### Version 2.4.2 [29 September 2019]
+- Minor bug fix with multiple faces detection module
+- Included provision to add padding to selfie captured
+
+#### Version 2.4.1 [23 April 2019]
 - Moved support to Xcode 10.2 and Swift 5
 - Multiple faces detection in face capture
 
@@ -8,7 +12,7 @@
 - Added methods to make Face Match and OCR calls
 - Added 'HVError' class
 - Response structure of liveness call changed to return full API response and headers
-- Optimised SDK size 
+- Optimised SDK size
 
 
 #### Version 2.3.0 [12 October 2018]

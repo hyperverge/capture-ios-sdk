@@ -24,7 +24,7 @@ class HyperSnapDemoAppLanguage {
         return current
     }
     /// set @lang to be the first in Applelanguages list
-    class func setAppleLanguageTo(_ lang: String) {
+    class func setAppleLanguageTo(lang: String) {
         let userdef = UserDefaults.standard
         userdef.set([lang,currentAppleLanguage()], forKey: APPLE_LANGUAGE_KEY)
         userdef.synchronize()

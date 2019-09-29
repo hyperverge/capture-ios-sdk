@@ -15,8 +15,6 @@ import CoreLocation
 class ViewController: UIViewController {
     @IBOutlet weak var startCaptureButton: UIButton!
     
-    @IBOutlet weak var languageButton: UIButton!
-    
     @IBOutlet weak var onlyDocCaptureLabel: UILabel!
     @IBOutlet weak var onlyFaceCaptureButton: UIButton!
     
@@ -68,8 +66,8 @@ class ViewController: UIViewController {
         documentLabel.text = "OCR - \(Global.shared.currentDocument.getNameString())"
         
         let oldTag = UserDefaults.standard.integer(forKey: "captureConfigTag")
-        setUpConfig(tag: oldTag)        
-        languageButton.setTitle(NSLocalizedString("Current Language", comment: ""), for: .normal)
+        setUpConfig(tag: oldTag)
+//        onlyDocCaptureLabel.text = NSLocalizedString("sample", comment: "")
 
     }
     
@@ -230,25 +228,6 @@ class ViewController: UIViewController {
         
         presentingVC.present(resultsVC, animated: true, completion: nil)
         
-    }
-    
-    
-    @IBAction func switchLanguage(sender: UIButton) {
-        if HyperSnapDemoAppLanguage.currentAppleLanguage() == "en" {
-            HyperSnapDemoAppLanguage.setAppleLanguageTo("vi")
-            languageButton.setTitle("Language - Vietnamese", for: .normal)
-        }else {
-            HyperSnapDemoAppLanguage.setAppleLanguageTo("en")
-            languageButton.setTitle("Language - English", for: .normal)
-        }
-        
-        let rootviewcontroller: UIWindow = ((UIApplication.shared.delegate?.window)!)!
-        rootviewcontroller.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "rootvc")
-        let mainwindow = (UIApplication.shared.delegate?.window!)!
-        mainwindow.backgroundColor = UIColor(hue: 0.6477, saturation: 0.6314, brightness: 0.6077, alpha: 0.8)
-        UIView.transition(with: mainwindow, duration: 0.55001, options: .transitionFlipFromLeft, animations: { () -> Void in
-        }) { (finished) -> Void in
-        }
     }
     
 }
