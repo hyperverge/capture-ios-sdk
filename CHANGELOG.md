@@ -1,3 +1,6 @@
+#### Version 2.4.3 [30 September 2019]
+- Moved support to Xcode 11 and Swift 5.1
+
 #### Version 2.4.2 [29 September 2019]
 - Minor bug fix with multiple faces detection module
 - Included provision to add padding to selfie captured
