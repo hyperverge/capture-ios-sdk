@@ -245,6 +245,7 @@ The start method takes a `HVFaceConfig` object and a completion handler.
 	-  `setLivenessAPIParameters(_ parameters : [String:AnyObject])` : Any additional parameters you want to send with the Liveness API Call. Following are parameters that could be sent.
 		-  *dataLogging*: (String - "yes"/"no")  If you want HyperVerge to temporarily store the image to access the QC dashboard or for debugging purposes, please set this to "yes".
 		- *allowEyesClosed*:(String - "yes"/"no") If this is set to 'no',  a error would be thrown when eyes are closed in the user photo. By default, closed eyes are allowed.
+		- *rejectBlur*:(String - "yes"/"no") If this is set to 'yes',  a error would be thrown when photo is blurred. By default, blurred images are allowed.This feature is only available when HyperSnapSDK is initialized with region set to `AsiaPacific` . 
 
 
 #### Liveness in Face Capture
