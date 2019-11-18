@@ -15,7 +15,7 @@ The framework also provides optional Instructions pages for Document and Face ca
 
 ### Requirements
 - Minimum iOS Deployment Target - iOS 9.0
--  Xcode 10.1
+-  Xcode 11.2.1
 
 ### ChangeLog
 

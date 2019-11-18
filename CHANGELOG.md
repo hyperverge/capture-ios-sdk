@@ -1,3 +1,7 @@
+#### Version 2.4.4 [16 November 2019]
+- Moved support to Xcode 11.2.1
+- Made default modal presentation style to 'fullScreen'
+
 #### Version 2.4.3 [30 September 2019]
 - Moved support to Xcode 11 and Swift 5.1
 
