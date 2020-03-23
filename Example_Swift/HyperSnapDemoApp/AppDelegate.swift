@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             HyperSnapSDK.initialize(appId: appID, appKey: appKey, region: region)
         }
         
+        HyperSnapSDK.setShouldUseSignature(true)
         
         return true
     }

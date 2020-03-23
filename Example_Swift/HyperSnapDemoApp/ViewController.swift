@@ -85,6 +85,7 @@ class ViewController: UIViewController {
     func startFaceCapture(_ callingVC: UIViewController) {
         
         let hvFaceConfig = HVFaceConfig()
+        hvFaceConfig.setShouldShowFullScreenViewController(false)
         hvFaceConfig.setShouldShowInstructionsPage(true)
         let headers = ["referenceid":"test"]
         if shouldMakeLivenessCall {
