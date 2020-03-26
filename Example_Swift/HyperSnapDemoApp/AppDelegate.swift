@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let appID = Global.shared.appID, let appKey = Global.shared.appKey, let region = Global.shared.region {
             //SDK Initialization Step
             HyperSnapSDK.initialize(appId: appID, appKey: appKey, region: region)
+            HVCameraButton.setImageTintColor(UIColor(red: 0.85, green: 0.22, blue: 0.19, alpha: 1.0))
         }
         
         HyperSnapSDK.setShouldUseSignature(true)
