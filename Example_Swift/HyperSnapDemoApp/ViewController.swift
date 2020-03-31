@@ -85,6 +85,7 @@ class ViewController: UIViewController {
     func startFaceCapture(_ callingVC: UIViewController) {
         
         let hvFaceConfig = HVFaceConfig()
+        HVCameraButton.setImageTintColor(UIColor(red: 0.85, green: 0.22, blue: 0.19, alpha: 1.0))
         hvFaceConfig.setShouldShowFullScreenViewController(false)
         hvFaceConfig.setShouldShowInstructionsPage(true)
         let headers = ["referenceid":"test"]
