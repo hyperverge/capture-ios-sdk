@@ -115,7 +115,7 @@
 				04E1DF152060DEE4002F23FC /* Sources */,
 				04E1DF162060DEE4002F23FC /* Frameworks */,
 				04E1DF172060DEE4002F23FC /* Resources */,
-				4262DF29C3D8E89EB216E727 /* [CP] Embed Pods Frameworks */,
+				7852B62E124C373592A4CDDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,14 +177,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4262DF29C3D8E89EB216E727 /* [CP] Embed Pods Frameworks */ = {
+		7852B62E124C373592A4CDDB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-frameworks.sh",
-				"${PODS_ROOT}/HyperSnapSDK/HyperSnapSDK.framework",
+				"${PODS_ROOT}/../../HyperSnapSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
