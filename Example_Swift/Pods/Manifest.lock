@@ -1,5 +1,5 @@
 PODS:
-  - HyperSnapSDK (2.4.6.1)
+  - HyperSnapSDK (2.4.6.2)
 
 DEPENDENCIES:
   - HyperSnapSDK (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HyperSnapSDK: 053babab8def563b73c0923a5bcecade4dafadca
+  HyperSnapSDK: fab361efeb94ce4ca183d2786d5d4bcf59fe8e82
 
 PODFILE CHECKSUM: 9eed2af7d5ebbce24904fe97761c195a3887dee0
 
