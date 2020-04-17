@@ -7,7 +7,7 @@ target 'HyperSnapDemoApp' do
 
 pod 'HyperSnapSDK', :path => '../'
 
-#pod 'HyperSnapSDK'
+#pod 'HyperSnapSDK', '2.4.6'
 
 
 end
