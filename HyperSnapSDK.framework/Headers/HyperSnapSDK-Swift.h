@@ -388,6 +388,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setFaceCaptureCircleSuccessColor:(UIColor * _Nonnull)color;
 - (void)setFaceCaptureCircleFailureColor:(UIColor * _Nonnull)color;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
+- (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -606,8 +607,8 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 };
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK12HyperSnapSDK")
-@interface HyperSnapSDK : NSObject
+SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
+@interface HyperSnapSDKConfig : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull StoryBoardName;)
 + (NSString * _Nonnull)StoryBoardName SWIFT_WARN_UNUSED_RESULT;
 + (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region product:(enum Product)product;
@@ -1039,6 +1040,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setFaceCaptureCircleSuccessColor:(UIColor * _Nonnull)color;
 - (void)setFaceCaptureCircleFailureColor:(UIColor * _Nonnull)color;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
+- (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1257,8 +1259,8 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 };
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK12HyperSnapSDK")
-@interface HyperSnapSDK : NSObject
+SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
+@interface HyperSnapSDKConfig : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull StoryBoardName;)
 + (NSString * _Nonnull)StoryBoardName SWIFT_WARN_UNUSED_RESULT;
 + (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region product:(enum Product)product;

@@ -15,8 +15,8 @@ public class Global: NSObject {
     
     
     //Set SDK Credentials here. Initialisation happens in the AppDelegate
-    var appID : String?//Add your AppID here
-    var appKey : String?//Add your AppKey here
+    var appID : String? //Add your AppID here
+    var appKey : String? //Add your AppKey here
     var region : HyperSnapParams.Region? //Set this to .India or .AsiaPacific or .UnitedStates
     
     

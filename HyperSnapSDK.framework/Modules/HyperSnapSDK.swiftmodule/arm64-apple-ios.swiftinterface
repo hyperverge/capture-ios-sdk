@@ -66,7 +66,7 @@ extension HVDocsViewController {
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc public class HyperSnapSDK : ObjectiveC.NSObject {
+@objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
   @objc public static let StoryBoardName: Swift.String
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, product: HyperSnapSDK.HyperSnapParams.Product)
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
@@ -319,6 +319,7 @@ extension HVDocsViewController {
   @objc public func setFaceCaptureCircleSuccessColor(_ color: UIKit.UIColor)
   @objc public func setFaceCaptureCircleFailureColor(_ color: UIKit.UIColor)
   @objc public func setShouldShowFullScreenViewController(_ shouldShow: Swift.Bool)
+  @objc public func setCustomLoadingScreen(_ vc: UIKit.UIViewController)
   public class TextConfig {
     @objc public func setFaceCaptureTitle(_ text: Swift.String)
     @objc public func setFaceCaptureTitle2(_ text: Swift.String)
@@ -357,6 +358,13 @@ extension HVDocsViewController {
   }
   @objc override dynamic public init()
   @objc deinit
+}
+public struct HVToast {
+  public static func setBackgroundColor(_ color: UIKit.UIColor)
+  public static func setMessageColor(_ color: UIKit.UIColor)
+  public static func setMessageFont(_ font: UIKit.UIFont)
+  public static func setMessageAlignment(_ alignment: UIKit.NSTextAlignment)
+  public static func setCornerRadius(_ radius: CoreGraphics.CGFloat)
 }
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Hashable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.RawRepresentable {}
