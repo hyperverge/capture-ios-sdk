@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
 // swift-module-flags: -target i386-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HyperSnapSDK
 import AVFoundation
 import CommonCrypto
@@ -31,8 +31,8 @@ import UIKit
     @objc get
   }
   public func setHVDocConfig(_ hvDocConfig: HyperSnapSDK.HVDocConfig)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
 }
 extension HVDocsViewController {
   @objc override dynamic open func viewDidLoad()
@@ -41,7 +41,7 @@ extension HVDocsViewController {
   @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
 }
-@objc open class HVFaceViewController : UIKit.UIViewController {
+@objc @_inheritsConvenienceInitializers open class HVFaceViewController : UIKit.UIViewController {
   @objc public var completionHandler: (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?, [Swift.String : Swift.String]?, UIKit.UIViewController) -> Swift.Void
   @objc override dynamic open func viewDidLoad()
   @objc public static func start(_ callingVC: UIKit.UIViewController, hvFaceConfig: HyperSnapSDK.HVFaceConfig, completionHandler: @escaping (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?, [Swift.String : Swift.String]?, UIKit.UIViewController) -> Swift.Void)
@@ -62,11 +62,11 @@ extension HVDocsViewController {
     @objc get
   }
   @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
-@objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
   @objc public static let StoryBoardName: Swift.String
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, product: HyperSnapSDK.HyperSnapParams.Product)
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
@@ -75,10 +75,10 @@ extension HVDocsViewController {
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?) -> Swift.Void)
   @objc public static func deleteImageAtUri(_ imageUri: Swift.String)
   @objc public static func sortDictionaryAlphabetically(_ dictionary: [Swift.String : Swift.AnyObject]) -> Swift.String
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc public class HyperSnapParams : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class HyperSnapParams : ObjectiveC.NSObject {
   @objc public enum DocumentType : Swift.Int {
     case card
     case a4
@@ -128,10 +128,10 @@ extension HVDocsViewController {
       get
     }
   }
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc open class HVFaceInstructionsViewController : UIKit.UIViewController {
+@objc @_inheritsConvenienceInitializers open class HVFaceInstructionsViewController : UIKit.UIViewController {
   @objc public var completionHandler: (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?, [Swift.String : Swift.String]?, UIKit.UIViewController) -> Swift.Void
   public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
   @objc override dynamic open func viewDidLoad()
@@ -148,17 +148,17 @@ extension HVDocsViewController {
   @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
     @objc get
   }
+  @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
-@objc public class HVError : ObjectiveC.NSObject {
+@_hasMissingDesignatedInitializers @objc public class HVError : ObjectiveC.NSObject {
   @objc public func getErrorMessage() -> Swift.String
   @objc public func getErrorCode() -> Swift.Int
-  @objc override dynamic public init()
   @objc deinit
+  @objc override dynamic public init()
 }
-@objc public class HVNetworkHelper : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers public class HVNetworkHelper : ObjectiveC.NSObject {
   @objc public static func makeOCRCall(endpoint: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?, [Swift.String : Swift.String]?) -> Swift.Void)
   @objc public static func makeFaceMatchCall(endpoint: Swift.String, faceUri: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?, [Swift.String : Swift.String]?) -> Swift.Void)
   @objc public static func makeFaceMatchCall(endpoint: Swift.String, image1: Swift.String, image2: Swift.String, faceMatchMode: HyperSnapSDK.HyperSnapParams.FaceMatchMode, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?, [Swift.String : Swift.String]?) -> Swift.Void)
@@ -175,8 +175,8 @@ extension HVDocsViewController {
   @objc public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
   @objc public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVDocReviewContinueButton : UIKit.UIButton {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -187,8 +187,8 @@ extension HVDocsViewController {
   @objc public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
   @objc public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVInstructionsProceedButton : UIKit.UIButton {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -199,14 +199,14 @@ extension HVDocsViewController {
   @objc public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
   @objc public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVCameraButton : UIKit.UIButton {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc public static func setImageTintColor(_ color: UIKit.UIColor)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVTitleLabel : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -214,8 +214,8 @@ extension HVDocsViewController {
   @objc public static func setTextColor(_ color: UIKit.UIColor)
   @objc public static func setShadowColor(_ color: UIKit.UIColor)
   @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVFaceDescriptionLabel : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -224,8 +224,8 @@ extension HVDocsViewController {
   @objc public static func setTextColor(_ color: UIKit.UIColor)
   @objc public static func setShadowColor(_ color: UIKit.UIColor)
   @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVFaceInstructionTopLabel : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -233,8 +233,8 @@ extension HVDocsViewController {
   @objc public static func setTextColor(_ color: UIKit.UIColor)
   @objc public static func setShadowColor(_ color: UIKit.UIColor)
   @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVFaceInstructionBottomLabel : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -242,8 +242,8 @@ extension HVDocsViewController {
   @objc public static func setTextColor(_ color: UIKit.UIColor)
   @objc public static func setShadowColor(_ color: UIKit.UIColor)
   @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVDocInstructionsLabel : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -252,8 +252,8 @@ extension HVDocsViewController {
   @objc public static func setTextColor(_ color: UIKit.UIColor)
   @objc public static func setShadowColor(_ color: UIKit.UIColor)
   @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVDocSubTextLabel : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -262,8 +262,8 @@ extension HVDocsViewController {
   @objc public static func setTextColor(_ color: UIKit.UIColor)
   @objc public static func setShadowColor(_ color: UIKit.UIColor)
   @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVDocDescriptionLabel : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -272,8 +272,8 @@ extension HVDocsViewController {
   @objc public static func setTextColor(_ color: UIKit.UIColor)
   @objc public static func setShadowColor(_ color: UIKit.UIColor)
   @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVDocDescriptionA4Label : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -282,8 +282,8 @@ extension HVDocsViewController {
   @objc public static func setTextColor(_ color: UIKit.UIColor)
   @objc public static func setShadowColor(_ color: UIKit.UIColor)
   @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVFaceActivityLabel : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -292,18 +292,18 @@ extension HVDocsViewController {
   @objc public static func setTextColor(_ color: UIKit.UIColor)
   @objc public static func setShadowColor(_ color: UIKit.UIColor)
   @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
 }
 @objc public class HVFaceActivityIndicator : UIKit.UIActivityIndicatorView {
   @objc required dynamic public init(coder aDecoder: Foundation.NSCoder)
   @objc public static func setStyle(_ style: UIKit.UIActivityIndicatorView.Style)
   @objc public static func setColor(_ color: UIKit.UIColor)
+  @objc deinit
   @objc override dynamic public init(style: UIKit.UIActivityIndicatorView.Style)
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc deinit
 }
-@objc public class HVFaceConfig : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class HVFaceConfig : ObjectiveC.NSObject {
   public var textConfig: HyperSnapSDK.HVFaceConfig.TextConfig
   @objc public func setLivenessMode(_ livenessMode: HyperSnapSDK.HyperSnapParams.LivenessMode)
   @objc public func setClientID(clientId: Swift.String)
@@ -320,7 +320,9 @@ extension HVDocsViewController {
   @objc public func setFaceCaptureCircleFailureColor(_ color: UIKit.UIColor)
   @objc public func setShouldShowFullScreenViewController(_ shouldShow: Swift.Bool)
   @objc public func setCustomLoadingScreen(_ vc: UIKit.UIViewController)
-  public class TextConfig {
+  @objc public func setCaptureButtonEnabledImage(_ image: UIKit.UIImage)
+  @objc public func setCaptureButtonDisabledImage(_ image: UIKit.UIImage)
+  @_hasMissingDesignatedInitializers public class TextConfig {
     @objc public func setFaceCaptureTitle(_ text: Swift.String)
     @objc public func setFaceCaptureTitle2(_ text: Swift.String)
     @objc public func setFaceCaptureMultipleFacesDetectedText(_ text: Swift.String)
@@ -337,7 +339,7 @@ extension HVDocsViewController {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public class HVDocConfig : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class HVDocConfig : ObjectiveC.NSObject {
   public var textConfig: HyperSnapSDK.HVDocConfig.TextConfig
   @objc public func setDocumentType(_ type: HyperSnapSDK.HyperSnapParams.DocumentType)
   @objc public func setAspectRatio(_ aspectRatio: Swift.Double)
@@ -346,7 +348,9 @@ extension HVDocsViewController {
   @objc public func setShouldShowFlashButton(_ shouldShow: Swift.Bool)
   @objc public func setShouldAddPadding(_ shouldAdd: Swift.Bool)
   @objc public func setShouldShowFullScreenViewController(_ shouldShow: Swift.Bool)
-  public class TextConfig {
+  @objc public func setCaptureButtonEnabledImage(_ image: UIKit.UIImage)
+  @objc public func setCaptureButtonDisabledImage(_ image: UIKit.UIImage)
+  @_hasMissingDesignatedInitializers public class TextConfig {
     @objc public func setDocCaptureTitle(_ text: Swift.String)
     @objc public func setDocCaptureDescription(_ text: Swift.String)
     @objc public func setDocCaptureSubText(_ text: Swift.String)
@@ -366,6 +370,7 @@ public struct HVToast {
   public static func setMessageAlignment(_ alignment: UIKit.NSTextAlignment)
   public static func setCornerRadius(_ radius: CoreGraphics.CGFloat)
 }
+extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Equatable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Hashable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.RawRepresentable {}
 extension HyperSnapSDK.HyperSnapParams.Region : Swift.Equatable {}
@@ -374,6 +379,7 @@ extension HyperSnapSDK.HyperSnapParams.Region : Swift.RawRepresentable {}
 extension HyperSnapSDK.HyperSnapParams.Product : Swift.Equatable {}
 extension HyperSnapSDK.HyperSnapParams.Product : Swift.Hashable {}
 extension HyperSnapSDK.HyperSnapParams.Product : Swift.RawRepresentable {}
+extension HyperSnapSDK.HyperSnapParams.LivenessMode : Swift.Equatable {}
 extension HyperSnapSDK.HyperSnapParams.LivenessMode : Swift.Hashable {}
 extension HyperSnapSDK.HyperSnapParams.LivenessMode : Swift.RawRepresentable {}
 extension HyperSnapSDK.HyperSnapParams.FaceMatchMode : Swift.Equatable {}
