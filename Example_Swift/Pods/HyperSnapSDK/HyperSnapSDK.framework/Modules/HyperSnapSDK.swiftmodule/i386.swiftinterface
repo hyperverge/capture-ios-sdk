@@ -72,7 +72,9 @@ extension HVDocsViewController {
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
+  @objc public static func setShouldUseAnalytics(_ shouldUse: Swift.Bool)
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?) -> Swift.Void)
+  @objc public static func setShouldReturnRawResponse(_ shouldReturn: Swift.Bool)
   @objc public static func deleteImageAtUri(_ imageUri: Swift.String)
   @objc public static func sortDictionaryAlphabetically(_ dictionary: [Swift.String : Swift.AnyObject]) -> Swift.String
   @objc override dynamic public init()

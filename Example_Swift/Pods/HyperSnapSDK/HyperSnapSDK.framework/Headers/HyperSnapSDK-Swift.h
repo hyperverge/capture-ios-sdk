@@ -627,7 +627,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
++ (void)setShouldUseAnalytics:(BOOL)shouldUse;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
++ (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
 + (NSString * _Nonnull)sortDictionaryAlphabetically:(NSDictionary<NSString *, id> * _Nonnull)dictionary SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1284,7 +1286,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
++ (void)setShouldUseAnalytics:(BOOL)shouldUse;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
++ (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
 + (NSString * _Nonnull)sortDictionaryAlphabetically:(NSDictionary<NSString *, id> * _Nonnull)dictionary SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

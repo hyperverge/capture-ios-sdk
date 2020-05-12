@@ -1,6 +1,6 @@
 {
   "name": "HyperSnapSDK",
-  "version": "2.4.7",
+  "version": "2.4.8",
   "static_framework": true,
   "summary": "HyperVerge's iOS Framework for capturing documents and faces to be used with our AI Engines",
   "description": "HyperSnapSDK is HyperVerge’s documents + face capture framework that captures images at a resolution appropriate for our proprietary Deep Learning OCR and Face Recognition Engines.The framework provides a liveness feature that uses our advanced AI Engines to tell if a captured image is that of a real person or a photograph.",
