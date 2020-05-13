@@ -227,7 +227,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
-- (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -374,6 +373,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel")
 @end
 
 enum LivenessMode : NSInteger;
+@class UINavigationController;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : NSObject
@@ -394,6 +394,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
+- (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -886,7 +887,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
-- (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1033,6 +1033,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel")
 @end
 
 enum LivenessMode : NSInteger;
+@class UINavigationController;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : NSObject
@@ -1053,6 +1054,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
+- (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

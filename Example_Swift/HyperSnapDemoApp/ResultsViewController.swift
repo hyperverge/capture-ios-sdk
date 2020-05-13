@@ -86,7 +86,7 @@ class ResultsViewController: UIViewController {
             self.shouldMakeOCRCall = false
             self.setUI()
         }
-        let headers = ["referenceId":"test"]
+        let headers = ["referenceId":"test","uuid":"abcd"]
         
         let params = ["dataLogging":"yes"] as [String:AnyObject]
         
@@ -104,12 +104,12 @@ class ResultsViewController: UIViewController {
             self.faceMatchResult = result
             self.faceMatchHeader = header
             self.faceMatchError = error
-            
+
             self.shouldMakeFaceMatchCall = false
             self.setUI()
         }
         
-        let headers = ["referenceId":"test"]
+        let headers = ["referenceId":"test","uuid":"abcd"]
         let params = ["dataLogging":"yes"] as [String:AnyObject]
         
         HVNetworkHelper.makeFaceMatchCall(endpoint: Global.shared.getFaceMatchEndpoint(), faceUri:faceImageUri ?? "", documentUri: docImageUri ?? "", parameters: params, headers: headers, completionHandler: completionHandler)

@@ -88,7 +88,7 @@ class ViewController: UIViewController {
         HVCameraButton.setImageTintColor(UIColor(red: 0.85, green: 0.22, blue: 0.19, alpha: 1.0))
 //        hvFaceConfig.setShouldShowFullScreenViewController(false)
         hvFaceConfig.setShouldShowInstructionsPage(true)
-        let headers = ["referenceid":"test"]
+        let headers = ["referenceid":"test","uuid":"abcd"]
         if shouldMakeLivenessCall {
             hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
         }else{
@@ -107,6 +107,7 @@ class ViewController: UIViewController {
                 self.livenessHeader = headers
                 self.livenessError = error
             }
+
             
             if let result = result, let imageUri = result["imageUri"] as? String {
                 self.faceImageUri = imageUri
