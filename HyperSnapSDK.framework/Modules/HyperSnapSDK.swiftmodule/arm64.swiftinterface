@@ -352,6 +352,7 @@ extension HVDocsViewController {
   @objc public func setShouldAddPadding(_ shouldAdd: Swift.Bool)
   @objc public func setShouldShowFullScreenViewController(_ shouldShow: Swift.Bool)
   @objc public func setCaptureButtonEnabledImage(_ image: UIKit.UIImage)
+  @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   public class TextConfig {
     @objc public func setDocCaptureTitle(_ text: Swift.String)
     @objc public func setDocCaptureDescription(_ text: Swift.String)

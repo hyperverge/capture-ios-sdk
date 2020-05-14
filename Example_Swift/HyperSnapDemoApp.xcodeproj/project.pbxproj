@@ -20,6 +20,19 @@
 		BE0FE033817A443DE0306464 /* Pods_HyperSnapDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69097BDC2C2310B7AD09AE99 /* Pods_HyperSnapDemoApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		042ED98C246C392500678857 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0401F14E222D471E00A152AA /* DocumentSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSelectionViewController.swift; sourceTree = "<group>"; };
 		0401F150222D473F00A152AA /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -116,6 +129,7 @@
 				04E1DF162060DEE4002F23FC /* Frameworks */,
 				04E1DF172060DEE4002F23FC /* Resources */,
 				DB1B72EFC87012604B59E7E8 /* [CP] Embed Pods Frameworks */,
+				042ED98C246C392500678857 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

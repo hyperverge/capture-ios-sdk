@@ -88,6 +88,7 @@ class ViewController: UIViewController {
         HVCameraButton.setImageTintColor(UIColor(red: 0.85, green: 0.22, blue: 0.19, alpha: 1.0))
 //        hvFaceConfig.setShouldShowFullScreenViewController(false)
         hvFaceConfig.setShouldShowInstructionsPage(true)
+        hvFaceConfig.setShouldShowInstructionsPage(true)
         let headers = ["referenceid":"test","uuid":"abcd"]
         if shouldMakeLivenessCall {
             hvFaceConfig.setLivenessMode(HyperSnapParams.LivenessMode.textureLiveness)
@@ -130,6 +131,7 @@ class ViewController: UIViewController {
         if Global.shared.currentDocument.getDocumentType() == .other{
             hvDocConfig.setAspectRatio(Global.shared.currentDocument.getAspectRatio())
         }
+        hvDocConfig.setShouldShowInstructionsPage(true)
         hvDocConfig.setShouldShowReviewPage(true)
         hvDocConfig.setDocumentType(HyperSnapParams.DocumentType.other)
 
