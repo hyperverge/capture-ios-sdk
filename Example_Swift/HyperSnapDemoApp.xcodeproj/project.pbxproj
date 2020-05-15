@@ -17,11 +17,12 @@
 		044E323E20C843F800AEAB5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044E323620C843F800AEAB5C /* Assets.xcassets */; };
 		044E323F20C843F800AEAB5C /* SwitchLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E323720C843F800AEAB5C /* SwitchLanguage.swift */; };
 		044E324120C8473D00AEAB5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 044E324320C8473D00AEAB5C /* Localizable.strings */; };
+		0496BAF2246ECAFC00514139 /* HVResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0496BAF1246ECAFC00514139 /* HVResources.bundle */; };
 		BE0FE033817A443DE0306464 /* Pods_HyperSnapDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69097BDC2C2310B7AD09AE99 /* Pods_HyperSnapDemoApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		042ED98C246C392500678857 /* Embed Frameworks */ = {
+		04C93E6F246EB6B300959E4A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -45,6 +46,7 @@
 		044E323720C843F800AEAB5C /* SwitchLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchLanguage.swift; sourceTree = "<group>"; };
 		044E324220C8473D00AEAB5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		044E324420C8474800AEAB5C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0496BAF1246ECAFC00514139 /* HVResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HVResources.bundle; path = ../HVResources.bundle; sourceTree = "<group>"; };
 		04E1DF192060DEE4002F23FC /* HyperSnapDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSnapDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E1DF282060DEE4002F23FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31C749C3369BAD6C68F23A70 /* Pods-HyperSnapDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSnapDemoApp.release.xcconfig"; path = "Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		04E1DF102060DEE4002F23FC = {
 			isa = PBXGroup;
 			children = (
+				0496BAF1246ECAFC00514139 /* HVResources.bundle */,
 				04E1DF1B2060DEE4002F23FC /* HyperSnapDemoApp */,
 				04E1DF1A2060DEE4002F23FC /* Products */,
 				9D179BFEDFC1D3881A48AB74 /* Pods */,
@@ -89,8 +92,8 @@
 				044E323620C843F800AEAB5C /* Assets.xcassets */,
 				044E323420C843F800AEAB5C /* LaunchScreen.storyboard */,
 				044E324320C8473D00AEAB5C /* Localizable.strings */,
-				044E323020C843F700AEAB5C /* Main.storyboard */,
 				044E323320C843F800AEAB5C /* ResultsViewController.swift */,
+				044E323020C843F700AEAB5C /* Main.storyboard */,
 				044E323720C843F800AEAB5C /* SwitchLanguage.swift */,
 				044E323120C843F700AEAB5C /* ViewController.swift */,
 				04E1DF282060DEE4002F23FC /* Info.plist */,
@@ -128,8 +131,7 @@
 				04E1DF152060DEE4002F23FC /* Sources */,
 				04E1DF162060DEE4002F23FC /* Frameworks */,
 				04E1DF172060DEE4002F23FC /* Resources */,
-				DB1B72EFC87012604B59E7E8 /* [CP] Embed Pods Frameworks */,
-				042ED98C246C392500678857 /* Embed Frameworks */,
+				04C93E6F246EB6B300959E4A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +186,7 @@
 				044E323820C843F800AEAB5C /* Main.storyboard in Resources */,
 				044E324120C8473D00AEAB5C /* Localizable.strings in Resources */,
 				044E323E20C843F800AEAB5C /* Assets.xcassets in Resources */,
+				0496BAF2246ECAFC00514139 /* HVResources.bundle in Resources */,
 				044E323C20C843F800AEAB5C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,24 +214,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DB1B72EFC87012604B59E7E8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-frameworks.sh",
-				"${PODS_ROOT}/../../HyperSnapSDK.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyperSnapSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -265,6 +250,7 @@
 		04E1DF292060DEE4002F23FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -324,6 +310,7 @@
 		04E1DF2A2060DEE4002F23FC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;

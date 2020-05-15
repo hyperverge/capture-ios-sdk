@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HyperSnapSDK"
-  s.version      = "2.4.10"
+  s.version      = "2.4.12"
   s.static_framework = true
   s.summary      = "HyperVerge's iOS Framework for capturing documents and faces to be used with our AI Engines"
   s.description  = "HyperSnapSDK is HyperVerge’s documents + face capture framework that captures images at a resolution appropriate for our proprietary Deep Learning OCR and Face Recognition Engines.The framework provides a liveness feature that uses our advanced AI Engines to tell if a captured image is that of a real person or a photograph."
@@ -12,6 +12,8 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'Custom', :file => 'LICENSE' }
   s.source       = { :http => "https://github.com/hyperverge/capture-ios-sdk/blob/master/HyperSnapSDK.zip?raw=true" }
   s.ios.vendored_frameworks = "HyperSnapSDK.framework"
+  # s.resource_bundles = {
+  #   'HVResources' => ['HVResources.bundle'] }
 
 
 end
