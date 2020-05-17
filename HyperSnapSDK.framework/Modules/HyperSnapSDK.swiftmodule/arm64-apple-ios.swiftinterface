@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
-// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HyperSnapSDK
+// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name HyperSnapSDK
 import AVFoundation
 import CommonCrypto
 import CoreLocation
@@ -67,7 +67,7 @@ extension HVDocsViewController {
   @objc deinit
 }
 @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
-  @objc public static let StoryBoardName: Swift.String
+  @objc public static var StoryBoardName: Swift.String
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, product: HyperSnapSDK.HyperSnapParams.Product)
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
@@ -373,16 +373,3 @@ public struct HVToast {
   public static func setMessageAlignment(_ alignment: UIKit.NSTextAlignment)
   public static func setCornerRadius(_ radius: CoreGraphics.CGFloat)
 }
-extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Hashable {}
-extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.RawRepresentable {}
-extension HyperSnapSDK.HyperSnapParams.Region : Swift.Equatable {}
-extension HyperSnapSDK.HyperSnapParams.Region : Swift.Hashable {}
-extension HyperSnapSDK.HyperSnapParams.Region : Swift.RawRepresentable {}
-extension HyperSnapSDK.HyperSnapParams.Product : Swift.Equatable {}
-extension HyperSnapSDK.HyperSnapParams.Product : Swift.Hashable {}
-extension HyperSnapSDK.HyperSnapParams.Product : Swift.RawRepresentable {}
-extension HyperSnapSDK.HyperSnapParams.LivenessMode : Swift.Hashable {}
-extension HyperSnapSDK.HyperSnapParams.LivenessMode : Swift.RawRepresentable {}
-extension HyperSnapSDK.HyperSnapParams.FaceMatchMode : Swift.Equatable {}
-extension HyperSnapSDK.HyperSnapParams.FaceMatchMode : Swift.Hashable {}
-extension HyperSnapSDK.HyperSnapParams.FaceMatchMode : Swift.RawRepresentable {}

@@ -19,7 +19,7 @@
 		044E324120C8473D00AEAB5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 044E324320C8473D00AEAB5C /* Localizable.strings */; };
 		0454347D246F094300602821 /* HyperSnapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0454347C246F094300602821 /* HyperSnapSDK.framework */; };
 		0454347E246F094300602821 /* HyperSnapSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0454347C246F094300602821 /* HyperSnapSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0496BAF2246ECAFC00514139 /* HVResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0496BAF1246ECAFC00514139 /* HVResources.bundle */; };
+		11445B3BF0FDD0935BC1D30C /* libPods-HyperSnapDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C3F07A206B184E92D3EB48 /* libPods-HyperSnapDemoApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,12 +49,12 @@
 		044E324220C8473D00AEAB5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		044E324420C8474800AEAB5C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0454347C246F094300602821 /* HyperSnapSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HyperSnapSDK.framework; path = ../HyperSnapSDK.framework; sourceTree = "<group>"; };
-		0496BAF1246ECAFC00514139 /* HVResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HVResources.bundle; path = ../HVResources.bundle; sourceTree = "<group>"; };
 		04E1DF192060DEE4002F23FC /* HyperSnapDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSnapDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E1DF282060DEE4002F23FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		254FDDC12A4AEDCF008B2FAF /* Pods-HyperSnapDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSnapDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		61770EB48F83714FCB8C380C /* Pods_HyperSnapDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperSnapDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A2A3D31B60A145FB9315587 /* Pods-HyperSnapDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSnapDemoApp.release.xcconfig"; path = "Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		92C3F07A206B184E92D3EB48 /* libPods-HyperSnapDemoApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HyperSnapDemoApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0454347D246F094300602821 /* HyperSnapSDK.framework in Frameworks */,
+				11445B3BF0FDD0935BC1D30C /* libPods-HyperSnapDemoApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +73,6 @@
 		04E1DF102060DEE4002F23FC = {
 			isa = PBXGroup;
 			children = (
-				0496BAF1246ECAFC00514139 /* HVResources.bundle */,
 				04E1DF1B2060DEE4002F23FC /* HyperSnapDemoApp */,
 				04E1DF1A2060DEE4002F23FC /* Products */,
 				9D179BFEDFC1D3881A48AB74 /* Pods */,
@@ -111,6 +111,7 @@
 			children = (
 				0454347C246F094300602821 /* HyperSnapSDK.framework */,
 				61770EB48F83714FCB8C380C /* Pods_HyperSnapDemoApp.framework */,
+				92C3F07A206B184E92D3EB48 /* libPods-HyperSnapDemoApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +137,7 @@
 				04E1DF162060DEE4002F23FC /* Frameworks */,
 				04E1DF172060DEE4002F23FC /* Resources */,
 				0454347F246F094300602821 /* Embed Frameworks */,
+				EF774A8AD86173CED46B6F83 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,7 +192,6 @@
 				044E323820C843F800AEAB5C /* Main.storyboard in Resources */,
 				044E324120C8473D00AEAB5C /* Localizable.strings in Resources */,
 				044E323E20C843F800AEAB5C /* Assets.xcassets in Resources */,
-				0496BAF2246ECAFC00514139 /* HVResources.bundle in Resources */,
 				044E323C20C843F800AEAB5C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +199,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		EF774A8AD86173CED46B6F83 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-resources.sh",
+				"${PODS_ROOT}/../../HVResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HVResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HyperSnapDemoApp/Pods-HyperSnapDemoApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F475FD53898C90C11C4D5F24 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,6 +394,7 @@
 				INFOPLIST_FILE = HyperSnapDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = co.hyperverge.HyperSnapDemoAppsdf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -395,6 +415,7 @@
 				INFOPLIST_FILE = HyperSnapDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = co.hyperverge.HyperSnapDemoAppsdf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

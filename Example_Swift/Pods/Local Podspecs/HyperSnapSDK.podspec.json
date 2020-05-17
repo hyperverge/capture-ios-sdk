@@ -18,5 +18,6 @@
   },
   "ios": {
     "vendored_frameworks": "HyperSnapSDK.framework"
-  }
+  },
+  "resources": "HVResources.bundle"
 }
