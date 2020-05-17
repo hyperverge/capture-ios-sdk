@@ -1,16 +1,16 @@
 PODS:
-  - HyperSnapSDK (2.4.13)
+  - HyperSnapSDK (2.4.14)
 
 DEPENDENCIES:
-  - HyperSnapSDK (from `../`)
+  - HyperSnapSDK
 
-EXTERNAL SOURCES:
-  HyperSnapSDK:
-    :path: "../"
+SPEC REPOS:
+  trunk:
+    - HyperSnapSDK
 
 SPEC CHECKSUMS:
-  HyperSnapSDK: a4130016f27eeed8c6b7882eb3ce4f4ace9706c3
+  HyperSnapSDK: 637be2ec5ab769bf288a131bdaebb518611b708e
 
-PODFILE CHECKSUM: ecd16154ab7ba9f7f75b4c14164342dc39646158
+PODFILE CHECKSUM: 8c924100c31f73327c5556c3c7ab3b3a220c9d8c
 
 COCOAPODS: 1.9.1
