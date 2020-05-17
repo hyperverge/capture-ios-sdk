@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'Custom', :file => 'LICENSE' }
   s.source       = { :http => "https://github.com/hyperverge/capture-ios-sdk/blob/master/HyperSnapSDK.zip?raw=true" }
   s.ios.vendored_frameworks = "HyperSnapSDK.framework"
-  s.resources = { :http => "https://github.com/hyperverge/capture-ios-sdk/blob/master/HVResources.bundle.zip?raw=true" }
-  # s.resources = "HVResources.bundle"
+  #s.resources = { :http => "https://github.com/hyperverge/capture-ios-sdk/blob/master/HVResources.bundle.zip?raw=true" }
+  s.resource = "HVResources.bundle"
 
 
 end
