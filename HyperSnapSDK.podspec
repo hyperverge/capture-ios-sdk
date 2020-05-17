@@ -10,10 +10,11 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = "9.0"
   s.license          = { :type => 'Custom', :file => 'LICENSE' }
-  s.source       = { :http => "https://github.com/hyperverge/capture-ios-sdk/blob/master/HyperSnapSDK.zip?raw=true" }
+  s.source       = { :http => "https://github.com/hyperverge/capture-ios-sdk/blob/master/HyperSnapSDK.zip?raw=true"}
+  s.source_files = "HyperSnapSDK.framework/Headers/*.h"
   s.ios.vendored_frameworks = "HyperSnapSDK.framework"
   #s.resources = { :http => "https://github.com/hyperverge/capture-ios-sdk/blob/master/HVResources.bundle.zip?raw=true" }
-  s.resource = "HVResources.bundle"
+  s.ios.resource = 'HVResources.bundle'
 
 
 end
