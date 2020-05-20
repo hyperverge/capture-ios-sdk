@@ -87,6 +87,7 @@ class ViewController: UIViewController {
         let hvFaceConfig = HVFaceConfig()
         HVCameraButton.setImageTintColor(UIColor(red: 0.85, green: 0.22, blue: 0.19, alpha: 1.0))
 //        hvFaceConfig.setShouldShowFullScreenViewController(false)
+        hvFaceConfig.setShouldShowCameraSwitchButton(true)
         hvFaceConfig.setShouldShowInstructionsPage(true)
         hvFaceConfig.setShouldShowInstructionsPage(true)
         let headers = ["referenceid":"test","uuid":"abcd"]
