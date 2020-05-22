@@ -9,5 +9,8 @@ pod 'HyperSnapSDK', :path => '../'
 
 #pod 'HyperSnapSDK'#, '2.4.6'
 
+#pod 'HyperSnapSDK', :git => 'https://github.com/hyperverge/capture-ios-sdk.git', :commit => 'b61e360638acb291a7991f49623a1ce3e6953606'
+
+
 
 end
