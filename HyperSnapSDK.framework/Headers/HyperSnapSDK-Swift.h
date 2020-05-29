@@ -611,6 +611,7 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
   FaceMatchModeFace_Id = 0,
   FaceMatchModeFace_Face = 1,
   FaceMatchModeFace_IdFaceString = 2,
+  FaceMatchModeGeneric = 3,
 };
 
 
@@ -630,6 +631,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
++ (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -1272,6 +1274,7 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
   FaceMatchModeFace_Id = 0,
   FaceMatchModeFace_Face = 1,
   FaceMatchModeFace_IdFaceString = 2,
+  FaceMatchModeGeneric = 3,
 };
 
 
@@ -1291,6 +1294,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
++ (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;

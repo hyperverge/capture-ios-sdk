@@ -73,6 +73,7 @@ extension HVDocsViewController {
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
   @objc public static func setShouldUseAnalytics(_ shouldUse: Swift.Bool)
+  @objc public static func setTimeoutIntervalForRequest(_ timeout: Swift.Double)
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?) -> Swift.Void)
   @objc public static func setShouldReturnRawResponse(_ shouldReturn: Swift.Bool)
   @objc public static func deleteImageAtUri(_ imageUri: Swift.String)
@@ -124,6 +125,7 @@ extension HVDocsViewController {
     case Face_Id
     case Face_Face
     case Face_IdFaceString
+    case Generic
     public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
     public var rawValue: Swift.Int {

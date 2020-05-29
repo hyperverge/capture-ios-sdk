@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         HyperSnapDemoAppLocalizer.DoTheSwizzling()
-        
+                
         if let appID = Global.shared.appID, let appKey = Global.shared.appKey, let region = Global.shared.region {
             //SDK Initialization Step
             HyperSnapSDKConfig.initialize(appId: appID, appKey: appKey, region: region)
