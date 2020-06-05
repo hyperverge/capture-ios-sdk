@@ -628,6 +628,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
 ///
 + (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region;
+/// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
+/// \param appId Provided by HyperVerge
+///
+/// \param accessToken Obtained from HyperVerge’s /login API
+///
+/// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
+///
++ (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
@@ -1291,6 +1299,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
 ///
 + (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region;
+/// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
+/// \param appId Provided by HyperVerge
+///
+/// \param accessToken Obtained from HyperVerge’s /login API
+///
+/// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
+///
++ (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;

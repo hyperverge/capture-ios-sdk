@@ -70,6 +70,7 @@ extension HVDocsViewController {
   @objc public static let StoryBoardName: Swift.String
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, product: HyperSnapSDK.HyperSnapParams.Product)
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
+  @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
   @objc public static func setShouldUseAnalytics(_ shouldUse: Swift.Bool)
