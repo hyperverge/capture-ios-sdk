@@ -309,7 +309,7 @@ extension HVDocsViewController {
   @objc deinit
 }
 @objc public class HVFaceConfig : ObjectiveC.NSObject {
-  public var textConfig: HyperSnapSDK.HVFaceConfig.TextConfig
+  @objc public var textConfig: HyperSnapSDK.HVFaceConfig.FaceTextConfig
   @objc public func setLivenessMode(_ livenessMode: HyperSnapSDK.HyperSnapParams.LivenessMode)
   @objc public func setClientID(clientId: Swift.String)
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
@@ -328,7 +328,7 @@ extension HVDocsViewController {
   @objc public func setCaptureButtonEnabledImage(_ image: UIKit.UIImage)
   @objc public func setCaptureButtonDisabledImage(_ image: UIKit.UIImage)
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
-  public class TextConfig {
+  @objc public class FaceTextConfig : ObjectiveC.NSObject {
     @objc public func setFaceCaptureTitle(_ text: Swift.String)
     @objc public func setFaceCaptureTitle2(_ text: Swift.String)
     @objc public func setFaceCaptureMultipleFacesDetectedText(_ text: Swift.String)
@@ -340,13 +340,14 @@ extension HVDocsViewController {
     @objc public func setFaceCaptureFaceNotFoundText2(_ text: Swift.String)
     @objc public func setFaceCaptureFaceNotFoundToastText(_ text: Swift.String)
     @objc public func setFaceCaptureActivityText(_ text: Swift.String)
+    @objc override dynamic public init()
     @objc deinit
   }
   @objc override dynamic public init()
   @objc deinit
 }
 @objc public class HVDocConfig : ObjectiveC.NSObject {
-  public var textConfig: HyperSnapSDK.HVDocConfig.TextConfig
+  @objc public var textConfig: HyperSnapSDK.HVDocConfig.DocTextConfig
   @objc public func setDocumentType(_ type: HyperSnapSDK.HyperSnapParams.DocumentType)
   @objc public func setAspectRatio(_ aspectRatio: Swift.Double)
   @objc public func setShouldShowReviewPage(_ shouldShow: Swift.Bool)
@@ -356,7 +357,7 @@ extension HVDocsViewController {
   @objc public func setShouldShowFullScreenViewController(_ shouldShow: Swift.Bool)
   @objc public func setCaptureButtonEnabledImage(_ image: UIKit.UIImage)
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
-  public class TextConfig {
+  @objc public class DocTextConfig : ObjectiveC.NSObject {
     @objc public func setDocCaptureTitle(_ text: Swift.String)
     @objc public func setDocCaptureDescription(_ text: Swift.String)
     @objc public func setDocCaptureSubText(_ text: Swift.String)
@@ -364,6 +365,7 @@ extension HVDocsViewController {
     @objc public func setDocReviewDescription(_ text: Swift.String)
     @objc public func setDocReviewRetakeButtonText(_ text: Swift.String)
     @objc public func setDocReviewContinueButtonText(_ text: Swift.String)
+    @objc override dynamic public init()
     @objc deinit
   }
   @objc override dynamic public init()

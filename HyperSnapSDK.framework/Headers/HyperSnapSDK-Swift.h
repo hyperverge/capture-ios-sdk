@@ -214,12 +214,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class DocTextConfig;
 enum DocumentType : NSInteger;
 @class UIImage;
 @class UINavigationController;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 @interface HVDocConfig : NSObject
+@property (nonatomic, strong) DocTextConfig * _Nonnull textConfig;
 - (void)setDocumentType:(enum DocumentType)type;
 - (void)setAspectRatio:(double)aspectRatio;
 - (void)setShouldShowReviewPage:(BOOL)shouldShow;
@@ -229,6 +231,19 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
+@interface DocTextConfig : NSObject
+- (void)setDocCaptureTitle:(NSString * _Nonnull)text;
+- (void)setDocCaptureDescription:(NSString * _Nonnull)text;
+- (void)setDocCaptureSubText:(NSString * _Nonnull)text;
+- (void)setDocReviewTitle:(NSString * _Nonnull)text;
+- (void)setDocReviewDescription:(NSString * _Nonnull)text;
+- (void)setDocReviewRetakeButtonText:(NSString * _Nonnull)text;
+- (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -374,10 +389,12 @@ SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class FaceTextConfig;
 enum LivenessMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : NSObject
+@property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setClientIDWithClientId:(NSString * _Nonnull)clientId;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
@@ -396,6 +413,23 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
+@interface FaceTextConfig : NSObject
+- (void)setFaceCaptureTitle:(NSString * _Nonnull)text;
+- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMultipleFacesDetectedText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureWrongOrientationText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureFaceFoundText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMoveAwayText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMoveAwayText2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureFaceNotFoundText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureFaceNotFoundText2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -885,12 +919,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class DocTextConfig;
 enum DocumentType : NSInteger;
 @class UIImage;
 @class UINavigationController;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 @interface HVDocConfig : NSObject
+@property (nonatomic, strong) DocTextConfig * _Nonnull textConfig;
 - (void)setDocumentType:(enum DocumentType)type;
 - (void)setAspectRatio:(double)aspectRatio;
 - (void)setShouldShowReviewPage:(BOOL)shouldShow;
@@ -900,6 +936,19 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
+@interface DocTextConfig : NSObject
+- (void)setDocCaptureTitle:(NSString * _Nonnull)text;
+- (void)setDocCaptureDescription:(NSString * _Nonnull)text;
+- (void)setDocCaptureSubText:(NSString * _Nonnull)text;
+- (void)setDocReviewTitle:(NSString * _Nonnull)text;
+- (void)setDocReviewDescription:(NSString * _Nonnull)text;
+- (void)setDocReviewRetakeButtonText:(NSString * _Nonnull)text;
+- (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1045,10 +1094,12 @@ SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class FaceTextConfig;
 enum LivenessMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : NSObject
+@property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setClientIDWithClientId:(NSString * _Nonnull)clientId;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
@@ -1067,6 +1118,23 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
+@interface FaceTextConfig : NSObject
+- (void)setFaceCaptureTitle:(NSString * _Nonnull)text;
+- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMultipleFacesDetectedText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureWrongOrientationText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureFaceFoundText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMoveAwayText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMoveAwayText2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureFaceNotFoundText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureFaceNotFoundText2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

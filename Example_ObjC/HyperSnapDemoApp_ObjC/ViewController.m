@@ -25,7 +25,7 @@ NSString* appKey = @"";
 - (void)viewDidLoad {
     [super viewDidLoad];
     //Initializes the SDK. Please set the 'appId' and 'appKey' provided by HyperVerge
-    [HyperSnapSDK initializeWithAppId:appId appKey:appKey region:RegionAsiaPacific product:ProductFaceID];
+    [HyperSnapSDKConfig initializeWithAppId:appId appKey:appKey region:RegionAsiaPacific product:ProductFaceID];
 
 }
 

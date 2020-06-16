@@ -1,6 +1,0 @@
-framework module HyperSnapSDK_Instructions {
-  umbrella header "HyperSnapSDK_Instructions.h"
-
-  export *
-  module * { export * }
-}
