@@ -351,7 +351,7 @@ extension HVDocsViewController {
   @objc public func setDocumentType(_ type: HyperSnapSDK.HyperSnapParams.DocumentType)
   @objc public func setAspectRatio(_ aspectRatio: Swift.Double)
   @objc public func setShouldShowReviewPage(_ shouldShow: Swift.Bool)
-  @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool, resourcePath: Swift.String? = nil)
+  @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
   @objc public func setShouldShowFlashButton(_ shouldShow: Swift.Bool)
   @objc public func setShouldAddPadding(_ shouldAdd: Swift.Bool)
   @objc public func setShouldShowFullScreenViewController(_ shouldShow: Swift.Bool)

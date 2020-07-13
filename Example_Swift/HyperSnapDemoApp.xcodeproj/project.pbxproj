@@ -18,23 +18,8 @@
 		044E323F20C843F800AEAB5C /* SwitchLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E323720C843F800AEAB5C /* SwitchLanguage.swift */; };
 		044E324120C8473D00AEAB5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 044E324320C8473D00AEAB5C /* Localizable.strings */; };
 		0454347D246F094300602821 /* HyperSnapSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0454347C246F094300602821 /* HyperSnapSDK.framework */; };
-		0454347E246F094300602821 /* HyperSnapSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0454347C246F094300602821 /* HyperSnapSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		11445B3BF0FDD0935BC1D30C /* libPods-HyperSnapDemoApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92C3F07A206B184E92D3EB48 /* libPods-HyperSnapDemoApp.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0454347F246F094300602821 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0454347E246F094300602821 /* HyperSnapSDK.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0401F14E222D471E00A152AA /* DocumentSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSelectionViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +121,6 @@
 				04E1DF152060DEE4002F23FC /* Sources */,
 				04E1DF162060DEE4002F23FC /* Frameworks */,
 				04E1DF172060DEE4002F23FC /* Resources */,
-				0454347F246F094300602821 /* Embed Frameworks */,
 				5AC4278E411D4E33E5F153AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -390,7 +374,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GTKBMCL9MG;
+				CURRENT_PROJECT_VERSION = 1.4;
+				DEVELOPMENT_TEAM = 7CEEYYY3J3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -398,8 +383,9 @@
 				INFOPLIST_FILE = HyperSnapDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = co.hyperverge.HyperSnapDemoAppsdf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperverge.Liveness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -415,7 +401,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GTKBMCL9MG;
+				CURRENT_PROJECT_VERSION = 1.4;
+				DEVELOPMENT_TEAM = 7CEEYYY3J3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -423,8 +410,9 @@
 				INFOPLIST_FILE = HyperSnapDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = co.hyperverge.HyperSnapDemoAppsdf;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperverge.Liveness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;

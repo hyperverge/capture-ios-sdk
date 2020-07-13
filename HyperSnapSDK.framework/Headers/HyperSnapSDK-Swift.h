@@ -225,7 +225,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setDocumentType:(enum DocumentType)type;
 - (void)setAspectRatio:(double)aspectRatio;
 - (void)setShouldShowReviewPage:(BOOL)shouldShow;
-- (void)setShouldShowInstructionsPage:(BOOL)shouldShow resourcePath:(NSString * _Nullable)resourcePath;
+- (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setShouldShowFlashButton:(BOOL)shouldShow;
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
@@ -930,7 +930,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setDocumentType:(enum DocumentType)type;
 - (void)setAspectRatio:(double)aspectRatio;
 - (void)setShouldShowReviewPage:(BOOL)shouldShow;
-- (void)setShouldShowInstructionsPage:(BOOL)shouldShow resourcePath:(NSString * _Nullable)resourcePath;
+- (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setShouldShowFlashButton:(BOOL)shouldShow;
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
