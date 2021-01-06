@@ -221,8 +221,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 
 @class DocTextConfig;
 enum DocumentType : NSInteger;
+@class UIViewController;
 @class UIImage;
 @class UINavigationController;
+enum DocumentSide : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 @interface HVDocConfig : NSObject
@@ -231,13 +233,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setAspectRatio:(double)aspectRatio;
 - (void)setShouldShowReviewPage:(BOOL)shouldShow;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
+- (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setShouldShowFlashButton:(BOOL)shouldShow;
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
+- (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, DocumentSide, open) {
+  DocumentSideFront = 0,
+  DocumentSideBack = 1,
+};
 
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
@@ -245,10 +255,13 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocCaptureTitle:(NSString * _Nonnull)text;
 - (void)setDocCaptureDescription:(NSString * _Nonnull)text;
 - (void)setDocCaptureSubText:(NSString * _Nonnull)text;
+- (void)setDocCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setDocReviewTitle:(NSString * _Nonnull)text;
 - (void)setDocReviewDescription:(NSString * _Nonnull)text;
 - (void)setDocReviewRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
+- (void)setDocRetakePageRetakeButtonText:(NSString * _Nonnull)text;
+- (void)setDocRetakePageTitleText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -330,13 +343,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel")
 @end
 
 @class HVError;
+@class HVResponse;
 @class NSBundle;
 
 /// DocCameraViewController is the base class which will be used from outside.
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 @interface HVDocsViewController : UIViewController
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
-@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull);
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 /// Starting point for Document Capture.
 /// note:
@@ -347,7 +361,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 ///
 /// \param completionHandler Closure that will be called after successful capture + processing or when there is an error
 ///
-+ (void)start:(UIViewController * _Nonnull)callingVC hvDocConfig:(HVDocConfig * _Nonnull)hvDocConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull))completionHandler;
++ (void)start:(UIViewController * _Nonnull)callingVC hvDocConfig:(HVDocConfig * _Nonnull)hvDocConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull))completionHandler;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
@@ -401,7 +415,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : NSObject
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
-- (void)setClientIDWithClientId:(NSString * _Nonnull)clientId;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setShouldReturnFullImageUri:(BOOL)shouldReturn;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
@@ -418,6 +431,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -437,6 +451,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureFaceNotFoundText2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
+- (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
+- (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -477,7 +493,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK25HVFaceInstructionTopLabel")
 
 SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 @interface HVFaceInstructionsViewController : UIViewController
-@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable, UIViewController * _Nonnull);
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
@@ -491,7 +507,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 @interface HVFaceViewController : UIViewController
-@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable, UIViewController * _Nonnull);
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
 /// Starting point for Face Capture and liveness.
 /// note:
@@ -502,7 +518,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 ///
 /// \param completionHandler Closure that will be called after successful capture + processing or when there is an error
 ///
-+ (void)start:(UIViewController * _Nonnull)callingVC hvFaceConfig:(HVFaceConfig * _Nonnull)hvFaceConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable, UIViewController * _Nonnull))completionHandler;
++ (void)start:(UIViewController * _Nonnull)callingVC hvFaceConfig:(HVFaceConfig * _Nonnull)hvFaceConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull))completionHandler;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
@@ -563,15 +579,12 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 ///     headers: An object of type [String:String]?. It is null unless there were any special headers sent by the HyperVerge’s backend.
 ///   </li>
 /// </ul>
-+ (void)makeOCRCallWithEndpoint:(NSString * _Nonnull)endpoint documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable))completionHandler;
++ (void)makeOCRAPICallWithEndpoint:(NSString * _Nonnull)endpoint documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
 /// Helper method to make Face Match calls to HyperVerge’s Backend.
 /// The face match call compares face in an ID card and the face in a user photo and gives a match score.
 /// <ul>
 ///   <li>
 ///     Parameters:
-///   </li>
-///   <li>
-///     endpoint: The full endpoint for the API Call
 ///   </li>
 ///   <li>
 ///     faceUri: The local path of the user photo. This is the ‘imageUri’ returned in the result of the Face Capture flow.
@@ -598,10 +611,31 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 ///     headers: An object of type [String:String]?. It is null unless there were any special headers sent by the HyperVerge’s backend.
 ///   </li>
 /// </ul>
-+ (void)makeFaceMatchCallWithEndpoint:(NSString * _Nonnull)endpoint faceUri:(NSString * _Nonnull)faceUri documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable))completionHandler;
-+ (void)makeFaceMatchCallWithEndpoint:(NSString * _Nonnull)endpoint image1:(NSString * _Nonnull)image1 image2:(NSString * _Nonnull)image2 faceMatchMode:(enum FaceMatchMode)faceMatchMode parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable))completionHandler;
-+ (void)makeMatchingAPICallWithEndpoint:(NSString * _Nonnull)endpoint parameters:(NSDictionary<NSString *, id> * _Nonnull)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable))completionHandler;
++ (void)makeFaceMatchCallWithFaceUri:(NSString * _Nonnull)faceUri documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeFaceMatchAPICallWithEndpoint:(NSString * _Nonnull)endpoint image1:(NSString * _Nonnull)image1 image2:(NSString * _Nonnull)image2 faceMatchMode:(enum FaceMatchMode)faceMatchMode parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeTextMatchAPICallWithEndpoint:(NSString * _Nonnull)endpoint parameters:(NSDictionary<NSString *, id> * _Nonnull)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK10HVResponse")
+@interface HVResponse : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVRetakeButton")
+@interface HVRetakeButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
@@ -658,11 +692,6 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull StoryBoardName;)
-+ (NSString * _Nonnull)StoryBoardName SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull versionNumber;)
-+ (NSString * _Nonnull)versionNumber SWIFT_WARN_UNUSED_RESULT;
-+ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region product:(enum Product)product;
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
 /// \param appId Provided by HyperVerge
 ///
@@ -687,6 +716,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
 + (NSString * _Nonnull)sortDictionaryAlphabetically:(NSDictionary<NSString *, id> * _Nonnull)dictionary SWIFT_WARN_UNUSED_RESULT;
++ (void)startUserSession;
++ (void)startUserSession:(NSString * _Nonnull)transactionId;
++ (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -935,8 +967,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 
 @class DocTextConfig;
 enum DocumentType : NSInteger;
+@class UIViewController;
 @class UIImage;
 @class UINavigationController;
+enum DocumentSide : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 @interface HVDocConfig : NSObject
@@ -945,13 +979,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setAspectRatio:(double)aspectRatio;
 - (void)setShouldShowReviewPage:(BOOL)shouldShow;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
+- (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setShouldShowFlashButton:(BOOL)shouldShow;
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
+- (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, DocumentSide, open) {
+  DocumentSideFront = 0,
+  DocumentSideBack = 1,
+};
 
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
@@ -959,10 +1001,13 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocCaptureTitle:(NSString * _Nonnull)text;
 - (void)setDocCaptureDescription:(NSString * _Nonnull)text;
 - (void)setDocCaptureSubText:(NSString * _Nonnull)text;
+- (void)setDocCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setDocReviewTitle:(NSString * _Nonnull)text;
 - (void)setDocReviewDescription:(NSString * _Nonnull)text;
 - (void)setDocReviewRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
+- (void)setDocRetakePageRetakeButtonText:(NSString * _Nonnull)text;
+- (void)setDocRetakePageTitleText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1044,13 +1089,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel")
 @end
 
 @class HVError;
+@class HVResponse;
 @class NSBundle;
 
 /// DocCameraViewController is the base class which will be used from outside.
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 @interface HVDocsViewController : UIViewController
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
-@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull);
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 /// Starting point for Document Capture.
 /// note:
@@ -1061,7 +1107,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 ///
 /// \param completionHandler Closure that will be called after successful capture + processing or when there is an error
 ///
-+ (void)start:(UIViewController * _Nonnull)callingVC hvDocConfig:(HVDocConfig * _Nonnull)hvDocConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, UIViewController * _Nonnull))completionHandler;
++ (void)start:(UIViewController * _Nonnull)callingVC hvDocConfig:(HVDocConfig * _Nonnull)hvDocConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull))completionHandler;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
@@ -1115,7 +1161,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : NSObject
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
-- (void)setClientIDWithClientId:(NSString * _Nonnull)clientId;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setShouldReturnFullImageUri:(BOOL)shouldReturn;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
@@ -1132,6 +1177,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1151,6 +1197,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureFaceNotFoundText2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
+- (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
+- (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1191,7 +1239,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK25HVFaceInstructionTopLabel")
 
 SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 @interface HVFaceInstructionsViewController : UIViewController
-@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable, UIViewController * _Nonnull);
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
@@ -1205,7 +1253,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 @interface HVFaceViewController : UIViewController
-@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable, UIViewController * _Nonnull);
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
 /// Starting point for Face Capture and liveness.
 /// note:
@@ -1216,7 +1264,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 ///
 /// \param completionHandler Closure that will be called after successful capture + processing or when there is an error
 ///
-+ (void)start:(UIViewController * _Nonnull)callingVC hvFaceConfig:(HVFaceConfig * _Nonnull)hvFaceConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable, UIViewController * _Nonnull))completionHandler;
++ (void)start:(UIViewController * _Nonnull)callingVC hvFaceConfig:(HVFaceConfig * _Nonnull)hvFaceConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull))completionHandler;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
@@ -1277,15 +1325,12 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 ///     headers: An object of type [String:String]?. It is null unless there were any special headers sent by the HyperVerge’s backend.
 ///   </li>
 /// </ul>
-+ (void)makeOCRCallWithEndpoint:(NSString * _Nonnull)endpoint documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable))completionHandler;
++ (void)makeOCRAPICallWithEndpoint:(NSString * _Nonnull)endpoint documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
 /// Helper method to make Face Match calls to HyperVerge’s Backend.
 /// The face match call compares face in an ID card and the face in a user photo and gives a match score.
 /// <ul>
 ///   <li>
 ///     Parameters:
-///   </li>
-///   <li>
-///     endpoint: The full endpoint for the API Call
 ///   </li>
 ///   <li>
 ///     faceUri: The local path of the user photo. This is the ‘imageUri’ returned in the result of the Face Capture flow.
@@ -1312,10 +1357,31 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 ///     headers: An object of type [String:String]?. It is null unless there were any special headers sent by the HyperVerge’s backend.
 ///   </li>
 /// </ul>
-+ (void)makeFaceMatchCallWithEndpoint:(NSString * _Nonnull)endpoint faceUri:(NSString * _Nonnull)faceUri documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable))completionHandler;
-+ (void)makeFaceMatchCallWithEndpoint:(NSString * _Nonnull)endpoint image1:(NSString * _Nonnull)image1 image2:(NSString * _Nonnull)image2 faceMatchMode:(enum FaceMatchMode)faceMatchMode parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable))completionHandler;
-+ (void)makeMatchingAPICallWithEndpoint:(NSString * _Nonnull)endpoint parameters:(NSDictionary<NSString *, id> * _Nonnull)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable, NSDictionary<NSString *, NSString *> * _Nullable))completionHandler;
++ (void)makeFaceMatchCallWithFaceUri:(NSString * _Nonnull)faceUri documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeFaceMatchAPICallWithEndpoint:(NSString * _Nonnull)endpoint image1:(NSString * _Nonnull)image1 image2:(NSString * _Nonnull)image2 faceMatchMode:(enum FaceMatchMode)faceMatchMode parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeTextMatchAPICallWithEndpoint:(NSString * _Nonnull)endpoint parameters:(NSDictionary<NSString *, id> * _Nonnull)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK10HVResponse")
+@interface HVResponse : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVRetakeButton")
+@interface HVRetakeButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
@@ -1372,11 +1438,6 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull StoryBoardName;)
-+ (NSString * _Nonnull)StoryBoardName SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull versionNumber;)
-+ (NSString * _Nonnull)versionNumber SWIFT_WARN_UNUSED_RESULT;
-+ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region product:(enum Product)product;
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
 /// \param appId Provided by HyperVerge
 ///
@@ -1401,6 +1462,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
 + (NSString * _Nonnull)sortDictionaryAlphabetically:(NSDictionary<NSString *, id> * _Nonnull)dictionary SWIFT_WARN_UNUSED_RESULT;
++ (void)startUserSession;
++ (void)startUserSession:(NSString * _Nonnull)transactionId;
++ (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
