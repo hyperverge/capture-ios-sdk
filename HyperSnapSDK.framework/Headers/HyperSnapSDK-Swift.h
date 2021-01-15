@@ -240,6 +240,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
+- (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -416,7 +417,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
-- (void)setShouldReturnFullImageUri:(BOOL)shouldReturn;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
 - (void)setLivenessAPIHeaders:(NSDictionary<NSString *, NSString *> * _Nonnull)headers;
 - (void)setShouldEnablePadding:(BOOL)shouldEnable;
@@ -433,6 +433,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
+- (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -716,8 +717,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
 + (NSString * _Nonnull)sortDictionaryAlphabetically:(NSDictionary<NSString *, id> * _Nonnull)dictionary SWIFT_WARN_UNUSED_RESULT;
-+ (void)startUserSession;
-+ (void)startUserSession:(NSString * _Nonnull)transactionId;
++ (void)startUserSession:(NSString * _Nullable)transactionId;
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -986,6 +986,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
+- (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1162,7 +1163,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
-- (void)setShouldReturnFullImageUri:(BOOL)shouldReturn;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
 - (void)setLivenessAPIHeaders:(NSDictionary<NSString *, NSString *> * _Nonnull)headers;
 - (void)setShouldEnablePadding:(BOOL)shouldEnable;
@@ -1179,6 +1179,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
+- (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1462,8 +1463,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
 + (NSString * _Nonnull)sortDictionaryAlphabetically:(NSDictionary<NSString *, id> * _Nonnull)dictionary SWIFT_WARN_UNUSED_RESULT;
-+ (void)startUserSession;
-+ (void)startUserSession:(NSString * _Nonnull)transactionId;
++ (void)startUserSession:(NSString * _Nullable)transactionId;
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

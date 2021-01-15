@@ -77,8 +77,7 @@ extension HVDocsViewController {
   @objc public static func setShouldReturnRawResponse(_ shouldReturn: Swift.Bool)
   @objc public static func deleteImageAtUri(_ imageUri: Swift.String)
   @objc public static func sortDictionaryAlphabetically(_ dictionary: [Swift.String : Swift.AnyObject]) -> Swift.String
-  @objc public static func startUserSession()
-  @objc public static func startUserSession(_ transactionId: Swift.String)
+  @objc public static func startUserSession(_ transactionId: Swift.String? = nil)
   @objc public static func endUserSession()
   @objc deinit
   @objc override dynamic public init()
@@ -331,7 +330,6 @@ extension HVDocsViewController {
   @objc public var textConfig: HyperSnapSDK.HVFaceConfig.FaceTextConfig
   @objc public func setLivenessMode(_ livenessMode: HyperSnapSDK.HyperSnapParams.LivenessMode)
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
-  @objc public func setShouldReturnFullImageUri(_ shouldReturn: Swift.Bool)
   @objc public func setLivenessAPIParameters(_ parameters: [Swift.String : Swift.AnyObject])
   @objc public func setLivenessAPIHeaders(_ headers: [Swift.String : Swift.String])
   @objc public func setShouldEnablePadding(_ shouldEnable: Swift.Bool)
@@ -348,6 +346,7 @@ extension HVDocsViewController {
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
   @objc public func setShouldRejectFaceNotStraight(_ shouldReject: Swift.Bool)
+  @objc public func setShouldHandleRetries(_ shouldHandle: Swift.Bool)
   @_inheritsConvenienceInitializers @objc public class FaceTextConfig : ObjectiveC.NSObject {
     @objc public func setFaceCaptureTitle(_ text: Swift.String)
     @objc public func setFaceCaptureTitle2(_ text: Swift.String)
@@ -388,6 +387,9 @@ extension HVDocsViewController {
   public var attemptsCount: Swift.Int {
     get
   }
+  public var retakeMessage: Swift.String? {
+    get
+  }
   @objc override dynamic public init()
   @objc deinit
 }
@@ -404,6 +406,7 @@ extension HVDocsViewController {
   @objc public func setCaptureButtonEnabledImage(_ image: UIKit.UIImage)
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
+  @objc public func setShouldHandleRetries(_ shouldHandle: Swift.Bool)
   @objc public func setOCRAPIDetails(_ endpoint: Swift.String, documentSide: HyperSnapSDK.HVDocConfig.DocumentSide, params: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?)
   @objc public enum DocumentSide : Swift.Int {
     case front

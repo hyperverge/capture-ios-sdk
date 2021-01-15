@@ -4,7 +4,7 @@
 //
 //  Created by Srinija on 06/06/18.
 //  Copyright © 2018 hyperverge. All rights reserved.
-//Version 2.5.0
+//Version 2.5.1
 
 #import <UIKit/UIKit.h>
 //#import "OpenCVWrapper.h"
