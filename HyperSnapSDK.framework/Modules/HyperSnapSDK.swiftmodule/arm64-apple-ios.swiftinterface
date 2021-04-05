@@ -77,7 +77,7 @@ extension HVDocsViewController {
   @objc public static func setShouldReturnRawResponse(_ shouldReturn: Swift.Bool)
   @objc public static func deleteImageAtUri(_ imageUri: Swift.String)
   @objc public static func sortDictionaryAlphabetically(_ dictionary: [Swift.String : Swift.AnyObject]) -> Swift.String
-  @objc public static func startUserSession(_ transactionId: Swift.String? = nil)
+  @objc public static func startUserSession(_ transactionId: Swift.String? = nil) -> HyperSnapSDK.HVError?
   @objc public static func endUserSession()
   @objc deinit
   @objc override dynamic public init()
@@ -369,25 +369,25 @@ extension HVDocsViewController {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class HVResponse : ObjectiveC.NSObject {
-  public var apiResult: [Swift.String : Swift.AnyObject]? {
+  @objc public var apiResult: [Swift.String : Swift.AnyObject]? {
     get
   }
-  public var apiHeaders: [Swift.String : Swift.String]? {
+  @objc public var apiHeaders: [Swift.String : Swift.String]? {
     get
   }
-  public var action: Swift.String? {
+  @objc public var action: Swift.String? {
     get
   }
-  public var imageUri: Swift.String? {
+  @objc public var imageUri: Swift.String? {
     get
   }
-  public var fullImageUri: Swift.String? {
+  @objc public var fullImageUri: Swift.String? {
     get
   }
-  public var attemptsCount: Swift.Int {
+  @objc public var attemptsCount: Swift.Int {
     get
   }
-  public var retakeMessage: Swift.String? {
+  @objc public var retakeMessage: Swift.String? {
     get
   }
   @objc override dynamic public init()

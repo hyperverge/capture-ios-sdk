@@ -621,6 +621,13 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 
 SWIFT_CLASS("_TtC12HyperSnapSDK10HVResponse")
 @interface HVResponse : NSObject
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable apiResult;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nullable apiHeaders;
+@property (nonatomic, readonly, copy) NSString * _Nullable action;
+@property (nonatomic, readonly, copy) NSString * _Nullable imageUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable fullImageUri;
+@property (nonatomic, readonly) NSInteger attemptsCount;
+@property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -717,7 +724,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
 + (NSString * _Nonnull)sortDictionaryAlphabetically:(NSDictionary<NSString *, id> * _Nonnull)dictionary SWIFT_WARN_UNUSED_RESULT;
-+ (void)startUserSession:(NSString * _Nullable)transactionId;
++ (HVError * _Nullable)startUserSession:(NSString * _Nullable)transactionId SWIFT_WARN_UNUSED_RESULT;
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1367,6 +1374,13 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 
 SWIFT_CLASS("_TtC12HyperSnapSDK10HVResponse")
 @interface HVResponse : NSObject
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable apiResult;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nullable apiHeaders;
+@property (nonatomic, readonly, copy) NSString * _Nullable action;
+@property (nonatomic, readonly, copy) NSString * _Nullable imageUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable fullImageUri;
+@property (nonatomic, readonly) NSInteger attemptsCount;
+@property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1463,7 +1477,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
 + (NSString * _Nonnull)sortDictionaryAlphabetically:(NSDictionary<NSString *, id> * _Nonnull)dictionary SWIFT_WARN_UNUSED_RESULT;
-+ (void)startUserSession:(NSString * _Nullable)transactionId;
++ (HVError * _Nullable)startUserSession:(NSString * _Nullable)transactionId SWIFT_WARN_UNUSED_RESULT;
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
