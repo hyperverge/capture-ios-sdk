@@ -267,6 +267,11 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
 - (void)setDocRetakePageRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocRetakePageTitleText:(NSString * _Nonnull)text;
+- (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setDocInstructions1:(NSString * _Nonnull)text;
+- (void)setDocInstructions2:(NSString * _Nonnull)text;
+- (void)setDocInstructions3:(NSString * _Nonnull)text;
+- (void)setDocInstructionsProceedText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -459,6 +464,14 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsTop1:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsTop2:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsNoGlasses:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsBrightLight:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsNoHat:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsProceed:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsProceedBackCam:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1017,6 +1030,11 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
 - (void)setDocRetakePageRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocRetakePageTitleText:(NSString * _Nonnull)text;
+- (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setDocInstructions1:(NSString * _Nonnull)text;
+- (void)setDocInstructions2:(NSString * _Nonnull)text;
+- (void)setDocInstructions3:(NSString * _Nonnull)text;
+- (void)setDocInstructionsProceedText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1209,6 +1227,14 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsTop1:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsTop2:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsNoGlasses:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsBrightLight:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsNoHat:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsProceed:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsProceedBackCam:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

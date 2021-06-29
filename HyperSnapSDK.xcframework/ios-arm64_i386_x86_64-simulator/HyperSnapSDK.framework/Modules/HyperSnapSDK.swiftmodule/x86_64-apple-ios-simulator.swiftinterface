@@ -363,6 +363,14 @@ extension HVDocsViewController {
     @objc public func setFaceCaptureActivityText(_ text: Swift.String)
     @objc public func setFaceRetakeButtonText(_ text: Swift.String)
     @objc public func setFaceRetakeTitleText(_ text: Swift.String)
+    @objc public func setFaceInstructionsTitle(_ text: Swift.String)
+    @objc public func setFaceInstructionsTop1(_ text: Swift.String)
+    @objc public func setFaceInstructionsTop2(_ text: Swift.String)
+    @objc public func setFaceInstructionsNoGlasses(_ text: Swift.String)
+    @objc public func setFaceInstructionsBrightLight(_ text: Swift.String)
+    @objc public func setFaceInstructionsNoHat(_ text: Swift.String)
+    @objc public func setFaceInstructionsProceed(_ text: Swift.String)
+    @objc public func setFaceInstructionsProceedBackCam(_ text: Swift.String)
     @objc override dynamic public init()
     @objc deinit
   }
@@ -429,6 +437,11 @@ extension HVDocsViewController {
     @objc public func setDocReviewContinueButtonText(_ text: Swift.String)
     @objc public func setDocRetakePageRetakeButtonText(_ text: Swift.String)
     @objc public func setDocRetakePageTitleText(_ text: Swift.String)
+    @objc public func setDocInstructionsTitle(_ text: Swift.String)
+    @objc public func setDocInstructions1(_ text: Swift.String)
+    @objc public func setDocInstructions2(_ text: Swift.String)
+    @objc public func setDocInstructions3(_ text: Swift.String)
+    @objc public func setDocInstructionsProceedText(_ text: Swift.String)
     @objc override dynamic public init()
     @objc deinit
   }
