@@ -2,6 +2,7 @@
 // swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
 // swift-module-flags: -target i386-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HyperSnapSDK
 import AVFoundation
+import Accelerate
 import CommonCrypto
 import CoreLocation
 import Dispatch
@@ -14,6 +15,7 @@ import Security
 import Swift
 import SystemConfiguration
 import UIKit
+import VideoToolbox
 @objc open class HVDocsViewController : UIKit.UIViewController {
   @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
     @objc get
@@ -64,6 +66,12 @@ extension HVDocsViewController {
   @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class HVBaseConfig : ObjectiveC.NSObject {
+  public var showTrustLogos: Swift.Bool
+  @objc public func setShowTrustLogos(_ shouldShow: Swift.Bool)
+  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
@@ -177,6 +185,12 @@ extension HVDocsViewController {
   @objc override dynamic public init()
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objc public class HVBrandingLayout : UIKit.UIStackView {
+  @objc public func showBranding(show: Swift.Bool)
+  @objc public func showTrustLogos(show: Swift.Bool)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
 @objc public class HVRetakeButton : UIKit.UIButton {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc public static func setBorderColor(_ color: CoreGraphics.CGColor)
@@ -232,6 +246,15 @@ extension HVDocsViewController {
   @objc deinit
 }
 @objc public class HVTitleLabel : UIKit.UILabel {
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public static func setFont(_ font: UIKit.UIFont)
+  @objc public static func setTextColor(_ color: UIKit.UIColor)
+  @objc public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+@objc public class HVSubtitleLabel : UIKit.UILabel {
   @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc public static func setFont(_ font: UIKit.UIFont)
   @objc public static func setTextColor(_ color: UIKit.UIColor)
@@ -326,7 +349,7 @@ extension HVDocsViewController {
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class HVFaceConfig : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class HVFaceConfig : HyperSnapSDK.HVBaseConfig {
   @objc public var textConfig: HyperSnapSDK.HVFaceConfig.FaceTextConfig
   @objc public func setLivenessMode(_ livenessMode: HyperSnapSDK.HyperSnapParams.LivenessMode)
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
@@ -347,10 +370,11 @@ extension HVDocsViewController {
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
   @objc public func setShouldRejectFaceNotStraight(_ shouldReject: Swift.Bool)
-  @objc public func setShouldHandleRetries(_ shouldHandle: Swift.Bool)
+  @objc public func setShouldShowCloseAlert(_ show: Swift.Bool)
   @_inheritsConvenienceInitializers @objc public class FaceTextConfig : ObjectiveC.NSObject {
     @objc public func setFaceCaptureTitle(_ text: Swift.String)
     @objc public func setFaceCaptureTitle2(_ text: Swift.String)
+    @objc public func setFaceCaptureSubtitle(_ text: Swift.String)
     @objc public func setFaceCaptureMultipleFacesDetectedText(_ text: Swift.String)
     @objc public func setFaceCaptureWrongOrientationText(_ text: Swift.String)
     @objc public func setFaceCaptureFaceFoundText(_ text: Swift.String)
@@ -371,6 +395,8 @@ extension HVDocsViewController {
     @objc public func setFaceInstructionsNoHat(_ text: Swift.String)
     @objc public func setFaceInstructionsProceed(_ text: Swift.String)
     @objc public func setFaceInstructionsProceedBackCam(_ text: Swift.String)
+    @objc public func setCloseAlertTitle(_ text: Swift.String)
+    @objc public func setCloseAlertDesc(_ text: Swift.String)
     @objc override dynamic public init()
     @objc deinit
   }
@@ -402,7 +428,7 @@ extension HVDocsViewController {
   @objc override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class HVDocConfig : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class HVDocConfig : HyperSnapSDK.HVBaseConfig {
   @objc public var textConfig: HyperSnapSDK.HVDocConfig.DocTextConfig
   @objc public func setDocumentType(_ type: HyperSnapSDK.HyperSnapParams.DocumentType)
   @objc public func setAspectRatio(_ aspectRatio: Swift.Double)
@@ -416,6 +442,7 @@ extension HVDocsViewController {
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
   @objc public func setShouldHandleRetries(_ shouldHandle: Swift.Bool)
+  @objc public func setShouldShowCloseAlert(_ show: Swift.Bool)
   @objc public func setOCRAPIDetails(_ endpoint: Swift.String, documentSide: HyperSnapSDK.HVDocConfig.DocumentSide, params: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?)
   @objc public enum DocumentSide : Swift.Int {
     case front
@@ -428,10 +455,12 @@ extension HVDocsViewController {
   }
   @_inheritsConvenienceInitializers @objc public class DocTextConfig : ObjectiveC.NSObject {
     @objc public func setDocCaptureTitle(_ text: Swift.String)
+    @objc public func setDocCaptureSubtitle(_ text: Swift.String)
     @objc public func setDocCaptureDescription(_ text: Swift.String)
     @objc public func setDocCaptureSubText(_ text: Swift.String)
     @objc public func setDocCaptureActivityText(_ text: Swift.String)
     @objc public func setDocReviewTitle(_ text: Swift.String)
+    @objc public func setDocReviewSubtitle(_ text: Swift.String)
     @objc public func setDocReviewDescription(_ text: Swift.String)
     @objc public func setDocReviewRetakeButtonText(_ text: Swift.String)
     @objc public func setDocReviewContinueButtonText(_ text: Swift.String)
@@ -442,6 +471,8 @@ extension HVDocsViewController {
     @objc public func setDocInstructions2(_ text: Swift.String)
     @objc public func setDocInstructions3(_ text: Swift.String)
     @objc public func setDocInstructionsProceedText(_ text: Swift.String)
+    @objc public func setCloseAlertTitle(_ text: Swift.String)
+    @objc public func setCloseAlertDesc(_ text: Swift.String)
     @objc override dynamic public init()
     @objc deinit
   }

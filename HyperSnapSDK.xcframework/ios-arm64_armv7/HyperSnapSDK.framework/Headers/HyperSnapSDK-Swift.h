@@ -211,7 +211,24 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSNumber;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
+@interface HVBaseConfig : NSObject
+- (void)setShowTrustLogos:(BOOL)shouldShow;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class NSCoder;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK16HVBrandingLayout")
+@interface HVBrandingLayout : UIStackView
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)showBrandingWithShow:(BOOL)show;
+- (void)showTrustLogosWithShow:(BOOL)show;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 @class UIColor;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
@@ -223,7 +240,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 
 @class DocTextConfig;
 enum DocumentType : NSInteger;
-@class NSNumber;
 @class UIViewController;
 @class UIImage;
 @class UINavigationController;
@@ -231,7 +247,7 @@ enum DocumentType : NSInteger;
 enum DocumentSide : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
-@interface HVDocConfig : NSObject
+@interface HVDocConfig : HVBaseConfig
 @property (nonatomic, strong) DocTextConfig * _Nonnull textConfig;
 - (void)setDocumentType:(enum DocumentType)type;
 - (void)setAspectRatio:(double)aspectRatio;
@@ -245,6 +261,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
+- (void)setShouldShowCloseAlert:(BOOL)show;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -258,10 +275,12 @@ typedef SWIFT_ENUM(NSInteger, DocumentSide, open) {
 SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 @interface DocTextConfig : NSObject
 - (void)setDocCaptureTitle:(NSString * _Nonnull)text;
+- (void)setDocCaptureSubtitle:(NSString * _Nonnull)text;
 - (void)setDocCaptureDescription:(NSString * _Nonnull)text;
 - (void)setDocCaptureSubText:(NSString * _Nonnull)text;
 - (void)setDocCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setDocReviewTitle:(NSString * _Nonnull)text;
+- (void)setDocReviewSubtitle:(NSString * _Nonnull)text;
 - (void)setDocReviewDescription:(NSString * _Nonnull)text;
 - (void)setDocReviewRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
@@ -272,6 +291,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocInstructions2:(NSString * _Nonnull)text;
 - (void)setDocInstructions3:(NSString * _Nonnull)text;
 - (void)setDocInstructionsProceedText:(NSString * _Nonnull)text;
+- (void)setCloseAlertTitle:(NSString * _Nonnull)text;
+- (void)setCloseAlertDesc:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -422,7 +443,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel")
 enum LivenessMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
-@interface HVFaceConfig : NSObject
+@interface HVFaceConfig : HVBaseConfig
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
@@ -443,7 +464,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
-- (void)setShouldHandleRetries:(BOOL)shouldHandle;
+- (void)setShouldShowCloseAlert:(BOOL)show;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -452,6 +473,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @interface FaceTextConfig : NSObject
 - (void)setFaceCaptureTitle:(NSString * _Nonnull)text;
 - (void)setFaceCaptureTitle2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureSubtitle:(NSString * _Nonnull)text;
 - (void)setFaceCaptureMultipleFacesDetectedText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureWrongOrientationText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceFoundText:(NSString * _Nonnull)text;
@@ -472,6 +494,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceInstructionsNoHat:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsProceed:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsProceedBackCam:(NSString * _Nonnull)text;
+- (void)setCloseAlertTitle:(NSString * _Nonnull)text;
+- (void)setCloseAlertDesc:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -665,6 +689,17 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVRetakeButton")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK15HVSubtitleLabel")
+@interface HVSubtitleLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVTitleLabel")
 @interface HVTitleLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -746,6 +781,9 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
 
 
 
@@ -974,7 +1012,24 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSNumber;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
+@interface HVBaseConfig : NSObject
+- (void)setShowTrustLogos:(BOOL)shouldShow;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class NSCoder;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK16HVBrandingLayout")
+@interface HVBrandingLayout : UIStackView
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)showBrandingWithShow:(BOOL)show;
+- (void)showTrustLogosWithShow:(BOOL)show;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 @class UIColor;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
@@ -986,7 +1041,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 
 @class DocTextConfig;
 enum DocumentType : NSInteger;
-@class NSNumber;
 @class UIViewController;
 @class UIImage;
 @class UINavigationController;
@@ -994,7 +1048,7 @@ enum DocumentType : NSInteger;
 enum DocumentSide : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
-@interface HVDocConfig : NSObject
+@interface HVDocConfig : HVBaseConfig
 @property (nonatomic, strong) DocTextConfig * _Nonnull textConfig;
 - (void)setDocumentType:(enum DocumentType)type;
 - (void)setAspectRatio:(double)aspectRatio;
@@ -1008,6 +1062,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
+- (void)setShouldShowCloseAlert:(BOOL)show;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1021,10 +1076,12 @@ typedef SWIFT_ENUM(NSInteger, DocumentSide, open) {
 SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 @interface DocTextConfig : NSObject
 - (void)setDocCaptureTitle:(NSString * _Nonnull)text;
+- (void)setDocCaptureSubtitle:(NSString * _Nonnull)text;
 - (void)setDocCaptureDescription:(NSString * _Nonnull)text;
 - (void)setDocCaptureSubText:(NSString * _Nonnull)text;
 - (void)setDocCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setDocReviewTitle:(NSString * _Nonnull)text;
+- (void)setDocReviewSubtitle:(NSString * _Nonnull)text;
 - (void)setDocReviewDescription:(NSString * _Nonnull)text;
 - (void)setDocReviewRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
@@ -1035,6 +1092,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocInstructions2:(NSString * _Nonnull)text;
 - (void)setDocInstructions3:(NSString * _Nonnull)text;
 - (void)setDocInstructionsProceedText:(NSString * _Nonnull)text;
+- (void)setCloseAlertTitle:(NSString * _Nonnull)text;
+- (void)setCloseAlertDesc:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1185,7 +1244,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel")
 enum LivenessMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
-@interface HVFaceConfig : NSObject
+@interface HVFaceConfig : HVBaseConfig
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
@@ -1206,7 +1265,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
-- (void)setShouldHandleRetries:(BOOL)shouldHandle;
+- (void)setShouldShowCloseAlert:(BOOL)show;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1215,6 +1274,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @interface FaceTextConfig : NSObject
 - (void)setFaceCaptureTitle:(NSString * _Nonnull)text;
 - (void)setFaceCaptureTitle2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureSubtitle:(NSString * _Nonnull)text;
 - (void)setFaceCaptureMultipleFacesDetectedText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureWrongOrientationText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceFoundText:(NSString * _Nonnull)text;
@@ -1235,6 +1295,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceInstructionsNoHat:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsProceed:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsProceedBackCam:(NSString * _Nonnull)text;
+- (void)setCloseAlertTitle:(NSString * _Nonnull)text;
+- (void)setCloseAlertDesc:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1428,6 +1490,17 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVRetakeButton")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK15HVSubtitleLabel")
+@interface HVSubtitleLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVTitleLabel")
 @interface HVTitleLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -1509,6 +1582,9 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
 
 
 
