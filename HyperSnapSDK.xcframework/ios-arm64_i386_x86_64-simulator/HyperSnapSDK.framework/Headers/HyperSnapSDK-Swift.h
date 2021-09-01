@@ -216,6 +216,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
 - (void)setShowTrustLogos:(BOOL)shouldShow;
+- (void)setShouldShowCloseAlert:(BOOL)show;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -261,7 +262,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
-- (void)setShouldShowCloseAlert:(BOOL)show;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -453,6 +453,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setPaddingWithLeft:(float)left right:(float)right top:(float)top bottom:(float)bottom;
 - (void)setLivenessEndpoint:(NSString * _Nonnull)endpoint;
 - (void)setShouldReturnFullImageUri:(BOOL)shouldReturn;
+- (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (void)setShouldUseBackCamera:(BOOL)shouldUse;
 - (void)setShouldShowCameraSwitchButton:(BOOL)shouldShow;
 - (void)setFaceCaptureCircleSuccessColor:(UIColor * _Nonnull)color;
@@ -464,7 +465,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
-- (void)setShouldShowCloseAlert:(BOOL)show;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1017,6 +1017,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
 - (void)setShowTrustLogos:(BOOL)shouldShow;
+- (void)setShouldShowCloseAlert:(BOOL)show;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1062,7 +1063,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
-- (void)setShouldShowCloseAlert:(BOOL)show;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1254,6 +1254,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setPaddingWithLeft:(float)left right:(float)right top:(float)top bottom:(float)bottom;
 - (void)setLivenessEndpoint:(NSString * _Nonnull)endpoint;
 - (void)setShouldReturnFullImageUri:(BOOL)shouldReturn;
+- (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (void)setShouldUseBackCamera:(BOOL)shouldUse;
 - (void)setShouldShowCameraSwitchButton:(BOOL)shouldShow;
 - (void)setFaceCaptureCircleSuccessColor:(UIColor * _Nonnull)color;
@@ -1265,7 +1266,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
-- (void)setShouldShowCloseAlert:(BOOL)show;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1818,6 +1818,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
 - (void)setShowTrustLogos:(BOOL)shouldShow;
+- (void)setShouldShowCloseAlert:(BOOL)show;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1863,7 +1864,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
-- (void)setShouldShowCloseAlert:(BOOL)show;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2055,6 +2055,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setPaddingWithLeft:(float)left right:(float)right top:(float)top bottom:(float)bottom;
 - (void)setLivenessEndpoint:(NSString * _Nonnull)endpoint;
 - (void)setShouldReturnFullImageUri:(BOOL)shouldReturn;
+- (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (void)setShouldUseBackCamera:(BOOL)shouldUse;
 - (void)setShouldShowCameraSwitchButton:(BOOL)shouldShow;
 - (void)setFaceCaptureCircleSuccessColor:(UIColor * _Nonnull)color;
@@ -2066,7 +2067,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
-- (void)setShouldShowCloseAlert:(BOOL)show;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
