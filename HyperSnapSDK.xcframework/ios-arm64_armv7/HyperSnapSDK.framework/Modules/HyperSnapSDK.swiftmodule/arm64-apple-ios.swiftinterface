@@ -70,7 +70,9 @@ extension HVDocsViewController {
 }
 @objc @_inheritsConvenienceInitializers public class HVBaseConfig : ObjectiveC.NSObject {
   public var showTrustLogos: Swift.Bool
+  public var shouldShowCloseAlert: Swift.Bool
   @objc public func setShowTrustLogos(_ shouldShow: Swift.Bool)
+  @objc public func setShouldShowCloseAlert(_ show: Swift.Bool)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -359,6 +361,7 @@ extension HVDocsViewController {
   @objc public func setPadding(left: Swift.Float, right: Swift.Float, top: Swift.Float, bottom: Swift.Float)
   @objc public func setLivenessEndpoint(_ endpoint: Swift.String)
   @objc public func setShouldReturnFullImageUri(_ shouldReturn: Swift.Bool)
+  @objc public func setShouldHandleRetries(_ shouldHandle: Swift.Bool)
   @objc public func setShouldUseBackCamera(_ shouldUse: Swift.Bool)
   @objc public func setShouldShowCameraSwitchButton(_ shouldShow: Swift.Bool)
   @objc public func setFaceCaptureCircleSuccessColor(_ color: UIKit.UIColor)
@@ -370,7 +373,6 @@ extension HVDocsViewController {
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
   @objc public func setShouldRejectFaceNotStraight(_ shouldReject: Swift.Bool)
-  @objc public func setShouldShowCloseAlert(_ show: Swift.Bool)
   @_inheritsConvenienceInitializers @objc public class FaceTextConfig : ObjectiveC.NSObject {
     @objc public func setFaceCaptureTitle(_ text: Swift.String)
     @objc public func setFaceCaptureTitle2(_ text: Swift.String)
@@ -442,7 +444,6 @@ extension HVDocsViewController {
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
   @objc public func setShouldHandleRetries(_ shouldHandle: Swift.Bool)
-  @objc public func setShouldShowCloseAlert(_ show: Swift.Bool)
   @objc public func setOCRAPIDetails(_ endpoint: Swift.String, documentSide: HyperSnapSDK.HVDocConfig.DocumentSide, params: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?)
   @objc public enum DocumentSide : Swift.Int {
     case front
