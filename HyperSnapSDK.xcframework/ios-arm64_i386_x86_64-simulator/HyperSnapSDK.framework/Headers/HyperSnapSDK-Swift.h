@@ -259,7 +259,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
-- (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
@@ -462,7 +462,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
-- (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1060,7 +1060,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
-- (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
@@ -1263,7 +1263,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
-- (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1861,7 +1861,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
-- (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
@@ -2064,7 +2064,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
-- (void)setNavigationController:(UINavigationController * _Nonnull)navVC;
+- (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
