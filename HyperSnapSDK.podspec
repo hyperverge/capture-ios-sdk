@@ -19,9 +19,9 @@ Pod::Spec.new do |s|
   s.ios.resource = 'HVResources.bundle'
   s.swift_version = '5.0'
 
-  s.test_spec 'Tests' do |test_spec|
-    test_spec.dependency 'Result', '~> 5.0'
-  end
+  #s.test_spec 'Tests' do |test_spec|
+  #  test_spec.dependency 'Result', '~> 5.0'
+  #end
 
 
 end
