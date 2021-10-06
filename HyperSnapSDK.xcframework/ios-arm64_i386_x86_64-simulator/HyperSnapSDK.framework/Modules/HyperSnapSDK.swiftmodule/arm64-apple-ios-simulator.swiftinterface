@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HyperSnapSDK
 import AVFoundation
 import Accelerate
@@ -16,56 +16,65 @@ import Swift
 import SystemConfiguration
 import UIKit
 import VideoToolbox
-@objc open class HVDocsViewController : UIKit.UIViewController {
-  @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
-    @objc get
+import _Concurrency
+@objc @_Concurrency.MainActor(unsafe) open class HVDocsViewController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) override dynamic open var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc public var completionHandler: (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?, UIKit.UIViewController) -> Swift.Void
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func start(_ callingVC: UIKit.UIViewController, hvDocConfig: HyperSnapSDK.HVDocConfig, completionHandler: @escaping (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?, UIKit.UIViewController) -> Swift.Void)
-  @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @objc get
+  @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ vcNew: UIKit.UIViewController) -> Swift.Void
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func start(_ callingVC: UIKit.UIViewController, hvDocConfig: HyperSnapSDK.HVDocConfig, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ viewController: UIKit.UIViewController) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open var shouldAutorotate: Swift.Bool {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  public func setHVDocConfig(_ hvDocConfig: HyperSnapSDK.HVDocConfig)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) public func setHVDocConfig(_ hvDocConfig: HyperSnapSDK.HVDocConfig)
   @objc deinit
 }
-extension HVDocsViewController {
-  @objc override dynamic open func viewDidLoad()
-  @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic open func viewWillLayoutSubviews()
-  @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
-  @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+extension HyperSnapSDK.HVDocsViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
 }
-@objc @_inheritsConvenienceInitializers open class HVFaceViewController : UIKit.UIViewController {
-  @objc public var completionHandler: (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?, UIKit.UIViewController) -> Swift.Void
-  @objc override dynamic open func viewDidLoad()
-  @objc public static func start(_ callingVC: UIKit.UIViewController, hvFaceConfig: HyperSnapSDK.HVFaceConfig, completionHandler: @escaping (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?, UIKit.UIViewController) -> Swift.Void)
-  @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic open func viewDidLayoutSubviews()
-  public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
-  @objc override dynamic open func viewWillLayoutSubviews()
-  @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
-    @objc get
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class HVFaceViewController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ vc: UIKit.UIViewController) -> Swift.Void
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @objc @_Concurrency.MainActor(unsafe) public static func start(_ callingVC: UIKit.UIViewController, hvFaceConfig: HyperSnapSDK.HVFaceConfig, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ viewController: UIKit.UIViewController) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open var shouldAutorotate: Swift.Bool {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class HVSessionResponse : ObjectiveC.NSObject {
+  @objc public var hvError: HyperSnapSDK.HVError? {
+    get
+  }
+  @objc public func isSuccess() -> Swift.Bool
+  @objc public func getHVError() -> HyperSnapSDK.HVError?
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class HVBaseConfig : ObjectiveC.NSObject {
@@ -83,11 +92,11 @@ extension HVDocsViewController {
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
   @objc public static func setShouldUseAnalytics(_ shouldUse: Swift.Bool)
   @objc public static func setTimeoutIntervalForRequest(_ timeout: Swift.Double)
-  @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (HyperSnapSDK.HVError?, [Swift.String : Swift.AnyObject]?) -> Swift.Void)
+  @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
   @objc public static func setShouldReturnRawResponse(_ shouldReturn: Swift.Bool)
   @objc public static func deleteImageAtUri(_ imageUri: Swift.String)
   @objc public static func sortDictionaryAlphabetically(_ dictionary: [Swift.String : Swift.AnyObject]) -> Swift.String
-  @objc public static func startUserSession(_ transactionId: Swift.String? = nil) -> HyperSnapSDK.HVError?
+  @objc public static func startUserSession(_ transactionId: Swift.String? = nil) -> HyperSnapSDK.HVSessionResponse
   @objc public static func endUserSession()
   @objc override dynamic public init()
   @objc deinit
@@ -146,25 +155,25 @@ extension HVDocsViewController {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers open class HVFaceInstructionsViewController : UIKit.UIViewController {
-  @objc public var completionHandler: (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?, UIKit.UIViewController) -> Swift.Void
-  public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
-  @objc override dynamic open func viewDidLoad()
-  @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
-    @objc get
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class HVFaceInstructionsViewController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ vc: UIKit.UIViewController) -> Swift.Void
+  @_Concurrency.MainActor(unsafe) public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open var shouldAutorotate: Swift.Bool {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class HVError : ObjectiveC.NSObject {
@@ -176,179 +185,160 @@ extension HVDocsViewController {
   }
   @objc public func getErrorMessage() -> Swift.String
   @objc public func getErrorCode() -> Swift.Int
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class HVNetworkHelper : ObjectiveC.NSObject {
-  @objc public static func makeOCRAPICall(endpoint: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?) -> Swift.Void)
-  @objc public static func makeFaceMatchCall(faceUri: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?) -> Swift.Void)
-  @objc public static func makeFaceMatchAPICall(endpoint: Swift.String, image1: Swift.String, image2: Swift.String, faceMatchMode: HyperSnapSDK.HyperSnapParams.FaceMatchMode, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?) -> Swift.Void)
-  @objc public static func makeTextMatchAPICall(endpoint: Swift.String, parameters: [Swift.String : Swift.AnyObject], headers: [Swift.String : Swift.String]?, completionHandler: @escaping (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?) -> Swift.Void)
+  @objc public static func makeOCRAPICall(endpoint: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  @objc public static func makeFaceMatchCall(faceUri: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  @objc public static func makeFaceMatchAPICall(endpoint: Swift.String, image1: Swift.String, image2: Swift.String, faceMatchMode: HyperSnapSDK.HyperSnapParams.FaceMatchMode, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  @objc public static func makeTextMatchAPICall(endpoint: Swift.String, parameters: [Swift.String : Swift.AnyObject], headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
   @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc public class HVBrandingLayout : UIKit.UIStackView {
-  @objc public func showBranding(show: Swift.Bool)
-  @objc public func showTrustLogos(show: Swift.Bool)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class HVBrandingLayout : UIKit.UIStackView {
+  @objc @_Concurrency.MainActor(unsafe) public func showBranding(show: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) public func showTrustLogos(show: Swift.Bool)
   @objc deinit
 }
-@objc public class HVRetakeButton : UIKit.UIButton {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setBorderColor(_ color: CoreGraphics.CGColor)
-  @objc public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
-  @objc public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
-  @objc public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVRetakeButton : UIKit.UIButton {
+  @objc @_Concurrency.MainActor(unsafe) required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
-@objc public class HVDocReviewRetakeButton : UIKit.UIButton {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setBorderColor(_ color: CoreGraphics.CGColor)
-  @objc public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
-  @objc public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
-  @objc public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewRetakeButton : UIKit.UIButton {
+  @objc @_Concurrency.MainActor(unsafe) required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
-@objc public class HVDocReviewContinueButton : UIKit.UIButton {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setBorderColor(_ color: CoreGraphics.CGColor)
-  @objc public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
-  @objc public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
-  @objc public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewContinueButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
-@objc public class HVInstructionsProceedButton : UIKit.UIButton {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setBorderColor(_ color: CoreGraphics.CGColor)
-  @objc public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
-  @objc public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
-  @objc public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVInstructionsProceedButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
-@objc public class HVCameraButton : UIKit.UIButton {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setImageTintColor(_ color: UIKit.UIColor)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVCameraButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setImageTintColor(_ color: UIKit.UIColor)
   @objc deinit
 }
-@objc public class HVTitleLabel : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVTitleLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVSubtitleLabel : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVSubtitleLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVFaceDescriptionLabel : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceDescriptionLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVFaceInstructionTopLabel : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceInstructionTopLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVFaceInstructionBottomLabel : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceInstructionBottomLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVDocInstructionsLabel : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVDocInstructionsLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVDocSubTextLabel : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVDocSubTextLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVDocDescriptionLabel : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVDocDescriptionLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVDocDescriptionA4Label : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVDocDescriptionA4Label : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVFaceActivityLabel : UIKit.UILabel {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setFont(_ font: UIKit.UIFont)
-  @objc public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc public static func setTextColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceActivityLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc public class HVFaceActivityIndicator : UIKit.UIActivityIndicatorView {
-  @objc required dynamic public init(coder aDecoder: Foundation.NSCoder)
-  @objc public static func setStyle(_ style: UIKit.UIActivityIndicatorView.Style)
-  @objc public static func setColor(_ color: UIKit.UIColor)
-  @objc override dynamic public init(style: UIKit.UIActivityIndicatorView.Style)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceActivityIndicator : UIKit.UIActivityIndicatorView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setStyle(_ style: UIKit.UIActivityIndicatorView.Style)
+  @objc @_Concurrency.MainActor(unsafe) public static func setColor(_ color: UIKit.UIColor)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class HVFaceConfig : HyperSnapSDK.HVBaseConfig {
@@ -428,7 +418,6 @@ extension HVDocsViewController {
   @objc public var retakeMessage: Swift.String? {
     get
   }
-  @objc override dynamic public init()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class HVDocConfig : HyperSnapSDK.HVBaseConfig {
