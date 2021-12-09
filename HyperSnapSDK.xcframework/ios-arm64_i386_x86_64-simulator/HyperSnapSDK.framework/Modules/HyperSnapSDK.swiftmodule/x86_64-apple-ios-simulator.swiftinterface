@@ -374,6 +374,8 @@ extension HyperSnapSDK.HVDocsViewController {
     @objc public func setFaceCaptureLookStraight(_ text: Swift.String)
     @objc public func setFaceCaptureMoveAwayText(_ text: Swift.String)
     @objc public func setFaceCaptureMoveAwayText2(_ text: Swift.String)
+    @objc public func setFaceCaptureMoveCloserText(_ text: Swift.String)
+    @objc public func setFaceCaptureMoveCloserText2(_ text: Swift.String)
     @objc public func setFaceCaptureFaceNotFoundText(_ text: Swift.String)
     @objc public func setFaceCaptureFaceNotFoundText2(_ text: Swift.String)
     @objc public func setFaceCaptureFaceNotFoundToastText(_ text: Swift.String)

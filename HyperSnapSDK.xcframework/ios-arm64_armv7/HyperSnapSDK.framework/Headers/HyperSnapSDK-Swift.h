@@ -480,6 +480,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureLookStraight:(NSString * _Nonnull)text;
 - (void)setFaceCaptureMoveAwayText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureMoveAwayText2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMoveCloserText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMoveCloserText2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundText2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
@@ -1291,6 +1293,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureLookStraight:(NSString * _Nonnull)text;
 - (void)setFaceCaptureMoveAwayText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureMoveAwayText2:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMoveCloserText:(NSString * _Nonnull)text;
+- (void)setFaceCaptureMoveCloserText2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundText2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
