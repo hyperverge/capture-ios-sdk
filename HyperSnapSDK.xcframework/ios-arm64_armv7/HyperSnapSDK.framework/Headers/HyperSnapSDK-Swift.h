@@ -692,6 +692,62 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVPageNumberLabel")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK20HVQRDescriptionLabel")
+@interface HVQRDescriptionLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVQRSkipButton")
+@interface HVQRSkipButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+/// HVQRViewController is the base class which will be used to open separate QR scanner VC and related functionalities
+SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
+@interface HVQRViewController : UIViewController
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable);
+/// Starting point for HVQR Scanner.
+/// <ul>
+///   <li>
+///     Note -  Initialisation of the SDK must be done before calling this method
+///   </li>
+/// </ul>
+/// \param callingVC ViewController that is currently active. HVQRViewController will be presented on top of this.
+///
+/// \param completionHandler Closure that will be called after successful capture + processing or when there is an error
+///
++ (void)start:(UIViewController * _Nonnull)callingVC completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface HVQRViewController (SWIFT_EXTENSION(HyperSnapSDK))
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(BOOL)animated;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK10HVResponse")
 @interface HVResponse : NSObject
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable apiResult;
@@ -1534,6 +1590,62 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVPageNumberLabel")
 + (void)setShadowColor:(UIColor * _Nonnull)color;
 + (void)setShadowOffset:(CGSize)offset;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK20HVQRDescriptionLabel")
+@interface HVQRDescriptionLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVQRSkipButton")
+@interface HVQRSkipButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+/// HVQRViewController is the base class which will be used to open separate QR scanner VC and related functionalities
+SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
+@interface HVQRViewController : UIViewController
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable);
+/// Starting point for HVQR Scanner.
+/// <ul>
+///   <li>
+///     Note -  Initialisation of the SDK must be done before calling this method
+///   </li>
+/// </ul>
+/// \param callingVC ViewController that is currently active. HVQRViewController will be presented on top of this.
+///
+/// \param completionHandler Closure that will be called after successful capture + processing or when there is an error
+///
++ (void)start:(UIViewController * _Nonnull)callingVC completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface HVQRViewController (SWIFT_EXTENSION(HyperSnapSDK))
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(BOOL)animated;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
 @end
 
 
