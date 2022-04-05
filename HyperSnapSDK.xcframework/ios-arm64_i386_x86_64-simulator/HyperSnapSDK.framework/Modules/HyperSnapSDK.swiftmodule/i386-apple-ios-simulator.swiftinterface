@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target i386-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name HyperSnapSDK
 import AVFoundation
 import Accelerate
@@ -19,7 +19,7 @@ import UIKit
 import VideoToolbox
 import _Concurrency
 @objc @_Concurrency.MainActor(unsafe) open class HVDocsViewController : UIKit.UIViewController {
-  @objc @_Concurrency.MainActor(unsafe) override dynamic open var prefersStatusBarHidden: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
     @_Concurrency.MainActor(unsafe) @objc get
   }
   @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ vcNew: UIKit.UIViewController) -> Swift.Void
@@ -203,7 +203,7 @@ extension HyperSnapSDK.HVDocsViewController {
   @objc deinit
 }
 @objc @_Concurrency.MainActor(unsafe) public class HVRetakeButton : UIKit.UIButton {
-  @objc @_Concurrency.MainActor(unsafe) required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
@@ -214,7 +214,7 @@ extension HyperSnapSDK.HVDocsViewController {
   @objc deinit
 }
 @objc @_Concurrency.MainActor(unsafe) public class HVDocReviewRetakeButton : UIKit.UIButton {
-  @objc @_Concurrency.MainActor(unsafe) required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
@@ -263,7 +263,7 @@ extension HyperSnapSDK.HVDocsViewController {
   @objc deinit
 }
 @objc @_Concurrency.MainActor(unsafe) public class HVQRSkipButton : UIKit.UIButton {
-  @objc @_Concurrency.MainActor(unsafe) required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
