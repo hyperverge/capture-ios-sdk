@@ -218,6 +218,152 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+@class UITouch;
+@class UIEvent;
+
+/// Lottie comes prepacked with a two Animated Controls, <code>AnimatedSwitch</code> and
+/// <code>AnimatedButton</code>. Both of these controls are built on top of <code>AnimatedControl</code>
+/// <code>AnimatedControl</code> is a subclass of <code>UIControl</code> that provides an interactive
+/// mechanism for controlling the visual state of an animation in response to
+/// user actions.
+/// The <code>AnimatedControl</code> will show and hide layers depending on the current
+/// <code>UIControl.State</code> of the control.
+/// Users of <code>AnimationControl</code> can set a Layer Name for each <code>UIControl.State</code>.
+/// When the state is change the <code>AnimationControl</code> will change the visibility
+/// of its layers.
+/// NOTE: Do not initialize directly. This is intended to be subclassed.
+SWIFT_CLASS("_TtC12HyperSnapSDK15AnimatedControl")
+@interface AnimatedControl : UIControl
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, getter=isEnabled) BOOL enabled;
+@property (nonatomic, getter=isSelected) BOOL selected;
+@property (nonatomic, getter=isHighlighted) BOOL highlighted;
+- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)continueTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+- (void)cancelTrackingWithEvent:(UIEvent * _Nullable)event;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+/// An interactive button that plays an animation when pressed.
+SWIFT_CLASS("_TtC12HyperSnapSDK14AnimatedButton")
+@interface AnimatedButton : AnimatedControl
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+@end
+
+
+
+/// An interactive switch with an ‘On’ and ‘Off’ state. When the user taps on the
+/// switch the state is toggled and the appropriate animation is played.
+/// Both the ‘On’ and ‘Off’ have an animation play range associated with their state.
+SWIFT_CLASS("_TtC12HyperSnapSDK14AnimatedSwitch")
+@interface AnimatedSwitch : AnimatedControl
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+@end
+
+
+/// A view that can be added to a keypath of an AnimationView
+SWIFT_CLASS("_TtC12HyperSnapSDK16AnimationSubview")
+@interface AnimationSubview : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK10LottieView")
+@interface LottieView : UIView
+- (void)didMoveToWindow;
+@property (nonatomic) UIViewContentMode contentMode;
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC12HyperSnapSDK13AnimationView")
+@interface AnimationView : LottieView
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+@end
+
+
+
+
+@class NSString;
+@class NSBundle;
+
+/// An Objective-C compatible wrapper around Lottie’s Animation class.
+/// Use in tandem with CompatibleAnimationView when using Lottie in Objective-C
+SWIFT_CLASS("_TtC12HyperSnapSDK19CompatibleAnimation")
+@interface CompatibleAnimation : NSObject
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name bundle:(NSBundle * _Nonnull)bundle OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// An Objective-C compatible wrapper around Lottie’s AnimationKeypath
+SWIFT_CLASS("_TtC12HyperSnapSDK26CompatibleAnimationKeypath")
+@interface CompatibleAnimationKeypath : NSObject
+/// Creates a keypath from a dot separated string. The string is separated by “.”
+- (nonnull instancetype)initWithKeypath:(NSString * _Nonnull)keypath OBJC_DESIGNATED_INITIALIZER;
+/// Creates a keypath from a list of strings.
+- (nonnull instancetype)initWithKeys:(NSArray<NSString *> * _Nonnull)keys OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIColor;
+
+/// An Objective-C compatible wrapper around Lottie’s AnimationView.
+SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
+@interface CompatibleAnimationView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@property (nonatomic, strong) CompatibleAnimation * _Nullable compatibleAnimation;
+@property (nonatomic) CGFloat loopAnimationCount;
+@property (nonatomic) UIViewContentMode contentMode;
+@property (nonatomic) BOOL shouldRasterizeWhenIdle;
+@property (nonatomic) CGFloat currentProgress;
+@property (nonatomic) NSTimeInterval currentTime;
+@property (nonatomic) CGFloat currentFrame;
+@property (nonatomic, readonly) CGFloat realtimeAnimationFrame;
+@property (nonatomic, readonly) CGFloat realtimeAnimationProgress;
+@property (nonatomic) CGFloat animationSpeed;
+@property (nonatomic) BOOL respectAnimationFrameRate;
+@property (nonatomic, readonly) BOOL isAnimationPlaying;
+- (void)play;
+- (void)playWithCompletion:(void (^ _Nullable)(BOOL))completion;
+- (void)playFromProgress:(CGFloat)fromProgress toProgress:(CGFloat)toProgress completion:(void (^ _Nullable)(BOOL))completion;
+- (void)playFromFrame:(CGFloat)fromFrame toFrame:(CGFloat)toFrame completion:(void (^ _Nullable)(BOOL))completion;
+- (void)playFromMarker:(NSString * _Nonnull)fromMarker toMarker:(NSString * _Nonnull)toMarker completion:(void (^ _Nullable)(BOOL))completion;
+- (void)stop;
+- (void)pause;
+- (void)reloadImages;
+- (void)forceDisplayUpdate;
+- (id _Nullable)getValueFor:(CompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
+- (void)logHierarchyKeypaths;
+- (void)setColorValue:(UIColor * _Nonnull)color forKeypath:(CompatibleAnimationKeypath * _Nonnull)keypath;
+- (UIColor * _Nullable)getColorValueFor:(CompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
+- (void)addSubview:(AnimationSubview * _Nonnull)subview forLayerAt:(CompatibleAnimationKeypath * _Nonnull)keypath;
+- (CGRect)convertWithRect:(CGRect)rect toLayerAt:(CompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
+- (CGPoint)convertWithPoint:(CGPoint)point toLayerAt:(CompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)progressTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)frameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
@@ -227,17 +373,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSCoder;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVBrandingLayout")
 @interface HVBrandingLayout : UIStackView
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (void)showBrandingWithShow:(BOOL)show;
-- (void)showTrustLogosWithShow:(BOOL)show;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
-@class UIColor;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 @interface HVCameraButton : UIButton
@@ -251,7 +394,6 @@ enum DocumentType : NSInteger;
 @class UIViewController;
 @class UIImage;
 @class UINavigationController;
-@class NSString;
 enum DocumentSide : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
@@ -290,7 +432,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocCaptureSubText:(NSString * _Nonnull)text;
 - (void)setDocCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setDocReviewTitle:(NSString * _Nonnull)text;
-- (void)setDocReviewSubtitle:(NSString * _Nonnull)text;
+- (void)setDocReviewSubtitle:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
 - (void)setDocReviewDescription:(NSString * _Nonnull)text;
 - (void)setDocReviewRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
@@ -344,8 +486,22 @@ SWIFT_CLASS("_TtC12HyperSnapSDK22HVDocInstructionsLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocPickerScreenButton")
-@interface HVDocPickerScreenButton : UIButton
+SWIFT_CLASS("_TtC12HyperSnapSDK24HVDocPickerCaptureButton")
+@interface HVDocPickerCaptureButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocPickerUploadButton")
+@interface HVDocPickerUploadButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
 + (void)setBackgroundColor:(CGColorRef _Nonnull)color;
@@ -372,6 +528,18 @@ SWIFT_CLASS("_TtC12HyperSnapSDK25HVDocReviewContinueButton")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK27HVDocReviewDescriptionLabel")
+@interface HVDocReviewDescriptionLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocReviewRetakeButton")
 @interface HVDocReviewRetakeButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -386,9 +554,22 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocReviewRetakeButton")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVDocReviewTitleLabel")
+@interface HVDocReviewTitleLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel")
 @interface HVDocSubTextLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
 + (void)setFont:(UIFont * _Nonnull)font;
 + (void)setTextAlignment:(NSTextAlignment)alignment;
 + (void)setTextColor:(UIColor * _Nonnull)color;
@@ -399,11 +580,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel")
 
 @class HVError;
 @class HVResponse;
-@class NSBundle;
 
 /// DocCameraViewController is the base class which will be used from outside.
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
-@interface HVDocsViewController : UIViewController
+@interface HVDocsViewController : UIViewController <UIViewControllerTransitioningDelegate>
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -423,9 +603,11 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
+@class UIPresentationController;
 
 @interface HVDocsViewController (SWIFT_EXTENSION(HyperSnapSDK))
 - (void)viewDidLoad;
+- (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
@@ -439,6 +621,32 @@ SWIFT_CLASS("_TtC12HyperSnapSDK7HVError")
 - (NSInteger)getErrorCode SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK19HVErrorRetakeButton")
+@interface HVErrorRetakeButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK18HVErrorRetakeLabel")
+@interface HVErrorRetakeLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
@@ -496,8 +704,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @interface FaceTextConfig : NSObject
 - (void)setFaceCaptureTitle:(NSString * _Nonnull)text;
-- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text;
-- (void)setFaceCaptureSubtitle:(NSString * _Nonnull)text;
+- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
+- (void)setFaceCaptureSubtitle:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
 - (void)setFaceCaptureMultipleFacesDetectedText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureWrongOrientationText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceFoundText:(NSString * _Nonnull)text;
@@ -564,6 +772,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 @interface HVFaceInstructionsViewController : UIViewController
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillAppear:(BOOL)animated;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
@@ -575,7 +785,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
-@interface HVFaceViewController : UIViewController
+@interface HVFaceViewController : UIViewController <UIViewControllerTransitioningDelegate>
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
 /// Starting point for Face Capture and liveness.
@@ -598,6 +808,11 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 - (void)viewWillDisappear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface HVFaceViewController (SWIFT_EXTENSION(HyperSnapSDK))
+- (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -751,6 +966,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 - (void)viewDidAppear:(BOOL)animated;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 @end
 
 
@@ -872,6 +1088,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 /// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
 ///
 + (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region;
++ (void)logEvent:(NSString * _Nonnull)name :(NSDictionary<NSString *, id> * _Nonnull)properties;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
@@ -894,6 +1111,17 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 
 
 
+
+
+
+
+
+
+@interface UINavigationController (SWIFT_EXTENSION(HyperSnapSDK))
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@end
 
 
 
@@ -1125,6 +1353,152 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+@class UITouch;
+@class UIEvent;
+
+/// Lottie comes prepacked with a two Animated Controls, <code>AnimatedSwitch</code> and
+/// <code>AnimatedButton</code>. Both of these controls are built on top of <code>AnimatedControl</code>
+/// <code>AnimatedControl</code> is a subclass of <code>UIControl</code> that provides an interactive
+/// mechanism for controlling the visual state of an animation in response to
+/// user actions.
+/// The <code>AnimatedControl</code> will show and hide layers depending on the current
+/// <code>UIControl.State</code> of the control.
+/// Users of <code>AnimationControl</code> can set a Layer Name for each <code>UIControl.State</code>.
+/// When the state is change the <code>AnimationControl</code> will change the visibility
+/// of its layers.
+/// NOTE: Do not initialize directly. This is intended to be subclassed.
+SWIFT_CLASS("_TtC12HyperSnapSDK15AnimatedControl")
+@interface AnimatedControl : UIControl
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, getter=isEnabled) BOOL enabled;
+@property (nonatomic, getter=isSelected) BOOL selected;
+@property (nonatomic, getter=isHighlighted) BOOL highlighted;
+- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)continueTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+- (void)cancelTrackingWithEvent:(UIEvent * _Nullable)event;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+/// An interactive button that plays an animation when pressed.
+SWIFT_CLASS("_TtC12HyperSnapSDK14AnimatedButton")
+@interface AnimatedButton : AnimatedControl
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+@end
+
+
+
+/// An interactive switch with an ‘On’ and ‘Off’ state. When the user taps on the
+/// switch the state is toggled and the appropriate animation is played.
+/// Both the ‘On’ and ‘Off’ have an animation play range associated with their state.
+SWIFT_CLASS("_TtC12HyperSnapSDK14AnimatedSwitch")
+@interface AnimatedSwitch : AnimatedControl
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+@end
+
+
+/// A view that can be added to a keypath of an AnimationView
+SWIFT_CLASS("_TtC12HyperSnapSDK16AnimationSubview")
+@interface AnimationSubview : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK10LottieView")
+@interface LottieView : UIView
+- (void)didMoveToWindow;
+@property (nonatomic) UIViewContentMode contentMode;
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC12HyperSnapSDK13AnimationView")
+@interface AnimationView : LottieView
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+@end
+
+
+
+
+@class NSString;
+@class NSBundle;
+
+/// An Objective-C compatible wrapper around Lottie’s Animation class.
+/// Use in tandem with CompatibleAnimationView when using Lottie in Objective-C
+SWIFT_CLASS("_TtC12HyperSnapSDK19CompatibleAnimation")
+@interface CompatibleAnimation : NSObject
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name bundle:(NSBundle * _Nonnull)bundle OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// An Objective-C compatible wrapper around Lottie’s AnimationKeypath
+SWIFT_CLASS("_TtC12HyperSnapSDK26CompatibleAnimationKeypath")
+@interface CompatibleAnimationKeypath : NSObject
+/// Creates a keypath from a dot separated string. The string is separated by “.”
+- (nonnull instancetype)initWithKeypath:(NSString * _Nonnull)keypath OBJC_DESIGNATED_INITIALIZER;
+/// Creates a keypath from a list of strings.
+- (nonnull instancetype)initWithKeys:(NSArray<NSString *> * _Nonnull)keys OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIColor;
+
+/// An Objective-C compatible wrapper around Lottie’s AnimationView.
+SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
+@interface CompatibleAnimationView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+@property (nonatomic, strong) CompatibleAnimation * _Nullable compatibleAnimation;
+@property (nonatomic) CGFloat loopAnimationCount;
+@property (nonatomic) UIViewContentMode contentMode;
+@property (nonatomic) BOOL shouldRasterizeWhenIdle;
+@property (nonatomic) CGFloat currentProgress;
+@property (nonatomic) NSTimeInterval currentTime;
+@property (nonatomic) CGFloat currentFrame;
+@property (nonatomic, readonly) CGFloat realtimeAnimationFrame;
+@property (nonatomic, readonly) CGFloat realtimeAnimationProgress;
+@property (nonatomic) CGFloat animationSpeed;
+@property (nonatomic) BOOL respectAnimationFrameRate;
+@property (nonatomic, readonly) BOOL isAnimationPlaying;
+- (void)play;
+- (void)playWithCompletion:(void (^ _Nullable)(BOOL))completion;
+- (void)playFromProgress:(CGFloat)fromProgress toProgress:(CGFloat)toProgress completion:(void (^ _Nullable)(BOOL))completion;
+- (void)playFromFrame:(CGFloat)fromFrame toFrame:(CGFloat)toFrame completion:(void (^ _Nullable)(BOOL))completion;
+- (void)playFromMarker:(NSString * _Nonnull)fromMarker toMarker:(NSString * _Nonnull)toMarker completion:(void (^ _Nullable)(BOOL))completion;
+- (void)stop;
+- (void)pause;
+- (void)reloadImages;
+- (void)forceDisplayUpdate;
+- (id _Nullable)getValueFor:(CompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
+- (void)logHierarchyKeypaths;
+- (void)setColorValue:(UIColor * _Nonnull)color forKeypath:(CompatibleAnimationKeypath * _Nonnull)keypath;
+- (UIColor * _Nullable)getColorValueFor:(CompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
+- (void)addSubview:(AnimationSubview * _Nonnull)subview forLayerAt:(CompatibleAnimationKeypath * _Nonnull)keypath;
+- (CGRect)convertWithRect:(CGRect)rect toLayerAt:(CompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
+- (CGPoint)convertWithPoint:(CGPoint)point toLayerAt:(CompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)progressTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)frameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+@end
+
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
@@ -1134,17 +1508,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSCoder;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVBrandingLayout")
 @interface HVBrandingLayout : UIStackView
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (void)showBrandingWithShow:(BOOL)show;
-- (void)showTrustLogosWithShow:(BOOL)show;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
-@class UIColor;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 @interface HVCameraButton : UIButton
@@ -1158,7 +1529,6 @@ enum DocumentType : NSInteger;
 @class UIViewController;
 @class UIImage;
 @class UINavigationController;
-@class NSString;
 enum DocumentSide : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
@@ -1197,7 +1567,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocCaptureSubText:(NSString * _Nonnull)text;
 - (void)setDocCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setDocReviewTitle:(NSString * _Nonnull)text;
-- (void)setDocReviewSubtitle:(NSString * _Nonnull)text;
+- (void)setDocReviewSubtitle:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
 - (void)setDocReviewDescription:(NSString * _Nonnull)text;
 - (void)setDocReviewRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
@@ -1251,8 +1621,22 @@ SWIFT_CLASS("_TtC12HyperSnapSDK22HVDocInstructionsLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocPickerScreenButton")
-@interface HVDocPickerScreenButton : UIButton
+SWIFT_CLASS("_TtC12HyperSnapSDK24HVDocPickerCaptureButton")
+@interface HVDocPickerCaptureButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocPickerUploadButton")
+@interface HVDocPickerUploadButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
 + (void)setBackgroundColor:(CGColorRef _Nonnull)color;
@@ -1279,6 +1663,18 @@ SWIFT_CLASS("_TtC12HyperSnapSDK25HVDocReviewContinueButton")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK27HVDocReviewDescriptionLabel")
+@interface HVDocReviewDescriptionLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocReviewRetakeButton")
 @interface HVDocReviewRetakeButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -1293,9 +1689,22 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocReviewRetakeButton")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVDocReviewTitleLabel")
+@interface HVDocReviewTitleLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel")
 @interface HVDocSubTextLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
 + (void)setFont:(UIFont * _Nonnull)font;
 + (void)setTextAlignment:(NSTextAlignment)alignment;
 + (void)setTextColor:(UIColor * _Nonnull)color;
@@ -1306,11 +1715,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel")
 
 @class HVError;
 @class HVResponse;
-@class NSBundle;
 
 /// DocCameraViewController is the base class which will be used from outside.
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
-@interface HVDocsViewController : UIViewController
+@interface HVDocsViewController : UIViewController <UIViewControllerTransitioningDelegate>
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -1330,9 +1738,11 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
+@class UIPresentationController;
 
 @interface HVDocsViewController (SWIFT_EXTENSION(HyperSnapSDK))
 - (void)viewDidLoad;
+- (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
@@ -1346,6 +1756,32 @@ SWIFT_CLASS("_TtC12HyperSnapSDK7HVError")
 - (NSInteger)getErrorCode SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK19HVErrorRetakeButton")
+@interface HVErrorRetakeButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK18HVErrorRetakeLabel")
+@interface HVErrorRetakeLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
@@ -1403,8 +1839,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @interface FaceTextConfig : NSObject
 - (void)setFaceCaptureTitle:(NSString * _Nonnull)text;
-- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text;
-- (void)setFaceCaptureSubtitle:(NSString * _Nonnull)text;
+- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
+- (void)setFaceCaptureSubtitle:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
 - (void)setFaceCaptureMultipleFacesDetectedText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureWrongOrientationText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceFoundText:(NSString * _Nonnull)text;
@@ -1471,6 +1907,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 @interface HVFaceInstructionsViewController : UIViewController
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillAppear:(BOOL)animated;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
@@ -1482,7 +1920,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
-@interface HVFaceViewController : UIViewController
+@interface HVFaceViewController : UIViewController <UIViewControllerTransitioningDelegate>
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
 - (void)viewDidLoad;
 /// Starting point for Face Capture and liveness.
@@ -1505,6 +1943,11 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 - (void)viewWillDisappear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface HVFaceViewController (SWIFT_EXTENSION(HyperSnapSDK))
+- (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1658,6 +2101,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 - (void)viewDidAppear:(BOOL)animated;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 @end
 
 
@@ -1779,6 +2223,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 /// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
 ///
 + (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region;
++ (void)logEvent:(NSString * _Nonnull)name :(NSDictionary<NSString *, id> * _Nonnull)properties;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
@@ -1801,6 +2246,17 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 
 
 
+
+
+
+
+
+
+@interface UINavigationController (SWIFT_EXTENSION(HyperSnapSDK))
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@end
 
 
 
