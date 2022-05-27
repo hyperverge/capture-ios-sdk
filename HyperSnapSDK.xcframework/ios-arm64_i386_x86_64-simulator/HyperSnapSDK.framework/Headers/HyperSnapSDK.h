@@ -2,12 +2,10 @@
 //  HyperSnapSDK.h
 //  HyperSnapSDK
 //
-//  Created by Srinija on 06/06/18.
-//  Copyright © 2018 hyperverge. All rights reserved.
-//Version 4.0.0
+//  Created by Shrirama Upadhya A on 09/05/22.
+//
 
-#import <UIKit/UIKit.h>
-//#import "OpenCVWrapper.h"
+#import <Foundation/Foundation.h>
 
 //! Project version number for HyperSnapSDK.
 FOUNDATION_EXPORT double HyperSnapSDKVersionNumber;
