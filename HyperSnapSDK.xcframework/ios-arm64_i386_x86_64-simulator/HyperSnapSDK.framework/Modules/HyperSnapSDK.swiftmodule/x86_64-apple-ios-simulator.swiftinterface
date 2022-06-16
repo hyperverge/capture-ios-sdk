@@ -165,8 +165,10 @@ public enum BlendMode : Swift.Int, Swift.Codable {
 @_inheritsConvenienceInitializers @objc public class HVFaceConfig : HyperSnapSDK.HVBaseConfig {
   @objc public var textConfig: HyperSnapSDK.HVFaceConfig.FaceTextConfig
   @objc public func setLivenessMode(_ livenessMode: HyperSnapSDK.HyperSnapParams.LivenessMode)
-  @objc public func setShouldRecordvideo(_ shouldRecordvideo: Swift.Bool)
+  @objc public func setShouldRecordVideo(_ shouldRecordvideo: Swift.Bool)
   @objc public func setFps(_ fps: Swift.Int)
+  @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
+  @objc public func setAutoCaptureDuration(_ duration: Swift.Int)
   @objc public func setNumberOfFrames(_ numberOfFrames: Swift.Int)
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
   @objc public func setLivenessAPIParameters(_ parameters: [Swift.String : Swift.AnyObject])
@@ -205,6 +207,8 @@ public enum BlendMode : Swift.Int, Swift.Codable {
     @objc public func setFaceCaptureFaceNotFoundText(_ text: Swift.String)
     @objc public func setFaceCaptureFaceNotFoundText2(_ text: Swift.String)
     @objc public func setFaceCaptureFaceNotFoundToastText(_ text: Swift.String)
+    @objc public func setFaceAutoCaptureWaitText(_ text: Swift.String)
+    @objc public func setFaceAutoCaptureActionText(_ text: Swift.String)
     @objc public func setFaceCaptureActivityText(_ text: Swift.String)
     @objc public func setFaceRetakeButtonText(_ text: Swift.String)
     @objc public func setFaceRetakeTitleText(_ text: Swift.String)
