@@ -678,8 +678,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : HVBaseConfig
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
-- (void)setShouldRecordvideo:(BOOL)shouldRecordvideo;
+- (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
 - (void)setFps:(NSInteger)fps;
+- (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
+- (void)setAutoCaptureDuration:(NSInteger)duration;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
@@ -720,6 +722,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureFaceNotFoundText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundText2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
+- (void)setFaceAutoCaptureWaitText:(NSString * _Nonnull)text;
+- (void)setFaceAutoCaptureActionText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
@@ -1814,8 +1818,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : HVBaseConfig
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
-- (void)setShouldRecordvideo:(BOOL)shouldRecordvideo;
+- (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
 - (void)setFps:(NSInteger)fps;
+- (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
+- (void)setAutoCaptureDuration:(NSInteger)duration;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
@@ -1856,6 +1862,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureFaceNotFoundText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundText2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
+- (void)setFaceAutoCaptureWaitText:(NSString * _Nonnull)text;
+- (void)setFaceAutoCaptureActionText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
@@ -2950,8 +2958,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : HVBaseConfig
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
-- (void)setShouldRecordvideo:(BOOL)shouldRecordvideo;
+- (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
 - (void)setFps:(NSInteger)fps;
+- (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
+- (void)setAutoCaptureDuration:(NSInteger)duration;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
@@ -2992,6 +3002,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureFaceNotFoundText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundText2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
+- (void)setFaceAutoCaptureWaitText:(NSString * _Nonnull)text;
+- (void)setFaceAutoCaptureActionText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
