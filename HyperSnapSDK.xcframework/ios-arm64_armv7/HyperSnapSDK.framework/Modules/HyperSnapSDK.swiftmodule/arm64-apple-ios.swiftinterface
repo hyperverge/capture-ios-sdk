@@ -453,31 +453,13 @@ public protocol AnyValueProvider {
   public static let EVENT_REMOTE_CONFIG_API_ERROR: Swift.String
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc public class HVResponse : ObjectiveC.NSObject {
-  @objc public var apiResult: [Swift.String : Swift.AnyObject]? {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class HVResponse : HyperSnapSDK.HVBaseResponse {
+  @objc public var retakeAttemptResponses: [HyperSnapSDK.HVBaseResponse] {
     get
   }
-  @objc public var apiHeaders: [Swift.String : Swift.String]? {
-    get
-  }
-  @objc public var action: Swift.String? {
-    get
-  }
-  @objc public var imageUri: Swift.String? {
-    get
-  }
-  @objc public var fullImageUri: Swift.String? {
-    get
-  }
-  @objc public var videoUri: Swift.String? {
-    get
-  }
-  @objc public var attemptsCount: Swift.Int {
-    get
-  }
-  @objc public var retakeMessage: Swift.String? {
-    get
-  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class HVIPDetails {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class HVFaceViewController : UIKit.UIViewController, UIKit.UIViewControllerTransitioningDelegate {
@@ -777,6 +759,36 @@ extension UIKit.UIFont {
     }
   }
   @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class HVGeoDetails {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class HVBaseResponse : ObjectiveC.NSObject {
+  @objc public var apiResult: [Swift.String : Swift.AnyObject]? {
+    get
+  }
+  @objc public var apiHeaders: [Swift.String : Swift.String]? {
+    get
+  }
+  @objc public var action: Swift.String? {
+    get
+  }
+  @objc public var imageUri: Swift.String? {
+    get
+  }
+  @objc public var fullImageUri: Swift.String? {
+    get
+  }
+  @objc public var videoUri: Swift.String? {
+    get
+  }
+  @objc public var attemptsCount: Swift.Int {
+    get
+  }
+  @objc public var retakeMessage: Swift.String? {
+    get
+  }
   @objc deinit
 }
 @objc @_Concurrency.MainActor(unsafe) open class HVDocsViewController : UIKit.UIViewController, UIKit.UIViewControllerTransitioningDelegate {
