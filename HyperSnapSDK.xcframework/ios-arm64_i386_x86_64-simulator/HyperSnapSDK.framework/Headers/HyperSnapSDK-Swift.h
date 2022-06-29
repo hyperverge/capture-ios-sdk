@@ -374,6 +374,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
+@interface HVBaseResponse : NSObject
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable apiResult;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nullable apiHeaders;
+@property (nonatomic, readonly, copy) NSString * _Nullable action;
+@property (nonatomic, readonly, copy) NSString * _Nullable imageUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable fullImageUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable videoUri;
+@property (nonatomic, readonly) NSInteger attemptsCount;
+@property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVBrandingLayout")
 @interface HVBrandingLayout : UIStackView
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
@@ -978,17 +993,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK10HVResponse")
-@interface HVResponse : NSObject
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable apiResult;
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nullable apiHeaders;
-@property (nonatomic, readonly, copy) NSString * _Nullable action;
-@property (nonatomic, readonly, copy) NSString * _Nullable imageUri;
-@property (nonatomic, readonly, copy) NSString * _Nullable fullImageUri;
-@property (nonatomic, readonly, copy) NSString * _Nullable videoUri;
-@property (nonatomic, readonly) NSInteger attemptsCount;
-@property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@interface HVResponse : HVBaseResponse
+@property (nonatomic, readonly, copy) NSArray<HVBaseResponse *> * _Nonnull retakeAttemptResponses;
 @end
 
 
@@ -1514,6 +1520,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
+@interface HVBaseResponse : NSObject
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable apiResult;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nullable apiHeaders;
+@property (nonatomic, readonly, copy) NSString * _Nullable action;
+@property (nonatomic, readonly, copy) NSString * _Nullable imageUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable fullImageUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable videoUri;
+@property (nonatomic, readonly) NSInteger attemptsCount;
+@property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVBrandingLayout")
 @interface HVBrandingLayout : UIStackView
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
@@ -2118,17 +2139,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK10HVResponse")
-@interface HVResponse : NSObject
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable apiResult;
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nullable apiHeaders;
-@property (nonatomic, readonly, copy) NSString * _Nullable action;
-@property (nonatomic, readonly, copy) NSString * _Nullable imageUri;
-@property (nonatomic, readonly, copy) NSString * _Nullable fullImageUri;
-@property (nonatomic, readonly, copy) NSString * _Nullable videoUri;
-@property (nonatomic, readonly) NSInteger attemptsCount;
-@property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@interface HVResponse : HVBaseResponse
+@property (nonatomic, readonly, copy) NSArray<HVBaseResponse *> * _Nonnull retakeAttemptResponses;
 @end
 
 
@@ -2654,6 +2666,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @end
 
 
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
+@interface HVBaseResponse : NSObject
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable apiResult;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nullable apiHeaders;
+@property (nonatomic, readonly, copy) NSString * _Nullable action;
+@property (nonatomic, readonly, copy) NSString * _Nullable imageUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable fullImageUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable videoUri;
+@property (nonatomic, readonly) NSInteger attemptsCount;
+@property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVBrandingLayout")
 @interface HVBrandingLayout : UIStackView
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
@@ -3258,17 +3285,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK10HVResponse")
-@interface HVResponse : NSObject
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nullable apiResult;
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nullable apiHeaders;
-@property (nonatomic, readonly, copy) NSString * _Nullable action;
-@property (nonatomic, readonly, copy) NSString * _Nullable imageUri;
-@property (nonatomic, readonly, copy) NSString * _Nullable fullImageUri;
-@property (nonatomic, readonly, copy) NSString * _Nullable videoUri;
-@property (nonatomic, readonly) NSInteger attemptsCount;
-@property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@interface HVResponse : HVBaseResponse
+@property (nonatomic, readonly, copy) NSArray<HVBaseResponse *> * _Nonnull retakeAttemptResponses;
 @end
 
 
