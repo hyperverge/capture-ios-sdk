@@ -40,4 +40,4 @@ jobs:
       # Runs a command to let you know that HyperSnapSDK (x.y.z) has been released
       - name: Log HyperSnapSDK (x.y.z) release
         run: |
-          echo HyperSnapSDK (x.y.z) has been pushed to cocoapods
+          echo HyperSnapSDK x.y.z has been pushed to cocoapods
