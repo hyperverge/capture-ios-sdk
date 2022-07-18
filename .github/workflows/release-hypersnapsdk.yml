@@ -18,7 +18,10 @@ jobs:
   # This workflow contains a single job called "deploy"
   deploy:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
+    
+    # Environment to be used for pushing HyperSnapSDK to cocoapods
+    environment: production
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -27,17 +30,23 @@ jobs:
 
       # Runs a set of commands to create tag (x.y.z) and push it to origin
       - name: Create a tag for version x.y.z
+        env:
+          HYPERSNAPSDK_VERSION: ${{ secrets.HYPERSNAPSDK_VERSION }}
         run: |
-          git tag "x.y.z"
+          git tag "$HYPERSNAPSDK_VERSION"
           git push origin --tags
 
-      # Runs a set of commands to push HyperSnapSDK (x.y.z) to cocoapods
-      # - name: Push HyperSnapSDK (x.y.z) to cocoapods
-      #  run: |
-      #   pod spec lint HyperSnapSDK.podspec --allow-warnings --verbose
-      #   pod trunk push HyperSnapSDK.podspec --allow-warnings
+      # Runs a set of commands to push HyperSnapSDK (HYPERSNAPSDK_VERSION) to cocoapods
+#       - name: Push HyperSnapSDK (HYPERSNAPSDK_VERSION) to cocoapods
+#         env: 
+#           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+#         run: |
+#           pod spec lint HyperSnapSDK.podspec --allow-warnings --verbose
+#           pod trunk push HyperSnapSDK.podspec --allow-warnings
       
       # Runs a command to let you know that HyperSnapSDK (x.y.z) has been released
-      - name: Log HyperSnapSDK (x.y.z) release
+      - name: Log HyperSnapSDK (HYPERSNAPSDK_VERSION) release
+        env: 
+          HYPERSNAPSDK_VERSION: ${{ secrets.HYPERSNAPSDK_VERSION }}
         run: |
-          echo HyperSnapSDK x.y.z has been pushed to cocoapods
+          echo HyperSnapSDK "$HYPERSNAPSDK_VERSION" has been pushed to cocoapods
