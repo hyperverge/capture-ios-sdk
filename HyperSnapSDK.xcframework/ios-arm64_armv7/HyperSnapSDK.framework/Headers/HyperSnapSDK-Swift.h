@@ -441,6 +441,12 @@ typedef SWIFT_ENUM(NSInteger, DocumentSide, open) {
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 @interface DocTextConfig : NSObject
+- (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setDocInstructions1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setDocInstructions2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setDocInstructions3:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setDocInstructionsProceedText:(NSString * _Nonnull)text;
+- (void)setDocInstructionsUploadText:(NSString * _Nonnull)text;
 - (void)setDocCaptureTitle:(NSString * _Nonnull)text;
 - (void)setDocCaptureSubtitle:(NSString * _Nonnull)text;
 - (void)setDocCaptureDescription:(NSString * _Nonnull)text;
@@ -453,11 +459,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
 - (void)setDocRetakePageRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocRetakePageTitleText:(NSString * _Nonnull)text;
-- (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
-- (void)setDocInstructions1:(NSString * _Nonnull)text;
-- (void)setDocInstructions2:(NSString * _Nonnull)text;
-- (void)setDocInstructions3:(NSString * _Nonnull)text;
-- (void)setDocInstructionsProceedText:(NSString * _Nonnull)text;
+- (void)setDocLoadingTitleText:(NSString * _Nonnull)text;
+- (void)setDocLoadingDescriptionText:(NSString * _Nonnull)text;
 - (void)setCloseAlertTitle:(NSString * _Nonnull)text;
 - (void)setCloseAlertDesc:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -501,8 +504,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK22HVDocInstructionsLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK24HVDocPickerCaptureButton")
-@interface HVDocPickerCaptureButton : UIButton
+SWIFT_CLASS("_TtC12HyperSnapSDK30HVDocInstructionsProceedButton")
+@interface HVDocInstructionsProceedButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
 + (void)setBackgroundColor:(CGColorRef _Nonnull)color;
@@ -515,8 +518,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK24HVDocPickerCaptureButton")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocPickerUploadButton")
-@interface HVDocPickerUploadButton : UIButton
+SWIFT_CLASS("_TtC12HyperSnapSDK29HVDocInstructionsUploadButton")
+@interface HVDocInstructionsUploadButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
 + (void)setBackgroundColor:(CGColorRef _Nonnull)color;
@@ -723,8 +726,17 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @interface FaceTextConfig : NSObject
+- (void)setFaceInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsDescription:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsTop1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsTop2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsNoGlasses:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsBrightLight:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsNoHat:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsProceed:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsProceedBackCam:(NSString * _Nonnull)text;
 - (void)setFaceCaptureTitle:(NSString * _Nonnull)text;
-- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
+- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureSubtitle:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
 - (void)setFaceCaptureMultipleFacesDetectedText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureWrongOrientationText:(NSString * _Nonnull)text;
@@ -739,17 +751,11 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
 - (void)setFaceAutoCaptureWaitText:(NSString * _Nonnull)text;
 - (void)setFaceAutoCaptureActionText:(NSString * _Nonnull)text;
+- (void)setFaceLoadingTitleText:(NSString * _Nonnull)text;
+- (void)setFaceLoadingDescriptionText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsTitle:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsTop1:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsTop2:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsNoGlasses:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsBrightLight:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsNoHat:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsProceed:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsProceedBackCam:(NSString * _Nonnull)text;
 - (void)setCloseAlertTitle:(NSString * _Nonnull)text;
 - (void)setCloseAlertDesc:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -793,14 +799,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK25HVFaceInstructionTopLabel")
 SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 @interface HVFaceInstructionsViewController : UIViewController
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
-- (void)viewDidLoad;
-- (void)viewWillLayoutSubviews;
-- (void)viewDidAppear:(BOOL)animated;
-- (void)viewWillAppear:(BOOL)animated;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -934,6 +940,27 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVPageNumberLabel")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class HVQRTextConfig;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK10HVQRConfig")
+@interface HVQRConfig : HVBaseConfig
+- (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
+@property (nonatomic, strong) HVQRTextConfig * _Nonnull textConfig;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtCC12HyperSnapSDK10HVQRConfig14HVQRTextConfig")
+@interface HVQRTextConfig : NSObject
+- (void)setQrCaptureSubText:(NSString * _Nonnull)text;
+- (void)setQrCaptureTitle:(NSString * _Nonnull)text;
+- (void)setQrInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setQrCaptureDescription:(NSString * _Nonnull)text;
+- (void)setQrInstructionsDescription:(NSString * _Nonnull)text;
+- (void)setQrInstructionsProceedText:(NSString * _Nonnull)text;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVQRDescriptionLabel")
 @interface HVQRDescriptionLabel : UILabel
@@ -944,6 +971,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVQRDescriptionLabel")
 + (void)setShadowColor:(UIColor * _Nonnull)color;
 + (void)setShadowOffset:(CGSize)offset;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK30HVQRInstructionsViewController")
+@interface HVQRInstructionsViewController : UIViewController
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable);
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -973,11 +1015,18 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 /// </ul>
 /// \param callingVC ViewController that is currently active. HVQRViewController will be presented on top of this.
 ///
+/// \param hvQRConfig Object with all properties related to QR Capture
+///
 /// \param completionHandler Closure that will be called after successful capture + processing or when there is an error
 ///
-+ (void)start:(UIViewController * _Nonnull)callingVC completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
++ (void)start:(UIViewController * _Nonnull)callingVC hvQRConfig:(HVQRConfig * _Nonnull)hvQRConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface HVQRViewController (SWIFT_EXTENSION(HyperSnapSDK)) <UIViewControllerTransitioningDelegate>
+- (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1115,7 +1164,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 
@@ -1587,6 +1635,12 @@ typedef SWIFT_ENUM(NSInteger, DocumentSide, open) {
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 @interface DocTextConfig : NSObject
+- (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setDocInstructions1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setDocInstructions2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setDocInstructions3:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setDocInstructionsProceedText:(NSString * _Nonnull)text;
+- (void)setDocInstructionsUploadText:(NSString * _Nonnull)text;
 - (void)setDocCaptureTitle:(NSString * _Nonnull)text;
 - (void)setDocCaptureSubtitle:(NSString * _Nonnull)text;
 - (void)setDocCaptureDescription:(NSString * _Nonnull)text;
@@ -1599,11 +1653,8 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (void)setDocReviewContinueButtonText:(NSString * _Nonnull)text;
 - (void)setDocRetakePageRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setDocRetakePageTitleText:(NSString * _Nonnull)text;
-- (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
-- (void)setDocInstructions1:(NSString * _Nonnull)text;
-- (void)setDocInstructions2:(NSString * _Nonnull)text;
-- (void)setDocInstructions3:(NSString * _Nonnull)text;
-- (void)setDocInstructionsProceedText:(NSString * _Nonnull)text;
+- (void)setDocLoadingTitleText:(NSString * _Nonnull)text;
+- (void)setDocLoadingDescriptionText:(NSString * _Nonnull)text;
 - (void)setCloseAlertTitle:(NSString * _Nonnull)text;
 - (void)setCloseAlertDesc:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1647,8 +1698,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK22HVDocInstructionsLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK24HVDocPickerCaptureButton")
-@interface HVDocPickerCaptureButton : UIButton
+SWIFT_CLASS("_TtC12HyperSnapSDK30HVDocInstructionsProceedButton")
+@interface HVDocInstructionsProceedButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
 + (void)setBackgroundColor:(CGColorRef _Nonnull)color;
@@ -1661,8 +1712,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK24HVDocPickerCaptureButton")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocPickerUploadButton")
-@interface HVDocPickerUploadButton : UIButton
+SWIFT_CLASS("_TtC12HyperSnapSDK29HVDocInstructionsUploadButton")
+@interface HVDocInstructionsUploadButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
 + (void)setBackgroundColor:(CGColorRef _Nonnull)color;
@@ -1869,8 +1920,17 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @interface FaceTextConfig : NSObject
+- (void)setFaceInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsDescription:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsTop1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsTop2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsNoGlasses:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsBrightLight:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsNoHat:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
+- (void)setFaceInstructionsProceed:(NSString * _Nonnull)text;
+- (void)setFaceInstructionsProceedBackCam:(NSString * _Nonnull)text;
 - (void)setFaceCaptureTitle:(NSString * _Nonnull)text;
-- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
+- (void)setFaceCaptureTitle2:(NSString * _Nonnull)text;
 - (void)setFaceCaptureSubtitle:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Won't be available after UI/UX revamp");
 - (void)setFaceCaptureMultipleFacesDetectedText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureWrongOrientationText:(NSString * _Nonnull)text;
@@ -1885,17 +1945,11 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceCaptureFaceNotFoundToastText:(NSString * _Nonnull)text;
 - (void)setFaceAutoCaptureWaitText:(NSString * _Nonnull)text;
 - (void)setFaceAutoCaptureActionText:(NSString * _Nonnull)text;
+- (void)setFaceLoadingTitleText:(NSString * _Nonnull)text;
+- (void)setFaceLoadingDescriptionText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsTitle:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsTop1:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsTop2:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsNoGlasses:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsBrightLight:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsNoHat:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsProceed:(NSString * _Nonnull)text;
-- (void)setFaceInstructionsProceedBackCam:(NSString * _Nonnull)text;
 - (void)setCloseAlertTitle:(NSString * _Nonnull)text;
 - (void)setCloseAlertDesc:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1939,14 +1993,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK25HVFaceInstructionTopLabel")
 SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 @interface HVFaceInstructionsViewController : UIViewController
 @property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull);
-- (void)viewDidLoad;
-- (void)viewWillLayoutSubviews;
-- (void)viewDidAppear:(BOOL)animated;
-- (void)viewWillAppear:(BOOL)animated;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(BOOL)animated;
+- (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2080,6 +2134,27 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVPageNumberLabel")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class HVQRTextConfig;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK10HVQRConfig")
+@interface HVQRConfig : HVBaseConfig
+- (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
+@property (nonatomic, strong) HVQRTextConfig * _Nonnull textConfig;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtCC12HyperSnapSDK10HVQRConfig14HVQRTextConfig")
+@interface HVQRTextConfig : NSObject
+- (void)setQrCaptureSubText:(NSString * _Nonnull)text;
+- (void)setQrCaptureTitle:(NSString * _Nonnull)text;
+- (void)setQrInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setQrCaptureDescription:(NSString * _Nonnull)text;
+- (void)setQrInstructionsDescription:(NSString * _Nonnull)text;
+- (void)setQrInstructionsProceedText:(NSString * _Nonnull)text;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVQRDescriptionLabel")
 @interface HVQRDescriptionLabel : UILabel
@@ -2090,6 +2165,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVQRDescriptionLabel")
 + (void)setShadowColor:(UIColor * _Nonnull)color;
 + (void)setShadowOffset:(CGSize)offset;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK30HVQRInstructionsViewController")
+@interface HVQRInstructionsViewController : UIViewController
+@property (nonatomic, copy) void (^ _Nonnull completionHandler)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable);
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+- (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidAppear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -2119,11 +2209,18 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 /// </ul>
 /// \param callingVC ViewController that is currently active. HVQRViewController will be presented on top of this.
 ///
+/// \param hvQRConfig Object with all properties related to QR Capture
+///
 /// \param completionHandler Closure that will be called after successful capture + processing or when there is an error
 ///
-+ (void)start:(UIViewController * _Nonnull)callingVC completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
++ (void)start:(UIViewController * _Nonnull)callingVC hvQRConfig:(HVQRConfig * _Nonnull)hvQRConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface HVQRViewController (SWIFT_EXTENSION(HyperSnapSDK)) <UIViewControllerTransitioningDelegate>
+- (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -2261,7 +2358,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
-
 
 
 

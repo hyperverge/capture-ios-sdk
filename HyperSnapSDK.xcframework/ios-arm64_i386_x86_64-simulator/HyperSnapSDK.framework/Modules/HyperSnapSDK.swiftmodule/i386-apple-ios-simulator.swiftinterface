@@ -88,6 +88,15 @@ public protocol AnimationCacheProvider {
     }
   }
   @_inheritsConvenienceInitializers @objc public class DocTextConfig : ObjectiveC.NSObject {
+    @objc public func setDocInstructionsTitle(_ text: Swift.String)
+    @available(*, deprecated, message: "Removed in UI/UX upgrade")
+    @objc public func setDocInstructions1(_ text: Swift.String)
+    @available(*, deprecated, message: "Removed in UI/UX upgrade")
+    @objc public func setDocInstructions2(_ text: Swift.String)
+    @available(*, deprecated, message: "Removed in UI/UX upgrade")
+    @objc public func setDocInstructions3(_ text: Swift.String)
+    @objc public func setDocInstructionsProceedText(_ text: Swift.String)
+    @objc public func setDocInstructionsUploadText(_ text: Swift.String)
     @objc public func setDocCaptureTitle(_ text: Swift.String)
     @objc public func setDocCaptureSubtitle(_ text: Swift.String)
     @objc public func setDocCaptureDescription(_ text: Swift.String)
@@ -101,11 +110,8 @@ public protocol AnimationCacheProvider {
     @objc public func setDocReviewContinueButtonText(_ text: Swift.String)
     @objc public func setDocRetakePageRetakeButtonText(_ text: Swift.String)
     @objc public func setDocRetakePageTitleText(_ text: Swift.String)
-    @objc public func setDocInstructionsTitle(_ text: Swift.String)
-    @objc public func setDocInstructions1(_ text: Swift.String)
-    @objc public func setDocInstructions2(_ text: Swift.String)
-    @objc public func setDocInstructions3(_ text: Swift.String)
-    @objc public func setDocInstructionsProceedText(_ text: Swift.String)
+    @objc public func setDocLoadingTitleText(_ text: Swift.String)
+    @objc public func setDocLoadingDescriptionText(_ text: Swift.String)
     @objc public func setCloseAlertTitle(_ text: Swift.String)
     @objc public func setCloseAlertDesc(_ text: Swift.String)
     @objc override dynamic public init()
@@ -191,8 +197,21 @@ public enum BlendMode : Swift.Int, Swift.Codable {
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
   @objc public func setShouldRejectFaceNotStraight(_ shouldReject: Swift.Bool)
   @_inheritsConvenienceInitializers @objc public class FaceTextConfig : ObjectiveC.NSObject {
+    @objc public func setFaceInstructionsTitle(_ text: Swift.String)
+    @objc public func setFaceInstructionsDescription(_ text: Swift.String)
+    @available(*, deprecated, message: "Removed in UI/UX upgrade")
+    @objc public func setFaceInstructionsTop1(_ text: Swift.String)
+    @available(*, deprecated, message: "Removed in UI/UX upgrade")
+    @objc public func setFaceInstructionsTop2(_ text: Swift.String)
+    @available(*, deprecated, message: "Removed in UI/UX upgrade")
+    @objc public func setFaceInstructionsNoGlasses(_ text: Swift.String)
+    @available(*, deprecated, message: "Removed in UI/UX upgrade")
+    @objc public func setFaceInstructionsBrightLight(_ text: Swift.String)
+    @available(*, deprecated, message: "Removed in UI/UX upgrade")
+    @objc public func setFaceInstructionsNoHat(_ text: Swift.String)
+    @objc public func setFaceInstructionsProceed(_ text: Swift.String)
+    @objc public func setFaceInstructionsProceedBackCam(_ text: Swift.String)
     @objc public func setFaceCaptureTitle(_ text: Swift.String)
-    @available(*, deprecated, message: "Won't be available after UI/UX revamp")
     @objc public func setFaceCaptureTitle2(_ text: Swift.String)
     @available(*, deprecated, message: "Won't be available after UI/UX revamp")
     @objc public func setFaceCaptureSubtitle(_ text: Swift.String)
@@ -209,17 +228,11 @@ public enum BlendMode : Swift.Int, Swift.Codable {
     @objc public func setFaceCaptureFaceNotFoundToastText(_ text: Swift.String)
     @objc public func setFaceAutoCaptureWaitText(_ text: Swift.String)
     @objc public func setFaceAutoCaptureActionText(_ text: Swift.String)
+    @objc public func setFaceLoadingTitleText(_ text: Swift.String)
+    @objc public func setFaceLoadingDescriptionText(_ text: Swift.String)
     @objc public func setFaceCaptureActivityText(_ text: Swift.String)
     @objc public func setFaceRetakeButtonText(_ text: Swift.String)
     @objc public func setFaceRetakeTitleText(_ text: Swift.String)
-    @objc public func setFaceInstructionsTitle(_ text: Swift.String)
-    @objc public func setFaceInstructionsTop1(_ text: Swift.String)
-    @objc public func setFaceInstructionsTop2(_ text: Swift.String)
-    @objc public func setFaceInstructionsNoGlasses(_ text: Swift.String)
-    @objc public func setFaceInstructionsBrightLight(_ text: Swift.String)
-    @objc public func setFaceInstructionsNoHat(_ text: Swift.String)
-    @objc public func setFaceInstructionsProceed(_ text: Swift.String)
-    @objc public func setFaceInstructionsProceedBackCam(_ text: Swift.String)
     @objc public func setCloseAlertTitle(_ text: Swift.String)
     @objc public func setCloseAlertDesc(_ text: Swift.String)
     @objc override dynamic public init()
@@ -553,6 +566,28 @@ extension HyperSnapSDK.Vector3D {
     get
   }
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class HVQRInstructionsViewController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) public func setHVQRConfig(hvQRConfig: HyperSnapSDK.HVQRConfig)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @objc public class HVSessionResponse : ObjectiveC.NSObject {
   @objc public var hvError: HyperSnapSDK.HVError? {
     get
@@ -669,6 +704,22 @@ extension HyperSnapSDK.LottieLoopMode : Swift.Equatable {
   @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
     @_Concurrency.MainActor(unsafe) @objc get
   }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class HVQRConfig : HyperSnapSDK.HVBaseConfig {
+  @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
+  @objc public var textConfig: HyperSnapSDK.HVQRConfig.HVQRTextConfig
+  @_inheritsConvenienceInitializers @objc public class HVQRTextConfig : ObjectiveC.NSObject {
+    @objc public func setQrCaptureSubText(_ text: Swift.String)
+    @objc public func setQrCaptureTitle(_ text: Swift.String)
+    @objc public func setQrInstructionsTitle(_ text: Swift.String)
+    @objc public func setQrCaptureDescription(_ text: Swift.String)
+    @objc public func setQrInstructionsDescription(_ text: Swift.String)
+    @objc public func setQrInstructionsProceedText(_ text: Swift.String)
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc override dynamic public init()
   @objc deinit
 }
 extension HyperSnapSDK.Color : Swift.Codable {
@@ -924,7 +975,7 @@ public struct Color {
   @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVDocPickerCaptureButton : UIKit.UIButton {
+@objc @_Concurrency.MainActor(unsafe) public class HVDocInstructionsProceedButton : UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
@@ -935,7 +986,7 @@ public struct Color {
   @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVDocPickerUploadButton : UIKit.UIButton {
+@objc @_Concurrency.MainActor(unsafe) public class HVDocInstructionsUploadButton : UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
@@ -1115,10 +1166,6 @@ public struct Color {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class HVFaceInstructionsViewController : UIKit.UIViewController {
   @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ vc: UIKit.UIViewController) -> Swift.Void
   @_Concurrency.MainActor(unsafe) public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
     @_Concurrency.MainActor(unsafe) @objc get
   }
@@ -1131,6 +1178,10 @@ public struct Color {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
     @_Concurrency.MainActor(unsafe) @objc get
   }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -1349,7 +1400,8 @@ final public class DefaultFontProvider : HyperSnapSDK.AnimationFontProvider {
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class HVQRViewController : UIKit.UIViewController {
   @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void
-  @objc @_Concurrency.MainActor(unsafe) public static func start(_ callingVC: UIKit.UIViewController, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
+  @objc @_Concurrency.MainActor(unsafe) public static func start(_ callingVC: UIKit.UIViewController, hvQRConfig: HyperSnapSDK.HVQRConfig, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func setHVQRConfig(hvQRConfig: HyperSnapSDK.HVQRConfig)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -1368,6 +1420,9 @@ extension HyperSnapSDK.HVQRViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
     @_Concurrency.MainActor(unsafe) @objc get
   }
+}
+extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
 }
 @objc @_inheritsConvenienceInitializers public class HVBaseConfig : ObjectiveC.NSObject {
   public var showTrustLogos: Swift.Bool
