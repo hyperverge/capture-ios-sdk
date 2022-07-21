@@ -28,8 +28,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a set of commands to create tag (x.y.z) and push it to origin
-      - name: Create a tag for version x.y.z
+      # Runs a set of commands to create tag (HYPERSNAPSDK_VERSION) and push it to origin
+      - name: Create a tag for version HYPERSNAPSDK_VERSION (x.y.z)
         env:
           HYPERSNAPSDK_VERSION: ${{ secrets.HYPERSNAPSDK_VERSION }}
         run: |
@@ -37,15 +37,15 @@ jobs:
           git push origin --tags
 
       # Runs a set of commands to push HyperSnapSDK (HYPERSNAPSDK_VERSION) to cocoapods
-#       - name: Push HyperSnapSDK (HYPERSNAPSDK_VERSION) to cocoapods
-#         env: 
-#           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-#         run: |
-#           pod spec lint HyperSnapSDK.podspec --allow-warnings --verbose
-#           pod trunk push HyperSnapSDK.podspec --allow-warnings
+      - name: Push HyperSnapSDK (HYPERSNAPSDK_VERSION) to cocoapods
+        env: 
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: |
+          pod spec lint HyperSnapSDK.podspec --allow-warnings --verbose
+          pod trunk push HyperSnapSDK.podspec --allow-warnings
       
       # Runs a command to let you know that HyperSnapSDK (x.y.z) has been released
-      - name: Log HyperSnapSDK (HYPERSNAPSDK_VERSION) release
+      - name: Log HyperSnapSDK (HYPERSNAPSDK_VERSION x.y.z) release
         env: 
           HYPERSNAPSDK_VERSION: ${{ secrets.HYPERSNAPSDK_VERSION }}
         run: |
