@@ -441,6 +441,7 @@ typedef SWIFT_ENUM(NSInteger, DocumentSide, open) {
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 @interface DocTextConfig : NSObject
+- (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
 - (void)setDocInstructions1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
 - (void)setDocInstructions2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
@@ -726,6 +727,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @interface FaceTextConfig : NSObject
+- (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setFaceInstructionsTitle:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsDescription:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsTop1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
@@ -1135,6 +1137,9 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *, NSString *> * _Nonnull uiConfigJson;)
++ (NSDictionary<NSString *, NSString *> * _Nonnull)uiConfigJson SWIFT_WARN_UNUSED_RESULT;
++ (void)setUiConfigJson:(NSDictionary<NSString *, NSString *> * _Nonnull)value;
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
 /// \param appId Provided by HyperVerge
 ///
@@ -1156,6 +1161,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
++ (void)setUiJson:(NSDictionary<NSString *, NSString *> * _Nonnull)colorJson;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -1164,6 +1170,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 
@@ -1635,6 +1642,7 @@ typedef SWIFT_ENUM(NSInteger, DocumentSide, open) {
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 @interface DocTextConfig : NSObject
+- (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
 - (void)setDocInstructions1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
 - (void)setDocInstructions2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
@@ -1920,6 +1928,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @interface FaceTextConfig : NSObject
+- (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setFaceInstructionsTitle:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsDescription:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsTop1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
@@ -2329,6 +2338,9 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *, NSString *> * _Nonnull uiConfigJson;)
++ (NSDictionary<NSString *, NSString *> * _Nonnull)uiConfigJson SWIFT_WARN_UNUSED_RESULT;
++ (void)setUiConfigJson:(NSDictionary<NSString *, NSString *> * _Nonnull)value;
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
 /// \param appId Provided by HyperVerge
 ///
@@ -2350,6 +2362,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
++ (void)setUiJson:(NSDictionary<NSString *, NSString *> * _Nonnull)colorJson;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -2358,6 +2371,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 
@@ -2829,6 +2843,7 @@ typedef SWIFT_ENUM(NSInteger, DocumentSide, open) {
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 @interface DocTextConfig : NSObject
+- (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
 - (void)setDocInstructions1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
 - (void)setDocInstructions2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
@@ -3114,6 +3129,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @interface FaceTextConfig : NSObject
+- (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setFaceInstructionsTitle:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsDescription:(NSString * _Nonnull)text;
 - (void)setFaceInstructionsTop1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
@@ -3523,6 +3539,9 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *, NSString *> * _Nonnull uiConfigJson;)
++ (NSDictionary<NSString *, NSString *> * _Nonnull)uiConfigJson SWIFT_WARN_UNUSED_RESULT;
++ (void)setUiConfigJson:(NSDictionary<NSString *, NSString *> * _Nonnull)value;
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
 /// \param appId Provided by HyperVerge
 ///
@@ -3544,6 +3563,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
++ (void)setUiJson:(NSDictionary<NSString *, NSString *> * _Nonnull)colorJson;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -3552,6 +3572,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 
