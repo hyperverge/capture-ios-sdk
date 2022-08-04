@@ -88,6 +88,7 @@ public protocol AnimationCacheProvider {
     }
   }
   @_inheritsConvenienceInitializers @objc public class DocTextConfig : ObjectiveC.NSObject {
+    @objc public func setTextConfig(_ textJson: [Swift.String : Swift.String])
     @objc public func setDocInstructionsTitle(_ text: Swift.String)
     @available(*, deprecated, message: "Removed in UI/UX upgrade")
     @objc public func setDocInstructions1(_ text: Swift.String)
@@ -197,6 +198,7 @@ public enum BlendMode : Swift.Int, Swift.Codable {
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
   @objc public func setShouldRejectFaceNotStraight(_ shouldReject: Swift.Bool)
   @_inheritsConvenienceInitializers @objc public class FaceTextConfig : ObjectiveC.NSObject {
+    @objc public func setTextConfig(_ textJson: [Swift.String : Swift.String])
     @objc public func setFaceInstructionsTitle(_ text: Swift.String)
     @objc public func setFaceInstructionsDescription(_ text: Swift.String)
     @available(*, deprecated, message: "Removed in UI/UX upgrade")
@@ -329,6 +331,9 @@ final public class FloatValueProvider : HyperSnapSDK.AnyValueProvider {
   final public func hasUpdate(frame: CoreGraphics.CGFloat) -> Swift.Bool
   final public func value(frame: CoreGraphics.CGFloat) -> Any
   @objc deinit
+}
+extension UIKit.UIColor {
+  convenience public init(hex: Swift.String)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AnimationSubview : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
@@ -540,6 +545,9 @@ extension HyperSnapSDK.HVFaceViewController {
 }
 infix operator +| : DefaultPrecedence
 infix operator +- : DefaultPrecedence
+@_hasMissingDesignatedInitializers public class getValidHexCode {
+  @objc deinit
+}
 public struct Vector1D {
   public init(_ value: Swift.Double)
   public let value: Swift.Double
@@ -741,6 +749,7 @@ extension UIKit.UIFont {
   public static func registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle?)
 }
 @_inheritsConvenienceInitializers @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
+  @objc public static var uiConfigJson: [Swift.String : Swift.String]
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func logEvent(_ name: Swift.String, _ properties: [Swift.String : Any])
@@ -748,6 +757,7 @@ extension UIKit.UIFont {
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
   @objc public static func setShouldUseAnalytics(_ shouldUse: Swift.Bool)
   @objc public static func setTimeoutIntervalForRequest(_ timeout: Swift.Double)
+  @objc public static func setUiJson(_ colorJson: [Swift.String : Swift.String])
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
   @objc public static func setShouldReturnRawResponse(_ shouldReturn: Swift.Bool)
   @objc public static func deleteImageAtUri(_ imageUri: Swift.String)
