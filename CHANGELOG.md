@@ -1,8 +1,11 @@
+#### 4.1.6 [18 Aug 2022]
+- Bugfix : Branding issue fix
+
 #### 4.1.5 [04 Aug 2022]
 - Add Text and UI config
 - Bugfix : Face Response Retake attempts
 
-#### 4.1.4 [21 Jul 2022]
+#### 4.1.4 [28 Jul 2022]
 - Support Signature Check for ind based endpoints
 - Send unique `fileName` in request body of all network calls
 
