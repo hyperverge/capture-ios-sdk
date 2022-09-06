@@ -1,5 +1,6 @@
 #### 4.1.7 [6 Sept 2022]
-- Added support to read barcode in document capture
+- Added support to read barcode in document capture (Use setter function `setShouldReadBarcode`)
+- Deprecate `setShouldReadQR` - Use `setShouldReadNIDQR` instead
 
 #### 4.1.6 [18 Aug 2022]
 - Bugfix : Branding issue fix
