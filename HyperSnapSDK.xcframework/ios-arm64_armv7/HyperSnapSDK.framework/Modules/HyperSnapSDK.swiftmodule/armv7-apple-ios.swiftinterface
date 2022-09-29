@@ -180,6 +180,7 @@ public enum BlendMode : Swift.Int, Swift.Codable {
   @objc public func setFps(_ fps: Swift.Int)
   @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
   @objc public func setAutoCaptureDuration(_ duration: Swift.Int)
+  @objc public func setShowAlertBox(_ shouldShowAlertLabel: Swift.Bool)
   @objc public func setNumberOfFrames(_ numberOfFrames: Swift.Int)
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
   @objc public func setLivenessAPIParameters(_ parameters: [Swift.String : Swift.AnyObject])
@@ -241,6 +242,7 @@ public enum BlendMode : Swift.Int, Swift.Codable {
     @objc public func setFaceRetakeTitleText(_ text: Swift.String)
     @objc public func setCloseAlertTitle(_ text: Swift.String)
     @objc public func setCloseAlertDesc(_ text: Swift.String)
+    @objc public func setAlertBoxLabelText(_ text: Swift.String)
     @objc override dynamic public init()
     @objc deinit
   }
@@ -549,9 +551,6 @@ extension HyperSnapSDK.HVFaceViewController {
 }
 infix operator +| : DefaultPrecedence
 infix operator +- : DefaultPrecedence
-@_hasMissingDesignatedInitializers public class getValidHexCode {
-  @objc deinit
-}
 public struct Vector1D {
   public init(_ value: Swift.Double)
   public let value: Swift.Double
@@ -1180,6 +1179,20 @@ public struct Color {
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
+@objc @_Concurrency.MainActor(unsafe) public class HVAlertTextLabel : UIKit.UILabel {
+  @objc @_Concurrency.MainActor(unsafe) required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class HVFaceInstructionsViewController : UIKit.UIViewController {
   @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ vc: UIKit.UIViewController) -> Swift.Void
   @_Concurrency.MainActor(unsafe) public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
@@ -1332,6 +1345,9 @@ public protocol AnimationFontProvider {
 final public class DefaultFontProvider : HyperSnapSDK.AnimationFontProvider {
   final public func fontFor(family: Swift.String, size: CoreGraphics.CGFloat) -> CoreText.CTFont?
   public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class getValidHexCode {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AnimatedButton : HyperSnapSDK.AnimatedControl {

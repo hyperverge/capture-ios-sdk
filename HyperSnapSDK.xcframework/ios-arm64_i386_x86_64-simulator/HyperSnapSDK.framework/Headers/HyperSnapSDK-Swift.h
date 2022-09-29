@@ -359,6 +359,22 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
 @end
 
 
+@class UIFont;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK16HVAlertTextLabel")
+@interface HVAlertTextLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
@@ -465,7 +481,6 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIFont;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocDescriptionA4Label")
 @interface HVDocDescriptionA4Label : UILabel
@@ -699,6 +714,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setFps:(NSInteger)fps;
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
 - (void)setAutoCaptureDuration:(NSInteger)duration;
+- (void)setShowAlertBox:(BOOL)shouldShowAlertLabel;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
@@ -758,6 +774,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
 - (void)setCloseAlertTitle:(NSString * _Nonnull)text;
 - (void)setCloseAlertDesc:(NSString * _Nonnull)text;
+- (void)setAlertBoxLabelText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1558,6 +1575,22 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
 @end
 
 
+@class UIFont;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK16HVAlertTextLabel")
+@interface HVAlertTextLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
@@ -1664,7 +1697,6 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIFont;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocDescriptionA4Label")
 @interface HVDocDescriptionA4Label : UILabel
@@ -1898,6 +1930,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setFps:(NSInteger)fps;
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
 - (void)setAutoCaptureDuration:(NSInteger)duration;
+- (void)setShowAlertBox:(BOOL)shouldShowAlertLabel;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
@@ -1957,6 +1990,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
 - (void)setCloseAlertTitle:(NSString * _Nonnull)text;
 - (void)setCloseAlertDesc:(NSString * _Nonnull)text;
+- (void)setAlertBoxLabelText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2757,6 +2791,22 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
 @end
 
 
+@class UIFont;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK16HVAlertTextLabel")
+@interface HVAlertTextLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
@@ -2863,7 +2913,6 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIFont;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocDescriptionA4Label")
 @interface HVDocDescriptionA4Label : UILabel
@@ -3097,6 +3146,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setFps:(NSInteger)fps;
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
 - (void)setAutoCaptureDuration:(NSInteger)duration;
+- (void)setShowAlertBox:(BOOL)shouldShowAlertLabel;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
@@ -3156,6 +3206,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
 - (void)setCloseAlertTitle:(NSString * _Nonnull)text;
 - (void)setCloseAlertDesc:(NSString * _Nonnull)text;
+- (void)setAlertBoxLabelText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

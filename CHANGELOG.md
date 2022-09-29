@@ -1,3 +1,7 @@
+#### 4.1.8 [29 Sept 2022]
+- Add alert box in Selfie Capture Flow
+- Refactor cache logic
+
 #### 4.1.7 [6 Sept 2022]
 - Added support to read barcode in document capture (Use setter function `setShouldReadBarcode`)
 - Deprecate `setShouldReadQR` - Use `setShouldReadNIDQR` instead
