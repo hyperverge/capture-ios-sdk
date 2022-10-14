@@ -90,7 +90,7 @@
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/rZu-Sr-XNX-view-V7e-qd-0oS.nib</key>
 		<data>
-		0gkNVJiXXIwYwdXlYGAu2j1EUpk=
+		/CgASiNaGfoyZZQj5oxQiLl104w=
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/x6s-8e-c2z-view-fsm-ON-Vee.nib</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>HVResources.bundle/_CodeSignature/CodeDirectory</key>
 		<data>
-		eGYjm77zbXmKvah/v0L/7ck90sc=
+		ZuZJJxIQTeZvpGtvK2Z0E7Ybnq0=
 		</data>
 		<key>HVResources.bundle/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -126,11 +126,11 @@
 		</data>
 		<key>HVResources.bundle/_CodeSignature/CodeRequirements-1</key>
 		<data>
-		bNrEIijivzmSQCqjFnogd3W7biw=
+		ePVrhUBgDZscgJk1In93VTKUhEg=
 		</data>
 		<key>HVResources.bundle/_CodeSignature/CodeResources</key>
 		<data>
-		C2nNZMP+okgulIdeZZC9l4ep8Q4=
+		8Qm25RpOC2f8QbZXBeX4o+8TM64=
 		</data>
 		<key>HVResources.bundle/_CodeSignature/CodeSignature</key>
 		<data>
@@ -502,11 +502,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0gkNVJiXXIwYwdXlYGAu2j1EUpk=
+			/CgASiNaGfoyZZQj5oxQiLl104w=
 			</data>
 			<key>hash2</key>
 			<data>
-			TjSE7tfzi9ihjbCnECdQdAYAfrgek/KudwdVobgJBNs=
+			NnomTYjOGpqKDxYkLQpWWZgETjYyDt3i0VwuFJkgHTQ=
 			</data>
 		</dict>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/x6s-8e-c2z-view-fsm-ON-Vee.nib</key>
@@ -579,11 +579,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eGYjm77zbXmKvah/v0L/7ck90sc=
+			ZuZJJxIQTeZvpGtvK2Z0E7Ybnq0=
 			</data>
 			<key>hash2</key>
 			<data>
-			PXEuTWw0LAQZspBeOwp2mpC4HYrYOOP7NuCHsuqd86M=
+			90IHeRE7fzpU4t7AKE4+CgwwNXyZnl8jjNaUcEFXPgc=
 			</data>
 		</dict>
 		<key>HVResources.bundle/_CodeSignature/CodeRequirements</key>
@@ -601,22 +601,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bNrEIijivzmSQCqjFnogd3W7biw=
+			ePVrhUBgDZscgJk1In93VTKUhEg=
 			</data>
 			<key>hash2</key>
 			<data>
-			7oTSm549A9fGIM8hUYiki6CdoulujsGCMWEjeQsq0bM=
+			m+3w311KS4/CKCtoF8v+O4TnjU/dn3Y1VLrnU2jvfnU=
 			</data>
 		</dict>
 		<key>HVResources.bundle/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			C2nNZMP+okgulIdeZZC9l4ep8Q4=
+			8Qm25RpOC2f8QbZXBeX4o+8TM64=
 			</data>
 			<key>hash2</key>
 			<data>
-			BC4qSzTuaxUE5GKGT3+cbSiQArKx8SGmEnSFvn8Gr1E=
+			J8GJ9ktbIBB+qHN0WrZGf6auyKUCU9GSY7BFSDPH6gc=
 			</data>
 		</dict>
 		<key>HVResources.bundle/_CodeSignature/CodeSignature</key>
