@@ -1,3 +1,8 @@
+#### 4.1.10 [28th Oct 2022]
+- Disabled pdf upload from document upload screen
+- Added ui and alignment customisations 
+- Added text customisations for QR module
+
 #### 4.1.9 [13th Oct 2022]
 - Fix retake message logic to use `code` from `summary.details` JsonArray
 - Fix issue with AlertLabel, Face Retake screen in Dark mode 

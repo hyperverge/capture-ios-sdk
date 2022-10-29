@@ -969,6 +969,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK10HVQRConfig")
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK10HVQRConfig14HVQRTextConfig")
 @interface HVQRTextConfig : NSObject
+- (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setQrCaptureSubText:(NSString * _Nonnull)text;
 - (void)setQrCaptureTitle:(NSString * _Nonnull)text;
 - (void)setQrInstructionsTitle:(NSString * _Nonnull)text;
@@ -1152,9 +1153,6 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *, NSString *> * _Nonnull uiConfigJson;)
-+ (NSDictionary<NSString *, NSString *> * _Nonnull)uiConfigJson SWIFT_WARN_UNUSED_RESULT;
-+ (void)setUiConfigJson:(NSDictionary<NSString *, NSString *> * _Nonnull)value;
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
 /// \param appId Provided by HyperVerge
 ///
@@ -1176,7 +1174,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *,
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
-+ (void)setUiJson:(NSDictionary<NSString *, NSString *> * _Nonnull)colorJson;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -2185,6 +2182,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK10HVQRConfig")
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK10HVQRConfig14HVQRTextConfig")
 @interface HVQRTextConfig : NSObject
+- (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setQrCaptureSubText:(NSString * _Nonnull)text;
 - (void)setQrCaptureTitle:(NSString * _Nonnull)text;
 - (void)setQrInstructionsTitle:(NSString * _Nonnull)text;
@@ -2368,9 +2366,6 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *, NSString *> * _Nonnull uiConfigJson;)
-+ (NSDictionary<NSString *, NSString *> * _Nonnull)uiConfigJson SWIFT_WARN_UNUSED_RESULT;
-+ (void)setUiConfigJson:(NSDictionary<NSString *, NSString *> * _Nonnull)value;
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
 /// \param appId Provided by HyperVerge
 ///
@@ -2392,7 +2387,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *,
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
-+ (void)setUiJson:(NSDictionary<NSString *, NSString *> * _Nonnull)colorJson;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -3401,6 +3395,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK10HVQRConfig")
 
 SWIFT_CLASS("_TtCC12HyperSnapSDK10HVQRConfig14HVQRTextConfig")
 @interface HVQRTextConfig : NSObject
+- (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setQrCaptureSubText:(NSString * _Nonnull)text;
 - (void)setQrCaptureTitle:(NSString * _Nonnull)text;
 - (void)setQrInstructionsTitle:(NSString * _Nonnull)text;
@@ -3584,9 +3579,6 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *, NSString *> * _Nonnull uiConfigJson;)
-+ (NSDictionary<NSString *, NSString *> * _Nonnull)uiConfigJson SWIFT_WARN_UNUSED_RESULT;
-+ (void)setUiConfigJson:(NSDictionary<NSString *, NSString *> * _Nonnull)value;
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
 /// \param appId Provided by HyperVerge
 ///
@@ -3608,7 +3600,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSDictionary<NSString *,
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
-+ (void)setUiJson:(NSDictionary<NSString *, NSString *> * _Nonnull)colorJson;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
