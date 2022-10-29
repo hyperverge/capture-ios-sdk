@@ -805,7 +805,7 @@ extension UIKit.UIFont {
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
   @objc public static func setShouldUseAnalytics(_ shouldUse: Swift.Bool)
   @objc public static func setTimeoutIntervalForRequest(_ timeout: Swift.Double)
-  public static func setUiConfig(_ uiConfig: HyperSnapSDK.HVUIConfig)
+  public static func setUiConfig(_ uiConfig: HyperSnapSDK.HVUIConfig?)
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
   @objc public static func setShouldReturnRawResponse(_ shouldReturn: Swift.Bool)
   @objc public static func deleteImageAtUri(_ imageUri: Swift.String)
