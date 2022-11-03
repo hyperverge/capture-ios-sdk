@@ -1,6 +1,7 @@
 #### 4.1.9 [13th Oct 2022]
 - Fix retake message logic to use `code` from `summary.details` JsonArray
 - Fix issue with AlertLabel, Face Retake screen in Dark mode 
+- [PATCH] Fix for face not straight happening in iOS 16.0
 
 #### 4.1.8 [29 Sept 2022]
 - Add alert box in Selfie Capture Flow
