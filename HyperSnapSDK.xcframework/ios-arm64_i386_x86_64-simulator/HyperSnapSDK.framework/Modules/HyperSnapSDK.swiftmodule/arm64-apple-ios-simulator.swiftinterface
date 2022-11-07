@@ -8,6 +8,7 @@ import AudioToolbox
 import CommonCrypto
 import CoreGraphics
 import CoreLocation
+import CoreMotion
 import CoreText
 import Dispatch
 import Foundation
@@ -538,6 +539,8 @@ public struct HVUIFont : Swift.Codable {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
   @_Concurrency.MainActor(unsafe) public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
     @_Concurrency.MainActor(unsafe) @objc get
@@ -804,6 +807,7 @@ extension UIKit.UIFont {
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
   @objc public static func setShouldUseAnalytics(_ shouldUse: Swift.Bool)
+  @objc public static func setShouldUseSensorBiometrics(_ shouldUse: Swift.Bool)
   @objc public static func setTimeoutIntervalForRequest(_ timeout: Swift.Double)
   public static func setUiConfig(_ uiConfig: HyperSnapSDK.HVUIConfig?)
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
@@ -945,6 +949,7 @@ extension HyperSnapSDK.HVDocsViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)

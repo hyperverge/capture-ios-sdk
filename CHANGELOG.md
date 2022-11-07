@@ -1,3 +1,7 @@
+#### 4.1.11 [7th Oct 2022]
+- Added extra checks to prevent image injection attacks on liveness api
+- Fixed issue with face not straight in iOS 16.0
+
 #### 4.1.10 [28th Oct 2022]
 - Disabled pdf upload from document upload screen
 - Added ui and alignment customisations 
