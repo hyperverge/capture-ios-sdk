@@ -647,6 +647,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (void)viewDidLoad;
 - (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -851,6 +852,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 + (void)start:(UIViewController * _Nonnull)callingVC hvFaceConfig:(HVFaceConfig * _Nonnull)hvFaceConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull))completionHandler;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidDisappear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
@@ -1179,6 +1182,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
++ (void)setShouldUseSensorBiometrics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
@@ -1866,6 +1870,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (void)viewDidLoad;
 - (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -2070,6 +2075,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 + (void)start:(UIViewController * _Nonnull)callingVC hvFaceConfig:(HVFaceConfig * _Nonnull)hvFaceConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull))completionHandler;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidDisappear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
@@ -2398,6 +2405,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
++ (void)setShouldUseSensorBiometrics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
@@ -3085,6 +3093,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (void)viewDidLoad;
 - (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -3289,6 +3298,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 + (void)start:(UIViewController * _Nonnull)callingVC hvFaceConfig:(HVFaceConfig * _Nonnull)hvFaceConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull))completionHandler;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidLayoutSubviews;
+- (void)viewDidDisappear:(BOOL)animated;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
@@ -3617,6 +3628,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
++ (void)setShouldUseSensorBiometrics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
