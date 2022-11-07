@@ -1,3 +1,10 @@
+#### 4.1.11 [7th Nov 2022]
+- Added sensor biometrics data collection 
+- Sending sensor biometrics data part of liveness api call
+- Fixed issue with Face not straight in iOS 16.0
+
+
+
 #### 4.1.10 [28th Oct 2022]
 - Disabled pdf upload from document upload screen
 - Added ui and alignment customisations 
