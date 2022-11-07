@@ -1,4 +1,4 @@
-#### 4.1.11 [7th Oct 2022]
+#### 4.2.0 [7th Oct 2022]
 - Added extra checks to prevent image injection attacks on liveness api
 - Fixed issue with face not straight in iOS 16.0
 
