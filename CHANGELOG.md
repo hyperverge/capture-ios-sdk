@@ -1,13 +1,18 @@
-#### 4.2.0 [7th Oct 2022]
-- Added extra checks to prevent image injection attacks on liveness api
-- Fixed issue with face not straight in iOS 16.0
+#### 4.3.0 [18 Oct 2022]
+- Add document detection - auto capture feature
+- Support Doc detection feature via `DocDetect` subspec
+- Update `deployment_target` to 11
 
-#### 4.1.10 [28th Oct 2022]
-- Disabled pdf upload from document upload screen
-- Added ui and alignment customisations 
-- Added text customisations for QR module
+#### 4.2.0 [07 Oct 2022]
+- Add extra checks to prevent image injection attacks on liveness api
+- Fix issue with face not straight in iOS 16.0
 
-#### 4.1.9 [13th Oct 2022]
+#### 4.1.10 [28 Oct 2022]
+- Disable pdf upload from document upload screen
+- Add ui and alignment customisations 
+- Add text customisations for QR module
+
+#### 4.1.9 [13 Oct 2022]
 - Fix retake message logic to use `code` from `summary.details` JsonArray
 - Fix issue with AlertLabel, Face Retake screen in Dark mode 
 
