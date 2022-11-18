@@ -1,9 +1,9 @@
-#### 4.3.0 [18 Oct 2022]
+#### 4.3.0 [18 Nov 2022]
 - Add document detection - auto capture feature
 - Support Doc detection feature via `DocDetect` subspec
 - Update `deployment_target` to 11
 
-#### 4.2.0 [07 Oct 2022]
+#### 4.2.0 [07 Nov 2022]
 - Add extra checks to prevent image injection attacks on liveness api
 - Fix issue with face not straight in iOS 16.0
 
