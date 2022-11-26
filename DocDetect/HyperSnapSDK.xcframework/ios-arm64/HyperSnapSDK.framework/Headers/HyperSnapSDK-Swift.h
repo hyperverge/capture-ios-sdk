@@ -981,6 +981,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVPageNumberLabel")
 SWIFT_CLASS("_TtC12HyperSnapSDK10HVQRConfig")
 @interface HVQRConfig : HVBaseConfig
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
+- (void)setSkipButtonDelay:(NSInteger)skipDelay;
 @property (nonatomic, strong) HVQRTextConfig * _Nonnull textConfig;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -995,6 +996,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK10HVQRConfig14HVQRTextConfig")
 - (void)setQrCaptureDescription:(NSString * _Nonnull)text;
 - (void)setQrInstructionsDescription:(NSString * _Nonnull)text;
 - (void)setQrInstructionsProceedText:(NSString * _Nonnull)text;
+- (void)setQrCaptureSkipButtonText:(NSString * _Nonnull)text;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
