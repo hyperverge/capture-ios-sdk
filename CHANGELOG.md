@@ -2,6 +2,7 @@
 - Add document detection - auto capture feature
 - Support Doc detection feature via `DocDetect` subspec
 - Update `deployment_target` to 11
+- Added support for skip feature in QR Module
 
 #### 4.2.0 [07 Nov 2022]
 - Add extra checks to prevent image injection attacks on liveness api
