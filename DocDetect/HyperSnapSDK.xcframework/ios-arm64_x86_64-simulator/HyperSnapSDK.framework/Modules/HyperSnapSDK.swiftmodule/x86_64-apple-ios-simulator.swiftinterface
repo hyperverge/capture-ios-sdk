@@ -786,6 +786,7 @@ extension HyperSnapSDK.HVFaceViewController {
 }
 @_inheritsConvenienceInitializers @objc public class HVQRConfig : HyperSnapSDK.HVBaseConfig {
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
+  @objc public func setSkipButtonDelay(_ skipDelay: Swift.Int)
   @objc public var textConfig: HyperSnapSDK.HVQRConfig.HVQRTextConfig
   @_inheritsConvenienceInitializers @objc public class HVQRTextConfig : ObjectiveC.NSObject {
     @objc public func setTextConfig(_ textJson: [Swift.String : Swift.String])
@@ -795,6 +796,7 @@ extension HyperSnapSDK.HVFaceViewController {
     @objc public func setQrCaptureDescription(_ text: Swift.String)
     @objc public func setQrInstructionsDescription(_ text: Swift.String)
     @objc public func setQrInstructionsProceedText(_ text: Swift.String)
+    @objc public func setQrCaptureSkipButtonText(_ text: Swift.String)
     @objc override dynamic public init()
     @objc deinit
   }
