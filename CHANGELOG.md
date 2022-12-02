@@ -1,8 +1,14 @@
+#### 4.4.0 [02 Dec 2022]
+- Add selfie - active liveness feature
+- Minor bug-fixes
+  - Update `fonts` key in `UIConfig`
+  - Update `animationPath` for document loading screen
+
 #### 4.3.0 [18 Nov 2022]
 - Add document detection - auto capture feature
 - Support Doc detection feature via `DocDetect` subspec
 - Update `deployment_target` to 11
-- Added support for skip feature in QR Module
+- Add support for skip feature in QR Module
 
 #### 4.2.0 [07 Nov 2022]
 - Add extra checks to prevent image injection attacks on liveness api
