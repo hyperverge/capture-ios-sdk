@@ -27,6 +27,7 @@ import TensorFlowLite
 import TensorFlowLiteC
 import UIKit
 import VideoToolbox
+import Vision
 import _Concurrency
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class AnimatedButton : HyperSnapSDK.AnimatedControl {
   @_Concurrency.MainActor(unsafe) override public init(animation: HyperSnapSDK.LottieAnimation, configuration: HyperSnapSDK.LottieConfiguration = .shared)
@@ -485,6 +486,10 @@ final public class GradientValueProvider {
   final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class HVActiveLiveness : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers public class HVBaseConfig : ObjectiveC.NSObject {
   public var showTrustLogos: Swift.Bool
   public var shouldShowCloseAlert: Swift.Bool
@@ -519,6 +524,9 @@ final public class GradientValueProvider {
     get
   }
   @objc public var rawBarcode: Swift.String? {
+    get
+  }
+  @objc public var gestureLivenessImageUrls: [Swift.String : Swift.String] {
     get
   }
   @objc deinit
@@ -650,6 +658,8 @@ extension HyperSnapSDK.HVDocsViewController {
   @objc public func setAutoCaptureDuration(_ duration: Swift.Int)
   @objc public func setShowAlertBox(_ shouldShowAlertLabel: Swift.Bool)
   @objc public func setNumberOfFrames(_ numberOfFrames: Swift.Int)
+  @objc public func setShouldCheckForActiveLiveness(_ shouldCheck: Swift.Bool)
+  @objc public func setTotalGestures(_ totalGestures: Swift.Int)
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
   @objc public func setLivenessAPIParameters(_ parameters: [Swift.String : Swift.AnyObject])
   @objc public func setLivenessAPIHeaders(_ headers: [Swift.String : Swift.String])
@@ -771,6 +781,48 @@ extension HyperSnapSDK.HVFaceViewController {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
 }
 @_hasMissingDesignatedInitializers public class HVGeoDetails {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class HVGesturePose : ObjectiveC.NSObject {
+  public enum FacePose : Swift.String {
+    case lookLeft
+    case lookRight
+    case lookStraight
+    case none
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum GestureState : Swift.Int {
+    case newPose
+    case authenticatedState
+    case validatePose
+    case poseMatches
+    case poseDoesNotMatch
+    case captureInProgress
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public enum GestureUIState : Swift.Int {
+    case newPose
+    case poseMatches
+    case poseDoesNotMatch
+    case stablePose
+    case faceNotDetected
+    case authenticatedState
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public init(facePose: HyperSnapSDK.HVGesturePose.FacePose)
+  @objc override dynamic public init()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class HVIPDetails {
@@ -1163,7 +1215,7 @@ public struct HVUIColor : Swift.Codable {
 }
 public struct HVUIConfig : Swift.Codable {
   public var colors: HyperSnapSDK.HVUIColor?
-  public var fonts: HyperSnapSDK.HVUIFont?
+  public var font: HyperSnapSDK.HVUIFont?
   public var fontWeight: HyperSnapSDK.HVUIFontWeight?
   public var fontSize: HyperSnapSDK.HVUIFontSize?
   public var alignment: HyperSnapSDK.HVUIAlignment?
@@ -2091,6 +2143,15 @@ extension HyperSnapSDK.HVCardUIState : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Equatable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Hashable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.RawRepresentable {}
+extension HyperSnapSDK.HVGesturePose.FacePose : Swift.Equatable {}
+extension HyperSnapSDK.HVGesturePose.FacePose : Swift.Hashable {}
+extension HyperSnapSDK.HVGesturePose.FacePose : Swift.RawRepresentable {}
+extension HyperSnapSDK.HVGesturePose.GestureState : Swift.Equatable {}
+extension HyperSnapSDK.HVGesturePose.GestureState : Swift.Hashable {}
+extension HyperSnapSDK.HVGesturePose.GestureState : Swift.RawRepresentable {}
+extension HyperSnapSDK.HVGesturePose.GestureUIState : Swift.Equatable {}
+extension HyperSnapSDK.HVGesturePose.GestureUIState : Swift.Hashable {}
+extension HyperSnapSDK.HVGesturePose.GestureUIState : Swift.RawRepresentable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Equatable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Hashable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.RawRepresentable {}

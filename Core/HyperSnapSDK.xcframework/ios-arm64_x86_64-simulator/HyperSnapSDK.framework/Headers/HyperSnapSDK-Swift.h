@@ -368,6 +368,12 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
 
 
 
+
+SWIFT_CLASS("_TtC12HyperSnapSDK16HVActiveLiveness")
+@interface HVActiveLiveness : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIFont;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVAlertTextLabel")
@@ -404,6 +410,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @property (nonatomic, readonly) NSInteger attemptsCount;
 @property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable rawBarcode;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull gestureLivenessImageUrls;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -725,6 +732,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setAutoCaptureDuration:(NSInteger)duration;
 - (void)setShowAlertBox:(BOOL)shouldShowAlertLabel;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
+- (void)setShouldCheckForActiveLiveness:(BOOL)shouldCheck;
+- (void)setTotalGestures:(NSInteger)totalGestures;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
 - (void)setLivenessAPIHeaders:(NSDictionary<NSString *, NSString *> * _Nonnull)headers;
@@ -870,6 +879,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 @interface HVFaceViewController (SWIFT_EXTENSION(HyperSnapSDK))
 - (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK13HVGesturePose")
+@interface HVGesturePose : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, GestureUIState, open) {
+  GestureUIStateNewPose = 0,
+  GestureUIStatePoseMatches = 1,
+  GestureUIStatePoseDoesNotMatch = 2,
+  GestureUIStateStablePose = 3,
+  GestureUIStateFaceNotDetected = 4,
+  GestureUIStateAuthenticatedState = 5,
+};
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK27HVInstructionsProceedButton")
@@ -1617,6 +1641,12 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
 
 
 
+
+SWIFT_CLASS("_TtC12HyperSnapSDK16HVActiveLiveness")
+@interface HVActiveLiveness : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UIFont;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVAlertTextLabel")
@@ -1653,6 +1683,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @property (nonatomic, readonly) NSInteger attemptsCount;
 @property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable rawBarcode;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull gestureLivenessImageUrls;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1974,6 +2005,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setAutoCaptureDuration:(NSInteger)duration;
 - (void)setShowAlertBox:(BOOL)shouldShowAlertLabel;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
+- (void)setShouldCheckForActiveLiveness:(BOOL)shouldCheck;
+- (void)setTotalGestures:(NSInteger)totalGestures;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setLivenessAPIParameters:(NSDictionary<NSString *, id> * _Nonnull)parameters;
 - (void)setLivenessAPIHeaders:(NSDictionary<NSString *, NSString *> * _Nonnull)headers;
@@ -2119,6 +2152,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 @interface HVFaceViewController (SWIFT_EXTENSION(HyperSnapSDK))
 - (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK13HVGesturePose")
+@interface HVGesturePose : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+typedef SWIFT_ENUM(NSInteger, GestureUIState, open) {
+  GestureUIStateNewPose = 0,
+  GestureUIStatePoseMatches = 1,
+  GestureUIStatePoseDoesNotMatch = 2,
+  GestureUIStateStablePose = 3,
+  GestureUIStateFaceNotDetected = 4,
+  GestureUIStateAuthenticatedState = 5,
+};
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK27HVInstructionsProceedButton")
