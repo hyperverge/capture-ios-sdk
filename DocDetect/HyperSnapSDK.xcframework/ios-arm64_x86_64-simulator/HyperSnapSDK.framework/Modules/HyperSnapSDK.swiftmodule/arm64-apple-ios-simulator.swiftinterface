@@ -29,269 +29,8 @@ import UIKit
 import VideoToolbox
 import Vision
 import _Concurrency
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class AnimatedButton : HyperSnapSDK.AnimatedControl {
-  @_Concurrency.MainActor(unsafe) override public init(animation: HyperSnapSDK.LottieAnimation, configuration: HyperSnapSDK.LottieConfiguration = .shared)
-  @objc override dynamic public init()
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
-  @objc override dynamic public var accessibilityTraits: UIKit.UIAccessibilityTraits {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor(unsafe) public func setPlayRange(fromProgress: HyperSnapSDK.AnimationProgressTime, toProgress: HyperSnapSDK.AnimationProgressTime, event: UIKit.UIControl.Event)
-  @_Concurrency.MainActor(unsafe) public func setPlayRange(fromMarker fromName: Swift.String, toMarker toName: Swift.String, event: UIKit.UIControl.Event)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) open class AnimatedControl : UIKit.UIControl {
-  @_Concurrency.MainActor(unsafe) public init(animation: HyperSnapSDK.LottieAnimation, configuration: HyperSnapSDK.LottieConfiguration = .shared)
-  @objc dynamic public init()
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isSelected: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isHighlighted: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreGraphics.CGSize {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func continueTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func cancelTracking(with event: UIKit.UIEvent?)
-  @_Concurrency.MainActor(unsafe) open func animationDidSet()
-  @_Concurrency.MainActor(unsafe) final public let animationView: HyperSnapSDK.LottieAnimationView
-  @_Concurrency.MainActor(unsafe) public var animation: HyperSnapSDK.LottieAnimation? {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) public var animationSpeed: CoreGraphics.CGFloat {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) public func setLayer(named: Swift.String, forState: UIKit.UIControl.State)
-  @_Concurrency.MainActor(unsafe) public func setValueProvider(_ valueProvider: HyperSnapSDK.AnyValueProvider, keypath: HyperSnapSDK.AnimationKeypath)
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class AnimatedSwitch : HyperSnapSDK.AnimatedControl {
-  @_Concurrency.MainActor(unsafe) override public init(animation: HyperSnapSDK.LottieAnimation, configuration: HyperSnapSDK.LottieConfiguration = .shared)
-  @objc override dynamic public init()
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) override open func animationDidSet()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
-  public enum CancelBehavior {
-    case reverse
-    case none
-    public static func == (a: HyperSnapSDK.AnimatedSwitch.CancelBehavior, b: HyperSnapSDK.AnimatedSwitch.CancelBehavior) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  @_Concurrency.MainActor(unsafe) public var cancelBehavior: HyperSnapSDK.AnimatedSwitch.CancelBehavior
-  @_Concurrency.MainActor(unsafe) public var animateUpdateWhenChangingAnimation: Swift.Bool
-  @objc override dynamic public var accessibilityTraits: UIKit.UIAccessibilityTraits {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor(unsafe) public var isOn: Swift.Bool {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) public func setIsOn(_ isOn: Swift.Bool, animated: Swift.Bool, shouldFireHaptics: Swift.Bool = true)
-  @_Concurrency.MainActor(unsafe) public func setProgressForState(fromProgress: HyperSnapSDK.AnimationProgressTime, toProgress: HyperSnapSDK.AnimationProgressTime, forOnState: Swift.Bool)
-  @objc deinit
-}
-public protocol AnimationCacheProvider {
-  func animation(forKey: Swift.String) -> HyperSnapSDK.LottieAnimation?
-  func setAnimation(_ animation: HyperSnapSDK.LottieAnimation, forKey: Swift.String)
-  func clearCache()
-}
-public typealias LottieCompletionBlock = (Swift.Bool) -> Swift.Void
-public protocol AnimationFontProvider {
-  func fontFor(family: Swift.String, size: CoreGraphics.CGFloat) -> CoreText.CTFont?
-}
-final public class DefaultFontProvider : HyperSnapSDK.AnimationFontProvider {
-  public init()
-  final public func fontFor(family: Swift.String, size: CoreGraphics.CGFloat) -> CoreText.CTFont?
-  @objc deinit
-}
-public protocol AnimationImageProvider {
-  func imageForAsset(asset: HyperSnapSDK.ImageAsset) -> CoreGraphics.CGImage?
-}
-public struct AnimationKeypath : Swift.Hashable, Swift.ExpressibleByStringLiteral {
-  public init(keypath: Swift.String)
-  public init(stringLiteral: Swift.String)
-  public init(keys: [Swift.String])
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: HyperSnapSDK.AnimationKeypath, b: HyperSnapSDK.AnimationKeypath) -> Swift.Bool
-  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
-  public typealias StringLiteralType = Swift.String
-  public typealias UnicodeScalarLiteralType = Swift.String
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class AnimationSubview : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-public protocol AnimationTextProvider : AnyObject {
-  func textFor(keypathName: Swift.String, sourceText: Swift.String) -> Swift.String
-}
-final public class DictionaryTextProvider : HyperSnapSDK.AnimationTextProvider {
-  public init(_ values: [Swift.String : Swift.String])
-  final public func textFor(keypathName: Swift.String, sourceText: Swift.String) -> Swift.String
-  @objc deinit
-}
-final public class DefaultTextProvider : HyperSnapSDK.AnimationTextProvider {
-  public init()
-  final public func textFor(keypathName _: Swift.String, sourceText: Swift.String) -> Swift.String
-  @objc deinit
-}
-public typealias AnimationFrameTime = CoreGraphics.CGFloat
-public typealias AnimationProgressTime = CoreGraphics.CGFloat
-public protocol AnyValueProvider {
-  var valueType: Any.Type { get }
-  var typeErasedStorage: HyperSnapSDK.AnyValueProviderStorage { get }
-  func hasUpdate(frame: HyperSnapSDK.AnimationFrameTime) -> Swift.Bool
-}
-extension HyperSnapSDK.AnyValueProvider {
-  public func value(frame: HyperSnapSDK.AnimationFrameTime) -> Any
-}
-public enum ValueProviderStorage<T> where T : HyperSnapSDK.AnyInterpolatable {
-  case singleValue(T)
-  case keyframes([HyperSnapSDK.Keyframe<T>])
-  case closure((HyperSnapSDK.AnimationFrameTime) -> T)
-}
-public enum AnyValueProviderStorage {
-  case singleValue(Any)
-  case keyframes([HyperSnapSDK.Keyframe<Any>], interpolate: (HyperSnapSDK.AnimationFrameTime) -> Any)
-  case closure((HyperSnapSDK.AnimationFrameTime) -> Any)
-}
-@_hasMissingDesignatedInitializers public class Asset : Swift.Codable {
-  required public init(from decoder: Swift.Decoder) throws
-  final public let id: Swift.String
-  @objc deinit
-  public func encode(to encoder: Swift.Encoder) throws
-}
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class HVBrandingLayout : UIKit.UIStackView {
   @objc @_Concurrency.MainActor(unsafe) public func showBranding(show: Swift.Bool)
-  @objc deinit
-}
-public class BundleImageProvider : HyperSnapSDK.AnimationImageProvider {
-  public init(bundle: Foundation.Bundle, searchPath: Swift.String?)
-  public func imageForAsset(asset: HyperSnapSDK.ImageAsset) -> CoreGraphics.CGImage?
-  @objc deinit
-}
-extension HyperSnapSDK.LottieColor : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
-}
-final public class ColorValueProvider {
-  public init(block: @escaping HyperSnapSDK.ColorValueProvider.ColorValueBlock)
-  public init(_ color: HyperSnapSDK.LottieColor)
-  public init(_ keyframes: [HyperSnapSDK.Keyframe<HyperSnapSDK.LottieColor>])
-  public typealias ColorValueBlock = (CoreGraphics.CGFloat) -> HyperSnapSDK.LottieColor
-  final public var color: HyperSnapSDK.LottieColor {
-    get
-    set
-  }
-  final public var valueType: Any.Type {
-    get
-  }
-  final public var storage: HyperSnapSDK.ValueProviderStorage<HyperSnapSDK.LottieColor> {
-    get
-  }
-  final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
-  @objc deinit
-}
-@objc final public class CompatibleAnimationKeypath : ObjectiveC.NSObject {
-  @objc public init(keypath: Swift.String)
-  @objc public init(keys: [Swift.String])
-  final public let animationKeypath: HyperSnapSDK.AnimationKeypath
-  @objc deinit
-}
-@objc final public class CompatibleAnimation : ObjectiveC.NSObject {
-  @objc public init(name: Swift.String, bundle: Foundation.Bundle = Bundle.main)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) final public class CompatibleAnimationView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) public init(compatibleAnimation: HyperSnapSDK.CompatibleAnimation)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc @_Concurrency.MainActor(unsafe) final public var compatibleAnimation: HyperSnapSDK.CompatibleAnimation? {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var loopAnimationCount: CoreGraphics.CGFloat {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor(unsafe) @objc override final public var contentMode: UIKit.UIView.ContentMode {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var shouldRasterizeWhenIdle: Swift.Bool {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var currentProgress: CoreGraphics.CGFloat {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var currentTime: Foundation.TimeInterval {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var currentFrame: CoreGraphics.CGFloat {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var realtimeAnimationFrame: CoreGraphics.CGFloat {
-    @objc get
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var realtimeAnimationProgress: CoreGraphics.CGFloat {
-    @objc get
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var animationSpeed: CoreGraphics.CGFloat {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var respectAnimationFrameRate: Swift.Bool {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public var isAnimationPlaying: Swift.Bool {
-    @objc get
-  }
-  @objc @_Concurrency.MainActor(unsafe) final public func play()
-  @objc @_Concurrency.MainActor(unsafe) final public func play(completion: ((Swift.Bool) -> Swift.Void)?)
-  @objc @_Concurrency.MainActor(unsafe) final public func play(fromProgress: CoreGraphics.CGFloat, toProgress: CoreGraphics.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
-  @objc @_Concurrency.MainActor(unsafe) final public func play(fromFrame: CoreGraphics.CGFloat, toFrame: CoreGraphics.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
-  @objc @_Concurrency.MainActor(unsafe) final public func play(fromMarker: Swift.String, toMarker: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
-  @objc @_Concurrency.MainActor(unsafe) final public func play(marker: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
-  @objc @_Concurrency.MainActor(unsafe) final public func stop()
-  @objc @_Concurrency.MainActor(unsafe) final public func pause()
-  @objc @_Concurrency.MainActor(unsafe) final public func reloadImages()
-  @objc @_Concurrency.MainActor(unsafe) final public func forceDisplayUpdate()
-  @objc @_Concurrency.MainActor(unsafe) final public func getValue(for keypath: HyperSnapSDK.CompatibleAnimationKeypath, atFrame: CoreGraphics.CGFloat) -> Any?
-  @objc @_Concurrency.MainActor(unsafe) final public func logHierarchyKeypaths()
-  @objc @_Concurrency.MainActor(unsafe) final public func setColorValue(_ color: UIKit.UIColor, forKeypath keypath: HyperSnapSDK.CompatibleAnimationKeypath)
-  @objc @_Concurrency.MainActor(unsafe) final public func getColorValue(for keypath: HyperSnapSDK.CompatibleAnimationKeypath, atFrame: CoreGraphics.CGFloat) -> UIKit.UIColor?
-  @objc @_Concurrency.MainActor(unsafe) final public func addSubview(_ subview: HyperSnapSDK.AnimationSubview, forLayerAt keypath: HyperSnapSDK.CompatibleAnimationKeypath)
-  @objc @_Concurrency.MainActor(unsafe) final public func convert(rect: CoreGraphics.CGRect, toLayerAt keypath: HyperSnapSDK.CompatibleAnimationKeypath?) -> CoreGraphics.CGRect
-  @objc @_Concurrency.MainActor(unsafe) final public func convert(point: CoreGraphics.CGPoint, toLayerAt keypath: HyperSnapSDK.CompatibleAnimationKeypath?) -> CoreGraphics.CGPoint
-  @objc @_Concurrency.MainActor(unsafe) final public func progressTime(forMarker named: Swift.String) -> CoreGraphics.CGFloat
-  @objc @_Concurrency.MainActor(unsafe) final public func frameTime(forMarker named: Swift.String) -> CoreGraphics.CGFloat
-  @objc @_Concurrency.MainActor(unsafe) final public func durationFrameTime(forMarker named: Swift.String) -> CoreGraphics.CGFloat
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class getValidHexCode {
@@ -441,51 +180,6 @@ extension UIKit.UINavigationController {
 extension UIKit.UIFont {
   public static func registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle?)
 }
-public class FilepathImageProvider : HyperSnapSDK.AnimationImageProvider {
-  public init(filepath: Swift.String)
-  public init(filepath: Foundation.URL)
-  public func imageForAsset(asset: HyperSnapSDK.ImageAsset) -> CoreGraphics.CGImage?
-  @objc deinit
-}
-final public class FloatValueProvider {
-  public init(block: @escaping HyperSnapSDK.FloatValueProvider.CGFloatValueBlock)
-  public init(_ float: CoreGraphics.CGFloat)
-  public typealias CGFloatValueBlock = (CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
-  final public var float: CoreGraphics.CGFloat {
-    get
-    set
-  }
-  final public var valueType: Any.Type {
-    get
-  }
-  final public var storage: HyperSnapSDK.ValueProviderStorage<HyperSnapSDK.LottieVector1D> {
-    get
-  }
-  final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
-  @objc deinit
-}
-final public class GradientValueProvider {
-  public init(block: @escaping HyperSnapSDK.GradientValueProvider.ColorsValueBlock, locations: HyperSnapSDK.GradientValueProvider.ColorLocationsBlock? = nil)
-  public init(_ colors: [HyperSnapSDK.LottieColor], locations: [Swift.Double] = [])
-  public typealias ColorsValueBlock = (CoreGraphics.CGFloat) -> [HyperSnapSDK.LottieColor]
-  public typealias ColorLocationsBlock = (CoreGraphics.CGFloat) -> [Swift.Double]
-  final public var colors: [HyperSnapSDK.LottieColor] {
-    get
-    set
-  }
-  final public var locations: [Swift.Double] {
-    get
-    set
-  }
-  final public var valueType: Any.Type {
-    get
-  }
-  final public var storage: HyperSnapSDK.ValueProviderStorage<[Swift.Double]> {
-    get
-  }
-  final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers public class HVActiveLiveness : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc deinit
@@ -526,7 +220,7 @@ final public class GradientValueProvider {
   @objc public var rawBarcode: Swift.String? {
     get
   }
-  @objc public var gestureLivenessImageUrls: [Swift.String : Swift.String] {
+  @objc public var gestureLivenessImageUrls: [Swift.String : [Swift.String]] {
     get
   }
   @objc deinit
@@ -554,6 +248,8 @@ final public class GradientValueProvider {
   @objc public func setDefaultPadding(_ defaultPadding: CoreGraphics.CGFloat)
   @objc public func setShouldShowFullScreenViewController(_ shouldShow: Swift.Bool)
   @objc public func setCaptureButtonEnabledImage(_ image: UIKit.UIImage)
+  @objc public func setDocumentCaptureOverlay(_ image: UIKit.UIImage)
+  @objc public func setDocumentCaptureOverlayDuration(durationInMS: Swift.Int)
   @available(*, deprecated, message: "This function is not necessary anymore")
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
@@ -578,6 +274,7 @@ final public class GradientValueProvider {
   @_inheritsConvenienceInitializers @objc public class DocTextConfig : ObjectiveC.NSObject {
     @objc public func setTextConfig(_ textJson: [Swift.String : Swift.String])
     @objc public func setDocInstructionsTitle(_ text: Swift.String)
+    @objc public func setDocInstructionsDescription(_ text: Swift.String)
     @available(*, deprecated, message: "Removed in UI/UX upgrade")
     @objc public func setDocInstructions1(_ text: Swift.String)
     @available(*, deprecated, message: "Removed in UI/UX upgrade")
@@ -674,6 +371,8 @@ extension HyperSnapSDK.HVDocsViewController {
   @objc public func setFaceCaptureCircleFailureColor(_ color: UIKit.UIColor)
   @objc public func setShouldShowFullScreenViewController(_ shouldShow: Swift.Bool)
   @objc public func setCustomLoadingScreen(_ vc: UIKit.UIViewController)
+  @objc public func setFaceCaptureOverlay(_ image: UIKit.UIImage)
+  @objc public func setFaceCaptureOverlayDuration(durationInMS: Swift.Int)
   @objc public func setCaptureButtonEnabledImage(_ image: UIKit.UIImage)
   @objc public func setCaptureButtonDisabledImage(_ image: UIKit.UIImage)
   @available(*, deprecated, message: "This function is not necessary anymore")
@@ -828,6 +527,15 @@ extension HyperSnapSDK.HVFaceViewController {
 @_hasMissingDesignatedInitializers public class HVIPDetails {
   @objc deinit
 }
+public enum HVCoordinateSpace : Swift.Int, Swift.Codable {
+  case type2d
+  case type3d
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers public class HVNetworkHelper : ObjectiveC.NSObject {
   @objc public static func makeOCRAPICall(endpoint: Swift.String, documentUri: Swift.String, qrCroppedImageUri: Swift.String? = nil, hvDocConfig: HyperSnapSDK.HVDocConfig? = nil, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
   @objc public static func makeFaceMatchCall(faceUri: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
@@ -918,7 +626,7 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVRetakeButton : UIKit.UIButton {
+@objc @_Concurrency.MainActor(unsafe) public class HVPrimaryButton : UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
@@ -929,62 +637,7 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
   @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVErrorRetakeButton : UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewRetakeButton : UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewContinueButton : UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVDocInstructionsProceedButton : UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVDocInstructionsUploadButton : UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVInstructionsProceedButton : UIKit.UIButton {
+@objc @_Concurrency.MainActor(unsafe) public class HVSecondaryButton : UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
@@ -1002,6 +655,10 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
 }
 @objc @_Concurrency.MainActor(unsafe) public class HVQRSkipButton : UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
@@ -1019,129 +676,7 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewTitleLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewDescriptionLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVPageNumberLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVSubtitleLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVFaceDescriptionLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVFaceInstructionTopLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVFaceInstructionBottomLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVDocInstructionsLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVDocSubTextLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVDocDescriptionLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVDocDescriptionA4Label : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVFaceActivityLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVFaceActivityIndicator : UIKit.UIActivityIndicatorView {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setStyle(_ style: UIKit.UIActivityIndicatorView.Style)
-  @objc @_Concurrency.MainActor(unsafe) public static func setColor(_ color: UIKit.UIColor)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVErrorRetakeLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) public class HVQRDescriptionLabel : UIKit.UILabel {
+@objc @_Concurrency.MainActor(unsafe) public class HVDescriptionLabel : UIKit.UILabel {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
@@ -1162,6 +697,271 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
   @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
   @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class HVRetakeMessageLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class HVStatusLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class HVSubTextLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVRetakeButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVErrorRetakeButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewRetakeButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewContinueButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocInstructionsProceedButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocInstructionsUploadButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVInstructionsProceedButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setBorderWidth(_ width: CoreGraphics.CGFloat)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewTitleLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocReviewDescriptionLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVPageNumberLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVSubtitleLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceDescriptionLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceInstructionTopLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceInstructionBottomLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocInstructionsLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocSubTextLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocDescriptionLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVDocDescriptionA4Label : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceActivityLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVFaceActivityIndicator : UIKit.UIActivityIndicatorView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setStyle(_ style: UIKit.UIActivityIndicatorView.Style)
+  @objc @_Concurrency.MainActor(unsafe) public static func setColor(_ color: UIKit.UIColor)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVErrorRetakeLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
+@objc @_Concurrency.MainActor(unsafe) public class HVQRDescriptionLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
 public struct HVUIAlignment : Swift.Codable {
@@ -1331,63 +1131,6 @@ public struct HVUIFontWeight : Swift.Codable {
   @objc override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class ImageAsset : HyperSnapSDK.Asset {
-  final public let name: Swift.String
-  final public let directory: Swift.String
-  final public let width: Swift.Double
-  final public let height: Swift.Double
-  override final public func encode(to encoder: Swift.Encoder) throws
-  @objc deinit
-}
-public protocol Interpolatable : HyperSnapSDK.AnyInterpolatable {
-  func interpolate(to: Self, amount: CoreGraphics.CGFloat) -> Self
-}
-public protocol SpatialInterpolatable : HyperSnapSDK.AnyInterpolatable {
-  func interpolate(to: Self, amount: CoreGraphics.CGFloat, spatialOutTangent: CoreGraphics.CGPoint?, spatialInTangent: CoreGraphics.CGPoint?) -> Self
-}
-public protocol AnyInterpolatable {
-  func _interpolate(to: Self, amount: CoreGraphics.CGFloat, spatialOutTangent: CoreGraphics.CGPoint?, spatialInTangent: CoreGraphics.CGPoint?) -> Self
-}
-extension HyperSnapSDK.Interpolatable {
-  public func _interpolate(to: Self, amount: CoreGraphics.CGFloat, spatialOutTangent _: CoreGraphics.CGPoint?, spatialInTangent _: CoreGraphics.CGPoint?) -> Self
-}
-extension HyperSnapSDK.SpatialInterpolatable {
-  public func interpolate(to: Self, amount: CoreGraphics.CGFloat) -> Self
-  public func _interpolate(to: Self, amount: CoreGraphics.CGFloat, spatialOutTangent: CoreGraphics.CGPoint?, spatialInTangent: CoreGraphics.CGPoint?) -> Self
-}
-extension Swift.Double : HyperSnapSDK.Interpolatable {
-}
-extension CoreGraphics.CGFloat : HyperSnapSDK.Interpolatable {
-}
-extension Swift.Float : HyperSnapSDK.Interpolatable {
-}
-extension HyperSnapSDK.Interpolatable where Self : Swift.BinaryFloatingPoint {
-  public func interpolate(to: Self, amount: CoreGraphics.CGFloat) -> Self
-}
-extension CoreGraphics.CGRect : HyperSnapSDK.Interpolatable {
-  public func interpolate(to: CoreGraphics.CGRect, amount: CoreGraphics.CGFloat) -> CoreGraphics.CGRect
-}
-extension CoreGraphics.CGSize : HyperSnapSDK.Interpolatable {
-  public func interpolate(to: CoreGraphics.CGSize, amount: CoreGraphics.CGFloat) -> CoreGraphics.CGSize
-}
-extension CoreGraphics.CGPoint : HyperSnapSDK.SpatialInterpolatable {
-  public func interpolate(to: CoreGraphics.CGPoint, amount: CoreGraphics.CGFloat, spatialOutTangent: CoreGraphics.CGPoint?, spatialInTangent: CoreGraphics.CGPoint?) -> CoreGraphics.CGPoint
-}
-extension HyperSnapSDK.LottieColor : HyperSnapSDK.Interpolatable {
-  public func interpolate(to: HyperSnapSDK.LottieColor, amount: CoreGraphics.CGFloat) -> HyperSnapSDK.LottieColor
-}
-extension HyperSnapSDK.LottieVector1D : HyperSnapSDK.Interpolatable {
-  public func interpolate(to: HyperSnapSDK.LottieVector1D, amount: CoreGraphics.CGFloat) -> HyperSnapSDK.LottieVector1D
-}
-extension HyperSnapSDK.LottieVector2D : HyperSnapSDK.SpatialInterpolatable {
-  public func interpolate(to: HyperSnapSDK.LottieVector2D, amount: CoreGraphics.CGFloat, spatialOutTangent: CoreGraphics.CGPoint?, spatialInTangent: CoreGraphics.CGPoint?) -> HyperSnapSDK.LottieVector2D
-}
-extension HyperSnapSDK.LottieVector3D : HyperSnapSDK.SpatialInterpolatable {
-  public func interpolate(to: HyperSnapSDK.LottieVector3D, amount: CoreGraphics.CGFloat, spatialOutTangent: CoreGraphics.CGPoint?, spatialInTangent: CoreGraphics.CGPoint?) -> HyperSnapSDK.LottieVector3D
-}
-extension Swift.Array : HyperSnapSDK.Interpolatable, HyperSnapSDK.AnyInterpolatable where Element : HyperSnapSDK.Interpolatable {
-  public func interpolate(to: [Element], amount: CoreGraphics.CGFloat) -> [Element]
-}
 final public class Interpreter {
   final public let options: HyperSnapSDK.Interpreter.Options?
   final public let delegates: [HyperSnapSDK.Delegate]?
@@ -1450,27 +1193,6 @@ extension HyperSnapSDK.InterpreterError : Foundation.LocalizedError {
 }
 extension HyperSnapSDK.InterpreterError : Swift.CustomStringConvertible {
   public var description: Swift.String {
-    get
-  }
-}
-final public class Keyframe<T> {
-  public init(_ value: T, spatialInTangent: HyperSnapSDK.LottieVector3D? = nil, spatialOutTangent: HyperSnapSDK.LottieVector3D? = nil)
-  public init(value: T, time: HyperSnapSDK.AnimationFrameTime, isHold: Swift.Bool = false, inTangent: HyperSnapSDK.LottieVector2D? = nil, outTangent: HyperSnapSDK.LottieVector2D? = nil, spatialInTangent: HyperSnapSDK.LottieVector3D? = nil, spatialOutTangent: HyperSnapSDK.LottieVector3D? = nil)
-  final public let value: T
-  final public let time: HyperSnapSDK.AnimationFrameTime
-  final public let isHold: Swift.Bool
-  final public let inTangent: HyperSnapSDK.LottieVector2D?
-  final public let outTangent: HyperSnapSDK.LottieVector2D?
-  final public let spatialInTangent: HyperSnapSDK.LottieVector3D?
-  final public let spatialOutTangent: HyperSnapSDK.LottieVector3D?
-  @objc deinit
-}
-extension HyperSnapSDK.Keyframe : Swift.Equatable where T : Swift.Equatable {
-  public static func == (lhs: HyperSnapSDK.Keyframe<T>, rhs: HyperSnapSDK.Keyframe<T>) -> Swift.Bool
-}
-extension HyperSnapSDK.Keyframe : Swift.Hashable where T : Swift.Hashable {
-  final public func hash(into hasher: inout Swift.Hasher)
-  final public var hashValue: Swift.Int {
     get
   }
 }
@@ -1556,382 +1278,8 @@ extension HyperSnapSDK.Keyframe : Swift.Hashable where T : Swift.Hashable {
 extension QuartzCore.CALayer {
   @nonobjc public func logLayerTree(withIndent: Swift.Int = 0)
 }
-public enum LayerType : Swift.Int, Swift.Codable {
-  case precomp
-  case solid
-  case image
-  case null
-  case shape
-  case text
-  public init(from decoder: Swift.Decoder) throws
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public enum MatteType : Swift.Int, Swift.Codable {
-  case none
-  case add
-  case invert
-  case unknown
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public enum BlendMode : Swift.Int, Swift.Codable {
-  case normal
-  case multiply
-  case screen
-  case overlay
-  case darken
-  case lighten
-  case colorDodge
-  case colorBurn
-  case hardLight
-  case softLight
-  case difference
-  case exclusion
-  case hue
-  case saturation
-  case color
-  case luminosity
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public enum CoordinateSpace : Swift.Int, Swift.Codable {
-  case type2d
-  case type3d
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@available(*, deprecated, renamed: "LottieAnimation", message: "`Lottie.Animation` has been renamed to `LottieAnimation`, to prevent conflicts with the `SwiftUI.Animation` type. This notice will be removed in Lottie 4.0.")
-public typealias Animation = HyperSnapSDK.LottieAnimation
-final public class LottieAnimation : Swift.Codable {
-  required public init(from decoder: Swift.Decoder) throws
-  public init(dictionary: [Swift.String : Any]) throws
-  final public let startFrame: HyperSnapSDK.AnimationFrameTime
-  final public let endFrame: HyperSnapSDK.AnimationFrameTime
-  final public let framerate: Swift.Double
-  final public var markerNames: [Swift.String] {
-    get
-  }
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-}
-extension HyperSnapSDK.LottieAnimation {
-  public typealias DownloadClosure = (HyperSnapSDK.LottieAnimation?) -> Swift.Void
-  final public var duration: Foundation.TimeInterval {
-    get
-  }
-  final public var bounds: CoreGraphics.CGRect {
-    get
-  }
-  final public var size: CoreGraphics.CGSize {
-    get
-  }
-  public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, animationCache: HyperSnapSDK.AnimationCacheProvider? = nil) -> HyperSnapSDK.LottieAnimation?
-  public static func filepath(_ filepath: Swift.String, animationCache: HyperSnapSDK.AnimationCacheProvider? = nil) -> HyperSnapSDK.LottieAnimation?
-  public static func asset(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, animationCache: HyperSnapSDK.AnimationCacheProvider? = nil) -> HyperSnapSDK.LottieAnimation?
-  public static func from(data: Foundation.Data, strategy: HyperSnapSDK.DecodingStrategy = LottieConfiguration.shared.decodingStrategy) throws -> HyperSnapSDK.LottieAnimation
-  public static func loadedFrom(url: Foundation.URL, session: Foundation.URLSession = .shared, closure: @escaping HyperSnapSDK.LottieAnimation.DownloadClosure, animationCache: HyperSnapSDK.AnimationCacheProvider?)
-  final public func progressTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationProgressTime?
-  final public func frameTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationFrameTime?
-  final public func durationFrameTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationFrameTime?
-  final public func progressTime(forFrame frameTime: HyperSnapSDK.AnimationFrameTime, clamped: Swift.Bool = true) -> HyperSnapSDK.AnimationProgressTime
-  final public func frameTime(forProgress progressTime: HyperSnapSDK.AnimationProgressTime) -> HyperSnapSDK.AnimationFrameTime
-  final public func time(forFrame frameTime: HyperSnapSDK.AnimationFrameTime) -> Foundation.TimeInterval
-  final public func frameTime(forTime time: Foundation.TimeInterval) -> HyperSnapSDK.AnimationFrameTime
-}
-public enum LottieBackgroundBehavior {
-  case stop
-  case pause
-  case pauseAndRestore
-  case forceFinish
-  case continuePlaying
-  public static func `default`(for renderingEngine: HyperSnapSDK.RenderingEngine) -> HyperSnapSDK.LottieBackgroundBehavior
-  public static func == (a: HyperSnapSDK.LottieBackgroundBehavior, b: HyperSnapSDK.LottieBackgroundBehavior) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public enum LottieLoopMode {
-  case playOnce
-  case loop
-  case autoReverse
-  case `repeat`(Swift.Float)
-  case repeatBackwards(Swift.Float)
-}
-extension HyperSnapSDK.LottieLoopMode : Swift.Equatable {
-  public static func == (lhs: HyperSnapSDK.LottieLoopMode, rhs: HyperSnapSDK.LottieLoopMode) -> Swift.Bool
-}
-@available(*, deprecated, renamed: "LottieAnimationView", message: "`AnimationView` has been renamed to `LottieAnimationView`, for consistency with the new `LottieAnimation` type. This notice will be removed in Lottie 4.0.")
-public typealias AnimationView = HyperSnapSDK.LottieAnimationView
-@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) final public class LottieAnimationView : HyperSnapSDK.LottieAnimationViewBase {
-  @_Concurrency.MainActor(unsafe) public init(animation: HyperSnapSDK.LottieAnimation?, imageProvider: HyperSnapSDK.AnimationImageProvider? = nil, textProvider: HyperSnapSDK.AnimationTextProvider = DefaultTextProvider(), fontProvider: HyperSnapSDK.AnimationFontProvider = DefaultFontProvider(), configuration: HyperSnapSDK.LottieConfiguration = .shared, logger: HyperSnapSDK.LottieLogger = .shared)
-  @_Concurrency.MainActor(unsafe) public init(configuration: HyperSnapSDK.LottieConfiguration = .shared, logger: HyperSnapSDK.LottieLogger = .shared)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) final public let configuration: HyperSnapSDK.LottieConfiguration
-  @_Concurrency.MainActor(unsafe) final public var valueProviders: [HyperSnapSDK.AnimationKeypath : HyperSnapSDK.AnyValueProvider] {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) final public var backgroundBehavior: HyperSnapSDK.LottieBackgroundBehavior {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var animation: HyperSnapSDK.LottieAnimation? {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var imageProvider: HyperSnapSDK.AnimationImageProvider {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var textProvider: HyperSnapSDK.AnimationTextProvider {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var fontProvider: HyperSnapSDK.AnimationFontProvider {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var isAnimationPlaying: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) final public var isAnimationQueued: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) final public var loopMode: HyperSnapSDK.LottieLoopMode {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var shouldRasterizeWhenIdle: Swift.Bool {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var currentProgress: HyperSnapSDK.AnimationProgressTime {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var currentTime: Foundation.TimeInterval {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var currentFrame: HyperSnapSDK.AnimationFrameTime {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var realtimeAnimationFrame: HyperSnapSDK.AnimationFrameTime {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) final public var realtimeAnimationProgress: HyperSnapSDK.AnimationProgressTime {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) final public var animationSpeed: CoreGraphics.CGFloat {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var respectAnimationFrameRate: Swift.Bool {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) final public var viewportFrame: CoreGraphics.CGRect? {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
-  @_Concurrency.MainActor(unsafe) final public var currentRenderingEngine: HyperSnapSDK.RenderingEngine? {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) final public func play(completion: HyperSnapSDK.LottieCompletionBlock? = nil)
-  @_Concurrency.MainActor(unsafe) final public func play(fromProgress: HyperSnapSDK.AnimationProgressTime? = nil, toProgress: HyperSnapSDK.AnimationProgressTime, loopMode: HyperSnapSDK.LottieLoopMode? = nil, completion: HyperSnapSDK.LottieCompletionBlock? = nil)
-  @_Concurrency.MainActor(unsafe) final public func play(fromFrame: HyperSnapSDK.AnimationFrameTime? = nil, toFrame: HyperSnapSDK.AnimationFrameTime, loopMode: HyperSnapSDK.LottieLoopMode? = nil, completion: HyperSnapSDK.LottieCompletionBlock? = nil)
-  @_Concurrency.MainActor(unsafe) final public func play(fromMarker: Swift.String? = nil, toMarker: Swift.String, loopMode: HyperSnapSDK.LottieLoopMode? = nil, completion: HyperSnapSDK.LottieCompletionBlock? = nil)
-  @_Concurrency.MainActor(unsafe) final public func play(marker: Swift.String, loopMode: HyperSnapSDK.LottieLoopMode? = nil, completion: HyperSnapSDK.LottieCompletionBlock? = nil)
-  @_Concurrency.MainActor(unsafe) final public func stop()
-  @_Concurrency.MainActor(unsafe) final public func pause()
-  @_Concurrency.MainActor(unsafe) final public func reloadImages()
-  @_Concurrency.MainActor(unsafe) final public func forceDisplayUpdate()
-  @_Concurrency.MainActor(unsafe) final public func setValueProvider(_ valueProvider: HyperSnapSDK.AnyValueProvider, keypath: HyperSnapSDK.AnimationKeypath)
-  @_Concurrency.MainActor(unsafe) final public func getValue(for keypath: HyperSnapSDK.AnimationKeypath, atFrame: HyperSnapSDK.AnimationFrameTime?) -> Any?
-  @_Concurrency.MainActor(unsafe) final public func getOriginalValue(for keypath: HyperSnapSDK.AnimationKeypath, atFrame: HyperSnapSDK.AnimationFrameTime?) -> Any?
-  @_Concurrency.MainActor(unsafe) final public func logHierarchyKeypaths()
-  @_Concurrency.MainActor(unsafe) final public func addSubview(_ subview: HyperSnapSDK.AnimationSubview, forLayerAt keypath: HyperSnapSDK.AnimationKeypath)
-  @_Concurrency.MainActor(unsafe) final public func convert(_ rect: CoreGraphics.CGRect, toLayerAt keypath: HyperSnapSDK.AnimationKeypath?) -> CoreGraphics.CGRect?
-  @_Concurrency.MainActor(unsafe) final public func convert(_ point: CoreGraphics.CGPoint, toLayerAt keypath: HyperSnapSDK.AnimationKeypath?) -> CoreGraphics.CGPoint?
-  @_Concurrency.MainActor(unsafe) final public func setNodeIsEnabled(isEnabled: Swift.Bool, keypath: HyperSnapSDK.AnimationKeypath)
-  @_Concurrency.MainActor(unsafe) final public func progressTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationProgressTime?
-  @_Concurrency.MainActor(unsafe) final public func frameTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationFrameTime?
-  @_Concurrency.MainActor(unsafe) final public func durationFrameTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationFrameTime?
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class LottieAnimationViewBase : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var contentMode: UIKit.UIView.ContentMode {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-extension HyperSnapSDK.LottieAnimationView {
-  @_Concurrency.MainActor(unsafe) convenience public init(name: Swift.String, bundle: Foundation.Bundle = Bundle.main, imageProvider: HyperSnapSDK.AnimationImageProvider? = nil, animationCache: HyperSnapSDK.AnimationCacheProvider? = LRUAnimationCache.sharedCache, configuration: HyperSnapSDK.LottieConfiguration = .shared)
-  @_Concurrency.MainActor(unsafe) convenience public init(filePath: Swift.String, imageProvider: HyperSnapSDK.AnimationImageProvider? = nil, animationCache: HyperSnapSDK.AnimationCacheProvider? = LRUAnimationCache.sharedCache, configuration: HyperSnapSDK.LottieConfiguration = .shared)
-  @_Concurrency.MainActor(unsafe) convenience public init(url: Foundation.URL, imageProvider: HyperSnapSDK.AnimationImageProvider? = nil, closure: @escaping HyperSnapSDK.LottieAnimationView.DownloadClosure, animationCache: HyperSnapSDK.AnimationCacheProvider? = LRUAnimationCache.sharedCache, configuration: HyperSnapSDK.LottieConfiguration = .shared)
-  @_Concurrency.MainActor(unsafe) convenience public init(asset name: Swift.String, bundle: Foundation.Bundle = Bundle.main, imageProvider: HyperSnapSDK.AnimationImageProvider? = nil, animationCache: HyperSnapSDK.AnimationCacheProvider? = LRUAnimationCache.sharedCache, configuration: HyperSnapSDK.LottieConfiguration = .shared)
-  public typealias DownloadClosure = (Swift.Error?) -> Swift.Void
-}
-public enum ColorFormatDenominator : Swift.Hashable {
-  case One
-  case OneHundred
-  case TwoFiftyFive
-  public static func == (a: HyperSnapSDK.ColorFormatDenominator, b: HyperSnapSDK.ColorFormatDenominator) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-@available(*, deprecated, renamed: "LottieColor", message: "`Lottie.Color` has been renamed to `LottieColor`, to prevent conflicts with the `SwiftUI.Color` type. This notice will be removed in Lottie 4.0.")
-public typealias Color = HyperSnapSDK.LottieColor
-public struct LottieColor : Swift.Hashable {
-  public var r: Swift.Double
-  public var g: Swift.Double
-  public var b: Swift.Double
-  public var a: Swift.Double
-  public init(r: Swift.Double, g: Swift.Double, b: Swift.Double, a: Swift.Double, denominator: HyperSnapSDK.ColorFormatDenominator = .One)
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: HyperSnapSDK.LottieColor, b: HyperSnapSDK.LottieColor) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public struct LottieConfiguration : Swift.Hashable {
-  public init(renderingEngine: HyperSnapSDK.RenderingEngineOption = .mainThread, decodingStrategy: HyperSnapSDK.DecodingStrategy = .codable)
-  public static var shared: HyperSnapSDK.LottieConfiguration
-  public var renderingEngine: HyperSnapSDK.RenderingEngineOption
-  public var decodingStrategy: HyperSnapSDK.DecodingStrategy
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: HyperSnapSDK.LottieConfiguration, b: HyperSnapSDK.LottieConfiguration) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public enum RenderingEngineOption : Swift.Hashable {
-  case automatic
-  case specific(HyperSnapSDK.RenderingEngine)
-  public static var mainThread: HyperSnapSDK.RenderingEngineOption {
-    get
-  }
-  public static var coreAnimation: HyperSnapSDK.RenderingEngineOption {
-    get
-  }
-}
-public enum RenderingEngine : Swift.Hashable {
-  case mainThread
-  case coreAnimation
-}
-extension HyperSnapSDK.RenderingEngineOption : Swift.RawRepresentable, Swift.CustomStringConvertible {
-  public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
-    get
-  }
-  public var description: Swift.String {
-    get
-  }
-  public typealias RawValue = Swift.String
-}
-extension HyperSnapSDK.RenderingEngine : Swift.RawRepresentable, Swift.CustomStringConvertible {
-  public init?(rawValue: Swift.String)
-  public var rawValue: Swift.String {
-    get
-  }
-  public var description: Swift.String {
-    get
-  }
-  public typealias RawValue = Swift.String
-}
-public enum DecodingStrategy : Swift.Hashable {
-  case codable
-  case dictionaryBased
-  public static func == (a: HyperSnapSDK.DecodingStrategy, b: HyperSnapSDK.DecodingStrategy) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-final public class LottieLogger {
-  public init(assert: @escaping HyperSnapSDK.LottieLogger.Assert = { condition, message, file, line in
-      // If we default to `Swift.assert` directly with `assert: Assert = Swift.assert`,
-      // the call will unexpectedly not respect the -O flag and will crash in release
-      // https://github.com/apple/swift/issues/60249
-      Swift.assert(condition(), message(), file: file, line: line)
-    }, assertionFailure: @escaping HyperSnapSDK.LottieLogger.AssertionFailure = { message, file, line in
-      // If we default to `Swift.assertionFailure` directly with
-      // `assertionFailure: AssertionFailure = Swift.assertionFailure`,
-      // the call will unexpectedly not respect the -O flag and will crash in release
-      // https://github.com/apple/swift/issues/60249
-      Swift.assertionFailure(message(), file: file, line: line)
-    }, warn: @escaping HyperSnapSDK.LottieLogger.Warn = { message, _, _ in
-    }, info: @escaping HyperSnapSDK.LottieLogger.Info = { message in
-    })
-  public typealias Assert = (_ condition: @autoclosure () -> Swift.Bool, _ message: @autoclosure () -> Swift.String, _ fileID: Swift.StaticString, _ line: Swift.UInt) -> Swift.Void
-  public typealias AssertionFailure = (_ message: @autoclosure () -> Swift.String, _ fileID: Swift.StaticString, _ line: Swift.UInt) -> Swift.Void
-  public typealias Warn = (_ message: @autoclosure () -> Swift.String, _ fileID: Swift.StaticString, _ line: Swift.UInt) -> Swift.Void
-  public typealias Info = (_ message: @autoclosure () -> Swift.String) -> Swift.Void
-  public static var shared: HyperSnapSDK.LottieLogger
-  final public func assert(_ condition: @autoclosure () -> Swift.Bool, _ message: @autoclosure () -> Swift.String = String(), fileID: Swift.StaticString = #fileID, line: Swift.UInt = #line)
-  final public func assertionFailure(_ message: @autoclosure () -> Swift.String = String(), fileID: Swift.StaticString = #fileID, line: Swift.UInt = #line)
-  final public func warn(_ message: @autoclosure () -> Swift.String = String(), fileID: Swift.StaticString = #fileID, line: Swift.UInt = #line)
-  final public func info(_ message: @autoclosure () -> Swift.String = String())
-  @objc deinit
-}
-extension HyperSnapSDK.LottieLogger {
-  public static var printToConsole: HyperSnapSDK.LottieLogger {
-    get
-  }
-}
-public class LRUAnimationCache : HyperSnapSDK.AnimationCacheProvider {
-  public init()
-  public static let sharedCache: HyperSnapSDK.LRUAnimationCache
-  public var cacheSize: Swift.Int
-  public func clearCache()
-  public func animation(forKey: Swift.String) -> HyperSnapSDK.LottieAnimation?
-  public func setAnimation(_ animation: HyperSnapSDK.LottieAnimation, forKey: Swift.String)
-  @objc deinit
-}
 infix operator +| : DefaultPrecedence
 infix operator +- : DefaultPrecedence
-final public class PointValueProvider {
-  public init(block: @escaping HyperSnapSDK.PointValueProvider.PointValueBlock)
-  public init(_ point: CoreGraphics.CGPoint)
-  public typealias PointValueBlock = (CoreGraphics.CGFloat) -> CoreGraphics.CGPoint
-  final public var point: CoreGraphics.CGPoint {
-    get
-    set
-  }
-  final public var valueType: Any.Type {
-    get
-  }
-  final public var storage: HyperSnapSDK.ValueProviderStorage<HyperSnapSDK.LottieVector3D> {
-    get
-  }
-  final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
-  @objc deinit
-}
 public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
   public let scale: Swift.Float
   public let zeroPoint: Swift.Int
@@ -1982,23 +1330,6 @@ extension HyperSnapSDK.SignatureRunnerError : Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
-}
-final public class SizeValueProvider {
-  public init(block: @escaping HyperSnapSDK.SizeValueProvider.SizeValueBlock)
-  public init(_ size: CoreGraphics.CGSize)
-  public typealias SizeValueBlock = (CoreGraphics.CGFloat) -> CoreGraphics.CGSize
-  final public var size: CoreGraphics.CGSize {
-    get
-    set
-  }
-  final public var valueType: Any.Type {
-    get
-  }
-  final public var storage: HyperSnapSDK.ValueProviderStorage<HyperSnapSDK.LottieVector3D> {
-    get
-  }
-  final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
-  @objc deinit
 }
 public struct Tensor : Swift.Equatable, Swift.Hashable {
   public let name: Swift.String
@@ -2058,85 +1389,9 @@ public struct HVToast {
   public static func setMessageAlignment(_ alignment: UIKit.NSTextAlignment)
   public static func setCornerRadius(_ radius: CoreGraphics.CGFloat)
 }
-@_hasMissingDesignatedInitializers public class UIAnimationUtil {
-  public static var docInstruction: HyperSnapSDK.LottieAnimation?
-  public static var docProcessing: HyperSnapSDK.LottieAnimation?
-  public static var docSuccess: HyperSnapSDK.LottieAnimation?
-  public static var docFailure: HyperSnapSDK.LottieAnimation?
-  public static var faceInstruction: HyperSnapSDK.LottieAnimation?
-  public static var faceProcessing: HyperSnapSDK.LottieAnimation?
-  public static var faceSuccess: HyperSnapSDK.LottieAnimation?
-  public static var faceFailure: HyperSnapSDK.LottieAnimation?
-  public static func initAnimation(animation: HyperSnapSDK.HVUIAnimation)
-  @objc deinit
-}
-extension UIKit.UIColor {
-  public var lottieColorValue: HyperSnapSDK.LottieColor {
-    get
-  }
-}
 extension UIKit.UIColor {
   convenience public init(hex: Swift.String)
 }
-@available(*, deprecated, renamed: "LottieVector1D", message: "`Lottie.Vector1D` has been renamed to `LottieVector1D` for consistency with the new `LottieVector3D` type. This notice will be removed in Lottie 4.0.")
-public typealias Vector1D = HyperSnapSDK.LottieVector1D
-public struct LottieVector1D : Swift.Hashable {
-  public init(_ value: Swift.Double)
-  public let value: Swift.Double
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: HyperSnapSDK.LottieVector1D, b: HyperSnapSDK.LottieVector1D) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-@available(*, deprecated, renamed: "LottieVector3D", message: "`Lottie.Vector3D` has been renamed to `LottieVector3D`, to prevent conflicts with the Apple SDK `Spatial.Vector3D` type. This notice will be removed in Lottie 4.0.")
-public typealias Vector3D = HyperSnapSDK.LottieVector3D
-public struct LottieVector3D : Swift.Hashable {
-  public let x: Swift.Double
-  public let y: Swift.Double
-  public let z: Swift.Double
-  public init(x: Swift.Double, y: Swift.Double, z: Swift.Double)
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: HyperSnapSDK.LottieVector3D, b: HyperSnapSDK.LottieVector3D) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension HyperSnapSDK.LottieVector1D : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
-}
-@available(*, deprecated, renamed: "LottieVector2D", message: "`Lottie.Vector2D` has been renamed to `LottieVector2D` for consistency with the new `LottieVector3D` type. This notice will be removed in Lottie 4.0.")
-public typealias Vector2D = HyperSnapSDK.LottieVector2D
-public struct LottieVector2D : Swift.Codable, Swift.Hashable {
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
-  public func hash(into hasher: inout Swift.Hasher)
-  public static func == (a: HyperSnapSDK.LottieVector2D, b: HyperSnapSDK.LottieVector2D) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension HyperSnapSDK.LottieVector3D : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
-}
-extension HyperSnapSDK.LottieVector3D {
-  public var pointValue: CoreGraphics.CGPoint {
-    get
-  }
-  public var sizeValue: CoreGraphics.CGSize {
-    get
-  }
-}
-extension HyperSnapSDK.AnimatedSwitch.CancelBehavior : Swift.Equatable {}
-extension HyperSnapSDK.AnimatedSwitch.CancelBehavior : Swift.Hashable {}
-extension HyperSnapSDK.BlendMode : Swift.Equatable {}
-extension HyperSnapSDK.BlendMode : Swift.Hashable {}
-extension HyperSnapSDK.BlendMode : Swift.RawRepresentable {}
-extension HyperSnapSDK.ColorValueProvider : HyperSnapSDK.AnyValueProvider {}
-extension HyperSnapSDK.FloatValueProvider : HyperSnapSDK.AnyValueProvider {}
-extension HyperSnapSDK.GradientValueProvider : HyperSnapSDK.AnyValueProvider {}
 extension HyperSnapSDK.HVCardUIState : Swift.Equatable {}
 extension HyperSnapSDK.HVCardUIState : Swift.Hashable {}
 extension HyperSnapSDK.HVCardUIState : Swift.RawRepresentable {}
@@ -2152,6 +1407,9 @@ extension HyperSnapSDK.HVGesturePose.GestureState : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVGesturePose.GestureUIState : Swift.Equatable {}
 extension HyperSnapSDK.HVGesturePose.GestureUIState : Swift.Hashable {}
 extension HyperSnapSDK.HVGesturePose.GestureUIState : Swift.RawRepresentable {}
+extension HyperSnapSDK.HVCoordinateSpace : Swift.Equatable {}
+extension HyperSnapSDK.HVCoordinateSpace : Swift.Hashable {}
+extension HyperSnapSDK.HVCoordinateSpace : Swift.RawRepresentable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Equatable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Hashable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.RawRepresentable {}
@@ -2167,16 +1425,3 @@ extension HyperSnapSDK.HyperSnapParams.LivenessMode : Swift.RawRepresentable {}
 extension HyperSnapSDK.HyperSnapParams.FaceMatchMode : Swift.Equatable {}
 extension HyperSnapSDK.HyperSnapParams.FaceMatchMode : Swift.Hashable {}
 extension HyperSnapSDK.HyperSnapParams.FaceMatchMode : Swift.RawRepresentable {}
-extension HyperSnapSDK.LayerType : Swift.Equatable {}
-extension HyperSnapSDK.LayerType : Swift.Hashable {}
-extension HyperSnapSDK.LayerType : Swift.RawRepresentable {}
-extension HyperSnapSDK.MatteType : Swift.Equatable {}
-extension HyperSnapSDK.MatteType : Swift.Hashable {}
-extension HyperSnapSDK.MatteType : Swift.RawRepresentable {}
-extension HyperSnapSDK.CoordinateSpace : Swift.Equatable {}
-extension HyperSnapSDK.CoordinateSpace : Swift.Hashable {}
-extension HyperSnapSDK.CoordinateSpace : Swift.RawRepresentable {}
-extension HyperSnapSDK.LottieBackgroundBehavior : Swift.Equatable {}
-extension HyperSnapSDK.LottieBackgroundBehavior : Swift.Hashable {}
-extension HyperSnapSDK.PointValueProvider : HyperSnapSDK.AnyValueProvider {}
-extension HyperSnapSDK.SizeValueProvider : HyperSnapSDK.AnyValueProvider {}

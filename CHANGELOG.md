@@ -1,3 +1,13 @@
+#### 4.5.0 [15 Dec 2022]
+- UI refinements based on suggestions listed here
+- UI/UX upgrade
+    - Overlay for both Document and Selfie Capture screen
+    - Document Auto capture UI/UX
+    - Blur effect while capturing
+- Rename Lottie... classes to HVLottie...
+    - Make Lottie files internal
+- Updated response structure for active liveness
+
 #### 4.4.0 [02 Dec 2022]
 - Add selfie - active liveness feature
 - Minor bug-fixes

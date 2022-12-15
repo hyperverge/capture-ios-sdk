@@ -216,67 +216,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
-@class NSCoder;
-@class UITouch;
-@class UIEvent;
-
-/// Lottie comes prepacked with a two Animated Controls, <code>AnimatedSwitch</code> and
-/// <code>AnimatedButton</code>. Both of these controls are built on top of <code>AnimatedControl</code>
-/// <code>AnimatedControl</code> is a subclass of <code>UIControl</code> that provides an interactive
-/// mechanism for controlling the visual state of an animation in response to
-/// user actions.
-/// The <code>AnimatedControl</code> will show and hide layers depending on the current
-/// <code>UIControl.State</code> of the control.
-/// Users of <code>AnimationControl</code> can set a Layer Name for each <code>UIControl.State</code>.
-/// When the state is change the <code>AnimationControl</code> will change the visibility
-/// of its layers.
-/// NOTE: Do not initialize directly. This is intended to be subclassed.
-SWIFT_CLASS("_TtC12HyperSnapSDK15AnimatedControl")
-@interface AnimatedControl : UIControl
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@property (nonatomic, getter=isEnabled) BOOL enabled;
-@property (nonatomic, getter=isSelected) BOOL selected;
-@property (nonatomic, getter=isHighlighted) BOOL highlighted;
-@property (nonatomic, readonly) CGSize intrinsicContentSize;
-- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)continueTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
-- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
-- (void)cancelTrackingWithEvent:(UIEvent * _Nullable)event;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
-
-
-/// An interactive button that plays an animation when pressed.
-SWIFT_CLASS("_TtC12HyperSnapSDK14AnimatedButton")
-@interface AnimatedButton : AnimatedControl
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
-- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
-@property (nonatomic) UIAccessibilityTraits accessibilityTraits;
-@end
-
-
-
-/// An interactive switch with an ‘On’ and ‘Off’ state. When the user taps on the
-/// switch the state is toggled and the appropriate animation is played.
-/// Both the ‘On’ and ‘Off’ have an animation play range associated with their state.
-SWIFT_CLASS("_TtC12HyperSnapSDK14AnimatedSwitch")
-@interface AnimatedSwitch : AnimatedControl
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
-@property (nonatomic) UIAccessibilityTraits accessibilityTraits;
-@end
-
-
-/// A view that can be added to a keypath of an AnimationView
-SWIFT_CLASS("_TtC12HyperSnapSDK16AnimationSubview")
-@interface AnimationSubview : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
 
 
 
@@ -296,73 +235,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK16AnimationSubview")
 
 
 
-
-
-@class NSString;
-@class NSBundle;
-
-/// An Objective-C compatible wrapper around Lottie’s Animation class.
-/// Use in tandem with CompatibleAnimationView when using Lottie in Objective-C
-SWIFT_CLASS("_TtC12HyperSnapSDK19CompatibleAnimation")
-@interface CompatibleAnimation : NSObject
-- (nonnull instancetype)initWithName:(NSString * _Nonnull)name bundle:(NSBundle * _Nonnull)bundle OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// An Objective-C compatible wrapper around Lottie’s AnimationKeypath
-SWIFT_CLASS("_TtC12HyperSnapSDK26CompatibleAnimationKeypath")
-@interface CompatibleAnimationKeypath : NSObject
-/// Creates a keypath from a dot separated string. The string is separated by “.”
-- (nonnull instancetype)initWithKeypath:(NSString * _Nonnull)keypath OBJC_DESIGNATED_INITIALIZER;
-/// Creates a keypath from a list of strings.
-- (nonnull instancetype)initWithKeys:(NSArray<NSString *> * _Nonnull)keys OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class UIColor;
-
-/// An Objective-C compatible wrapper around Lottie’s LottieAnimationView.
-SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
-@interface CompatibleAnimationView : UIView
-- (nonnull instancetype)initWithCompatibleAnimation:(CompatibleAnimation * _Nonnull)compatibleAnimation OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-@property (nonatomic, strong) CompatibleAnimation * _Nullable compatibleAnimation;
-@property (nonatomic) CGFloat loopAnimationCount;
-@property (nonatomic) UIViewContentMode contentMode;
-@property (nonatomic) BOOL shouldRasterizeWhenIdle;
-@property (nonatomic) CGFloat currentProgress;
-@property (nonatomic) NSTimeInterval currentTime;
-@property (nonatomic) CGFloat currentFrame;
-@property (nonatomic, readonly) CGFloat realtimeAnimationFrame;
-@property (nonatomic, readonly) CGFloat realtimeAnimationProgress;
-@property (nonatomic) CGFloat animationSpeed;
-@property (nonatomic) BOOL respectAnimationFrameRate;
-@property (nonatomic, readonly) BOOL isAnimationPlaying;
-- (void)play;
-- (void)playWithCompletion:(void (^ _Nullable)(BOOL))completion;
-- (void)playFromProgress:(CGFloat)fromProgress toProgress:(CGFloat)toProgress completion:(void (^ _Nullable)(BOOL))completion;
-- (void)playFromFrame:(CGFloat)fromFrame toFrame:(CGFloat)toFrame completion:(void (^ _Nullable)(BOOL))completion;
-- (void)playFromMarker:(NSString * _Nonnull)fromMarker toMarker:(NSString * _Nonnull)toMarker completion:(void (^ _Nullable)(BOOL))completion;
-- (void)playWithMarker:(NSString * _Nonnull)marker completion:(void (^ _Nullable)(BOOL))completion;
-- (void)stop;
-- (void)pause;
-- (void)reloadImages;
-- (void)forceDisplayUpdate;
-- (id _Nullable)getValueFor:(CompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
-- (void)logHierarchyKeypaths;
-- (void)setColorValue:(UIColor * _Nonnull)color forKeypath:(CompatibleAnimationKeypath * _Nonnull)keypath;
-- (UIColor * _Nullable)getColorValueFor:(CompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
-- (void)addSubview:(AnimationSubview * _Nonnull)subview forLayerAt:(CompatibleAnimationKeypath * _Nonnull)keypath;
-- (CGRect)convertWithRect:(CGRect)rect toLayerAt:(CompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
-- (CGPoint)convertWithPoint:(CGPoint)point toLayerAt:(CompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)progressTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)frameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)durationFrameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
-@end
 
 
 
@@ -372,7 +244,9 @@ SWIFT_CLASS("_TtC12HyperSnapSDK16HVActiveLiveness")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSCoder;
 @class UIFont;
+@class UIColor;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVAlertTextLabel")
 @interface HVAlertTextLabel : UILabel
@@ -396,6 +270,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSString;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @interface HVBaseResponse : NSObject
@@ -408,7 +283,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @property (nonatomic, readonly) NSInteger attemptsCount;
 @property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable rawBarcode;
-@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSString *> * _Nonnull gestureLivenessImageUrls;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, NSArray<NSString *> *> * _Nonnull gestureLivenessImageUrls;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -436,6 +311,18 @@ typedef SWIFT_ENUM(NSInteger, HVCardUIState, open) {
   HVCardUIStateMoveAway = 3,
 };
 
+
+SWIFT_CLASS("_TtC12HyperSnapSDK18HVDescriptionLabel")
+@interface HVDescriptionLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 @class DocTextConfig;
 enum DocumentType : NSInteger;
 @class UIViewController;
@@ -456,6 +343,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setDefaultPadding:(CGFloat)defaultPadding;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
+- (void)setDocumentCaptureOverlay:(UIImage * _Nonnull)image;
+- (void)setDocumentCaptureOverlayDurationWithDurationInMS:(NSInteger)durationInMS;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
@@ -479,6 +368,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 @interface DocTextConfig : NSObject
 - (void)setTextConfig:(NSDictionary<NSString *, NSString *> * _Nonnull)textJson;
 - (void)setDocInstructionsTitle:(NSString * _Nonnull)text;
+- (void)setDocInstructionsDescription:(NSString * _Nonnull)text;
 - (void)setDocInstructions1:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
 - (void)setDocInstructions2:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
 - (void)setDocInstructions3:(NSString * _Nonnull)text SWIFT_DEPRECATED_MSG("Removed in UI/UX upgrade");
@@ -504,7 +394,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK11HVDocConfig13DocTextConfig")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocDescriptionA4Label")
+SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocDescriptionA4Label") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocDescriptionA4Label : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -516,7 +406,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocDescriptionA4Label")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK21HVDocDescriptionLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVDocDescriptionLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocDescriptionLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -528,7 +418,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK21HVDocDescriptionLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK22HVDocInstructionsLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK22HVDocInstructionsLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocInstructionsLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -540,7 +430,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK22HVDocInstructionsLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK30HVDocInstructionsProceedButton")
+SWIFT_CLASS("_TtC12HyperSnapSDK30HVDocInstructionsProceedButton") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocInstructionsProceedButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
@@ -554,7 +444,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK30HVDocInstructionsProceedButton")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK29HVDocInstructionsUploadButton")
+SWIFT_CLASS("_TtC12HyperSnapSDK29HVDocInstructionsUploadButton") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocInstructionsUploadButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
@@ -568,7 +458,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK29HVDocInstructionsUploadButton")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK25HVDocReviewContinueButton")
+SWIFT_CLASS("_TtC12HyperSnapSDK25HVDocReviewContinueButton") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocReviewContinueButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
@@ -582,7 +472,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK25HVDocReviewContinueButton")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK27HVDocReviewDescriptionLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK27HVDocReviewDescriptionLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocReviewDescriptionLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -594,7 +484,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK27HVDocReviewDescriptionLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocReviewRetakeButton")
+SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocReviewRetakeButton") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocReviewRetakeButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
@@ -608,7 +498,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23HVDocReviewRetakeButton")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK21HVDocReviewTitleLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVDocReviewTitleLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocReviewTitleLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -619,7 +509,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK21HVDocReviewTitleLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVDocSubTextLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)drawTextInRect:(CGRect)rect;
@@ -634,6 +524,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel")
 
 @class HVError;
 @class HVResponse;
+@class NSBundle;
 
 /// DocCameraViewController is the base class which will be used from outside.
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
@@ -680,7 +571,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK7HVError")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK19HVErrorRetakeButton")
+SWIFT_CLASS("_TtC12HyperSnapSDK19HVErrorRetakeButton") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVErrorRetakeButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
@@ -694,7 +585,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK19HVErrorRetakeButton")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK18HVErrorRetakeLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK18HVErrorRetakeLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVErrorRetakeLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -706,7 +597,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVErrorRetakeLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK23HVFaceActivityIndicator")
+SWIFT_CLASS("_TtC12HyperSnapSDK23HVFaceActivityIndicator") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVFaceActivityIndicator : UIActivityIndicatorView
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setStyle:(UIActivityIndicatorViewStyle)style;
@@ -716,7 +607,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK23HVFaceActivityIndicator")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVFaceActivityLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -756,6 +647,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setFaceCaptureCircleFailureColor:(UIColor * _Nonnull)color;
 - (void)setShouldShowFullScreenViewController:(BOOL)shouldShow;
 - (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
+- (void)setFaceCaptureOverlay:(UIImage * _Nonnull)image;
+- (void)setFaceCaptureOverlayDurationWithDurationInMS:(NSInteger)durationInMS;
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setCaptureButtonDisabledImage:(UIImage * _Nonnull)image;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
@@ -805,7 +698,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK22HVFaceDescriptionLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK22HVFaceDescriptionLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVFaceDescriptionLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -817,7 +710,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK22HVFaceDescriptionLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK28HVFaceInstructionBottomLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK28HVFaceInstructionBottomLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVFaceInstructionBottomLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -828,7 +721,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK28HVFaceInstructionBottomLabel")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK25HVFaceInstructionTopLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK25HVFaceInstructionTopLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVFaceInstructionTopLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -904,7 +797,7 @@ typedef SWIFT_ENUM(NSInteger, GestureUIState, open) {
 };
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK27HVInstructionsProceedButton")
+SWIFT_CLASS("_TtC12HyperSnapSDK27HVInstructionsProceedButton") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVInstructionsProceedButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
@@ -990,7 +883,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK17HVPageNumberLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK17HVPageNumberLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVPageNumberLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -999,6 +892,21 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVPageNumberLabel")
 + (void)setShadowOffset:(CGSize)offset;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK15HVPrimaryButton")
+@interface HVPrimaryButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 @class HVQRTextConfig;
 
@@ -1025,7 +933,7 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK10HVQRConfig14HVQRTextConfig")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK20HVQRDescriptionLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK20HVQRDescriptionLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVQRDescriptionLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -1055,6 +963,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK30HVQRInstructionsViewController")
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVQRSkipButton")
 @interface HVQRSkipButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
 + (void)setBackgroundColor:(CGColorRef _Nonnull)color;
 + (void)setBorderWidth:(CGFloat)width;
@@ -1110,8 +1020,34 @@ SWIFT_CLASS("_TtC12HyperSnapSDK10HVResponse")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK14HVRetakeButton")
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVRetakeButton") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVRetakeButton : UIButton
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setBorderColor:(CGColorRef _Nonnull)color;
++ (void)setBackgroundColor:(CGColorRef _Nonnull)color;
++ (void)setBorderWidth:(CGFloat)width;
++ (void)setTitleColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowColor:(UIColor * _Nullable)color for:(UIControlState)state;
++ (void)setTitleShadowOffset:(CGSize)offset;
++ (void)setTitleFont:(UIFont * _Nonnull)font;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK20HVRetakeMessageLabel")
+@interface HVRetakeMessageLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK17HVSecondaryButton")
+@interface HVSecondaryButton : UIButton
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setBorderColor:(CGColorRef _Nonnull)color;
 + (void)setBackgroundColor:(CGColorRef _Nonnull)color;
@@ -1133,7 +1069,35 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVSessionResponse")
 @end
 
 
-SWIFT_CLASS("_TtC12HyperSnapSDK15HVSubtitleLabel")
+SWIFT_CLASS("_TtC12HyperSnapSDK13HVStatusLabel")
+@interface HVStatusLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK14HVSubTextLabel")
+@interface HVSubTextLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK15HVSubtitleLabel") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVSubtitleLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
@@ -1228,28 +1192,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
-
-
-/// The base view for <code>LottieAnimationView</code> on iOS, tvOS, watchOS, and macCatalyst.
-/// Enables the <code>LottieAnimationView</code> implementation to be shared across platforms.
-SWIFT_CLASS("_TtC12HyperSnapSDK23LottieAnimationViewBase")
-@interface LottieAnimationViewBase : UIView
-@property (nonatomic) UIViewContentMode contentMode;
-- (void)didMoveToWindow;
-- (void)layoutSubviews;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-IB_DESIGNABLE
-SWIFT_CLASS("_TtC12HyperSnapSDK19LottieAnimationView")
-@interface LottieAnimationView : LottieAnimationViewBase
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@property (nonatomic, readonly) CGSize intrinsicContentSize;
-@end
-
 
 
 
