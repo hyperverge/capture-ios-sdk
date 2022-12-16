@@ -32,6 +32,19 @@ import _Concurrency
 @_hasMissingDesignatedInitializers public class getValidHexCode {
   @objc deinit
 }
+public enum Model : Swift.String {
+  case simulator, iPod1, iPod2, iPod3, iPod4, iPod5, iPod6, iPod7, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPad5, iPad6, iPad7, iPad8, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, AppleWatch1, AppleWatchS1, AppleWatchS2, AppleWatchS3, AppleWatchS4, AppleWatchS5, AppleWatchSE, AppleWatchS6, AppleTV1, AppleTV2, AppleTV3, AppleTV4, AppleTV_4K, unrecognized
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var type: HyperSnapSDK.Model {
+    get
+  }
+}
 @_hasMissingDesignatedInitializers public class Events {
   public static let EVENT_HYPERSNAPSDK_INITIALISED: Swift.String
   public static let EVENT_HYPERSNAPSDK_REGION_SELECTION: Swift.String
@@ -939,13 +952,17 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
   @objc deinit
 }
 public struct HVUIAlignment : Swift.Codable {
-  public var titleTextAlignment: Swift.String?
-  public var descriptionTextAlignment: Swift.String?
+  public var titleTextAlignment: Swift.String
+  public var descriptionTextAlignment: Swift.String
+  public var statusTextAlignment: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct HVUIAnimation : Swift.Codable {
+  @available(*, deprecated, message: "Use documentInstructionFrontSideLottie in the future")
   public var documentInstructionLottie: Swift.String?
+  public var documentInstructionFrontSideLottie: Swift.String?
+  public var documentInstructionBackSideLottie: Swift.String?
   public var documentProcessingLottie: Swift.String?
   public var documentSuccessLottie: Swift.String?
   public var documentFailureLottie: Swift.String?
@@ -963,71 +980,75 @@ public struct HVUIAnimation : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct HVUIBorderRadius : Swift.Codable {
-  public var primaryButtonRadius: Swift.Float?
-  public var secondaryButtonRadius: Swift.Float?
+  public var primaryButtonRadius: Swift.Float
+  public var secondaryButtonRadius: Swift.Float
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct HVUIColor : Swift.Codable {
-  public var titleTextColor: Swift.String?
-  public var descriptionTextColor: Swift.String?
-  public var documentSideHintTextColor: Swift.String?
-  public var primaryButtonBackgroundColor: Swift.String?
-  public var primaryButtonTextColor: Swift.String?
-  public var primaryButtonBorderColor: Swift.String?
-  public var secondaryButtonBackgroundColor: Swift.String?
-  public var secondaryButtonTextColor: Swift.String?
-  public var secondaryButtonBorderColor: Swift.String?
-  public var captureButtonColor: Swift.String?
+  public var titleTextColor: Swift.String
+  public var descriptionTextColor: Swift.String
+  public var documentSideHintTextColor: Swift.String
+  public var statusTextColor: Swift.String
+  public var primaryButtonBackgroundColor: Swift.String
+  public var primaryButtonTextColor: Swift.String
+  public var primaryButtonBorderColor: Swift.String
+  public var secondaryButtonBackgroundColor: Swift.String
+  public var secondaryButtonTextColor: Swift.String
+  public var secondaryButtonBorderColor: Swift.String
+  public var captureButtonColor: Swift.String
   public var animationsPrimaryColor: Swift.String?
-  public var retakeMessageColor: Swift.String?
-  public var alertTextBoxTextColor: Swift.String?
-  public var alertTextBoxBorderColor: Swift.String?
-  public var alertTextBoxBackgroundColor: Swift.String?
+  public var retakeMessageColor: Swift.String
+  public var alertTextBoxTextColor: Swift.String
+  public var alertTextBoxBorderColor: Swift.String
+  public var alertTextBoxBackgroundColor: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct HVUIConfig : Swift.Codable {
-  public var colors: HyperSnapSDK.HVUIColor?
-  public var font: HyperSnapSDK.HVUIFont?
-  public var fontWeight: HyperSnapSDK.HVUIFontWeight?
-  public var fontSize: HyperSnapSDK.HVUIFontSize?
-  public var alignment: HyperSnapSDK.HVUIAlignment?
-  public var borderRadius: HyperSnapSDK.HVUIBorderRadius?
-  public var animation: HyperSnapSDK.HVUIAnimation?
+  public var colors: HyperSnapSDK.HVUIColor
+  public var font: HyperSnapSDK.HVUIFont
+  public var fontWeight: HyperSnapSDK.HVUIFontWeight
+  public var fontSize: HyperSnapSDK.HVUIFontSize
+  public var alignment: HyperSnapSDK.HVUIAlignment
+  public var borderRadius: HyperSnapSDK.HVUIBorderRadius
+  public var animation: HyperSnapSDK.HVUIAnimation
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct HVUIFont : Swift.Codable {
-  public var titleTextFont: Swift.String?
-  public var descTextFont: Swift.String?
-  public var documentSideHintTextFont: Swift.String?
-  public var retakeMessageFont: Swift.String?
-  public var primaryButtonFont: Swift.String?
-  public var secondaryButtonFont: Swift.String?
-  public var alertTextBoxTextFont: Swift.String?
+  public var titleTextFont: Swift.String
+  public var descTextFont: Swift.String
+  public var statusTextFont: Swift.String
+  public var documentSideHintTextFont: Swift.String
+  public var retakeMessageFont: Swift.String
+  public var primaryButtonFont: Swift.String
+  public var secondaryButtonFont: Swift.String
+  public var alertTextBoxTextFont: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct HVUIFontSize : Swift.Codable {
-  public var titleTextSize: Swift.Float?
-  public var descriptionTextSize: Swift.Float?
-  public var documentSideHintTextSize: Swift.Float?
-  public var retakeMessageTextSize: Swift.Float?
-  public var primaryButtonTextSize: Swift.Float?
-  public var secondaryButtonTextSize: Swift.Float?
-  public var alertTextBoxTextSize: Swift.Float?
+  public var titleTextSize: Swift.Float
+  public var descriptionTextSize: Swift.Float
+  public var statusTextSize: Swift.Float
+  public var documentSideHintTextSize: Swift.Float
+  public var retakeMessageTextSize: Swift.Float
+  public var primaryButtonTextSize: Swift.Float
+  public var secondaryButtonTextSize: Swift.Float
+  public var alertTextBoxTextSize: Swift.Float
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
 public struct HVUIFontWeight : Swift.Codable {
-  public var titleTextFontWeight: Swift.String?
-  public var descTextFontWeight: Swift.String?
-  public var documentSideHintTextFontWeight: Swift.String?
-  public var retakeMessageFontWeight: Swift.String?
-  public var primaryButtonFontWeight: Swift.String?
-  public var secondaryButtonFontWeight: Swift.String?
-  public var alertTextBoxTextFontWeight: Swift.String?
+  public var titleTextFontWeight: Swift.String
+  public var descTextFontWeight: Swift.String
+  public var statusTextFontWeight: Swift.String
+  public var documentSideHintTextFontWeight: Swift.String
+  public var retakeMessageFontWeight: Swift.String
+  public var primaryButtonFontWeight: Swift.String
+  public var secondaryButtonFontWeight: Swift.String
+  public var alertTextBoxTextFontWeight: Swift.String
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -1199,6 +1220,9 @@ public struct HVToast {
 extension UIKit.UIColor {
   convenience public init(hex: Swift.String)
 }
+extension HyperSnapSDK.Model : Swift.Equatable {}
+extension HyperSnapSDK.Model : Swift.Hashable {}
+extension HyperSnapSDK.Model : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Equatable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Hashable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.RawRepresentable {}

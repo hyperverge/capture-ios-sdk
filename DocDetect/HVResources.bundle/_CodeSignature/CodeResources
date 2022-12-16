@@ -4,9 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Animations/id_back_instructions.json</key>
+		<data>
+		zSKlUj9VowK4AMDS5xbpFBEi/0o=
+		</data>
 		<key>Animations/id_failure.json</key>
 		<data>
 		mwsNTj3F+uqEkHG0Rf1qF9odrbQ=
+		</data>
+		<key>Animations/id_front_instructions.json</key>
+		<data>
+		laZ33Nj2T6ts/U63m897t4NXSik=
 		</data>
 		<key>Animations/id_instructions.json</key>
 		<data>
@@ -46,7 +54,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		o0I8QtbNuPjokUNQwHWwpErZZ+U=
+		GhGxVABz7YWrc0xDUVyrQ64WiK8=
 		</data>
 		<key>Fonts/Mulish-Bold.ttf</key>
 		<data>
@@ -62,11 +70,11 @@
 		</data>
 		<key>HyperSnapPreview.storyboardc/0Im-yy-oBf-view-gGT-kM-2J8.nib</key>
 		<data>
-		YToZgIY7HMVe9480WJ11bvXs1/o=
+		fnzEMN/HeZRL2+AnttXF9S6PtBY=
 		</data>
 		<key>HyperSnapPreview.storyboardc/4fg-ZS-N1N-view-JEy-Ej-q0e.nib</key>
 		<data>
-		5NDaJBWOd4y9fCr9TjKluVNAlsw=
+		z5cbKAJJv7hYGheqK3Zm2ddARBQ=
 		</data>
 		<key>HyperSnapPreview.storyboardc/CameraPermissionView.nib</key>
 		<data>
@@ -74,7 +82,7 @@
 		</data>
 		<key>HyperSnapPreview.storyboardc/FLA-dQ-4zP-view-cr0-ND-hE1.nib</key>
 		<data>
-		IaBTgjR8Q+x9CTHHm7nFJObnitA=
+		OHrHJOV+VmUXQMptFxIlY61IxjI=
 		</data>
 		<key>HyperSnapPreview.storyboardc/HVDocInstructionsViewController.nib</key>
 		<data>
@@ -122,15 +130,15 @@
 		</data>
 		<key>HyperSnapPreview.storyboardc/LLQ-Rw-bPV-view-3wQ-UB-Q0T.nib</key>
 		<data>
-		R/KP/qOFLMZpywWcLTEg+czaK18=
+		o+Vw/GjKX4s594RyaAy5R9Mmvm0=
 		</data>
 		<key>HyperSnapPreview.storyboardc/X28-NM-fAr-view-LoJ-eo-ZkA.nib</key>
 		<data>
-		2BYnI0hBUeKsgvO7gRXCMLdRfR0=
+		ozaFCPX1q7v3TMdgPNzcOH3DzAI=
 		</data>
 		<key>HyperSnapPreview.storyboardc/gCh-3x-nUM-view-8oc-3b-U5W.nib</key>
 		<data>
-		boraUk7mIoVWH2xY7lQiNYaHFFQ=
+		VP4NMLmPv4Jt5DVE4Xllz4S3wlc=
 		</data>
 		<key>HyperSnapPreview.storyboardc/oKX-YD-dVH-view-M3V-FI-hJ0.nib</key>
 		<data>
@@ -138,19 +146,19 @@
 		</data>
 		<key>HyperSnapPreview.storyboardc/qVG-fv-wg9-view-Fzv-RR-Zik.nib</key>
 		<data>
-		OO61+OS7doYh9Lw9xPOngIIBtWs=
+		UOJ0gaW9KwjJbZdU+WQpa47bhAg=
 		</data>
 		<key>HyperSnapPreview.storyboardc/rZu-Sr-XNX-view-V7e-qd-0oS.nib</key>
 		<data>
-		bv7uwF2+gy4MI3XrwTS2znJ8suY=
+		7VnNF7S5JYtx+exQzyNaKLijrVE=
 		</data>
 		<key>HyperSnapPreview.storyboardc/x6s-8e-c2z-view-fsm-ON-Vee.nib</key>
 		<data>
-		0HEJ4X0yq0WTwo6R1ZJVf6lbgWI=
+		xn1dUXL/8wdxY84GPvgIEyINKrg=
 		</data>
 		<key>HyperSnapPreview.storyboardc/zO2-8S-LAx-view-ebP-XP-QMS.nib</key>
 		<data>
-		bf3fx0yKv0rtr5IeMWdLe04280M=
+		mIFnC3FhneTDo/nQwC1CXNSRjmI=
 		</data>
 		<key>yolov5n_224x224_Lite.tflite</key>
 		<data>
@@ -159,6 +167,17 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Animations/id_back_instructions.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			zSKlUj9VowK4AMDS5xbpFBEi/0o=
+			</data>
+			<key>hash2</key>
+			<data>
+			0+6Ty+8/Gln37u9Ch/p0uvfKUYBrsweSzW405UY0smg=
+			</data>
+		</dict>
 		<key>Animations/id_failure.json</key>
 		<dict>
 			<key>hash</key>
@@ -168,6 +187,17 @@
 			<key>hash2</key>
 			<data>
 			WxFfHimBOpfsEGWSIEi84c7oxMIdvXdbkr4Eq7wNFZw=
+			</data>
+		</dict>
+		<key>Animations/id_front_instructions.json</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			laZ33Nj2T6ts/U63m897t4NXSik=
+			</data>
+			<key>hash2</key>
+			<data>
+			rhkD4oYAodHTEhpT0K+5rJ4ykq36uR4C0o1C0d4evtQ=
 			</data>
 		</dict>
 		<key>Animations/id_instructions.json</key>
@@ -273,11 +303,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			o0I8QtbNuPjokUNQwHWwpErZZ+U=
+			GhGxVABz7YWrc0xDUVyrQ64WiK8=
 			</data>
 			<key>hash2</key>
 			<data>
-			FVUoop4Q0txvHSzFRcDRb8eZIxhrbMg/KaC3pL8VFb8=
+			k7uJ173KwippwBWqbj6ewqs0zAODsScIUwprrOdy3Ng=
 			</data>
 		</dict>
 		<key>Fonts/Mulish-Bold.ttf</key>
@@ -317,22 +347,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YToZgIY7HMVe9480WJ11bvXs1/o=
+			fnzEMN/HeZRL2+AnttXF9S6PtBY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aFCXpEChrNlrOZcgK/Y4muK9MlW+Sy9AWy6lzj4sQo8=
+			AnHLyhfjFfDQ0ninyBsRtu+FHp+RtVOdd/F3QSo95aA=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/4fg-ZS-N1N-view-JEy-Ej-q0e.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5NDaJBWOd4y9fCr9TjKluVNAlsw=
+			z5cbKAJJv7hYGheqK3Zm2ddARBQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			2V/J27VrBEbXIBRQ5FqIpHYh073ckeGbRDWosSOSOZM=
+			KcSoURhPFMrEnRegJovX/2QH0APVKS+PvWdvfoa86Uc=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/CameraPermissionView.nib</key>
@@ -350,11 +380,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IaBTgjR8Q+x9CTHHm7nFJObnitA=
+			OHrHJOV+VmUXQMptFxIlY61IxjI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Xuz0SfSokk5Ehbb9C8bqpMUsaW98MmHd5FerNlXDMXA=
+			ajwDaE/QA4NCHPuJK1E2KnWXWFd3RUvd4jnX8v8hVM0=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/HVDocInstructionsViewController.nib</key>
@@ -482,33 +512,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			R/KP/qOFLMZpywWcLTEg+czaK18=
+			o+Vw/GjKX4s594RyaAy5R9Mmvm0=
 			</data>
 			<key>hash2</key>
 			<data>
-			9flGLcJsPKUBCI0JTKLDtQVZOyJ9brE1a5+ZO2HZJCk=
+			/yuY1VsRQ3RCWsK2K0FC1MF+4nmGO1htgO1HeCdqC9I=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/X28-NM-fAr-view-LoJ-eo-ZkA.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2BYnI0hBUeKsgvO7gRXCMLdRfR0=
+			ozaFCPX1q7v3TMdgPNzcOH3DzAI=
 			</data>
 			<key>hash2</key>
 			<data>
-			tkwpvIZYqYWLIytvEKXkAFwuAa35AjYaDcGMZY/b0Ls=
+			KhQydye013WSH1Cj747S+uKZbAbXF5zvQLqFevM7UdU=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/gCh-3x-nUM-view-8oc-3b-U5W.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			boraUk7mIoVWH2xY7lQiNYaHFFQ=
+			VP4NMLmPv4Jt5DVE4Xllz4S3wlc=
 			</data>
 			<key>hash2</key>
 			<data>
-			edi77GmH5P9nZE1405UwIZZm4PEDk4ywK4a5ItfwTPk=
+			aOD6mKSq4xotgiPGae2vM6ofGJOwZLcYeIyLVVUisdE=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/oKX-YD-dVH-view-M3V-FI-hJ0.nib</key>
@@ -526,44 +556,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OO61+OS7doYh9Lw9xPOngIIBtWs=
+			UOJ0gaW9KwjJbZdU+WQpa47bhAg=
 			</data>
 			<key>hash2</key>
 			<data>
-			GJXKD8f1SfstaGdmKI7XLUOaz0Ceyj5d+kgZ+3ve5Hc=
+			j/b/GZApykIU0ATI19VevBG2wD3I6vKlF0b6Zfpm0Fg=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/rZu-Sr-XNX-view-V7e-qd-0oS.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bv7uwF2+gy4MI3XrwTS2znJ8suY=
+			7VnNF7S5JYtx+exQzyNaKLijrVE=
 			</data>
 			<key>hash2</key>
 			<data>
-			SEAhFSx8WvZARNUcH6KSfF/c90Kyaa8FR1O/t0ivbv0=
+			z0TPgvF1xOx1VsnrQsfcWW1CHymjP3zklpgKYkKbjO0=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/x6s-8e-c2z-view-fsm-ON-Vee.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0HEJ4X0yq0WTwo6R1ZJVf6lbgWI=
+			xn1dUXL/8wdxY84GPvgIEyINKrg=
 			</data>
 			<key>hash2</key>
 			<data>
-			e8C4xDMYrGUSkc/U5+Wxqfx6ogpWcwC029Oyj8izM/E=
+			e+SDaUp5socTNP0R6qifwPMeZndDqthJXf2UG+gpZ5U=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/zO2-8S-LAx-view-ebP-XP-QMS.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bf3fx0yKv0rtr5IeMWdLe04280M=
+			mIFnC3FhneTDo/nQwC1CXNSRjmI=
 			</data>
 			<key>hash2</key>
 			<data>
-			tmGuEb3N3G9Zl9zghwImTKsueyC7Hvxcc3LvUylnf4k=
+			0n6esK+S3N7LueshUnTSq637blFbz6OSpO53IY3D5yI=
 			</data>
 		</dict>
 		<key>yolov5n_224x224_Lite.tflite</key>
