@@ -7,6 +7,7 @@
 - Rename Lottie... classes to HVLottie...
     - Make Lottie files internal
 - Updated response structure for active liveness
+- Adds support for HTML tags in TextViews
 
 #### 4.4.0 [02 Dec 2022]
 - Add selfie - active liveness feature
