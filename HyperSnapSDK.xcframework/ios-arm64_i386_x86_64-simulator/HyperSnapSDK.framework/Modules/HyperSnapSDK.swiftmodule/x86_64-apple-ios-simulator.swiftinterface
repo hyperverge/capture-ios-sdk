@@ -283,13 +283,13 @@ final public class Animation : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
 }
 public struct HVUIFontWeight : Swift.Codable {
-  public var titleTextFontWeight: Swift.String?
-  public var descTextFontWeight: Swift.String?
-  public var documentSideHintTextFontWeight: Swift.String?
-  public var retakeMessageFontWeight: Swift.String?
-  public var primaryButtonFontWeight: Swift.String?
-  public var secondaryButtonFontWeight: Swift.String?
-  public var alertTextBoxTextFontWeight: Swift.String?
+  public var titleTextWeight: Swift.String?
+  public var descriptionTextWeight: Swift.String?
+  public var documentSideHintTextWeight: Swift.String?
+  public var retakeMessageWeight: Swift.String?
+  public var primaryButtonTextWeight: Swift.String?
+  public var secondaryButtonTextWeight: Swift.String?
+  public var alertTextBoxTextWeight: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
@@ -523,11 +523,11 @@ public struct HVUIConfig : Swift.Codable {
 }
 public struct HVUIFont : Swift.Codable {
   public var titleTextFont: Swift.String?
-  public var descTextFont: Swift.String?
+  public var descriptionTextFont: Swift.String?
   public var documentSideHintTextFont: Swift.String?
   public var retakeMessageFont: Swift.String?
-  public var primaryButtonFont: Swift.String?
-  public var secondaryButtonFont: Swift.String?
+  public var primaryButtonTextFont: Swift.String?
+  public var secondaryButtonTextFont: Swift.String?
   public var alertTextBoxTextFont: Swift.String?
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws

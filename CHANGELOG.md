@@ -1,3 +1,8 @@
+#### 4.2.1 [6th Jan 2022]
+- 1. Fix font family and font weight keys
+- 2. Support text config customisations for device orientation
+
+
 #### 4.2.0 [7th Oct 2022]
 - Added extra checks to prevent image injection attacks on liveness api
 - Fixed issue with face not straight in iOS 16.0

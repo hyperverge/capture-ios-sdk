@@ -102,7 +102,7 @@
 		</data>
 		<key>HVResources.bundle/Info.plist</key>
 		<data>
-		jvsNtFUWxkTc0DRseAln3c6Rv8k=
+		tBRVeK6U1VNQFgIpEOZlDTGH5Pg=
 		</data>
 		<key>HVResources.bundle/Mulish-Bold.ttf</key>
 		<data>
@@ -166,7 +166,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rrHRHxdTxhi5Ty9HZ6ceHpJ/LsA=
+		HT9bIb1FZeMaOUw8SgI24e6v+t0=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -174,11 +174,11 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		X8TXt7saCP4fTsU5WM7JJxa/v2c=
+		Z8bvICvVCH6rYle0iNPIvjt+QfU=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		4DHYBoY8FrAXz/gQFm/0lTRtrWg=
+		fhejBuzx54OhE7n/O2ALyHv2Njc=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
@@ -186,11 +186,11 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		1ZPcQZGgVuYGbj5OrAGjr8FOs7E=
+		9eucowalA63mQAWrsppb7ucP87M=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		epubaAclvx1TOHXJNYY6iPX+DIc=
+		bymKwixBQA5VbryIeDvjimCFeIo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -467,11 +467,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jvsNtFUWxkTc0DRseAln3c6Rv8k=
+			tBRVeK6U1VNQFgIpEOZlDTGH5Pg=
 			</data>
 			<key>hash2</key>
 			<data>
-			SmHtNXLeWEg9l/UwxpbTwuygzaMD8DzeZE4F/V7fDxg=
+			IQJzogOCED8URRxrPuUAd/X4H1/HLNBka7gdXW5K5XY=
 			</data>
 		</dict>
 		<key>HVResources.bundle/Mulish-Bold.ttf</key>
@@ -654,22 +654,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			X8TXt7saCP4fTsU5WM7JJxa/v2c=
+			Z8bvICvVCH6rYle0iNPIvjt+QfU=
 			</data>
 			<key>hash2</key>
 			<data>
-			2QqpDWgssqJvv+adrnEU2vUjuqIrsH40wOIWTHmsvE0=
+			DY/NeXmm6LgSAz8szfvE0sHRJAxLaozipp/2Lw/VrBQ=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4DHYBoY8FrAXz/gQFm/0lTRtrWg=
+			fhejBuzx54OhE7n/O2ALyHv2Njc=
 			</data>
 			<key>hash2</key>
 			<data>
-			aCi5hteNyxF2ChiwgchvueoJA9yOpK8UiFOXxOzHR0I=
+			aGRUkBd8ZFO+PenFy5XxeVKS+l9NyHf86bP9l2wOuZA=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/armv7-apple-ios.swiftdoc</key>
@@ -687,22 +687,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1ZPcQZGgVuYGbj5OrAGjr8FOs7E=
+			9eucowalA63mQAWrsppb7ucP87M=
 			</data>
 			<key>hash2</key>
 			<data>
-			pxGR6SW1JIOVSvt5SB1Y4GOMk2ADC0Mn8VG3OD0EqJ0=
+			ddlxLJyBAaeIfp/UAOYb7+rrUk/+88AbriWzbpK9368=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			epubaAclvx1TOHXJNYY6iPX+DIc=
+			bymKwixBQA5VbryIeDvjimCFeIo=
 			</data>
 			<key>hash2</key>
 			<data>
-			pcwgaQq+IZ/Ckqf+rvQAXV54xRUEiNX5vXdyxaQVjJU=
+			f6/xG7MnB3RDUjjoTePIF/6I+559Sz/Jhma30HgMdQs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
