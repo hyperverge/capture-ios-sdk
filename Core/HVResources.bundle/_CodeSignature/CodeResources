@@ -50,7 +50,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		GhGxVABz7YWrc0xDUVyrQ64WiK8=
+		o0I8QtbNuPjokUNQwHWwpErZZ+U=
 		</data>
 		<key>Fonts/Mulish-Bold.ttf</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>HyperSnapPreview.storyboardc/4fg-ZS-N1N-view-JEy-Ej-q0e.nib</key>
 		<data>
-		z5cbKAJJv7hYGheqK3Zm2ddARBQ=
+		PO9qda1CbnUCYZz8jt2OvrqQPH4=
 		</data>
 		<key>HyperSnapPreview.storyboardc/CameraPermissionView.nib</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>HyperSnapPreview.storyboardc/FLA-dQ-4zP-view-cr0-ND-hE1.nib</key>
 		<data>
-		OHrHJOV+VmUXQMptFxIlY61IxjI=
+		9hKmIOzLAyAJ3ZsV2lwENYsUL/8=
 		</data>
 		<key>HyperSnapPreview.storyboardc/HVDocInstructionsViewController.nib</key>
 		<data>
@@ -126,35 +126,39 @@
 		</data>
 		<key>HyperSnapPreview.storyboardc/LLQ-Rw-bPV-view-3wQ-UB-Q0T.nib</key>
 		<data>
-		o+Vw/GjKX4s594RyaAy5R9Mmvm0=
+		1WX6is3uKgLK4FTFjIEyUl9Utpk=
 		</data>
 		<key>HyperSnapPreview.storyboardc/X28-NM-fAr-view-LoJ-eo-ZkA.nib</key>
 		<data>
-		ozaFCPX1q7v3TMdgPNzcOH3DzAI=
+		j0Z6aSkt/7uVvjr2uh77ZiVxzBA=
 		</data>
 		<key>HyperSnapPreview.storyboardc/gCh-3x-nUM-view-8oc-3b-U5W.nib</key>
 		<data>
-		VP4NMLmPv4Jt5DVE4Xllz4S3wlc=
+		IzC/hEWbqxeQHKYrpxPCnAi2s8M=
 		</data>
 		<key>HyperSnapPreview.storyboardc/oKX-YD-dVH-view-M3V-FI-hJ0.nib</key>
 		<data>
-		INB/bY1WYnbuEwbWPJyjch1kYDc=
+		rgMulPRSs7tJlMh9eK4IGs9lQug=
 		</data>
 		<key>HyperSnapPreview.storyboardc/qVG-fv-wg9-view-Fzv-RR-Zik.nib</key>
 		<data>
-		UOJ0gaW9KwjJbZdU+WQpa47bhAg=
+		iu9LW0q4uO5dANYHY62k8EW8ANc=
 		</data>
 		<key>HyperSnapPreview.storyboardc/rZu-Sr-XNX-view-V7e-qd-0oS.nib</key>
 		<data>
-		7VnNF7S5JYtx+exQzyNaKLijrVE=
+		LEVsCKjhUI62x4J1cx+IYZn+YCQ=
 		</data>
 		<key>HyperSnapPreview.storyboardc/x6s-8e-c2z-view-fsm-ON-Vee.nib</key>
 		<data>
-		mZWHFobIcTPYODUGV4zfdnodhw4=
+		ixYSY7qzBNDh5LL1+3le0oUClmo=
 		</data>
 		<key>HyperSnapPreview.storyboardc/zO2-8S-LAx-view-ebP-XP-QMS.nib</key>
 		<data>
-		17881hE/JO+WCx9hVKrzWuiWubY=
+		VqboEeipmcVVb9oOVj1ZGf1RqhQ=
+		</data>
+		<key>yolov5n_224x224_Lite.tflite</key>
+		<data>
+		F2AAd5yD75NhwZtyoYB0jsFOWjc=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -284,11 +288,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GhGxVABz7YWrc0xDUVyrQ64WiK8=
+			o0I8QtbNuPjokUNQwHWwpErZZ+U=
 			</data>
 			<key>hash2</key>
 			<data>
-			k7uJ173KwippwBWqbj6ewqs0zAODsScIUwprrOdy3Ng=
+			FVUoop4Q0txvHSzFRcDRb8eZIxhrbMg/KaC3pL8VFb8=
 			</data>
 		</dict>
 		<key>Fonts/Mulish-Bold.ttf</key>
@@ -339,11 +343,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z5cbKAJJv7hYGheqK3Zm2ddARBQ=
+			PO9qda1CbnUCYZz8jt2OvrqQPH4=
 			</data>
 			<key>hash2</key>
 			<data>
-			KcSoURhPFMrEnRegJovX/2QH0APVKS+PvWdvfoa86Uc=
+			bSWvQQz13yIfsWZ+WzEl4F/0UcmZKoR/pdrHLDcFS1w=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/CameraPermissionView.nib</key>
@@ -361,11 +365,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OHrHJOV+VmUXQMptFxIlY61IxjI=
+			9hKmIOzLAyAJ3ZsV2lwENYsUL/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ajwDaE/QA4NCHPuJK1E2KnWXWFd3RUvd4jnX8v8hVM0=
+			aX3qdH1GHdicfKEi41dpSevyokLOR/XbrQ8xUFGrUL4=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/HVDocInstructionsViewController.nib</key>
@@ -493,88 +497,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			o+Vw/GjKX4s594RyaAy5R9Mmvm0=
+			1WX6is3uKgLK4FTFjIEyUl9Utpk=
 			</data>
 			<key>hash2</key>
 			<data>
-			/yuY1VsRQ3RCWsK2K0FC1MF+4nmGO1htgO1HeCdqC9I=
+			Z50Yzk/dpsnVts3VKzRaygtnK9+n8ehSNp7eWwX9ThY=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/X28-NM-fAr-view-LoJ-eo-ZkA.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ozaFCPX1q7v3TMdgPNzcOH3DzAI=
+			j0Z6aSkt/7uVvjr2uh77ZiVxzBA=
 			</data>
 			<key>hash2</key>
 			<data>
-			KhQydye013WSH1Cj747S+uKZbAbXF5zvQLqFevM7UdU=
+			jN1/HJuf8cOMy2qO5bSJ0i3L8ZSceDPFAIgWe7o10yo=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/gCh-3x-nUM-view-8oc-3b-U5W.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VP4NMLmPv4Jt5DVE4Xllz4S3wlc=
+			IzC/hEWbqxeQHKYrpxPCnAi2s8M=
 			</data>
 			<key>hash2</key>
 			<data>
-			aOD6mKSq4xotgiPGae2vM6ofGJOwZLcYeIyLVVUisdE=
+			x2fv1u8emiZXzc+1buDbyYidXr3Hc6aQGgJTE14n1Ho=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/oKX-YD-dVH-view-M3V-FI-hJ0.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			INB/bY1WYnbuEwbWPJyjch1kYDc=
+			rgMulPRSs7tJlMh9eK4IGs9lQug=
 			</data>
 			<key>hash2</key>
 			<data>
-			A35dVXx1DyA78svZdRd1nhm8BDwV8FOSxBrC7bhQXQc=
+			862oaohGZJjtWrgZR8dsi7faJ8AWJWo9qawbwV70ed8=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/qVG-fv-wg9-view-Fzv-RR-Zik.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UOJ0gaW9KwjJbZdU+WQpa47bhAg=
+			iu9LW0q4uO5dANYHY62k8EW8ANc=
 			</data>
 			<key>hash2</key>
 			<data>
-			j/b/GZApykIU0ATI19VevBG2wD3I6vKlF0b6Zfpm0Fg=
+			JsM14AQqOOWqbb3/lGWSKckEaf9b9GODDYG45ZUVGoY=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/rZu-Sr-XNX-view-V7e-qd-0oS.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7VnNF7S5JYtx+exQzyNaKLijrVE=
+			LEVsCKjhUI62x4J1cx+IYZn+YCQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			z0TPgvF1xOx1VsnrQsfcWW1CHymjP3zklpgKYkKbjO0=
+			Lf6ycke3cm1QYHksgK5Q2OgYbcMsreBURhJfZqD0Rfw=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/x6s-8e-c2z-view-fsm-ON-Vee.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mZWHFobIcTPYODUGV4zfdnodhw4=
+			ixYSY7qzBNDh5LL1+3le0oUClmo=
 			</data>
 			<key>hash2</key>
 			<data>
-			lcd87WtwT5iU3HXoCAkrleGgvQUK/AW9RitzSsJ/OiA=
+			RfeWOvsKTROLMHnXmSvD2Wz2pyr6COjpNsSdaowZNjM=
 			</data>
 		</dict>
 		<key>HyperSnapPreview.storyboardc/zO2-8S-LAx-view-ebP-XP-QMS.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			17881hE/JO+WCx9hVKrzWuiWubY=
+			VqboEeipmcVVb9oOVj1ZGf1RqhQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			LNK/2/t6DW/5pUsh5DhGS+fw09ZOGYXCW08GAk4ztsM=
+			PErJg6vAfr7AvqT3PSI+YALx2VFpoWadpFxPrMIpNKE=
+			</data>
+		</dict>
+		<key>yolov5n_224x224_Lite.tflite</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			F2AAd5yD75NhwZtyoYB0jsFOWjc=
+			</data>
+			<key>hash2</key>
+			<data>
+			wECJyrgf7HHDc7zKx9hP30FBfiLNRxmcsb+rv+Iv0lE=
 			</data>
 		</dict>
 	</dict>

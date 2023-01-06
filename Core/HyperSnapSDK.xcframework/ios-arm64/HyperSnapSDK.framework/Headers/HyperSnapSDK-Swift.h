@@ -345,6 +345,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldReadNIDQR:(BOOL)shouldRead;
 - (void)setShouldReadBarcode:(BOOL)shouldRead;
 - (void)setEnableDocumentUpload:(BOOL)enable;
+- (void)setUploadFileTypes:(NSArray<NSString *> * _Nullable)fileTypes;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1180,8 +1181,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)endUserSession;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
-
-
 
 
 
