@@ -1,3 +1,11 @@
+#### 4.6.0 [6th Jan 2022]
+- Fix font family and font-weight keys
+- Add text config support for wrong device orientation
+- Add UI configs for QR instructions and QR scanning screens
+- Add support for QR instructions animation customizations
+- Support background color customisation from ui config - default to white
+- Show online progress bar instead of loading VC while performing OCR and liveness calls
+- Update document auto capture UI/UX
 
 #### 4.2.1 [6th Jan 2022]
 - Fix font family and font weight keys
