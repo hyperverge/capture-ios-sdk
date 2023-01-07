@@ -1,3 +1,17 @@
+#### 4.6.0 [6th Jan 2022]
+- Fix font family and font-weight keys
+- Add text config support for wrong device orientation
+- Add UI configs for QR instructions and QR scanning screens
+- Add support for QR instructions animation customizations
+- Support background color customisation from ui config - default to white
+- Show online progress bar instead of loading VC while performing OCR and liveness calls
+- Update document auto capture UI/UX
+
+#### 4.2.1 [6th Jan 2022]
+- Fix font family and font weight keys
+- Support text config customisations for device orientation
+- Fix for document upload flow crash
+
 #### 4.5.0 [15 Dec 2022]
 - UI refinements based on suggestions listed here
 - UI/UX upgrade
@@ -24,6 +38,7 @@
 #### 4.2.0 [07 Nov 2022]
 - Add extra checks to prevent image injection attacks on liveness api
 - Fix issue with face not straight in iOS 16.0
+- [PATCH] Fix for document upload flow crashß
 
 #### 4.1.10 [28 Oct 2022]
 - Disable pdf upload from document upload screen
