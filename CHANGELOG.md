@@ -1,4 +1,8 @@
-#### 4.6.0 [6th Jan 2022]
+#### 4.6.1 [16th Feb 2023]
+- Added fix for lottie animation not loading 
+- UI/UX bug fixes 
+
+#### 4.6.0 [6th Jan 2023]
 - Fix font family and font-weight keys
 - Add text config support for wrong device orientation
 - Add UI configs for QR instructions and QR scanning screens
