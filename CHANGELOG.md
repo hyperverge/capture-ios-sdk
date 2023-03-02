@@ -1,6 +1,8 @@
 #### 4.6.1 [16th Feb 2023]
 - Added fix for lottie animation not loading 
 - UI/UX bug fixes 
+- [Patch] Added fix for html attributed string
+- [Patch] Upload button text config issue fix
 
 #### 4.6.0 [6th Jan 2023]
 - Fix font family and font-weight keys
