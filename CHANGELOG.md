@@ -1,3 +1,5 @@
+#### 4.6.2 [4 March 2023]
+- Fixed ui/text config issues
 #### 4.6.1 [16th Feb 2023]
 - Added fix for lottie animation not loading 
 - UI/UX bug fixes 
