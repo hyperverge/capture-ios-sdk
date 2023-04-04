@@ -1,3 +1,9 @@
+#### 4.7.0 [4 Apr 2023]
+- Fixed issue with QR screen closing
+- Fixed UI issues in Face/Doc capture
+- Added setter method to enable/disable overlay
+- Added signature checks for GKYC APIs
+
 #### 4.6.3 [20 March 2023]
 - Fixed font specific issues for UI config
 #### 4.6.2 [4 March 2023]
