@@ -339,6 +339,7 @@ enum DocumentSide : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 @interface HVDocConfig : HVBaseConfig
+- (void)setShouldEnableOverlay:(BOOL)enableOverlay;
 @property (nonatomic, strong) DocTextConfig * _Nonnull textConfig;
 - (void)setDocumentType:(enum DocumentType)type;
 - (void)setAspectRatio:(double)aspectRatio;
@@ -646,6 +647,7 @@ enum LivenessMode : NSInteger;
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : HVBaseConfig
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
+- (void)setShouldEnableOverlay:(BOOL)enableOverlay;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
 - (void)setFps:(NSInteger)fps;

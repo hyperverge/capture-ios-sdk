@@ -276,6 +276,7 @@ extension UIKit.UIFont {
   }
 }
 @_inheritsConvenienceInitializers @objc public class HVDocConfig : HyperSnapSDK.HVBaseConfig {
+  @objc public func setShouldEnableOverlay(_ enableOverlay: Swift.Bool)
   @objc public var textConfig: HyperSnapSDK.HVDocConfig.DocTextConfig
   @objc public func setDocumentType(_ type: HyperSnapSDK.HyperSnapParams.DocumentType)
   @objc public func setAspectRatio(_ aspectRatio: Swift.Double)
@@ -388,6 +389,7 @@ extension HyperSnapSDK.HVDocsViewController {
 }
 @_inheritsConvenienceInitializers @objc public class HVFaceConfig : HyperSnapSDK.HVBaseConfig {
   @objc public var textConfig: HyperSnapSDK.HVFaceConfig.FaceTextConfig
+  @objc public func setShouldEnableOverlay(_ enableOverlay: Swift.Bool)
   @objc public func setLivenessMode(_ livenessMode: HyperSnapSDK.HyperSnapParams.LivenessMode)
   @objc public func setShouldRecordVideo(_ shouldRecordvideo: Swift.Bool)
   @objc public func setFps(_ fps: Swift.Int)
