@@ -1115,6 +1115,9 @@ public struct HVUIColor : Swift.Codable {
   public var alertTextBoxBackgroundColor: Swift.String {
     get
   }
+  public var formPlaceHolderTextColor: Swift.String {
+    get
+  }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
