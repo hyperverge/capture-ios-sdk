@@ -1,20 +1,32 @@
-#### 4.7.0 [4 Apr 2023]
-- Fixed issue with QR screen closing
-- Fixed UI issues in Face/Doc capture
-- Added setter method to enable/disable overlay
-- Added signature checks for GKYC APIs
+#### 4.7.0 [04 Apr 2023]
+- Features:
+    - Update SDK security
+    - Update QR Screen UI/UX:
+        - Update QR scanning animation type
+        - Update QR scanning animation color
+        - Convert qr skip button to secondary button, update its placement in the screen
+        - Support qr flow camera permission view text config
+    - Add setter method to enable/disable overlay
+    - Support `formPlaceHolderTextColor` from UI Config
+- Bug fixes:
+    - Fix Retake button placement issue
+    - Fix Selfie retake button border radius issue
+    - Fix Spinning animation issue
+    - Fix Camera-permission view UI issues
 
 #### 4.6.3 [20 March 2023]
-- Fixed font specific issues for UI config
-#### 4.6.2 [4 March 2023]
-- Fixed ui/text config issues
-#### 4.6.1 [16th Feb 2023]
-- Added fix for lottie animation not loading 
+- Fix font specific issues for UI config
+
+#### 4.6.2 [04 March 2023]
+- Fix ui/text config issues
+
+#### 4.6.1 [16 Feb 2023]
+- Add fix for lottie animation not loading 
 - UI/UX bug fixes 
-- [Patch] Added fix for html attributed string
+- [Patch] Add fix for html attributed string
 - [Patch] Upload button text config issue fix
 
-#### 4.6.0 [6th Jan 2023]
+#### 4.6.0 [06 Jan 2023]
 - Fix font family and font-weight keys
 - Add text config support for wrong device orientation
 - Add UI configs for QR instructions and QR scanning screens
@@ -23,7 +35,7 @@
 - Show online progress bar instead of loading VC while performing OCR and liveness calls
 - Update document auto capture UI/UX
 
-#### 4.2.1 [6th Jan 2022]
+#### 4.2.1 [06 Jan 2022]
 - Fix font family and font weight keys
 - Support text config customisations for device orientation
 - Fix for document upload flow crash
@@ -65,11 +77,11 @@
 - Fix retake message logic to use `code` from `summary.details` JsonArray
 - Fix issue with AlertLabel, Face Retake screen in Dark mode 
 
-#### 4.1.8 [29 Sept 2022]
+#### 4.1.8 [29 Sep 2022]
 - Add alert box in Selfie Capture Flow
 - Refactor cache logic
 
-#### 4.1.7 [6 Sept 2022]
+#### 4.1.7 [06 Sep 2022]
 - Added support to read barcode in document capture (Use setter function `setShouldReadBarcode`)
 - Deprecate `setShouldReadQR` - Use `setShouldReadNIDQR` instead
 
