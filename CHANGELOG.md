@@ -1,3 +1,12 @@
+#### 4.8.0 [20 Apr 2023]
+- Features:
+    - Add support to enable/disable selfie video recording feature from remote config
+    - Log video recording events to rudderstack
+    - Add support to customise picker ui
+    - Support feature enabling/disabling by OS config
+    - Support Look Straight feature for iOS 16+ devices (which was previously disabled for all iOS 16+ devices)
+
+
 #### 4.7.0 [04 Apr 2023]
 - Features:
     - Update SDK security

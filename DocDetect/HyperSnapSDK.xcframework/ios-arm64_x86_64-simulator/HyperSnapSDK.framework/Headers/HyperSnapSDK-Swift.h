@@ -648,8 +648,8 @@ enum LivenessMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : HVBaseConfig
-@property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setShouldEnableOverlay:(BOOL)enableOverlay;
+@property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
 - (void)setFps:(NSInteger)fps;
@@ -2015,8 +2015,8 @@ enum LivenessMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : HVBaseConfig
-@property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setShouldEnableOverlay:(BOOL)enableOverlay;
+@property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
 - (void)setFps:(NSInteger)fps;

@@ -8,6 +8,7 @@ import AudioToolbox
 import CommonCrypto
 import CoreGraphics
 import CoreLocation
+import CoreMedia
 import CoreMotion
 import CoreText
 import Dispatch
@@ -42,7 +43,7 @@ public class ClearMessage : HyperSnapSDK.Message {
 @_hasMissingDesignatedInitializers public class getValidHexCode {
   @objc deinit
 }
-public enum Model : Swift.String {
+public enum HVDeviceModel : Swift.String {
   case simulator, iPod1, iPod2, iPod3, iPod4, iPod5, iPod6, iPod7, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPad5, iPad6, iPad7, iPad8, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, AppleWatch1, AppleWatchS1, AppleWatchS2, AppleWatchS3, AppleWatchS4, AppleWatchS5, AppleWatchSE, AppleWatchS6, AppleTV1, AppleTV2, AppleTV3, AppleTV4, AppleTV_4K, unrecognized
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -51,7 +52,7 @@ public enum Model : Swift.String {
   }
 }
 extension UIKit.UIDevice {
-  @_Concurrency.MainActor(unsafe) public var type: HyperSnapSDK.Model {
+  @_Concurrency.MainActor(unsafe) public var type: HyperSnapSDK.HVDeviceModel {
     get
   }
 }
@@ -399,6 +400,7 @@ extension HyperSnapSDK.HVDocsViewController {
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
   @objc public func setShouldRejectFaceNotStraight(_ shouldReject: Swift.Bool)
+  public func getShouldRejectFaceNotStraight() -> Swift.Bool
   @_inheritsConvenienceInitializers @objc public class FaceTextConfig : ObjectiveC.NSObject {
     @objc public func setTextConfig(_ textJson: [Swift.String : Swift.String])
     @objc public func setFaceInstructionsTitle(_ text: Swift.String)
@@ -730,6 +732,10 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
 }
 @objc @_Concurrency.MainActor(unsafe) public class HVStatusLabel : UIKit.UILabel {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
   @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
   @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
@@ -1023,6 +1029,9 @@ public struct HVUIBorderRadius : Swift.Codable {
   public var secondaryButtonRadius: Swift.Float {
     get
   }
+  public var pickerBorderRadius: Swift.Float {
+    get
+  }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -1079,6 +1088,24 @@ public struct HVUIColor : Swift.Codable {
   public var formPlaceHolderTextColor: Swift.String {
     get
   }
+  public var pickerTextColor: Swift.String {
+    get
+  }
+  public var pickerIconColor: Swift.String {
+    get
+  }
+  public var pickerBackgroundColor: Swift.String {
+    get
+  }
+  public var pickerBorderColor: Swift.String {
+    get
+  }
+  public var countryListItemTextColor: Swift.String {
+    get
+  }
+  public var countrySearchTextColor: Swift.String {
+    get
+  }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -1120,6 +1147,18 @@ public struct HVUIFont : Swift.Codable {
   public var alertTextBoxTextFont: Swift.String {
     get
   }
+  public var pickerTextFont: Swift.String {
+    get
+  }
+  public var countryListItemTextFont: Swift.String {
+    get
+  }
+  public var countryListItemSelectedTextFont: Swift.String {
+    get
+  }
+  public var countrySearchTextFont: Swift.String {
+    get
+  }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -1149,6 +1188,15 @@ public struct HVUIFontSize : Swift.Codable {
   public var alertTextBoxTextSize: Swift.Float {
     get
   }
+  public var pickerTextSize: Swift.Float {
+    get
+  }
+  public var countryListItemTextSize: Swift.Float {
+    get
+  }
+  public var countrySearchTextSize: Swift.Float {
+    get
+  }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -1176,6 +1224,18 @@ public struct HVUIFontWeight : Swift.Codable {
     get
   }
   public var alertTextBoxTextWeight: Swift.String {
+    get
+  }
+  public var pickerTextWeight: Swift.String {
+    get
+  }
+  public var countryListItemTextFontWeight: Swift.String {
+    get
+  }
+  public var countryListItemSelectedTextFontWeight: Swift.String {
+    get
+  }
+  public var countrySearchTextFontWeight: Swift.String {
     get
   }
   public init()
@@ -1567,9 +1627,9 @@ extension Foundation.Data {
   public func hasX509Header() throws -> Swift.Bool
   public func isAnHeaderlessKey() throws -> Swift.Bool
 }
-extension HyperSnapSDK.Model : Swift.Equatable {}
-extension HyperSnapSDK.Model : Swift.Hashable {}
-extension HyperSnapSDK.Model : Swift.RawRepresentable {}
+extension HyperSnapSDK.HVDeviceModel : Swift.Equatable {}
+extension HyperSnapSDK.HVDeviceModel : Swift.Hashable {}
+extension HyperSnapSDK.HVDeviceModel : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Equatable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Hashable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.RawRepresentable {}
