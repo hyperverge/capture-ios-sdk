@@ -1072,6 +1072,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVSessionResponse")
 SWIFT_CLASS("_TtC12HyperSnapSDK13HVStatusLabel")
 @interface HVStatusLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
 + (void)setFont:(UIFont * _Nonnull)font;
 + (void)setTextAlignment:(NSTextAlignment)alignment;
 + (void)setTextColor:(UIColor * _Nonnull)color;
