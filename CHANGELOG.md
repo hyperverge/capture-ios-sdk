@@ -1,3 +1,8 @@
+#### 4.8.1 [8 May 2023]
+- Bug fixes:
+    - Fix camera initialisation to support latest devices
+    - Fix retake message localisation
+    
 #### 4.8.0 [20 Apr 2023]
 - Features:
     - Add support to enable/disable selfie video recording feature from remote config
