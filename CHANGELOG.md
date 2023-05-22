@@ -1,3 +1,9 @@
+#### 4.9.0 [22 May 2023]
+- Features:
+    - Add support for .lottie files in the SDK for animations
+    - Add support for session recording in the camera layer
+    - Add `isDocumentUpload` to OCR headers, `true` for upload flow
+    
 #### 4.8.1 [8 May 2023]
 - Bug fixes:
     - Fix camera initialisation to support latest devices
