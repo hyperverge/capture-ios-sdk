@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		91DvsKMuqXteu3tQBhlqGpm6z8g=
+		1WCW77C/IZDMpDts1bhjhn6CsiI=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qKy3yMVuqrCwCxIJw7ez6gnpM9w=
+		as0bRYpEHJXWiZlDAmWVd77QHkY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -110,11 +110,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			91DvsKMuqXteu3tQBhlqGpm6z8g=
+			1WCW77C/IZDMpDts1bhjhn6CsiI=
 			</data>
 			<key>hash2</key>
 			<data>
-			1b4NNy4X/E+vfdPpvkD4uZSErNMaZK+C8R5dGPBACJs=
+			WgyAoXpG41rapemxaPSCi97pz1C4R59QBax48VRYY/8=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -143,11 +143,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qKy3yMVuqrCwCxIJw7ez6gnpM9w=
+			as0bRYpEHJXWiZlDAmWVd77QHkY=
 			</data>
 			<key>hash2</key>
 			<data>
-			UNjt3ze0oxw7k1YyDx/fKQxzC1hdxnaGbgsVP9osP1A=
+			WwSyiPfgFYF4RFtdDRc0O/6lAjTqt+ApXy2pouEvTdU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
