@@ -239,6 +239,99 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+@class HVCompatibleAnimation;
+enum HVCompatibleRenderingEngineOption : NSInteger;
+@class NSURL;
+@class NSData;
+@class NSCoder;
+@class CompatibleDictionaryTextProvider;
+enum HVCompatibleBackgroundBehavior : NSInteger;
+@class NSString;
+@class HVCompatibleAnimationKeypath;
+@class UIColor;
+@class HVAnimationSubview;
+
+/// An Objective-C compatible wrapper around Lottie’s LottieAnimationView.
+SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
+@interface CompatibleAnimationView : UIView
+/// Initializes a compatible AnimationView with a given compatible animation. Defaults to using
+/// the rendering engine specified in LottieConfiguration.shared.
+- (nonnull instancetype)initWithCompatibleAnimation:(HVCompatibleAnimation * _Nonnull)compatibleAnimation;
+/// Initializes a compatible AnimationView with a given compatible animation and rendering engine
+/// configuration.
+- (nonnull instancetype)initWithCompatibleAnimation:(HVCompatibleAnimation * _Nonnull)compatibleAnimation compatibleRenderingEngineOption:(enum HVCompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
+/// Initializes a compatible AnimationView with the resources asynchronously loaded from a given
+/// URL. Defaults to using the rendering engine specified in LottieConfiguration.shared.
+- (nonnull instancetype)initWithUrl:(NSURL * _Nonnull)url;
+/// Initializes a compatible AnimationView with the resources asynchronously loaded from a given
+/// URL using the given rendering engine configuration.
+- (nonnull instancetype)initWithUrl:(NSURL * _Nonnull)url compatibleRenderingEngineOption:(enum HVCompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
+/// Initializes a compatible AnimationView from a given Data object specifying the Lottie
+/// animation. Defaults to using the rendering engine specified in LottieConfiguration.shared.
+- (nonnull instancetype)initWithData:(NSData * _Nonnull)data;
+/// Initializes a compatible AnimationView from a given Data object specifying the Lottie
+/// animation using the given rendering engine configuration.
+- (nonnull instancetype)initWithData:(NSData * _Nonnull)data compatibleRenderingEngineOption:(enum HVCompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@property (nonatomic, strong) HVCompatibleAnimation * _Nullable compatibleAnimation;
+@property (nonatomic) CGFloat loopAnimationCount;
+@property (nonatomic, strong) CompatibleDictionaryTextProvider * _Nullable compatibleDictionaryTextProvider;
+@property (nonatomic) UIViewContentMode contentMode;
+@property (nonatomic) BOOL shouldRasterizeWhenIdle;
+@property (nonatomic) CGFloat currentProgress;
+@property (nonatomic, readonly) CGFloat duration;
+@property (nonatomic) NSTimeInterval currentTime;
+@property (nonatomic) CGFloat currentFrame;
+@property (nonatomic, readonly) CGFloat realtimeAnimationFrame;
+@property (nonatomic, readonly) CGFloat realtimeAnimationProgress;
+@property (nonatomic) CGFloat animationSpeed;
+@property (nonatomic) BOOL respectAnimationFrameRate;
+@property (nonatomic, readonly) BOOL isAnimationPlaying;
+@property (nonatomic) enum HVCompatibleBackgroundBehavior backgroundMode;
+- (void)play;
+- (void)playWithCompletion:(void (^ _Nullable)(BOOL))completion;
+/// Note: When calling this code from Objective-C, the method signature is
+/// playFromProgress:toProgress:completion which drops the standard “With” naming convention.
+- (void)playFromProgress:(CGFloat)fromProgress toProgress:(CGFloat)toProgress completion:(void (^ _Nullable)(BOOL))completion;
+/// Note: When calling this code from Objective-C, the method signature is
+/// playFromFrame:toFrame:completion which drops the standard “With” naming convention.
+- (void)playFromFrame:(CGFloat)fromFrame toFrame:(CGFloat)toFrame completion:(void (^ _Nullable)(BOOL))completion;
+/// Note: When calling this code from Objective-C, the method signature is
+/// playFromMarker:toMarker:completion which drops the standard “With” naming convention.
+- (void)playFromMarker:(NSString * _Nonnull)fromMarker toMarker:(NSString * _Nonnull)toMarker completion:(void (^ _Nullable)(BOOL))completion;
+- (void)playWithMarker:(NSString * _Nonnull)marker completion:(void (^ _Nullable)(BOOL))completion;
+- (void)stop;
+- (void)pause;
+- (void)reloadImages;
+- (void)forceDisplayUpdate;
+- (id _Nullable)getValueFor:(HVCompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
+- (void)logHierarchyKeypaths;
+- (void)setColorValue:(UIColor * _Nonnull)color forKeypath:(HVCompatibleAnimationKeypath * _Nonnull)keypath;
+- (UIColor * _Nullable)getColorValueFor:(HVCompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
+- (void)addSubview:(HVAnimationSubview * _Nonnull)subview forLayerAt:(HVCompatibleAnimationKeypath * _Nonnull)keypath;
+- (CGRect)convertWithRect:(CGRect)rect toLayerAt:(HVCompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
+- (CGPoint)convertWithPoint:(CGPoint)point toLayerAt:(HVCompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)progressTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)frameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)durationFrameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// An Objective-C compatible wrapper around Lottie’s DictionaryTextProvider.
+/// Use in tandem with CompatibleAnimationView to supply text to LottieAnimationView
+/// when using Lottie in Objective-C.
+SWIFT_CLASS("_TtC12HyperSnapSDK32CompatibleDictionaryTextProvider")
+@interface CompatibleDictionaryTextProvider : NSObject
+- (nonnull instancetype)initWithValues:(NSDictionary<NSString *, NSString *> * _Nonnull)values OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+
 
 SWIFT_CLASS("_TtC12HyperSnapSDK19GKYCSignatureHelper")
 @interface GKYCSignatureHelper : NSObject
@@ -251,9 +344,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK16HVActiveLiveness")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSCoder;
 @class UIFont;
-@class UIColor;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVAlertTextLabel")
 @interface HVAlertTextLabel : UILabel
@@ -269,6 +360,67 @@ SWIFT_CLASS("_TtC12HyperSnapSDK16HVAlertTextLabel")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class UITouch;
+@class UIEvent;
+
+/// Lottie comes prepacked with a two Animated Controls, <code>AnimatedSwitch</code> and
+/// <code>AnimatedButton</code>. Both of these controls are built on top of <code>AnimatedControl</code>
+/// <code>AnimatedControl</code> is a subclass of <code>UIControl</code> that provides an interactive
+/// mechanism for controlling the visual state of an animation in response to
+/// user actions.
+/// The <code>AnimatedControl</code> will show and hide layers depending on the current
+/// <code>UIControl.State</code> of the control.
+/// Users of <code>AnimationControl</code> can set a Layer Name for each <code>UIControl.State</code>.
+/// When the state is change the <code>AnimationControl</code> will change the visibility
+/// of its layers.
+/// NOTE: Do not initialize directly. This is intended to be subclassed.
+SWIFT_CLASS("_TtC12HyperSnapSDK17HVAnimatedControl")
+@interface HVAnimatedControl : UIControl
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, getter=isEnabled) BOOL enabled;
+@property (nonatomic, getter=isSelected) BOOL selected;
+@property (nonatomic, getter=isHighlighted) BOOL highlighted;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)continueTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+- (void)cancelTrackingWithEvent:(UIEvent * _Nullable)event;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+/// An interactive button that plays an animation when pressed.
+SWIFT_CLASS("_TtC12HyperSnapSDK16HVAnimatedButton")
+@interface HVAnimatedButton : HVAnimatedControl
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+@property (nonatomic) UIAccessibilityTraits accessibilityTraits;
+@end
+
+
+
+/// An interactive switch with an ‘On’ and ‘Off’ state. When the user taps on the
+/// switch the state is toggled and the appropriate animation is played.
+/// Both the ‘On’ and ‘Off’ have an animation play range associated with their state.
+SWIFT_CLASS("_TtC12HyperSnapSDK16HVAnimatedSwitch")
+@interface HVAnimatedSwitch : HVAnimatedControl
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
+@property (nonatomic) UIAccessibilityTraits accessibilityTraits;
+@end
+
+
+/// A view that can be added to a keypath of an AnimationView
+SWIFT_CLASS("_TtC12HyperSnapSDK18HVAnimationSubview")
+@interface HVAnimationSubview : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
@@ -277,7 +429,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSString;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @interface HVBaseResponse : NSObject
@@ -316,6 +467,77 @@ typedef SWIFT_ENUM(NSInteger, HVCardUIState, open) {
   HVCardUIStateCardNotDetected = 1,
   HVCardUIStateMoveCloser = 2,
   HVCardUIStateMoveAway = 3,
+};
+
+@class NSBundle;
+
+/// An Objective-C compatible wrapper around Lottie’s Animation class.
+/// Use in tandem with CompatibleAnimationView when using Lottie in Objective-C
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVCompatibleAnimation")
+@interface HVCompatibleAnimation : NSObject
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name subdirectory:(NSString * _Nullable)subdirectory bundle:(NSBundle * _Nonnull)bundle OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// An Objective-C compatible wrapper around Lottie’s AnimationKeypath
+SWIFT_CLASS("_TtC12HyperSnapSDK28HVCompatibleAnimationKeypath")
+@interface HVCompatibleAnimationKeypath : NSObject
+/// Creates a keypath from a dot separated string. The string is separated by “.”
+- (nonnull instancetype)initWithKeypath:(NSString * _Nonnull)keypath OBJC_DESIGNATED_INITIALIZER;
+/// Creates a keypath from a list of strings.
+- (nonnull instancetype)initWithKeys:(NSArray<NSString *> * _Nonnull)keys OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// An Objective-C compatible version of <code>LottieBackgroundBehavior</code>.
+typedef SWIFT_ENUM(NSInteger, HVCompatibleBackgroundBehavior, open) {
+/// Stop the animation and reset it to the beginning of its current play time. The completion block is called.
+  HVCompatibleBackgroundBehaviorStop = 0,
+/// Pause the animation in its current state. The completion block is called.
+  HVCompatibleBackgroundBehaviorPause = 1,
+/// Pause the animation and restart it when the application moves to the foreground.
+/// The completion block is stored and called when the animation completes.
+/// <ul>
+///   <li>
+///     This is the default when using the Main Thread rendering engine.
+///   </li>
+/// </ul>
+  HVCompatibleBackgroundBehaviorPauseAndRestore = 2,
+/// Stops the animation and sets it to the end of its current play time. The completion block is called.
+  HVCompatibleBackgroundBehaviorForceFinish = 3,
+/// The animation continues playing in the background.
+/// <ul>
+///   <li>
+///     This is the default when using the Core Animation rendering engine.
+///     Playing an animation using the Core Animation engine doesn’t come with any CPU overhead,
+///     so using <code>.continuePlaying</code> avoids the need to stop and then resume the animation
+///     (which does come with some CPU overhead).
+///   </li>
+///   <li>
+///     This mode should not be used with the Main Thread rendering engine.
+///   </li>
+/// </ul>
+  HVCompatibleBackgroundBehaviorContinuePlaying = 4,
+};
+
+/// An Objective-C compatible wrapper around Lottie’s RenderingEngineOption enum. Pass in an option
+/// to the CompatibleAnimationView initializers to configure the rendering engine for the view.
+typedef SWIFT_ENUM(NSInteger, HVCompatibleRenderingEngineOption, open) {
+/// Uses the rendering engine specified in LottieConfiguration.shared.
+  HVCompatibleRenderingEngineOptionShared = 0,
+/// Uses the library default rendering engine, coreAnimation.
+  HVCompatibleRenderingEngineOptionDefaultEngine = 1,
+/// Optimizes rendering performance by using the Core Animation rendering engine for animations it
+/// can render while falling back to the main thread renderer for all other animations.
+  HVCompatibleRenderingEngineOptionAutomatic = 2,
+/// Only renders animations using the main thread rendering engine.
+  HVCompatibleRenderingEngineOptionMainThread = 3,
+/// Only renders animations using the Core Animation rendering engine. Those animations that use
+/// features not yet supported on this renderer will not be rendered.
+  HVCompatibleRenderingEngineOptionCoreAnimation = 4,
 };
 
 
@@ -533,7 +755,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVDocSubTextLabel") SWIFT_DEPRECATED_MSG("Use U
 
 @class HVError;
 @class HVResponse;
-@class NSBundle;
 
 /// DocCameraViewController is the base class which will be used from outside.
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
@@ -833,6 +1054,30 @@ SWIFT_CLASS("_TtC12HyperSnapSDK27HVInstructionsProceedButton") SWIFT_DEPRECATED_
 + (void)setTitleFont:(UIFont * _Nonnull)font;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
+
+
+/// The base view for <code>LottieAnimationView</code> on iOS, tvOS, watchOS, and macCatalyst.
+/// Enables the <code>LottieAnimationView</code> implementation to be shared across platforms.
+SWIFT_CLASS("_TtC12HyperSnapSDK25HVLottieAnimationViewBase")
+@interface HVLottieAnimationViewBase : UIView
+@property (nonatomic) UIViewContentMode contentMode;
+- (void)didMoveToWindow;
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVLottieAnimationView")
+@interface HVLottieAnimationView : HVLottieAnimationViewBase
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+@end
+
+
+
 
 enum FaceMatchMode : NSInteger;
 
@@ -1243,7 +1488,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 
 
 
-@class NSData;
 @class PublicKey;
 @class EncryptedMessage;
 @class PrivateKey;
