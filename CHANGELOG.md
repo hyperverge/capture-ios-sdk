@@ -1,3 +1,8 @@
+
+#### 4.8.2 [25 May 2023]
+- Bug fixes:
+    - Add support for .lottie files in the SDK for animations
+    
 #### 4.9.0 [22 May 2023]
 - Features:
     - Add support for .lottie files in the SDK for animations
