@@ -5,6 +5,7 @@
     - Add setter function in HyperSnapSDKConfig to enable/disable secure feature - `setShouldSecure()`
     - Throws `securityError` when the user attempts to take a screenshot/records the screen
   - Add support for signature verification for all `allowedStatusCodes`
+  - Add support to delete sensor data files after uploading
 - Bug fixes:
   - Fix back navigation when instruction screen is present
 
