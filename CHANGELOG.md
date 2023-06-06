@@ -1,3 +1,14 @@
+#### 4.10.0 [6 Jun 2023]
+- Features:
+  - Add support for iPad screens
+  - Add secure flag support
+    - Add setter function in HyperSnapSDKConfig to enable/disable secure feature - `setShouldSecure()`
+    - Throws `sdkSecurityError` when the user attempts to take a screenshot/records the screen
+  - Add support for signature verification for all `allowedStatusCodes`
+- Bug fixes:
+  - Fix back navigation when instruction screen is present
+
+
 #### 4.9.0 [22 May 2023]
 - Features:
     - Add support for .lottie files in the SDK for animations

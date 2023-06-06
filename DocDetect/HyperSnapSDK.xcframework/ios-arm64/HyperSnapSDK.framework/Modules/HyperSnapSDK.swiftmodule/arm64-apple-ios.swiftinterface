@@ -393,6 +393,9 @@ extension UIKit.UINavigationController {
 extension UIKit.UIFont {
   public static func registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle?)
 }
+extension UIKit.UIStackView {
+  @objc override dynamic open func awakeFromNib()
+}
 @objc @_inheritsConvenienceInitializers public class GKYCSignatureHelper : ObjectiveC.NSObject {
   @objc override dynamic public init()
   public func setInputs(queryParams: [Swift.String : Swift.String]?, fileHashDictionary: [Swift.String : Swift.String]?, requestBody: [Swift.String : Swift.AnyObject], responseBody: [Swift.String : Swift.AnyObject]?, responseHeaders: [Swift.String : Swift.String]?)
@@ -552,6 +555,8 @@ public enum HVAnyValueProviderStorage {
 @objc @_inheritsConvenienceInitializers public class HVBaseConfig : ObjectiveC.NSObject {
   public var showTrustLogos: Swift.Bool
   public var shouldShowCloseAlert: Swift.Bool
+  public var allowedStatusCodes: [Swift.Int]?
+  @objc public func setAllowedStatusCodes(_ allowedStatusCodes: [Swift.Int])
   @objc public func setShowTrustLogos(_ shouldShow: Swift.Bool)
   @objc public func setShouldShowCloseAlert(_ show: Swift.Bool)
   @objc override dynamic public init()
@@ -657,6 +662,8 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setCaptureButtonEnabledImage(_ image: UIKit.UIImage)
   @objc public func setDocumentCaptureOverlay(_ image: UIKit.UIImage)
   @objc public func setDocumentCaptureOverlayDuration(durationInMS: Swift.Int)
+  @objc public func setReadBarcodeOverlay(_ image: UIKit.UIImage)
+  @objc public func setReadBarcodeTimeout(durationInMS: Swift.Int)
   @available(*, deprecated, message: "This function is not necessary anymore")
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
@@ -741,6 +748,10 @@ extension HyperSnapSDK.HVDocsViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
 }
 public class HVDotLottieCache : HyperSnapSDK.HVDotLottieCacheProvider {
@@ -871,8 +882,11 @@ public protocol HVDotLottieCacheProvider {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
     @_Concurrency.MainActor(unsafe) @objc get
   }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
@@ -884,6 +898,10 @@ public protocol HVDotLottieCacheProvider {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
   @objc @_Concurrency.MainActor(unsafe) public static func start(_ callingVC: UIKit.UIViewController, hvFaceConfig: HyperSnapSDK.HVFaceConfig, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ viewController: UIKit.UIViewController) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
   @_Concurrency.MainActor(unsafe) public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
@@ -1353,10 +1371,10 @@ extension HyperSnapSDK.HVLottieLogger {
 @available(*, deprecated, message: "Use DefaultAnimationCache instead, which is thread-safe and automatically responds to memory pressure.")
 public typealias HVLRUAnimationCache = HyperSnapSDK.HVDefaultAnimationCache
 @objc @_inheritsConvenienceInitializers public class HVNetworkHelper : ObjectiveC.NSObject {
-  @objc public static func makeOCRAPICall(endpoint: Swift.String, documentUri: Swift.String, qrCroppedImageUri: Swift.String? = nil, hvDocConfig: HyperSnapSDK.HVDocConfig? = nil, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
-  @objc public static func makeFaceMatchCall(faceUri: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
-  @objc public static func makeFaceMatchAPICall(endpoint: Swift.String, image1: Swift.String, image2: Swift.String, faceMatchMode: HyperSnapSDK.HyperSnapParams.FaceMatchMode, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
-  @objc public static func makeTextMatchAPICall(endpoint: Swift.String, parameters: [Swift.String : Swift.AnyObject], headers: [Swift.String : Swift.String]?, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  @objc public static func makeOCRAPICall(endpoint: Swift.String, documentUri: Swift.String, qrCroppedImageUri: Swift.String? = nil, hvDocConfig: HyperSnapSDK.HVDocConfig? = nil, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  @objc public static func makeFaceMatchCall(faceUri: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  @objc public static func makeFaceMatchAPICall(endpoint: Swift.String, image1: Swift.String, image2: Swift.String, faceMatchMode: HyperSnapSDK.HyperSnapParams.FaceMatchMode, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  @objc public static func makeTextMatchAPICall(endpoint: Swift.String, parameters: [Swift.String : Swift.AnyObject], headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1412,6 +1430,10 @@ final public class HVPointValueProvider {
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func setHVQRConfig(hvQRConfig: HyperSnapSDK.HVQRConfig)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
@@ -1422,6 +1444,10 @@ final public class HVPointValueProvider {
   @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void
   @objc @_Concurrency.MainActor(unsafe) public static func start(_ callingVC: UIKit.UIViewController, hvQRConfig: HyperSnapSDK.HVQRConfig, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func setHVQRConfig(hvQRConfig: HyperSnapSDK.HVQRConfig)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -2092,6 +2118,7 @@ public struct HVUIFontWeight : Swift.Codable {
   @objc public static func setShouldUseAnalytics(_ shouldUse: Swift.Bool)
   @objc public static func setShouldUseSensorBiometrics(_ shouldUse: Swift.Bool)
   @objc public static func setTimeoutIntervalForRequest(_ timeout: Swift.Double)
+  @objc public static func setShouldSecure(_ shouldSecure: Swift.Bool)
   public static func setUiConfig(_ uiConfig: HyperSnapSDK.HVUIConfig?)
   public static func getUiConfig() -> HyperSnapSDK.HVUIConfig
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
