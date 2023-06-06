@@ -219,6 +219,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK17AdaptiveStackView")
+@interface AdaptiveStackView : UIStackView
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 
 
@@ -245,7 +253,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 enum HVCompatibleRenderingEngineOption : NSInteger;
 @class NSURL;
 @class NSData;
-@class NSCoder;
 @class CompatibleDictionaryTextProvider;
 enum HVCompatibleBackgroundBehavior : NSInteger;
 @class NSString;
@@ -1472,11 +1479,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
-@end
-
-
-@interface UIStackView (SWIFT_EXTENSION(HyperSnapSDK))
-- (void)awakeFromNib;
 @end
 
 
@@ -1824,6 +1826,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class NSCoder;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK17AdaptiveStackView")
+@interface AdaptiveStackView : UIStackView
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 
 
@@ -1850,7 +1860,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 enum HVCompatibleRenderingEngineOption : NSInteger;
 @class NSURL;
 @class NSData;
-@class NSCoder;
 @class CompatibleDictionaryTextProvider;
 enum HVCompatibleBackgroundBehavior : NSInteger;
 @class NSString;
@@ -3077,11 +3086,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
-@end
-
-
-@interface UIStackView (SWIFT_EXTENSION(HyperSnapSDK))
-- (void)awakeFromNib;
 @end
 
 
