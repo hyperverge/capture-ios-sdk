@@ -424,6 +424,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVAnimationSubview")
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
+- (void)setAllowedStatusCodes:(NSArray<NSNumber *> * _Nonnull)allowedStatusCodes;
 - (void)setShowTrustLogos:(BOOL)shouldShow;
 - (void)setShouldShowCloseAlert:(BOOL)show;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -575,6 +576,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setCaptureButtonEnabledImage:(UIImage * _Nonnull)image;
 - (void)setDocumentCaptureOverlay:(UIImage * _Nonnull)image;
 - (void)setDocumentCaptureOverlayDurationWithDurationInMS:(NSInteger)durationInMS;
+- (void)setReadBarcodeOverlay:(UIImage * _Nonnull)image;
+- (void)setReadBarcodeTimeoutWithDurationInMS:(NSInteger)durationInMS;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
@@ -778,6 +781,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
+
 @class UIPresentationController;
 
 @interface HVDocsViewController (SWIFT_EXTENSION(HyperSnapSDK))
@@ -788,6 +792,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
+@property (nonatomic) CGSize preferredContentSize;
 - (void)viewWillDisappear:(BOOL)animated;
 @end
 
@@ -984,13 +989,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+@property (nonatomic) CGSize preferredContentSize;
 - (void)viewDidLoad;
-- (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
@@ -1008,6 +1014,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 ///
 + (void)start:(UIViewController * _Nonnull)callingVC hvFaceConfig:(HVFaceConfig * _Nonnull)hvFaceConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable, UIViewController * _Nonnull))completionHandler;
 - (void)viewWillAppear:(BOOL)animated;
+@property (nonatomic) CGSize preferredContentSize;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
@@ -1025,6 +1032,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 @interface HVFaceViewController (SWIFT_EXTENSION(HyperSnapSDK))
 - (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK13HVGesturePose")
@@ -1113,7 +1121,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 ///     headers: An object of type [String:String]?. It is null unless there were any special headers sent by the HyperVerge’s backend.
 ///   </li>
 /// </ul>
-+ (void)makeOCRAPICallWithEndpoint:(NSString * _Nonnull)endpoint documentUri:(NSString * _Nonnull)documentUri qrCroppedImageUri:(NSString * _Nullable)qrCroppedImageUri hvDocConfig:(HVDocConfig * _Nullable)hvDocConfig parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeOCRAPICallWithEndpoint:(NSString * _Nonnull)endpoint documentUri:(NSString * _Nonnull)documentUri qrCroppedImageUri:(NSString * _Nullable)qrCroppedImageUri hvDocConfig:(HVDocConfig * _Nullable)hvDocConfig parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers allowedStatusCodes:(NSArray<NSNumber *> * _Nullable)allowedStatusCodes completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
 /// Helper method to make Face Match calls to HyperVerge’s Backend.
 /// The face match call compares face in an ID card and the face in a user photo and gives a match score.
 /// <ul>
@@ -1145,9 +1153,9 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 ///     headers: An object of type [String:String]?. It is null unless there were any special headers sent by the HyperVerge’s backend.
 ///   </li>
 /// </ul>
-+ (void)makeFaceMatchCallWithFaceUri:(NSString * _Nonnull)faceUri documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
-+ (void)makeFaceMatchAPICallWithEndpoint:(NSString * _Nonnull)endpoint image1:(NSString * _Nonnull)image1 image2:(NSString * _Nonnull)image2 faceMatchMode:(enum FaceMatchMode)faceMatchMode parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
-+ (void)makeTextMatchAPICallWithEndpoint:(NSString * _Nonnull)endpoint parameters:(NSDictionary<NSString *, id> * _Nonnull)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeFaceMatchCallWithFaceUri:(NSString * _Nonnull)faceUri documentUri:(NSString * _Nonnull)documentUri parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers allowedStatusCodes:(NSArray<NSNumber *> * _Nullable)allowedStatusCodes completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeFaceMatchAPICallWithEndpoint:(NSString * _Nonnull)endpoint image1:(NSString * _Nonnull)image1 image2:(NSString * _Nonnull)image2 faceMatchMode:(enum FaceMatchMode)faceMatchMode parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers allowedStatusCodes:(NSArray<NSNumber *> * _Nullable)allowedStatusCodes completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeTextMatchAPICallWithEndpoint:(NSString * _Nonnull)endpoint parameters:(NSDictionary<NSString *, id> * _Nonnull)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers allowedStatusCodes:(NSArray<NSNumber *> * _Nullable)allowedStatusCodes completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1222,11 +1230,13 @@ SWIFT_CLASS("_TtC12HyperSnapSDK30HVQRInstructionsViewController")
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 - (void)viewDidLoad;
+@property (nonatomic) CGSize preferredContentSize;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
 
 
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVQRSkipButton")
@@ -1262,6 +1272,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 /// \param completionHandler Closure that will be called after successful capture + processing or when there is an error
 ///
 + (void)start:(UIViewController * _Nonnull)callingVC hvQRConfig:(HVQRConfig * _Nonnull)hvQRConfig completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
+@property (nonatomic) CGSize preferredContentSize;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1270,6 +1281,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 @interface HVQRViewController (SWIFT_EXTENSION(HyperSnapSDK)) <UIViewControllerTransitioningDelegate>
 - (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 @interface HVQRViewController (SWIFT_EXTENSION(HyperSnapSDK))
@@ -1453,6 +1465,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldUseAnalytics:(BOOL)shouldUse;
 + (void)setShouldUseSensorBiometrics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
++ (void)setShouldSecure:(BOOL)shouldSecure;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -1481,6 +1494,11 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@end
+
+
+@interface UIStackView (SWIFT_EXTENSION(HyperSnapSDK))
+- (void)awakeFromNib;
 @end
 
 
