@@ -385,9 +385,6 @@ extension UIKit.UINavigationController {
 extension UIKit.UIFont {
   public static func registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle?)
 }
-extension UIKit.UIStackView {
-  @objc override dynamic open func awakeFromNib()
-}
 @objc @_inheritsConvenienceInitializers public class GKYCSignatureHelper : ObjectiveC.NSObject {
   @objc override dynamic public init()
   public func setInputs(queryParams: [Swift.String : Swift.String]?, fileHashDictionary: [Swift.String : Swift.String]?, requestBody: [Swift.String : Swift.AnyObject], responseBody: [Swift.String : Swift.AnyObject]?, responseHeaders: [Swift.String : Swift.String]?)
@@ -1816,6 +1813,10 @@ final public class HVSizeValueProvider {
   @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class AdaptiveStackView : UIKit.UIStackView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
 public struct HVUIAlignment : Swift.Codable {
