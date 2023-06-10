@@ -567,6 +567,12 @@ public enum HVAnyValueProviderStorage {
   @objc public var fullImageUri: Swift.String? {
     get
   }
+  @objc public var statusCode: Swift.String? {
+    get
+  }
+  @objc public var statusMessage: Swift.String? {
+    get
+  }
   @objc public var videoUri: Swift.String? {
     get
   }

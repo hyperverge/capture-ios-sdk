@@ -445,6 +445,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @property (nonatomic, readonly, copy) NSString * _Nullable action;
 @property (nonatomic, readonly, copy) NSString * _Nullable imageUri;
 @property (nonatomic, readonly, copy) NSString * _Nullable fullImageUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable statusCode;
+@property (nonatomic, readonly, copy) NSString * _Nullable statusMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable videoUri;
 @property (nonatomic, readonly) NSInteger attemptsCount;
 @property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
