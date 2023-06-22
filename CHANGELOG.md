@@ -1,3 +1,10 @@
+#### 4.11.0 [22 Jun 2023]
+- Features: 
+  - Migrated to the latest version of AVFoundation
+  - Add support to return `latitude`, `longitude` in HVResponse
+- Bug Fixes:
+  - Fix signature check issue cause by JSONArray sorting
+  
 #### 4.10.0 [6 Jun 2023]
 - Features:
   - Add support for iPad screens

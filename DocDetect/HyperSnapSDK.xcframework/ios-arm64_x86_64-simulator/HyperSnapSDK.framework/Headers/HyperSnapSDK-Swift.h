@@ -454,6 +454,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable rawBarcode;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, NSArray<NSString *> *> * _Nonnull gestureLivenessImageUrls;
+@property (nonatomic, readonly) double latitude;
+@property (nonatomic, readonly) double longitude;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1470,6 +1472,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 /// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
 ///
 + (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region;
++ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region initializerCallback:(void (^ _Nonnull)(HVError * _Nullable))initializerCallback;
++ (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region initializerCallback:(void (^ _Nonnull)(HVError * _Nullable))initializerCallback;
 + (void)logEvent:(NSString * _Nonnull)name :(NSDictionary<NSString *, id> * _Nonnull)properties;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
@@ -1477,6 +1481,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldUseSensorBiometrics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setShouldSecure:(BOOL)shouldSecure;
++ (void)setShouldUseLocation:(BOOL)shouldUseLocation;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -2087,6 +2092,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable rawBarcode;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, NSArray<NSString *> *> * _Nonnull gestureLivenessImageUrls;
+@property (nonatomic, readonly) double latitude;
+@property (nonatomic, readonly) double longitude;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -3103,6 +3110,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 /// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
 ///
 + (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region;
++ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region initializerCallback:(void (^ _Nonnull)(HVError * _Nullable))initializerCallback;
++ (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region initializerCallback:(void (^ _Nonnull)(HVError * _Nullable))initializerCallback;
 + (void)logEvent:(NSString * _Nonnull)name :(NSDictionary<NSString *, id> * _Nonnull)properties;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
@@ -3110,6 +3119,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldUseSensorBiometrics:(BOOL)shouldUse;
 + (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setShouldSecure:(BOOL)shouldSecure;
++ (void)setShouldUseLocation:(BOOL)shouldUseLocation;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
