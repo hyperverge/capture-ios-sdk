@@ -588,6 +588,12 @@ public enum HVAnyValueProviderStorage {
   @objc public var gestureLivenessImageUrls: [Swift.String : [Swift.String]] {
     get
   }
+  @objc public var latitude: Swift.Double {
+    get
+  }
+  @objc public var longitude: Swift.Double {
+    get
+  }
   @objc deinit
 }
 public class HVBundleImageProvider : HyperSnapSDK.HVAnimationImageProvider {
@@ -2084,6 +2090,8 @@ public struct HVUIFontWeight : Swift.Codable {
 @_inheritsConvenienceInitializers @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
+  @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: @escaping (HyperSnapSDK.HVError?) -> Swift.Void)
+  @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: @escaping (_ error: HyperSnapSDK.HVError?) -> Swift.Void)
   @objc public static func logEvent(_ name: Swift.String, _ properties: [Swift.String : Any])
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
@@ -2091,6 +2099,7 @@ public struct HVUIFontWeight : Swift.Codable {
   @objc public static func setShouldUseSensorBiometrics(_ shouldUse: Swift.Bool)
   @objc public static func setTimeoutIntervalForRequest(_ timeout: Swift.Double)
   @objc public static func setShouldSecure(_ shouldSecure: Swift.Bool)
+  @objc public static func setShouldUseLocation(_ shouldUseLocation: Swift.Bool)
   public static func setUiConfig(_ uiConfig: HyperSnapSDK.HVUIConfig?)
   public static func getUiConfig() -> HyperSnapSDK.HVUIConfig
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
