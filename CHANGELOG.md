@@ -1,3 +1,9 @@
+#### 4.12.0 [30 Jun 2023]
+- Features: 
+  - Add support to make barcode read mandatory via HVDocConfig `setDisableBarcodeSkip` function
+- Bug Fixes:
+  - Fix memory issues in iPhone 6 & 7 variants
+  
 #### 4.11.0 [22 Jun 2023]
 - Features: 
   - Migrated to the latest version of AVFoundation

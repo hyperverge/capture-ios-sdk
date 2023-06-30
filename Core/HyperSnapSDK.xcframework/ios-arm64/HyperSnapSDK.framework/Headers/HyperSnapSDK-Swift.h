@@ -582,6 +582,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setDocumentCaptureOverlayDurationWithDurationInMS:(NSInteger)durationInMS;
 - (void)setReadBarcodeOverlay:(UIImage * _Nonnull)image;
 - (void)setReadBarcodeTimeoutWithDurationInMS:(NSInteger)durationInMS;
+- (void)setDisableBarcodeSkip:(BOOL)shouldDisable;
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;

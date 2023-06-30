@@ -673,6 +673,7 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setDocumentCaptureOverlayDuration(durationInMS: Swift.Int)
   @objc public func setReadBarcodeOverlay(_ image: UIKit.UIImage)
   @objc public func setReadBarcodeTimeout(durationInMS: Swift.Int)
+  @objc public func setDisableBarcodeSkip(_ shouldDisable: Swift.Bool)
   @available(*, deprecated, message: "This function is not necessary anymore")
   @objc public func setNavigationController(_ navVC: UIKit.UINavigationController)
   @objc public func setShouldDismissVCAutomatically(_ shouldDismiss: Swift.Bool)
