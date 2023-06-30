@@ -1,6 +1,6 @@
 #### 4.12.0 [30 Jun 2023]
 - Features: 
-  - Add support to configure disableBarcodeSkip using `setDisableBarcodeSkip()`
+  - Add support to make barcode read mandatory via HVDocConfig `setDisableBarcodeSkip` function
 - Bug Fixes:
   - Fix memory issues in iPhone 6 & 7 variants
   
