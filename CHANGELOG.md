@@ -1,3 +1,13 @@
+#### 4.14.0 [14 Aug 2023]
+- Features: 
+  - Add support for `loggingPercentage` and `effectiveFrom` via Analytics config
+  - Disable back button during API calls
+- Bug Fixes
+  - Add Processing text padding for A4 document type
+#### 4.13.0 [28 July 2023]
+- No changes 
+  - Keeping it consistent with Android HyperSnapSDK version
+
 #### 4.12.0 [30 Jun 2023]
 - Features: 
   - Add support to make barcode read mandatory via HVDocConfig `setDisableBarcodeSkip` function

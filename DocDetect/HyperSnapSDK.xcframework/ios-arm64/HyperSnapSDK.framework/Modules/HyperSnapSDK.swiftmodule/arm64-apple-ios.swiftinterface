@@ -10,11 +10,9 @@ import Compression
 import CoreFoundation
 import CoreGraphics
 import CoreLocation
-import CoreMIDI
 import CoreMedia
 import CoreMotion
 import CoreText
-import Darwin
 import Dispatch
 import Foundation
 @_exported import HyperSnapSDK
@@ -26,8 +24,6 @@ import QuartzCore
 import Security
 import Swift
 import SystemConfiguration
-import TensorFlowLite
-import TensorFlowLiteC
 import UIKit
 import VideoToolbox
 import Vision
@@ -181,10 +177,6 @@ extension HyperSnapSDK.HVLottieColor : Swift.Codable {
 }
 @_hasMissingDesignatedInitializers public class getValidHexCode {
   @objc deinit
-}
-public protocol Delegate : AnyObject {
-  typealias CDelegate = Swift.UnsafeMutablePointer<TensorFlowLiteC.TfLiteDelegate>
-  var cDelegate: Self.CDelegate { get }
 }
 public enum HVDeviceModel : Swift.String {
   case simulator, iPod1, iPod2, iPod3, iPod4, iPod5, iPod6, iPod7, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPad5, iPad6, iPad7, iPad8, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, AppleWatch1, AppleWatchS1, AppleWatchS2, AppleWatchS3, AppleWatchS4, AppleWatchS5, AppleWatchSE, AppleWatchS6, AppleTV1, AppleTV2, AppleTV3, AppleTV4, AppleTV_4K, unrecognized
@@ -609,17 +601,6 @@ public class HVBundleImageProvider : HyperSnapSDK.HVAnimationImageProvider {
   public func imageForAsset(asset: HyperSnapSDK.ImageAsset) -> CoreGraphics.CGImage?
   @objc deinit
 }
-@objc public enum HVCardUIState : Swift.Int {
-  case cardDetected
-  case cardNotDetected
-  case moveCloser
-  case moveAway
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 final public class HVColorValueProvider {
   public init(block: @escaping HyperSnapSDK.HVColorValueProvider.ColorValueBlock)
   public init(_ color: HyperSnapSDK.HVLottieColor)
@@ -682,8 +663,6 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setShouldReadQR(_ shouldRead: Swift.Bool)
   @objc public func setShouldReadNIDQR(_ shouldRead: Swift.Bool)
   @objc public func setShouldReadBarcode(_ shouldRead: Swift.Bool)
-  @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
-  @objc public func setAutoCaptureDuration(durationInMS: Swift.Int)
   @objc public func setEnableDocumentUpload(_ enable: Swift.Bool)
   @objc public func setUploadFileTypes(_ fileTypes: [Swift.String]?)
   @objc public func setOCRAPIDetails(_ endpoint: Swift.String, documentSide: HyperSnapSDK.HVDocConfig.DocumentSide, params: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?)
@@ -754,7 +733,6 @@ extension HyperSnapSDK.HVDocsViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
@@ -1607,19 +1585,6 @@ final public class HVSizeValueProvider {
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVDocumentAutoCaptureStatusLabel : UIKit.UILabel {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
-  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
-  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
-  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
-  @objc deinit
-}
 @objc @_Concurrency.MainActor(unsafe) public class HVSubTextLabel : UIKit.UILabel {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
@@ -2210,71 +2175,6 @@ public struct HVUIFontWeight : Swift.Codable {
   override final public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
 }
-final public class Interpreter {
-  final public let options: HyperSnapSDK.Interpreter.Options?
-  final public let delegates: [HyperSnapSDK.Delegate]?
-  final public var inputTensorCount: Swift.Int {
-    get
-  }
-  final public var outputTensorCount: Swift.Int {
-    get
-  }
-  final public var signatureKeys: [Swift.String] {
-    get
-  }
-  public init(modelPath: Swift.String, options: HyperSnapSDK.Interpreter.Options? = nil, delegates: [HyperSnapSDK.Delegate]? = nil) throws
-  @objc deinit
-  final public func invoke() throws
-  final public func input(at index: Swift.Int) throws -> HyperSnapSDK.Tensor
-  final public func output(at index: Swift.Int) throws -> HyperSnapSDK.Tensor
-  final public func resizeInput(at index: Swift.Int, to shape: HyperSnapSDK.Tensor.Shape) throws
-  @discardableResult
-  final public func copy(_ data: Foundation.Data, toInputAt index: Swift.Int) throws -> HyperSnapSDK.Tensor
-  final public func allocateTensors() throws
-  final public func signatureRunner(with key: Swift.String) throws -> HyperSnapSDK.SignatureRunner
-}
-extension HyperSnapSDK.Interpreter {
-  public struct Options : Swift.Equatable, Swift.Hashable {
-    public var threadCount: Swift.Int?
-    public var isXNNPackEnabled: Swift.Bool
-    public init()
-    public static func == (a: HyperSnapSDK.Interpreter.Options, b: HyperSnapSDK.Interpreter.Options) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-}
-@available(*, deprecated, renamed: "Interpreter.Options")
-public typealias InterpreterOptions = HyperSnapSDK.Interpreter.Options
-public enum InterpreterError : Swift.Error, Swift.Equatable, Swift.Hashable {
-  case invalidTensorIndex(index: Swift.Int, maxIndex: Swift.Int)
-  case invalidTensorDataCount(provided: Swift.Int, required: Swift.Int)
-  case invalidTensorDataType
-  case failedToLoadModel
-  case failedToCreateInterpreter
-  case failedToResizeInputTensor(index: Swift.Int)
-  case failedToCopyDataToInputTensor
-  case failedToAllocateTensors
-  case allocateTensorsRequired
-  case invokeInterpreterRequired
-  case tensorFlowLiteError(Swift.String)
-  public static func == (a: HyperSnapSDK.InterpreterError, b: HyperSnapSDK.InterpreterError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension HyperSnapSDK.InterpreterError : Foundation.LocalizedError {
-  public var errorDescription: Swift.String? {
-    get
-  }
-}
-extension HyperSnapSDK.InterpreterError : Swift.CustomStringConvertible {
-  public var description: Swift.String {
-    get
-  }
-}
 public protocol Key : AnyObject {
   var reference: Security.SecKey { get }
   var originalData: Foundation.Data? { get }
@@ -2500,15 +2400,6 @@ public class PublicKey : HyperSnapSDK.Key {
   public static func publicKeys(pemEncoded pemString: Swift.String) -> [HyperSnapSDK.PublicKey]
   @objc deinit
 }
-public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
-  public let scale: Swift.Float
-  public let zeroPoint: Swift.Int
-  public static func == (a: HyperSnapSDK.QuantizationParameters, b: HyperSnapSDK.QuantizationParameters) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
 public class Signature {
   public enum DigestType {
     case sha1
@@ -2529,48 +2420,6 @@ public class Signature {
     get
   }
   @objc deinit
-}
-@_hasMissingDesignatedInitializers final public class SignatureRunner {
-  final public let signatureKey: Swift.String
-  final public var inputs: [Swift.String] {
-    get
-  }
-  final public var outputs: [Swift.String] {
-    get
-  }
-  @objc deinit
-  final public func invoke(with inputs: [Swift.String : Foundation.Data]) throws
-  final public func input(named name: Swift.String) throws -> HyperSnapSDK.Tensor
-  final public func output(named name: Swift.String) throws -> HyperSnapSDK.Tensor
-  final public func resizeInput(named name: Swift.String, toShape shape: HyperSnapSDK.Tensor.Shape) throws
-  final public func copy(_ data: Foundation.Data, toInputNamed name: Swift.String) throws
-  final public func allocateTensors() throws
-}
-public enum SignatureRunnerError : Swift.Error, Swift.Equatable, Swift.Hashable {
-  case invalidTensorDataCount(provided: Swift.Int, required: Swift.Int)
-  case invalidTensorDataType
-  case failedToCreateSignatureRunner(signatureKey: Swift.String)
-  case failedToGetTensor(tensorType: Swift.String, nameInSignature: Swift.String)
-  case failedToResizeInputTensor(inputName: Swift.String)
-  case failedToCopyDataToInputTensor
-  case failedToAllocateTensors
-  case failedToInvokeSignature(signatureKey: Swift.String)
-  case allocateTensorsRequired
-  public static func == (a: HyperSnapSDK.SignatureRunnerError, b: HyperSnapSDK.SignatureRunnerError) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension HyperSnapSDK.SignatureRunnerError : Foundation.LocalizedError {
-  public var errorDescription: Swift.String? {
-    get
-  }
-}
-extension HyperSnapSDK.SignatureRunnerError : Swift.CustomStringConvertible {
-  public var description: Swift.String {
-    get
-  }
 }
 public typealias Padding = Security.SecPadding
 public enum SwiftyRSA {
@@ -2715,57 +2564,6 @@ extension HyperSnapSDK.SwiftyRSAError : Foundation.LocalizedError {
     get
   }
 }
-public struct Tensor : Swift.Equatable, Swift.Hashable {
-  public let name: Swift.String
-  public let dataType: HyperSnapSDK.Tensor.DataType
-  public let shape: HyperSnapSDK.Tensor.Shape
-  public let data: Foundation.Data
-  public let quantizationParameters: HyperSnapSDK.QuantizationParameters?
-  public static func == (a: HyperSnapSDK.Tensor, b: HyperSnapSDK.Tensor) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension HyperSnapSDK.Tensor {
-  public enum DataType : Swift.Equatable, Swift.Hashable {
-    case bool
-    case uInt8
-    case int16
-    case int32
-    case int64
-    case float16
-    case float32
-    case float64
-    public static func == (a: HyperSnapSDK.Tensor.DataType, b: HyperSnapSDK.Tensor.DataType) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-}
-extension HyperSnapSDK.Tensor {
-  public struct Shape : Swift.Equatable, Swift.Hashable {
-    public let rank: Swift.Int
-    public let dimensions: [Swift.Int]
-    public init(_ dimensions: [Swift.Int])
-    public init(_ elements: Swift.Int...)
-    public static func == (a: HyperSnapSDK.Tensor.Shape, b: HyperSnapSDK.Tensor.Shape) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-}
-extension HyperSnapSDK.Tensor.Shape : Swift.ExpressibleByArrayLiteral {
-  public init(arrayLiteral: Swift.Int...)
-  public typealias ArrayLiteralElement = Swift.Int
-}
-public enum Runtime {
-  public static var version: Swift.String {
-    get
-  }
-}
 public struct HVToast {
   public static func setBackgroundColor(_ color: UIKit.UIColor)
   public static func setMessageColor(_ color: UIKit.UIColor)
@@ -2842,9 +2640,6 @@ extension HyperSnapSDK.HVDeviceModel : Swift.Hashable {}
 extension HyperSnapSDK.HVDeviceModel : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVAnimatedSwitch.HVCancelBehavior : Swift.Equatable {}
 extension HyperSnapSDK.HVAnimatedSwitch.HVCancelBehavior : Swift.Hashable {}
-extension HyperSnapSDK.HVCardUIState : Swift.Equatable {}
-extension HyperSnapSDK.HVCardUIState : Swift.Hashable {}
-extension HyperSnapSDK.HVCardUIState : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVColorValueProvider : HyperSnapSDK.HVAnyValueProvider {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Equatable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Hashable {}
