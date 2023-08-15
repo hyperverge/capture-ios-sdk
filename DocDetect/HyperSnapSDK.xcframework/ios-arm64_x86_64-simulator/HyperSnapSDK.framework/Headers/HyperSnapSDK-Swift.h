@@ -476,6 +476,13 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+typedef SWIFT_ENUM(NSInteger, HVCardUIState, open) {
+  HVCardUIStateCardDetected = 0,
+  HVCardUIStateCardNotDetected = 1,
+  HVCardUIStateMoveCloser = 2,
+  HVCardUIStateMoveAway = 3,
+};
+
 @class NSBundle;
 
 /// An Objective-C compatible wrapper around Lottie’s Animation class.
@@ -591,6 +598,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldReadQR:(BOOL)shouldRead SWIFT_DEPRECATED_MSG("Use setShouldReadNIDQR() instead");
 - (void)setShouldReadNIDQR:(BOOL)shouldRead;
 - (void)setShouldReadBarcode:(BOOL)shouldRead;
+- (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
+- (void)setAutoCaptureDurationWithDurationInMS:(NSInteger)durationInMS;
 - (void)setEnableDocumentUpload:(BOOL)enable;
 - (void)setUploadFileTypes:(NSArray<NSString *> * _Nullable)fileTypes;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
@@ -793,11 +802,26 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (void)viewDidLoad;
 - (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 @property (nonatomic) CGSize preferredContentSize;
 - (void)viewWillDisappear:(BOOL)animated;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK32HVDocumentAutoCaptureStatusLabel")
+@interface HVDocumentAutoCaptureStatusLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
@@ -2091,6 +2115,13 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+typedef SWIFT_ENUM(NSInteger, HVCardUIState, open) {
+  HVCardUIStateCardDetected = 0,
+  HVCardUIStateCardNotDetected = 1,
+  HVCardUIStateMoveCloser = 2,
+  HVCardUIStateMoveAway = 3,
+};
+
 @class NSBundle;
 
 /// An Objective-C compatible wrapper around Lottie’s Animation class.
@@ -2206,6 +2237,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldReadQR:(BOOL)shouldRead SWIFT_DEPRECATED_MSG("Use setShouldReadNIDQR() instead");
 - (void)setShouldReadNIDQR:(BOOL)shouldRead;
 - (void)setShouldReadBarcode:(BOOL)shouldRead;
+- (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
+- (void)setAutoCaptureDurationWithDurationInMS:(NSInteger)durationInMS;
 - (void)setEnableDocumentUpload:(BOOL)enable;
 - (void)setUploadFileTypes:(NSArray<NSString *> * _Nullable)fileTypes;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
@@ -2408,11 +2441,26 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (void)viewDidLoad;
 - (UIPresentationController * _Nullable)presentationControllerForPresentedViewController:(UIViewController * _Nonnull)presented presentingViewController:(UIViewController * _Nullable)presenting sourceViewController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 @property (nonatomic) CGSize preferredContentSize;
 - (void)viewWillDisappear:(BOOL)animated;
+@end
+
+
+SWIFT_CLASS("_TtC12HyperSnapSDK32HVDocumentAutoCaptureStatusLabel")
+@interface HVDocumentAutoCaptureStatusLabel : UILabel
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
++ (void)setFont:(UIFont * _Nonnull)font;
++ (void)setTextAlignment:(NSTextAlignment)alignment;
++ (void)setTextColor:(UIColor * _Nonnull)color;
++ (void)setShadowColor:(UIColor * _Nonnull)color;
++ (void)setShadowOffset:(CGSize)offset;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
 
