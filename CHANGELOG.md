@@ -1,3 +1,13 @@
+#### 4.15.0 [28 Aug 2023]
+- Features:
+  - Support custom icons for primary buttons through UI config - support show/hide of these icons as well
+  - Support displaying of client logos through UI config
+- Bug Fixes:
+  - Fix flashButton show/hide issue
+  - Fix newline character signature issue
+  - Fix indefinite loading animation after capturing the image in lower end devices
+  - Fix SDK crash on clicking back button when image is being processed
+
 #### 4.14.0 [14 Aug 2023]
 - Features: 
   - Add support for `loggingPercentage` and `effectiveFrom` via Analytics config
