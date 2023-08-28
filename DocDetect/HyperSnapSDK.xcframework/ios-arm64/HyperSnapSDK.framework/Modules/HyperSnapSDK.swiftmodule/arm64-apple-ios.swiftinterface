@@ -1027,6 +1027,11 @@ final public class HVGradientValueProvider {
   final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class HVImageCache {
+  public static let imageCache: HyperSnapSDK.HVImageCache
+  final public func image(urlString: Swift.String, imageClosure: @escaping (_ uiImage: UIKit.UIImage) -> Swift.Void)
+  @objc deinit
+}
 public protocol HVInterpolatable : HyperSnapSDK.AnyInterpolatable {
   func interpolate(to: Self, amount: CoreGraphics.CGFloat) -> Self
 }
@@ -1510,6 +1515,10 @@ final public class HVSizeValueProvider {
     get
   }
   final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class HVClientLogoImageView : UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
 @objc @_Concurrency.MainActor(unsafe) public class HVPrimaryButton : UIKit.UIButton {
@@ -1999,6 +2008,8 @@ public struct HVUIConfig : Swift.Codable {
   public var alignment: HyperSnapSDK.HVUIAlignment?
   public var borderRadius: HyperSnapSDK.HVUIBorderRadius?
   public var animation: HyperSnapSDK.HVUIAnimation?
+  public var logos: HyperSnapSDK.HVUILogos?
+  public var icons: HyperSnapSDK.HVUIIcons?
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2117,6 +2128,33 @@ public struct HVUIFontWeight : Swift.Codable {
     get
   }
   public var countrySearchTextFontWeight: Swift.String {
+    get
+  }
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HVUIIcons : Swift.Codable {
+  public var primaryButtonIcon: HyperSnapSDK.HVUIPrimaryButtonIcon {
+    get
+  }
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HVUIPrimaryButtonIcon : Swift.Codable {
+  public var url: Swift.String {
+    get
+  }
+  public var shouldShow: Swift.Bool {
+    get
+  }
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HVUILogos : Swift.Codable {
+  public var clientLogo: Swift.String {
     get
   }
   public init()

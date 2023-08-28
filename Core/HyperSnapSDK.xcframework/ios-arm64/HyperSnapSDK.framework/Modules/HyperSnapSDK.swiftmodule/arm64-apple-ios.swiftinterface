@@ -10,6 +10,7 @@ import Compression
 import CoreFoundation
 import CoreGraphics
 import CoreLocation
+import CoreMIDI
 import CoreMedia
 import CoreMotion
 import CoreText
@@ -601,6 +602,17 @@ public class HVBundleImageProvider : HyperSnapSDK.HVAnimationImageProvider {
   public func imageForAsset(asset: HyperSnapSDK.ImageAsset) -> CoreGraphics.CGImage?
   @objc deinit
 }
+@objc public enum HVCardUIState : Swift.Int {
+  case cardDetected
+  case cardNotDetected
+  case moveCloser
+  case moveAway
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 final public class HVColorValueProvider {
   public init(block: @escaping HyperSnapSDK.HVColorValueProvider.ColorValueBlock)
   public init(_ color: HyperSnapSDK.HVLottieColor)
@@ -663,6 +675,8 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setShouldReadQR(_ shouldRead: Swift.Bool)
   @objc public func setShouldReadNIDQR(_ shouldRead: Swift.Bool)
   @objc public func setShouldReadBarcode(_ shouldRead: Swift.Bool)
+  @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
+  @objc public func setAutoCaptureDuration(durationInMS: Swift.Int)
   @objc public func setEnableDocumentUpload(_ enable: Swift.Bool)
   @objc public func setUploadFileTypes(_ fileTypes: [Swift.String]?)
   @objc public func setOCRAPIDetails(_ endpoint: Swift.String, documentSide: HyperSnapSDK.HVDocConfig.DocumentSide, params: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?)
@@ -733,6 +747,7 @@ extension HyperSnapSDK.HVDocsViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
@@ -1003,6 +1018,11 @@ final public class HVGradientValueProvider {
     get
   }
   final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class HVImageCache {
+  public static let imageCache: HyperSnapSDK.HVImageCache
+  final public func image(urlString: Swift.String, imageClosure: @escaping (_ uiImage: UIKit.UIImage) -> Swift.Void)
   @objc deinit
 }
 public protocol HVInterpolatable : HyperSnapSDK.AnyInterpolatable {
@@ -1490,6 +1510,10 @@ final public class HVSizeValueProvider {
   final public func hasUpdate(frame _: CoreGraphics.CGFloat) -> Swift.Bool
   @objc deinit
 }
+@objc @_Concurrency.MainActor(unsafe) public class HVClientLogoImageView : UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
 @objc @_Concurrency.MainActor(unsafe) public class HVPrimaryButton : UIKit.UIButton {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setBorderColor(_ color: CoreGraphics.CGColor)
@@ -1573,6 +1597,19 @@ final public class HVSizeValueProvider {
   @objc deinit
 }
 @objc @_Concurrency.MainActor(unsafe) public class HVStatusLabel : UIKit.UILabel {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
+  @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
+  @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreGraphics.CGSize)
+  @objc deinit
+}
+@objc @_Concurrency.MainActor(unsafe) public class HVDocumentAutoCaptureStatusLabel : UIKit.UILabel {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
@@ -1964,6 +2001,8 @@ public struct HVUIConfig : Swift.Codable {
   public var alignment: HyperSnapSDK.HVUIAlignment?
   public var borderRadius: HyperSnapSDK.HVUIBorderRadius?
   public var animation: HyperSnapSDK.HVUIAnimation?
+  public var logos: HyperSnapSDK.HVUILogos?
+  public var icons: HyperSnapSDK.HVUIIcons?
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2088,6 +2127,33 @@ public struct HVUIFontWeight : Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public struct HVUIIcons : Swift.Codable {
+  public var primaryButtonIcon: HyperSnapSDK.HVUIPrimaryButtonIcon {
+    get
+  }
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HVUIPrimaryButtonIcon : Swift.Codable {
+  public var url: Swift.String {
+    get
+  }
+  public var shouldShow: Swift.Bool {
+    get
+  }
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HVUILogos : Swift.Codable {
+  public var clientLogo: Swift.String {
+    get
+  }
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
 @_inheritsConvenienceInitializers @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
@@ -2174,6 +2240,34 @@ public struct HVUIFontWeight : Swift.Codable {
   final public let height: Swift.Double
   override final public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
+}
+public enum InterpreterError : Swift.Error, Swift.Equatable, Swift.Hashable {
+  case invalidTensorIndex(index: Swift.Int, maxIndex: Swift.Int)
+  case invalidTensorDataCount(provided: Swift.Int, required: Swift.Int)
+  case invalidTensorDataType
+  case failedToLoadModel
+  case failedToCreateInterpreter
+  case failedToResizeInputTensor(index: Swift.Int)
+  case failedToCopyDataToInputTensor
+  case failedToAllocateTensors
+  case allocateTensorsRequired
+  case invokeInterpreterRequired
+  case tensorFlowLiteError(Swift.String)
+  public static func == (a: HyperSnapSDK.InterpreterError, b: HyperSnapSDK.InterpreterError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension HyperSnapSDK.InterpreterError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension HyperSnapSDK.InterpreterError : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
 }
 public protocol Key : AnyObject {
   var reference: Security.SecKey { get }
@@ -2400,6 +2494,15 @@ public class PublicKey : HyperSnapSDK.Key {
   public static func publicKeys(pemEncoded pemString: Swift.String) -> [HyperSnapSDK.PublicKey]
   @objc deinit
 }
+public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
+  public let scale: Swift.Float
+  public let zeroPoint: Swift.Int
+  public static func == (a: HyperSnapSDK.QuantizationParameters, b: HyperSnapSDK.QuantizationParameters) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
 public class Signature {
   public enum DigestType {
     case sha1
@@ -2420,6 +2523,32 @@ public class Signature {
     get
   }
   @objc deinit
+}
+public enum SignatureRunnerError : Swift.Error, Swift.Equatable, Swift.Hashable {
+  case invalidTensorDataCount(provided: Swift.Int, required: Swift.Int)
+  case invalidTensorDataType
+  case failedToCreateSignatureRunner(signatureKey: Swift.String)
+  case failedToGetTensor(tensorType: Swift.String, nameInSignature: Swift.String)
+  case failedToResizeInputTensor(inputName: Swift.String)
+  case failedToCopyDataToInputTensor
+  case failedToAllocateTensors
+  case failedToInvokeSignature(signatureKey: Swift.String)
+  case allocateTensorsRequired
+  public static func == (a: HyperSnapSDK.SignatureRunnerError, b: HyperSnapSDK.SignatureRunnerError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension HyperSnapSDK.SignatureRunnerError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension HyperSnapSDK.SignatureRunnerError : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
 }
 public typealias Padding = Security.SecPadding
 public enum SwiftyRSA {
@@ -2640,6 +2769,9 @@ extension HyperSnapSDK.HVDeviceModel : Swift.Hashable {}
 extension HyperSnapSDK.HVDeviceModel : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVAnimatedSwitch.HVCancelBehavior : Swift.Equatable {}
 extension HyperSnapSDK.HVAnimatedSwitch.HVCancelBehavior : Swift.Hashable {}
+extension HyperSnapSDK.HVCardUIState : Swift.Equatable {}
+extension HyperSnapSDK.HVCardUIState : Swift.Hashable {}
+extension HyperSnapSDK.HVCardUIState : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVColorValueProvider : HyperSnapSDK.HVAnyValueProvider {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Equatable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Hashable {}

@@ -481,6 +481,16 @@ typedef SWIFT_ENUM(NSInteger, HVCardUIState, open) {
   HVCardUIStateMoveAway = 3,
 };
 
+@class UIImage;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVClientLogoImageView")
+@interface HVClientLogoImageView : UIImageView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 @class NSBundle;
 
 /// An Objective-C compatible wrapper around Lottie’s Animation class.
@@ -567,7 +577,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVDescriptionLabel")
 @class DocTextConfig;
 enum DocumentType : NSInteger;
 @class UIViewController;
-@class UIImage;
 @class UINavigationController;
 enum DocumentSide : NSInteger;
 
