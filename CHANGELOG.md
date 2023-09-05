@@ -7,6 +7,7 @@
   - Fix newline character signature issue
   - Fix indefinite loading animation after capturing the image in lower end devices
   - Fix SDK crash on clicking back button when image is being processed
+  - Fix iPad closing on iOS 13 & above
 
 #### 4.14.0 [14 Aug 2023]
 - Features: 
