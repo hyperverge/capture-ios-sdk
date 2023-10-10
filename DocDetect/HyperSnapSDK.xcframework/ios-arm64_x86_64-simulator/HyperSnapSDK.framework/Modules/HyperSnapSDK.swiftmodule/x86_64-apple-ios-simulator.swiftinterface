@@ -1886,6 +1886,12 @@ public struct HVUIAlignment : Swift.Codable {
   public var statusTextAlignment: Swift.String {
     get
   }
+  public var statementHelperTextAlignment: Swift.String {
+    get
+  }
+  public var statementTextAlignment: Swift.String {
+    get
+  }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -1940,6 +1946,15 @@ public struct HVUIColor : Swift.Codable {
     get
   }
   public var statusTextColor: Swift.String {
+    get
+  }
+  public var statementHelperTextColor: Swift.String {
+    get
+  }
+  public var statementTextColor: Swift.String {
+    get
+  }
+  public var loaderTextColor: Swift.String {
     get
   }
   public var primaryButtonBackgroundColor: Swift.String {
@@ -2024,6 +2039,15 @@ public struct HVUIFont : Swift.Codable {
   public var statusTextFont: Swift.String {
     get
   }
+  public var statementHelperTextFont: Swift.String {
+    get
+  }
+  public var statementTextFont: Swift.String {
+    get
+  }
+  public var loaderTextFont: Swift.String {
+    get
+  }
   public var documentSideHintTextFont: Swift.String {
     get
   }
@@ -2065,6 +2089,15 @@ public struct HVUIFontSize : Swift.Codable {
   public var statusTextSize: Swift.Float {
     get
   }
+  public var statementHelperTextSize: Swift.Float {
+    get
+  }
+  public var statementTextSize: Swift.Float {
+    get
+  }
+  public var loaderTextSize: Swift.Float {
+    get
+  }
   public var documentSideHintTextSize: Swift.Float {
     get
   }
@@ -2101,6 +2134,15 @@ public struct HVUIFontWeight : Swift.Codable {
     get
   }
   public var statusTextWeight: Swift.String {
+    get
+  }
+  public var statementHelperTextWeight: Swift.String {
+    get
+  }
+  public var statementTextWeight: Swift.String {
+    get
+  }
+  public var loaderTextWeight: Swift.String {
     get
   }
   public var documentSideHintTextWeight: Swift.String {

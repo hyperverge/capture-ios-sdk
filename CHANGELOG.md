@@ -1,3 +1,7 @@
+#### 4.16.0 [10 Oct 2023]
+- Features: 
+  - Support video statement customisation through UI Config
+  
 #### 4.15.0 [28 Aug 2023]
 - Features:
   - Support custom icons for primary buttons through UI config - support show/hide of these icons as well
