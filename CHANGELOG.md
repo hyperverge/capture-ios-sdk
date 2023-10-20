@@ -1,3 +1,8 @@
+#### 4.16.1 [20 Oct 2023]
+- Bug Fixes: 
+  - Fix null pointer crash in switch camera
+  - Fix crash in selecting available preview formats for image capture
+
 #### 4.16.0 [10 Oct 2023]
 - Features: 
   - Support video statement customisation through UI Config
