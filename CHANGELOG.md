@@ -1,3 +1,9 @@
+#### 4.17.0 [28 Nov 2023]
+- Features: 
+  - Added support for to view password protected files
+- Bug Fixes: 
+  - Fixed failing checks on signature verification
+
 #### 4.16.1 [20 Oct 2023]
 - Bug Fixes: 
   - Fix null pointer crash in switch camera
