@@ -54,7 +54,7 @@
 		</data>
 		<key>HVResources.bundle/Assets.car</key>
 		<data>
-		IZE9OTSKBAz50eTR8LkC28mq+Dg=
+		CLLWz9gFH6bpsHWarzqDFx51JUI=
 		</data>
 		<key>HVResources.bundle/Fonts/Mulish-Bold.ttf</key>
 		<data>
@@ -158,11 +158,11 @@
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/zO2-8S-LAx-view-ebP-XP-QMS.nib</key>
 		<data>
-		V6T4nBj25o2z2SW5K34Rhg5i36I=
+		w1BLh8ZpmWtKM70xssoxYvHxWFo=
 		</data>
 		<key>HVResources.bundle/Info.plist</key>
 		<data>
-		JzoS/3/MGx24fixLeSDdZs1Oe+A=
+		WnCizDvMql8ZUQrFLX3wJaT2Lqg=
 		</data>
 		<key>HVResources.bundle/yolov5n_224x224_Lite.tflite</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DXv94dZALeMHEOrH0AZZpqlmGh8=
+		M0hJRx/HQiLgQ2ewlJwzIqo2LC8=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Sg3jXg0uZ9mUpWQJbJ9Ia95LYWQ=
+		EMhdZMsb2wDFCzdLkbRRvQBrZgU=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -206,7 +206,7 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/RODnL1B+3vD01If/0T7AR6NEL8=
+		STf1bftaq+TD8FFHDNUgiG4yyrs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -351,11 +351,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IZE9OTSKBAz50eTR8LkC28mq+Dg=
+			CLLWz9gFH6bpsHWarzqDFx51JUI=
 			</data>
 			<key>hash2</key>
 			<data>
-			J+qqLHTS/lJfUMtZaYDDLwX9cU8snNDyz1Ybl5Xpczo=
+			xXgneHU4XRBwUkkbtuGrVn0mJTyJj4n68K/8a9mQKuw=
 			</data>
 		</dict>
 		<key>HVResources.bundle/Fonts/Mulish-Bold.ttf</key>
@@ -637,22 +637,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			V6T4nBj25o2z2SW5K34Rhg5i36I=
+			w1BLh8ZpmWtKM70xssoxYvHxWFo=
 			</data>
 			<key>hash2</key>
 			<data>
-			WGlAlgOmkoQFRtSDJW2soD/dSAdRxJSFsS6t8j/yrh0=
+			MElmMioU5tSn1Aidjsr684Uk1ZH9pMRoSRoY4sWydY8=
 			</data>
 		</dict>
 		<key>HVResources.bundle/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JzoS/3/MGx24fixLeSDdZs1Oe+A=
+			WnCizDvMql8ZUQrFLX3wJaT2Lqg=
 			</data>
 			<key>hash2</key>
 			<data>
-			dCTRkxNBucjPy0eqQHNGhtFZ5m8QA2V/LtxWf5aek6w=
+			jC1g1kwL9Jo331TZjBOhLv79fpGFjJ03Dfiis9NoygY=
 			</data>
 		</dict>
 		<key>HVResources.bundle/yolov5n_224x224_Lite.tflite</key>
@@ -725,11 +725,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Sg3jXg0uZ9mUpWQJbJ9Ia95LYWQ=
+			EMhdZMsb2wDFCzdLkbRRvQBrZgU=
 			</data>
 			<key>hash2</key>
 			<data>
-			XFNk+oBeAK8eUWIMFA7KWho44ByE85WTXRObD0mt62w=
+			UoUJpsPjbbhog4WhdqL2En3jbyWVO6xKYIVfp52l/BY=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -758,11 +758,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/RODnL1B+3vD01If/0T7AR6NEL8=
+			STf1bftaq+TD8FFHDNUgiG4yyrs=
 			</data>
 			<key>hash2</key>
 			<data>
-			c3vza+8t+jk8gs2/CpvKGPhh1Rf047zKdQ+9yqdlEm4=
+			MTtBOOk6YFrLGt/wOy+4YDTkDC7N7WexjmXGN/XpD3U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
