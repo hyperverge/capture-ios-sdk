@@ -1,4 +1,4 @@
-#### 4.17.1 [6 Jan 2023]
+#### 4.17.1 [6 Jan 2024]
 - Bug Fixes: 
   - Fixed automatic closing of iPad screens
   - Fixed face capture getting stuck when face is blurry
