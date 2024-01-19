@@ -1,3 +1,7 @@
+#### 4.18.0 [19 Jan 2024]
+- Bug Fixes: 
+  - Fixed issue with reversed instruction for active liveness on multi cam devices.
+  
 #### 4.17.1 [6 Jan 2024]
 - Bug Fixes: 
   - Fixed automatic closing of iPad screens
