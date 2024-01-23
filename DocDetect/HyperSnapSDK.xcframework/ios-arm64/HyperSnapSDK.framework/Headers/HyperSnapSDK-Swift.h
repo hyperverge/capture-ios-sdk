@@ -607,6 +607,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldReadBarcode:(BOOL)shouldRead;
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
 - (void)setAutoCaptureDurationWithDurationInMS:(NSInteger)durationInMS;
+- (void)setShowModuleBackButton:(BOOL)allow;
 - (void)setEnableDocumentUpload:(BOOL)enable;
 - (void)setUploadFileTypes:(NSArray<NSString *> * _Nullable)fileTypes;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
@@ -901,6 +902,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
 - (void)setAutoCaptureDuration:(NSInteger)duration;
 - (void)setShowAlertBox:(BOOL)shouldShowAlertLabel;
+- (void)setShowModuleBackButton:(BOOL)allow;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
 - (void)setShouldCheckForActiveLiveness:(BOOL)shouldCheck;
 - (void)setTotalGestures:(NSInteger)totalGestures;
@@ -1212,6 +1214,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK10HVQRConfig")
 @interface HVQRConfig : HVBaseConfig
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setSkipButtonDelay:(NSInteger)skipDelay;
+- (void)setShowModuleBackButton:(BOOL)allow;
 @property (nonatomic, strong) HVQRTextConfig * _Nonnull textConfig;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

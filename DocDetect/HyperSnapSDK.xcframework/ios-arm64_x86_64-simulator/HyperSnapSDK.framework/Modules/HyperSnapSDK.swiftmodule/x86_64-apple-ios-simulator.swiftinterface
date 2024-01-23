@@ -684,6 +684,7 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setShouldReadBarcode(_ shouldRead: Swift.Bool)
   @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
   @objc public func setAutoCaptureDuration(durationInMS: Swift.Int)
+  @objc public func setShowModuleBackButton(_ allow: Swift.Bool)
   @objc public func setEnableDocumentUpload(_ enable: Swift.Bool)
   @objc public func setUploadFileTypes(_ fileTypes: [Swift.String]?)
   @objc public func setOCRAPIDetails(_ endpoint: Swift.String, documentSide: HyperSnapSDK.HVDocConfig.DocumentSide, params: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?)
@@ -804,6 +805,7 @@ public protocol HVDotLottieCacheProvider {
   @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
   @objc public func setAutoCaptureDuration(_ duration: Swift.Int)
   @objc public func setShowAlertBox(_ shouldShowAlertLabel: Swift.Bool)
+  @objc public func setShowModuleBackButton(_ allow: Swift.Bool)
   @objc public func setNumberOfFrames(_ numberOfFrames: Swift.Int)
   @objc public func setShouldCheckForActiveLiveness(_ shouldCheck: Swift.Bool)
   @objc public func setTotalGestures(_ totalGestures: Swift.Int)
@@ -1413,6 +1415,7 @@ final public class HVPointValueProvider {
 @_inheritsConvenienceInitializers @objc public class HVQRConfig : HyperSnapSDK.HVBaseConfig {
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
   @objc public func setSkipButtonDelay(_ skipDelay: Swift.Int)
+  @objc public func setShowModuleBackButton(_ allow: Swift.Bool)
   @objc public var textConfig: HyperSnapSDK.HVQRConfig.HVQRTextConfig
   @_inheritsConvenienceInitializers @objc public class HVQRTextConfig : ObjectiveC.NSObject {
     @objc public func setTextConfig(_ textJson: [Swift.String : Swift.String])
@@ -2177,14 +2180,17 @@ public struct HVUIFontWeight : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
 }
 public struct HVUIIcons : Swift.Codable {
-  public var primaryButtonIcon: HyperSnapSDK.HVUIPrimaryButtonIcon {
+  public var primaryButtonIcon: HyperSnapSDK.HVUIIconProperties {
+    get
+  }
+  public var backButtonIcon: HyperSnapSDK.HVUIIconProperties {
     get
   }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-public struct HVUIPrimaryButtonIcon : Swift.Codable {
+public struct HVUIIconProperties : Swift.Codable {
   public var url: Swift.String {
     get
   }
