@@ -1,3 +1,8 @@
+#### 4.19.0 [23 Jan 2024]
+- Features: 
+  - Add support for back button visibility and icon customisations 
+  
+
 #### 4.18.0 [19 Jan 2024]
 - Bug Fixes: 
   - Fixed issue with reversed instruction for active liveness on multi cam devices.
