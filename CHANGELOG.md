@@ -1,3 +1,10 @@
+#### 4.19.1 [2 Feb 2024]
+- Features: 
+  - Migrate analytics fully from Rudderstack to Apollo
+- Bug Fixes:
+  - Fix issue with multiple callbacks in qr scanner page
+
+
 #### 4.19.0 [23 Jan 2024]
 - Features: 
   - Add support for back button visibility and icon customisations 

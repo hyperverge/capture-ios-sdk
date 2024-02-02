@@ -19,7 +19,9 @@ import Dispatch
 import Foundation
 @_exported import HyperSnapSDK
 import ImageIO
+import MachO
 import MobileCoreServices
+import Network
 import ObjectiveC
 import Photos
 import QuartzCore
