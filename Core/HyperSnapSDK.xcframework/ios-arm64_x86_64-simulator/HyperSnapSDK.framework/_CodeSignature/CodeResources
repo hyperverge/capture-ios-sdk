@@ -162,7 +162,7 @@
 		</data>
 		<key>HVResources.bundle/Info.plist</key>
 		<data>
-		IzYIu6Fcwy5N2c7ITPzpYSxg5hY=
+		Tr9pmSAHrrfy1Y2FdotuY8/MzG8=
 		</data>
 		<key>HVResources.bundle/yolov5n_224x224_Lite.tflite</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+KPIS0kQgGI7q8ybC7V6N+/56pg=
+		k5zVd/crP5//GRFwPk1IVL+dID0=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Qjc7R4BngARvghnYAheKTgm78Cw=
+		OZEHFui5MtGx36u7qljVbFT1aWc=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -206,7 +206,7 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/isqZKv0at5MCfrDdBzfv6kmF5s=
+		nLHdLS0K2KQDA0+kk4O/pc3mjnA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -648,11 +648,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IzYIu6Fcwy5N2c7ITPzpYSxg5hY=
+			Tr9pmSAHrrfy1Y2FdotuY8/MzG8=
 			</data>
 			<key>hash2</key>
 			<data>
-			uxRoe+0gLoCju4iCYCK8p0jCRT4OKswbykrn416TQzY=
+			dNGvVLGbPlpL4wc65vyjmloOQVdig7i2qqP6B2FLanA=
 			</data>
 		</dict>
 		<key>HVResources.bundle/yolov5n_224x224_Lite.tflite</key>
@@ -725,11 +725,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Qjc7R4BngARvghnYAheKTgm78Cw=
+			OZEHFui5MtGx36u7qljVbFT1aWc=
 			</data>
 			<key>hash2</key>
 			<data>
-			+Bdy9mPY3a82jwwBmYCxLH/kkGao2cfJWakV3QpBdVc=
+			ChOd05MITxnHey59ic+JW6kTPhTbnv9aUISBSaSz1xU=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -758,11 +758,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/isqZKv0at5MCfrDdBzfv6kmF5s=
+			nLHdLS0K2KQDA0+kk4O/pc3mjnA=
 			</data>
 			<key>hash2</key>
 			<data>
-			6e/inACSlSEqGVl/whc2ueH7J0jsaSnymNUgFioisdQ=
+			EnYyvf6tb/j87vEaqOkzy123wiZVwdBr2ZbyGW/5120=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

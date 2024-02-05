@@ -1,3 +1,7 @@
+#### 4.18.1 [5 Feb 2024]
+- Bug Fixes: 
+    - Removed warnings from the generated xcFrameworks.
+  
 #### 4.18.0 [19 Jan 2024]
 - Bug Fixes: 
   - Fixed issue with reversed instruction for active liveness on multi cam devices.
