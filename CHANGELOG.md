@@ -1,3 +1,8 @@
+#### 4.20.0 [9 Feb 2024]
+- Features: 
+  - Add support to use loader lottie while uploading documents
+  - Add support to customise typography for all text elements used in the SDK
+
 #### 4.19.1 [2 Feb 2024]
 - Features: 
   - Migrate analytics fully from Rudderstack to Apollo

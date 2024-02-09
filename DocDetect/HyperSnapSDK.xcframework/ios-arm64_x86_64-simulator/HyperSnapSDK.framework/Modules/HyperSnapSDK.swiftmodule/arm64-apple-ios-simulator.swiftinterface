@@ -1918,6 +1918,7 @@ public struct HVUIAnimation : Swift.Codable {
   public var endStateFailure: Swift.String?
   public var uploadFailure: Swift.String?
   public var qrInstruction: Swift.String?
+  public var loaderLottie: Swift.String?
   public func initAnimation()
   public init()
   public func encode(to encoder: Swift.Encoder) throws
@@ -1931,6 +1932,56 @@ public struct HVUIBorderRadius : Swift.Codable {
     get
   }
   public var pickerBorderRadius: Swift.Float {
+    get
+  }
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HVUICharSpacing : Swift.Codable {
+  public var titleTextCharSpacing: Swift.Float {
+    get
+  }
+  public var descriptionTextCharSpacing: Swift.Float {
+    get
+  }
+  public var statusTextCharSpacing: Swift.Float {
+    get
+  }
+  public var statementHelperTextCharSpacing: Swift.Float {
+    get
+  }
+  public var statementTextCharSpacing: Swift.Float {
+    get
+  }
+  public var loaderTextCharSpacing: Swift.Float {
+    get
+  }
+  public var documentSideHintTextCharSpacing: Swift.Float {
+    get
+  }
+  public var retakeMessageTextCharSpacing: Swift.Float {
+    get
+  }
+  public var primaryButtonTextCharSpacing: Swift.Float {
+    get
+  }
+  public var secondaryButtonTextCharSpacing: Swift.Float {
+    get
+  }
+  public var alertTextBoxTextCharSpacing: Swift.Float {
+    get
+  }
+  public var pickerTextCharSpacing: Swift.Float {
+    get
+  }
+  public var countryListItemTextCharSpacing: Swift.Float {
+    get
+  }
+  public var countryListItemSelectedTextCharSpacing: Swift.Float {
+    get
+  }
+  public var countrySearchTextCharSpacing: Swift.Float {
     get
   }
   public init()
@@ -2030,6 +2081,8 @@ public struct HVUIConfig : Swift.Codable {
   public var animation: HyperSnapSDK.HVUIAnimation?
   public var logos: HyperSnapSDK.HVUILogos?
   public var icons: HyperSnapSDK.HVUIIcons?
+  public var lineHeight: HyperSnapSDK.HVUILineHeight?
+  public var charSpacing: HyperSnapSDK.HVUICharSpacing?
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2197,6 +2250,56 @@ public struct HVUIIconProperties : Swift.Codable {
     get
   }
   public var shouldShow: Swift.Bool {
+    get
+  }
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct HVUILineHeight : Swift.Codable {
+  public var titleTextLineHeight: Swift.Float {
+    get
+  }
+  public var descriptionTextLineHeight: Swift.Float {
+    get
+  }
+  public var statusTextLineHeight: Swift.Float {
+    get
+  }
+  public var statementHelperTextLineHeight: Swift.Float {
+    get
+  }
+  public var statementTextLineHeight: Swift.Float {
+    get
+  }
+  public var loaderTextLineHeight: Swift.Float {
+    get
+  }
+  public var documentSideHintTextLineHeight: Swift.Float {
+    get
+  }
+  public var retakeMessageTextLineHeight: Swift.Float {
+    get
+  }
+  public var primaryButtonTextLineHeight: Swift.Float {
+    get
+  }
+  public var secondaryButtonTextLineHeight: Swift.Float {
+    get
+  }
+  public var alertTextBoxTextLineHeight: Swift.Float {
+    get
+  }
+  public var pickerTextLineHeight: Swift.Float {
+    get
+  }
+  public var countryListItemTextLineHeight: Swift.Float {
+    get
+  }
+  public var countryListItemSelectedTextLineHeight: Swift.Float {
+    get
+  }
+  public var countrySearchTextCharLineHeight: Swift.Float {
     get
   }
   public init()
