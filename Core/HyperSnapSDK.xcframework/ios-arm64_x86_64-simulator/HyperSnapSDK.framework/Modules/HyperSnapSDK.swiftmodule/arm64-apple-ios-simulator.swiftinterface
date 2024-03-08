@@ -1891,6 +1891,9 @@ public struct HVUIAlignment : Swift.Codable {
   public var statementTextAlignment: Swift.String {
     get
   }
+  public var nfcStatusTextAlignment: Swift.String {
+    get
+  }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2061,6 +2064,12 @@ public struct HVUIColor : Swift.Codable {
   public var countrySearchTextColor: Swift.String {
     get
   }
+  public var nfcStatusTextColor: Swift.String {
+    get
+  }
+  public var nfcStatusErrorTextColor: Swift.String {
+    get
+  }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2127,6 +2136,9 @@ public struct HVUIFont : Swift.Codable {
   public var countrySearchTextFont: Swift.String {
     get
   }
+  public var nfcStatusTextFont: Swift.String {
+    get
+  }
   public init()
   public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2172,6 +2184,9 @@ public struct HVUIFontSize : Swift.Codable {
     get
   }
   public var countrySearchTextSize: Swift.Float {
+    get
+  }
+  public var nfcStatusTextSize: Swift.Float {
     get
   }
   public init()
@@ -2222,6 +2237,9 @@ public struct HVUIFontWeight : Swift.Codable {
     get
   }
   public var countrySearchTextFontWeight: Swift.String {
+    get
+  }
+  public var nfcStatusTextWeight: Swift.String {
     get
   }
   public init()
