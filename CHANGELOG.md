@@ -1,3 +1,8 @@
+#### 4.20.1 [13 Mar 2024]
+- Bug Fixes: 
+  - Fix for white preview coming up when camera loads
+  - Fix multiple capture sessions created for qr scanner page
+  
 #### 4.20.0 [9 Feb 2024]
 - Features: 
   - Add support to use loader lottie while uploading documents
