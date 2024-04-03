@@ -1,3 +1,11 @@
+#### 4.21.0 [03 Apr 2024]
+- Features:
+  - Add support for UI config for NFC modules
+  - Add support lottie color customisations
+  - Add support to reduced "Powered by HyperVerge" branding texts
+- Bug Fixes:
+  - Update default texts in QR flow
+
 #### 4.20.1 [13 Mar 2024]
 - Bug Fixes: 
   - Fix for white preview coming up when camera loads
@@ -61,6 +69,7 @@
   - Disable back button during API calls
 - Bug Fixes
   - Add Processing text padding for A4 document type
+  
 #### 4.13.0 [28 July 2023]
 - No changes 
   - Keeping it consistent with Android HyperSnapSDK version
