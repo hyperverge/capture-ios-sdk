@@ -6,6 +6,6 @@ framework module HyperSnapSDK {
 }
 
 module HyperSnapSDK.Swift {
-    header "HyperSnapSDK-Swift.h"
-    requires objc
+  header "HyperSnapSDK-Swift.h"
+  requires objc
 }
