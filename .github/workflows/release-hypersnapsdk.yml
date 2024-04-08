@@ -18,15 +18,22 @@ jobs:
   # This workflow contains a single job called "deploy"
   deploy:
     # The type of runner that the job will run on
-    runs-on: macOS-latest
+    runs-on: macOS-14
     
     # Environment to be used for pushing HyperSnapSDK to cocoapods
     environment: production
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Use latest stable version of xcode
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.2'
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        id: checkout_branch
+        uses: actions/checkout@v3
 
       # Runs a set of commands to create tag (HYPERSNAPSDK_VERSION) and push it to origin
       - name: Create a tag for version HYPERSNAPSDK_VERSION (x.y.z)
