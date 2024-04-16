@@ -1,3 +1,7 @@
+#### 4.20.2 [16 Mar 2024]
+- Bug Fixes: 
+  - Removed references to `NWPathMonitor` which requires min deployment target set to 12 in Xcode 15
+
 #### 4.20.1 [13 Mar 2024]
 - Bug Fixes: 
   - Fix for white preview coming up when camera loads
