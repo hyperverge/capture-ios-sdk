@@ -1,4 +1,4 @@
-#### 4.20.2 [16 Mar 2024]
+#### 4.20.2 [16 Apr 2024]
 - Bug Fixes: 
   - Removed references to `NWPathMonitor` which requires min deployment target set to 12 in Xcode 15
 
