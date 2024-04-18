@@ -1911,6 +1911,7 @@ public struct HVUIAnimation : Swift.Codable {
   public var uploadFailure: Swift.String?
   public var qrInstruction: Swift.String?
   public var loaderLottie: Swift.String?
+  public var nfcInstructioniOS: Swift.String?
   public func initAnimation()
   public init()
   public func encode(to encoder: any Swift.Encoder) throws
