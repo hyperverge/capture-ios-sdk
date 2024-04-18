@@ -1,3 +1,10 @@
+
+#### 4.21.1 [18 Apr 2024]
+- Features:
+  - Add support for UI config for NFC Instruction screen
+- Bug Fixes : 
+    Removed references to  `NWPathMonitor` which requires min deployment target set to 12 in Xcode 15
+
 #### 4.21.0 [03 Apr 2024]
 - Features:
   - Add support for UI config for NFC modules
