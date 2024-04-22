@@ -1,4 +1,7 @@
-
+#### 4.22.0 [22 Apr 2024]
+- Features 
+    - Added privacy manifest to HyperSnapSDK
+    
 #### 4.21.1 [18 Apr 2024]
 - Features:
   - Add support for UI config for NFC Instruction screen
