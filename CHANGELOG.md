@@ -1,3 +1,8 @@
+#### 4.21.2 [26 Apr 2024]
+- Enhancements:
+  - Pre-load icons
+- Bug Fixes : 
+  - Rename public final classes with HV prefix
 
 #### 4.21.1 [18 Apr 2024]
 - Features:
