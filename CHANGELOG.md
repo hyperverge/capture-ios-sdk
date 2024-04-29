@@ -1,3 +1,9 @@
+#### 4.22.1 [29 Apr 2024]
+- Enhancements:
+  - Pre-load icons
+- Bug Fixes : 
+  - Rename public final classes with HV prefix
+ 
 #### 4.22.0 [22 Apr 2024]
 - Features 
     - Added privacy manifest to HyperSnapSDK
