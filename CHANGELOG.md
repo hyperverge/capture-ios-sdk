@@ -1,18 +1,28 @@
 #### 4.22.1 [29 Apr 2024]
 - Enhancements:
-  - Pre-load icons
+  - Add ability to pre-load icons present in UI config
 - Bug Fixes : 
   - Rename public final classes with HV prefix
- 
+  
+#### 4.21.2 [26 Apr 2024]
+- Enhancements:
+  - Add ability to pre-load icons present in UI config
+- Bug Fixes : 
+  - Rename public final classes with HV prefix
+
 #### 4.22.0 [22 Apr 2024]
-- Features 
-    - Added privacy manifest to HyperSnapSDK
-    
+- Features:
+  - Added privacy manifest to HyperSnapSDK
+
 #### 4.21.1 [18 Apr 2024]
 - Features:
   - Add support for UI config for NFC Instruction screen
 - Bug Fixes : 
-    Removed references to  `NWPathMonitor` which requires min deployment target set to 12 in Xcode 15
+  - Remove references to  `NWPathMonitor` which requires min deployment target set to 12 in Xcode 15
+
+#### 4.20.2 [16 Apr 2024]
+- Bug Fixes: 
+  - Remove references to `NWPathMonitor` which requires min deployment target set to 12 in Xcode 15
 
 #### 4.21.0 [03 Apr 2024]
 - Features:
