@@ -333,94 +333,6 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17AdaptiveStackView")
 
 
 
-@class HVCompatibleAnimation;
-enum HVCompatibleRenderingEngineOption : NSInteger;
-@class NSURL;
-@class NSData;
-@class CompatibleDictionaryTextProvider;
-enum HVCompatibleBackgroundBehavior : NSInteger;
-@class NSString;
-@class HVCompatibleAnimationKeypath;
-@class UIColor;
-@class HVAnimationSubview;
-
-/// An Objective-C compatible wrapper around Lottie’s LottieAnimationView.
-SWIFT_CLASS("_TtC12HyperSnapSDK23CompatibleAnimationView")
-@interface CompatibleAnimationView : UIView
-/// Initializes a compatible AnimationView with a given compatible animation. Defaults to using
-/// the rendering engine specified in LottieConfiguration.shared.
-- (nonnull instancetype)initWithCompatibleAnimation:(HVCompatibleAnimation * _Nonnull)compatibleAnimation;
-/// Initializes a compatible AnimationView with a given compatible animation and rendering engine
-/// configuration.
-- (nonnull instancetype)initWithCompatibleAnimation:(HVCompatibleAnimation * _Nonnull)compatibleAnimation compatibleRenderingEngineOption:(enum HVCompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
-/// Initializes a compatible AnimationView with the resources asynchronously loaded from a given
-/// URL. Defaults to using the rendering engine specified in LottieConfiguration.shared.
-- (nonnull instancetype)initWithUrl:(NSURL * _Nonnull)url;
-/// Initializes a compatible AnimationView with the resources asynchronously loaded from a given
-/// URL using the given rendering engine configuration.
-- (nonnull instancetype)initWithUrl:(NSURL * _Nonnull)url compatibleRenderingEngineOption:(enum HVCompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
-/// Initializes a compatible AnimationView from a given Data object specifying the Lottie
-/// animation. Defaults to using the rendering engine specified in LottieConfiguration.shared.
-- (nonnull instancetype)initWithData:(NSData * _Nonnull)data;
-/// Initializes a compatible AnimationView from a given Data object specifying the Lottie
-/// animation using the given rendering engine configuration.
-- (nonnull instancetype)initWithData:(NSData * _Nonnull)data compatibleRenderingEngineOption:(enum HVCompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
-@property (nonatomic, strong) HVCompatibleAnimation * _Nullable compatibleAnimation;
-@property (nonatomic) CGFloat loopAnimationCount;
-@property (nonatomic, strong) CompatibleDictionaryTextProvider * _Nullable compatibleDictionaryTextProvider;
-@property (nonatomic) UIViewContentMode contentMode;
-@property (nonatomic) BOOL shouldRasterizeWhenIdle;
-@property (nonatomic) CGFloat currentProgress;
-@property (nonatomic, readonly) CGFloat duration;
-@property (nonatomic) NSTimeInterval currentTime;
-@property (nonatomic) CGFloat currentFrame;
-@property (nonatomic, readonly) CGFloat realtimeAnimationFrame;
-@property (nonatomic, readonly) CGFloat realtimeAnimationProgress;
-@property (nonatomic) CGFloat animationSpeed;
-@property (nonatomic) BOOL respectAnimationFrameRate;
-@property (nonatomic, readonly) BOOL isAnimationPlaying;
-@property (nonatomic) enum HVCompatibleBackgroundBehavior backgroundMode;
-- (void)play;
-- (void)playWithCompletion:(void (^ _Nullable)(BOOL))completion;
-/// Note: When calling this code from Objective-C, the method signature is
-/// playFromProgress:toProgress:completion which drops the standard “With” naming convention.
-- (void)playFromProgress:(CGFloat)fromProgress toProgress:(CGFloat)toProgress completion:(void (^ _Nullable)(BOOL))completion;
-/// Note: When calling this code from Objective-C, the method signature is
-/// playFromFrame:toFrame:completion which drops the standard “With” naming convention.
-- (void)playFromFrame:(CGFloat)fromFrame toFrame:(CGFloat)toFrame completion:(void (^ _Nullable)(BOOL))completion;
-/// Note: When calling this code from Objective-C, the method signature is
-/// playFromMarker:toMarker:completion which drops the standard “With” naming convention.
-- (void)playFromMarker:(NSString * _Nonnull)fromMarker toMarker:(NSString * _Nonnull)toMarker completion:(void (^ _Nullable)(BOOL))completion;
-- (void)playWithMarker:(NSString * _Nonnull)marker completion:(void (^ _Nullable)(BOOL))completion;
-- (void)stop;
-- (void)pause;
-- (void)reloadImages;
-- (void)forceDisplayUpdate;
-- (id _Nullable)getValueFor:(HVCompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
-- (void)logHierarchyKeypaths;
-- (void)setColorValue:(UIColor * _Nonnull)color forKeypath:(HVCompatibleAnimationKeypath * _Nonnull)keypath;
-- (UIColor * _Nullable)getColorValueFor:(HVCompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
-- (void)addSubview:(HVAnimationSubview * _Nonnull)subview forLayerAt:(HVCompatibleAnimationKeypath * _Nonnull)keypath;
-- (CGRect)convertWithRect:(CGRect)rect toLayerAt:(HVCompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
-- (CGPoint)convertWithPoint:(CGPoint)point toLayerAt:(HVCompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)progressTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)frameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)durationFrameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-/// An Objective-C compatible wrapper around Lottie’s DictionaryTextProvider.
-/// Use in tandem with CompatibleAnimationView to supply text to LottieAnimationView
-/// when using Lottie in Objective-C.
-SWIFT_CLASS("_TtC12HyperSnapSDK32CompatibleDictionaryTextProvider")
-@interface CompatibleDictionaryTextProvider : NSObject
-- (nonnull instancetype)initWithValues:(NSDictionary<NSString *, NSString *> * _Nonnull)values OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
 
 
 
@@ -438,6 +350,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK16HVActiveLiveness")
 @end
 
 @class UIFont;
+@class UIColor;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK16HVAlertTextLabel")
 @interface HVAlertTextLabel : UILabel
@@ -523,6 +436,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class NSString;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @interface HVBaseResponse : NSObject
@@ -600,6 +514,78 @@ SWIFT_CLASS("_TtC12HyperSnapSDK28HVCompatibleAnimationKeypath")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+enum HVCompatibleRenderingEngineOption : NSInteger;
+@class NSURL;
+@class NSData;
+@class HVCompatibleDictionaryTextProvider;
+enum HVCompatibleBackgroundBehavior : NSInteger;
+
+/// An Objective-C compatible wrapper around Lottie’s LottieAnimationView.
+SWIFT_CLASS("_TtC12HyperSnapSDK25HVCompatibleAnimationView")
+@interface HVCompatibleAnimationView : UIView
+/// Initializes a compatible AnimationView with a given compatible animation. Defaults to using
+/// the rendering engine specified in LottieConfiguration.shared.
+- (nonnull instancetype)initWithCompatibleAnimation:(HVCompatibleAnimation * _Nonnull)compatibleAnimation;
+/// Initializes a compatible AnimationView with a given compatible animation and rendering engine
+/// configuration.
+- (nonnull instancetype)initWithCompatibleAnimation:(HVCompatibleAnimation * _Nonnull)compatibleAnimation compatibleRenderingEngineOption:(enum HVCompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
+/// Initializes a compatible AnimationView with the resources asynchronously loaded from a given
+/// URL. Defaults to using the rendering engine specified in LottieConfiguration.shared.
+- (nonnull instancetype)initWithUrl:(NSURL * _Nonnull)url;
+/// Initializes a compatible AnimationView with the resources asynchronously loaded from a given
+/// URL using the given rendering engine configuration.
+- (nonnull instancetype)initWithUrl:(NSURL * _Nonnull)url compatibleRenderingEngineOption:(enum HVCompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
+/// Initializes a compatible AnimationView from a given Data object specifying the Lottie
+/// animation. Defaults to using the rendering engine specified in LottieConfiguration.shared.
+- (nonnull instancetype)initWithData:(NSData * _Nonnull)data;
+/// Initializes a compatible AnimationView from a given Data object specifying the Lottie
+/// animation using the given rendering engine configuration.
+- (nonnull instancetype)initWithData:(NSData * _Nonnull)data compatibleRenderingEngineOption:(enum HVCompatibleRenderingEngineOption)compatibleRenderingEngineOption OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
+@property (nonatomic, strong) HVCompatibleAnimation * _Nullable compatibleAnimation;
+@property (nonatomic) CGFloat loopAnimationCount;
+@property (nonatomic, strong) HVCompatibleDictionaryTextProvider * _Nullable compatibleDictionaryTextProvider;
+@property (nonatomic) UIViewContentMode contentMode;
+@property (nonatomic) BOOL shouldRasterizeWhenIdle;
+@property (nonatomic) CGFloat currentProgress;
+@property (nonatomic, readonly) CGFloat duration;
+@property (nonatomic) NSTimeInterval currentTime;
+@property (nonatomic) CGFloat currentFrame;
+@property (nonatomic, readonly) CGFloat realtimeAnimationFrame;
+@property (nonatomic, readonly) CGFloat realtimeAnimationProgress;
+@property (nonatomic) CGFloat animationSpeed;
+@property (nonatomic) BOOL respectAnimationFrameRate;
+@property (nonatomic, readonly) BOOL isAnimationPlaying;
+@property (nonatomic) enum HVCompatibleBackgroundBehavior backgroundMode;
+- (void)play;
+- (void)playWithCompletion:(void (^ _Nullable)(BOOL))completion;
+/// Note: When calling this code from Objective-C, the method signature is
+/// playFromProgress:toProgress:completion which drops the standard “With” naming convention.
+- (void)playFromProgress:(CGFloat)fromProgress toProgress:(CGFloat)toProgress completion:(void (^ _Nullable)(BOOL))completion;
+/// Note: When calling this code from Objective-C, the method signature is
+/// playFromFrame:toFrame:completion which drops the standard “With” naming convention.
+- (void)playFromFrame:(CGFloat)fromFrame toFrame:(CGFloat)toFrame completion:(void (^ _Nullable)(BOOL))completion;
+/// Note: When calling this code from Objective-C, the method signature is
+/// playFromMarker:toMarker:completion which drops the standard “With” naming convention.
+- (void)playFromMarker:(NSString * _Nonnull)fromMarker toMarker:(NSString * _Nonnull)toMarker completion:(void (^ _Nullable)(BOOL))completion;
+- (void)playWithMarker:(NSString * _Nonnull)marker completion:(void (^ _Nullable)(BOOL))completion;
+- (void)stop;
+- (void)pause;
+- (void)reloadImages;
+- (void)forceDisplayUpdate;
+- (id _Nullable)getValueFor:(HVCompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
+- (void)logHierarchyKeypaths;
+- (void)setColorValue:(UIColor * _Nonnull)color forKeypath:(HVCompatibleAnimationKeypath * _Nonnull)keypath;
+- (UIColor * _Nullable)getColorValueFor:(HVCompatibleAnimationKeypath * _Nonnull)keypath atFrame:(CGFloat)atFrame SWIFT_WARN_UNUSED_RESULT;
+- (void)addSubview:(HVAnimationSubview * _Nonnull)subview forLayerAt:(HVCompatibleAnimationKeypath * _Nonnull)keypath;
+- (CGRect)convertWithRect:(CGRect)rect toLayerAt:(HVCompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
+- (CGPoint)convertWithPoint:(CGPoint)point toLayerAt:(HVCompatibleAnimationKeypath * _Nullable)keypath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)progressTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)frameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)durationFrameTimeForMarker:(NSString * _Nonnull)named SWIFT_WARN_UNUSED_RESULT;
+@end
+
 /// An Objective-C compatible version of <code>LottieBackgroundBehavior</code>.
 typedef SWIFT_ENUM(NSInteger, HVCompatibleBackgroundBehavior, open) {
 /// Stop the animation and reset it to the beginning of its current play time. The completion block is called.
@@ -630,6 +616,17 @@ typedef SWIFT_ENUM(NSInteger, HVCompatibleBackgroundBehavior, open) {
 /// </ul>
   HVCompatibleBackgroundBehaviorContinuePlaying = 4,
 };
+
+
+/// An Objective-C compatible wrapper around Lottie’s DictionaryTextProvider.
+/// Use in tandem with CompatibleAnimationView to supply text to LottieAnimationView
+/// when using Lottie in Objective-C.
+SWIFT_CLASS("_TtC12HyperSnapSDK34HVCompatibleDictionaryTextProvider")
+@interface HVCompatibleDictionaryTextProvider : NSObject
+- (nonnull instancetype)initWithValues:(NSDictionary<NSString *, NSString *> * _Nonnull)values OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 /// An Objective-C compatible wrapper around Lottie’s RenderingEngineOption enum. Pass in an option
 /// to the CompatibleAnimationView initializers to configure the rendering engine for the view.
