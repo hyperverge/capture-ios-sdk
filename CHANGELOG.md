@@ -1,3 +1,7 @@
+#### 4.22.2 [29 Apr 2024]
+- Enhancements:
+ - Made default config fetch non-blocking
+
 #### 4.22.1 [29 Apr 2024]
 - Enhancements:
   - Add ability to pre-load icons present in UI config

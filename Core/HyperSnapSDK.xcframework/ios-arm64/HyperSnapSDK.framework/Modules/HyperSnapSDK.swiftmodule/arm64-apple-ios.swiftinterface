@@ -2348,8 +2348,8 @@ public struct HVUILogos : Swift.Codable {
 @_inheritsConvenienceInitializers @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
-  @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: @escaping (HyperSnapSDK.HVError?) -> Swift.Void)
-  @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: @escaping (_ error: HyperSnapSDK.HVError?) -> Swift.Void)
+  @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: ((HyperSnapSDK.HVError?) -> Swift.Void)?)
+  @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: ((_ error: HyperSnapSDK.HVError?) -> Swift.Void)?)
   @objc public static func logEvent(_ name: Swift.String, _ properties: [Swift.String : Any])
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
