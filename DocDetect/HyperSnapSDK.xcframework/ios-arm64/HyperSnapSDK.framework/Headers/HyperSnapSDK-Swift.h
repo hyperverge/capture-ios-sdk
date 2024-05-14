@@ -1566,8 +1566,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 /// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
 ///
 + (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region;
-+ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region initializerCallback:(void (^ _Nonnull)(HVError * _Nullable))initializerCallback;
-+ (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region initializerCallback:(void (^ _Nonnull)(HVError * _Nullable))initializerCallback;
++ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region initializerCallback:(void (^ _Nullable)(HVError * _Nullable))initializerCallback;
++ (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region initializerCallback:(void (^ _Nullable)(HVError * _Nullable))initializerCallback;
 + (void)logEvent:(NSString * _Nonnull)name :(NSDictionary<NSString *, id> * _Nonnull)properties;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
