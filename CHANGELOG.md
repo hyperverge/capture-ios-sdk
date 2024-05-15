@@ -1,6 +1,6 @@
-#### 4.22.2 [29 Apr 2024]
+#### 4.22.2 [14 May 2024]
 - Enhancements:
- - Made default config fetch non-blocking
+  - Make default config fetch non-blocking API call
 
 #### 4.22.1 [29 Apr 2024]
 - Enhancements:
