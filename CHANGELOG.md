@@ -1,3 +1,9 @@
+#### 4.22.3 [22 May 2024]
+- Enhancements:
+    - Add loader view when feature config is being fetched for capture screens
+- Bug Fixes :
+    - Fix for overlapping camera view constraints on document capture screen
+    
 #### 4.22.2 [14 May 2024]
 - Enhancements:
   - Make default config fetch non-blocking API call
