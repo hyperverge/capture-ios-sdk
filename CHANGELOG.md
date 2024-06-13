@@ -1,3 +1,7 @@
+#### 4.23.0 [13 Jun 2024]
+- Enhancements:
+    - Add support for iOS triple camera mode in QR scanner
+
 #### 4.22.3 [22 May 2024]
 - Enhancements:
     - Add loader view when feature config is being fetched for capture screens
