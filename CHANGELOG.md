@@ -1,3 +1,7 @@
+#### 4.23.1 [26 Jul 2024]
+- Enhancements:
+    - Enable doc capture button only after camera is initialised
+    
 #### 4.23.0 [13 Jun 2024]
 - Enhancements:
     - Add support for iOS triple camera mode in QR scanner
