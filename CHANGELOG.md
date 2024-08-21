@@ -1,3 +1,8 @@
+#### 4.24.0 [21 Aug 2024]
+- Enhancements:
+    - Add UI config support for custom background image for non-capture screens
+    - Add UI config support for capture-screen related UI elements
+
 #### 4.23.1 [26 Jul 2024]
 - Enhancements:
     - Enable doc capture button only after camera is initialised

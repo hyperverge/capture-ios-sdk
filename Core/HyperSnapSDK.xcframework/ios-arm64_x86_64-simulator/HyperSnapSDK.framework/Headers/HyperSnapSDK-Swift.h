@@ -427,6 +427,16 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVAnimationSubview")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIImage;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVBackgroundImageView")
+@interface HVBackgroundImageView : UIImageView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
@@ -481,10 +491,11 @@ typedef SWIFT_ENUM(NSInteger, HVCardUIState, open) {
   HVCardUIStateMoveAway = 3,
 };
 
-@class UIImage;
 
+IB_DESIGNABLE
 SWIFT_CLASS("_TtC12HyperSnapSDK21HVClientLogoImageView")
 @interface HVClientLogoImageView : UIImageView
+@property (nonatomic) IBInspectable BOOL isCaptureScreen;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithImage:(UIImage * _Nullable)image SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage SWIFT_UNAVAILABLE;
@@ -646,8 +657,10 @@ typedef SWIFT_ENUM(NSInteger, HVCompatibleRenderingEngineOption, open) {
 };
 
 
+IB_DESIGNABLE
 SWIFT_CLASS("_TtC12HyperSnapSDK18HVDescriptionLabel")
 @interface HVDescriptionLabel : UILabel
+@property (nonatomic) IBInspectable BOOL isCaptureScreen;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
 + (void)setTextAlignment:(NSTextAlignment)alignment;
@@ -1457,8 +1470,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVSessionResponse")
 @end
 
 
+IB_DESIGNABLE
 SWIFT_CLASS("_TtC12HyperSnapSDK13HVStatusLabel")
 @interface HVStatusLabel : UILabel
+@property (nonatomic) IBInspectable BOOL isCaptureScreen;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)drawTextInRect:(CGRect)rect;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
@@ -1496,8 +1511,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVSubtitleLabel") SWIFT_DEPRECATED_MSG("Use UIC
 @end
 
 
+IB_DESIGNABLE
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVTitleLabel")
 @interface HVTitleLabel : UILabel
+@property (nonatomic) IBInspectable BOOL isCaptureScreen;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
 + (void)setTextColor:(UIColor * _Nonnull)color;
@@ -2162,6 +2179,16 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVAnimationSubview")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIImage;
+
+SWIFT_CLASS("_TtC12HyperSnapSDK21HVBackgroundImageView")
+@interface HVBackgroundImageView : UIImageView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage SWIFT_UNAVAILABLE;
+@end
+
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVBaseConfig")
 @interface HVBaseConfig : NSObject
@@ -2216,10 +2243,11 @@ typedef SWIFT_ENUM(NSInteger, HVCardUIState, open) {
   HVCardUIStateMoveAway = 3,
 };
 
-@class UIImage;
 
+IB_DESIGNABLE
 SWIFT_CLASS("_TtC12HyperSnapSDK21HVClientLogoImageView")
 @interface HVClientLogoImageView : UIImageView
+@property (nonatomic) IBInspectable BOOL isCaptureScreen;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithImage:(UIImage * _Nullable)image SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage SWIFT_UNAVAILABLE;
@@ -2381,8 +2409,10 @@ typedef SWIFT_ENUM(NSInteger, HVCompatibleRenderingEngineOption, open) {
 };
 
 
+IB_DESIGNABLE
 SWIFT_CLASS("_TtC12HyperSnapSDK18HVDescriptionLabel")
 @interface HVDescriptionLabel : UILabel
+@property (nonatomic) IBInspectable BOOL isCaptureScreen;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
 + (void)setTextAlignment:(NSTextAlignment)alignment;
@@ -3192,8 +3222,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVSessionResponse")
 @end
 
 
+IB_DESIGNABLE
 SWIFT_CLASS("_TtC12HyperSnapSDK13HVStatusLabel")
 @interface HVStatusLabel : UILabel
+@property (nonatomic) IBInspectable BOOL isCaptureScreen;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)drawTextInRect:(CGRect)rect;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
@@ -3231,8 +3263,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVSubtitleLabel") SWIFT_DEPRECATED_MSG("Use UIC
 @end
 
 
+IB_DESIGNABLE
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVTitleLabel")
 @interface HVTitleLabel : UILabel
+@property (nonatomic) IBInspectable BOOL isCaptureScreen;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 + (void)setFont:(UIFont * _Nonnull)font;
 + (void)setTextColor:(UIColor * _Nonnull)color;

@@ -1519,7 +1519,11 @@ final public class HVSizeValueProvider {
   final public func hasUpdate(frame _: CoreFoundation.CGFloat) -> Swift.Bool
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVClientLogoImageView : UIKit.UIImageView {
+@objc @IBDesignable @_Concurrency.MainActor(unsafe) public class HVClientLogoImageView : UIKit.UIImageView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var isCaptureScreen: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
@@ -1565,15 +1569,24 @@ final public class HVSizeValueProvider {
   @objc @_Concurrency.MainActor(unsafe) public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVTitleLabel : UIKit.UILabel {
+@objc @IBDesignable @_Concurrency.MainActor(unsafe) public class HVTitleLabel : UIKit.UILabel {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var isCaptureScreen: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func updateUI()
   @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVDescriptionLabel : UIKit.UILabel {
+@objc @IBDesignable @_Concurrency.MainActor(unsafe) public class HVDescriptionLabel : UIKit.UILabel {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var isCaptureScreen: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor(unsafe) public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
@@ -1605,7 +1618,11 @@ final public class HVSizeValueProvider {
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class HVStatusLabel : UIKit.UILabel {
+@objc @IBDesignable @_Concurrency.MainActor(unsafe) public class HVStatusLabel : UIKit.UILabel {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var isCaptureScreen: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func drawText(in rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
@@ -1642,6 +1659,10 @@ final public class HVSizeValueProvider {
   @objc @_Concurrency.MainActor(unsafe) public static func setTextColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor(unsafe) public static func setShadowOffset(_ offset: CoreFoundation.CGSize)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class HVBackgroundImageView : UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
@@ -2008,6 +2029,15 @@ public struct HVUIColor : Swift.Codable {
   public var statusTextColor: Swift.String {
     get
   }
+  public var captureScreenTitleTextColor: Swift.String {
+    get
+  }
+  public var captureScreenDescriptionTextColor: Swift.String {
+    get
+  }
+  public var captureScreenStatusTextColor: Swift.String {
+    get
+  }
   public var statementHelperTextColor: Swift.String {
     get
   }
@@ -2091,6 +2121,7 @@ public struct HVUIColor : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct HVUIConfig : Swift.Codable {
+  public var backgroundImage: Swift.String?
   public var colors: HyperSnapSDK.HVUIColor?
   public var font: HyperSnapSDK.HVUIFont?
   public var fontWeight: HyperSnapSDK.HVUIFontWeight?
@@ -2269,6 +2300,9 @@ public struct HVUIIcons : Swift.Codable {
   public var backButtonIcon: HyperSnapSDK.HVUIIconProperties {
     get
   }
+  public var captureScreenBackButtonIcon: HyperSnapSDK.HVUIIconProperties {
+    get
+  }
   public init()
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -2339,6 +2373,9 @@ public struct HVUILineHeight : Swift.Codable {
 }
 public struct HVUILogos : Swift.Codable {
   public var clientLogo: Swift.String {
+    get
+  }
+  public var captureScreenClientLogo: Swift.String {
     get
   }
   public init()
