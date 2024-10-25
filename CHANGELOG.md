@@ -1,5 +1,5 @@
 
-#### 4.25.0 [21 Aug 2024]
+#### 4.25.0 [25 Oct 2024]
 - Enhancements:
     - Add support for `submittedTimestamp` in HVResponse for doc & face capture
     - Add support for fallback cameraDevice when discoverSession fails
