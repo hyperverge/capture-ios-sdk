@@ -78,7 +78,7 @@
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/4fg-ZS-N1N-view-JEy-Ej-q0e.nib</key>
 		<data>
-		YA8P3XRd2s/bCZFaCYD3j77/MqI=
+		PxerCOuib0gsMLp1A52SAOz9DDQ=
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/CameraPermissionView.nib</key>
 		<data>
@@ -138,35 +138,35 @@
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/X28-NM-fAr-view-LoJ-eo-ZkA.nib</key>
 		<data>
-		CLl0sKxkPKWBwsNLFddfdqXrzN0=
+		SWDNNRCJUH6L48pRLk8lsYoLqJ8=
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/gCh-3x-nUM-view-8oc-3b-U5W.nib</key>
 		<data>
-		CzhHDr2gD0gXc+DfN3T38PdSYWI=
+		iDpEWm0n0yUYjY+835ZdcmxEBgI=
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/oKX-YD-dVH-view-M3V-FI-hJ0.nib</key>
 		<data>
-		J4MG08/Uz3ElDxMDJI9BKUJuv3s=
+		mDnbr82TRkT3Pb6TQ25hWdFH5RA=
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/qVG-fv-wg9-view-Fzv-RR-Zik.nib</key>
 		<data>
-		D59d6iBFyczxD2PgZgfjWYkVfTc=
+		FXNR2BkXAjsjf1GIj9l8pxg7Ask=
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/rZu-Sr-XNX-view-V7e-qd-0oS.nib</key>
 		<data>
-		jRH2HwRQvuPfSgFJM41hdaYtsJw=
+		Gd0g4zr9+T/Qx0n5m4lHBmRryws=
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/x6s-8e-c2z-view-fsm-ON-Vee.nib</key>
 		<data>
-		+TtDviuHOmsjvdlSwbRrxGlb/JE=
+		AZANavoiPuCZwb0jw2Vm2KJKQew=
 		</data>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/zO2-8S-LAx-view-ebP-XP-QMS.nib</key>
 		<data>
-		vBMpksG1fMSAecDGs+K1T1WyNDY=
+		y2CpRdeU8VZ+qiwUjucr9K6MF0E=
 		</data>
 		<key>HVResources.bundle/Info.plist</key>
 		<data>
-		+SaTBLDYS6ByhFsxnWPGVipVgdo=
+		9POphIZup6mY3Q8fLl0ucrynJcY=
 		</data>
 		<key>HVResources.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -178,7 +178,7 @@
 		</data>
 		<key>Headers/HyperSnapSDK-Swift.h</key>
 		<data>
-		j1uK6iyZf2GwsTjNv2KQE9WEawg=
+		TVOci5Sbffdzn6DTLfZNDkL8nM4=
 		</data>
 		<key>Headers/HyperSnapSDK-umbrella.h</key>
 		<data>
@@ -190,15 +190,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		s0bKJTIO7yhs+B65hN2LOGiSKdI=
+		noAM5kW+BIdrFcKOO3cWMVP8tg4=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		31htq+NqX+GcM8HAyNs9hc8JBr4=
+		z1ydgxUNZBnDtU3bElPe+EJWSqc=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		DLhEwllV1x1879fk6nLexk7bUP8=
+		hwIeHz6FRMOLSQyxj2I0DrYNwnY=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -206,19 +206,19 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		DLhEwllV1x1879fk6nLexk7bUP8=
+		hwIeHz6FRMOLSQyxj2I0DrYNwnY=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		CWYN8268sQzQXnComM3NuXoYMO8=
+		m/Aal0/1FFQglmB/oDuYi5ozw+4=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		EUN0JukPE4NGiiafp5B7ZPTVakM=
+		h0LWOUuX4gBbihQu3SPrMkgdMGw=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		4a1Jr2gm+rjzzzI9sdI5eMgFZ+s=
+		ayLlCG6BX6+nbGQMCkoUX9QiunM=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -226,11 +226,11 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		4a1Jr2gm+rjzzzI9sdI5eMgFZ+s=
+		ayLlCG6BX6+nbGQMCkoUX9QiunM=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		dqinB9ym6TVn6eeYwfONYBT3d9o=
+		0bS1cOfWOfkhnNgYAy/8hKL1ZuQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -441,11 +441,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YA8P3XRd2s/bCZFaCYD3j77/MqI=
+			PxerCOuib0gsMLp1A52SAOz9DDQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			vFmuVRonI9KXivJWU6V5z10ir0yLqTxFWYDIsDF5gyA=
+			DzRyRs6AxfegLBraupD+9EDUXoX7cm78KScVvq+LmcQ=
 			</data>
 		</dict>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/CameraPermissionView.nib</key>
@@ -606,88 +606,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CLl0sKxkPKWBwsNLFddfdqXrzN0=
+			SWDNNRCJUH6L48pRLk8lsYoLqJ8=
 			</data>
 			<key>hash2</key>
 			<data>
-			83nYXeotMLqbLsO0e15dtMmaJ3xWUqiTkz53S1ghBRQ=
+			8aQMcZ5gAFo6fO5eQR6P4/XCogI4m9CZPzTr3o+dppc=
 			</data>
 		</dict>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/gCh-3x-nUM-view-8oc-3b-U5W.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CzhHDr2gD0gXc+DfN3T38PdSYWI=
+			iDpEWm0n0yUYjY+835ZdcmxEBgI=
 			</data>
 			<key>hash2</key>
 			<data>
-			0fTyesjXjCXbccKBYBLo8HE8dXWKlUst62bY9ffHVNc=
+			gXH5OppWf4PmoQ5pr8tDVwhHXrHvBEQB7rSO4dmXbFg=
 			</data>
 		</dict>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/oKX-YD-dVH-view-M3V-FI-hJ0.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			J4MG08/Uz3ElDxMDJI9BKUJuv3s=
+			mDnbr82TRkT3Pb6TQ25hWdFH5RA=
 			</data>
 			<key>hash2</key>
 			<data>
-			NPCIX2lUEZmr7SBI3CgUEGqxMdIz+VgVyDCyURlxBq0=
+			MX1fe6kV1/vOL1571oUD8XY55qTYxYHEwO64yK1IYDo=
 			</data>
 		</dict>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/qVG-fv-wg9-view-Fzv-RR-Zik.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			D59d6iBFyczxD2PgZgfjWYkVfTc=
+			FXNR2BkXAjsjf1GIj9l8pxg7Ask=
 			</data>
 			<key>hash2</key>
 			<data>
-			5EGKHrBPJwfAuQ3vE5ZpgxIwAq9bHU748n1TKCZXvck=
+			g0GLauvAjKrGeQZqGgRNopuaZ4azs2jAamNx2VD2wDk=
 			</data>
 		</dict>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/rZu-Sr-XNX-view-V7e-qd-0oS.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jRH2HwRQvuPfSgFJM41hdaYtsJw=
+			Gd0g4zr9+T/Qx0n5m4lHBmRryws=
 			</data>
 			<key>hash2</key>
 			<data>
-			4B+8RL0779ohATrxg+DgKXH3tXYlBdVC/429Gfuel/4=
+			fttctYeiCE+XEo1vu/bk2T2R7d4w2vINdy5JGUS4mZw=
 			</data>
 		</dict>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/x6s-8e-c2z-view-fsm-ON-Vee.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+TtDviuHOmsjvdlSwbRrxGlb/JE=
+			AZANavoiPuCZwb0jw2Vm2KJKQew=
 			</data>
 			<key>hash2</key>
 			<data>
-			fv3r+V8iyJMZaaw+jS/Zn1ac9rTbs+ZYYda4QyCmYKw=
+			nZFjqmpa28w4Mdt729Jh5ZUn6tdVyDAcD0pv8l8Hu+w=
 			</data>
 		</dict>
 		<key>HVResources.bundle/HyperSnapPreview.storyboardc/zO2-8S-LAx-view-ebP-XP-QMS.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vBMpksG1fMSAecDGs+K1T1WyNDY=
+			y2CpRdeU8VZ+qiwUjucr9K6MF0E=
 			</data>
 			<key>hash2</key>
 			<data>
-			MASFVtvYr00jAUp3tD/TpNYMzmqQAQA9aY/byzF1byI=
+			Fs8bd8YYzgdRY0i/nk+/YBA2wR4ygbKLY82BEjbE6HI=
 			</data>
 		</dict>
 		<key>HVResources.bundle/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+SaTBLDYS6ByhFsxnWPGVipVgdo=
+			9POphIZup6mY3Q8fLl0ucrynJcY=
 			</data>
 			<key>hash2</key>
 			<data>
-			nG+dXpAyUnM4M1uPnan8pU2BMO1IRaZ2I/Oax0Svvdo=
+			coDY3ltAxOsz2Q8SCF4ZEwh+0VDIe9IaARBN02OgFRc=
 			</data>
 		</dict>
 		<key>HVResources.bundle/PrivacyInfo.xcprivacy</key>
@@ -716,11 +716,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			j1uK6iyZf2GwsTjNv2KQE9WEawg=
+			TVOci5Sbffdzn6DTLfZNDkL8nM4=
 			</data>
 			<key>hash2</key>
 			<data>
-			kWiSe71y1s29nhjWpgqdUI7omRQdpOZcvGLpISVKkHg=
+			CR/KDbtq7CY7rwyQ2Q5dlkur1Gnny0NftI2bYuF/WNY=
 			</data>
 		</dict>
 		<key>Headers/HyperSnapSDK-umbrella.h</key>
@@ -749,22 +749,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			31htq+NqX+GcM8HAyNs9hc8JBr4=
+			z1ydgxUNZBnDtU3bElPe+EJWSqc=
 			</data>
 			<key>hash2</key>
 			<data>
-			sqOATnGQjDT3i45co8dOq1e/QBMqhhAvMKcaWysLquE=
+			e4yTNVoS2J4Osy8K1XiRs9lFjy7Rzxgk4nOqFtez/X4=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DLhEwllV1x1879fk6nLexk7bUP8=
+			hwIeHz6FRMOLSQyxj2I0DrYNwnY=
 			</data>
 			<key>hash2</key>
 			<data>
-			V9Vr32k/kkBy7Wg1fJNeqKyyu23yB4iPMzWXhwrrRqo=
+			MN6y5eI+gGOs+h5vZlM7olqC73o/t/OvYDzB38yJVPw=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -782,44 +782,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DLhEwllV1x1879fk6nLexk7bUP8=
+			hwIeHz6FRMOLSQyxj2I0DrYNwnY=
 			</data>
 			<key>hash2</key>
 			<data>
-			V9Vr32k/kkBy7Wg1fJNeqKyyu23yB4iPMzWXhwrrRqo=
+			MN6y5eI+gGOs+h5vZlM7olqC73o/t/OvYDzB38yJVPw=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CWYN8268sQzQXnComM3NuXoYMO8=
+			m/Aal0/1FFQglmB/oDuYi5ozw+4=
 			</data>
 			<key>hash2</key>
 			<data>
-			3eBRZBDi1OrmewzZ7j8MmIZP4NAwT3zb1ONJqfTTa2o=
+			kQ9SZ7iPcT2JK56VXXTd/t8B+t9lqUEbskeEWZwHWIk=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EUN0JukPE4NGiiafp5B7ZPTVakM=
+			h0LWOUuX4gBbihQu3SPrMkgdMGw=
 			</data>
 			<key>hash2</key>
 			<data>
-			X57x6Fv7wk1VK+9xHZ1wRuS78QYS6lakt2ta+bddJuA=
+			Qz5tENQuvI4T38QdtcnuE2qRe2le+291QM1Jgc5WlS0=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4a1Jr2gm+rjzzzI9sdI5eMgFZ+s=
+			ayLlCG6BX6+nbGQMCkoUX9QiunM=
 			</data>
 			<key>hash2</key>
 			<data>
-			FYiCkBlpQWozAMIai3FOT6SpWkySXYxmXxpC/Co+1go=
+			rrrEJ5YwSzG5dFQjE/So6VbKpBOtFkZw2dGybkIC8pY=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -837,22 +837,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4a1Jr2gm+rjzzzI9sdI5eMgFZ+s=
+			ayLlCG6BX6+nbGQMCkoUX9QiunM=
 			</data>
 			<key>hash2</key>
 			<data>
-			FYiCkBlpQWozAMIai3FOT6SpWkySXYxmXxpC/Co+1go=
+			rrrEJ5YwSzG5dFQjE/So6VbKpBOtFkZw2dGybkIC8pY=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dqinB9ym6TVn6eeYwfONYBT3d9o=
+			0bS1cOfWOfkhnNgYAy/8hKL1ZuQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			S5lNaxmhvlSdWSKYB28K6ELf2MPSpBtn85hOG5H8Jbs=
+			RDZ7ZnSvRsin/FR6AcNUHh6u8oZIwB8jQuKz6h0S6Kg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

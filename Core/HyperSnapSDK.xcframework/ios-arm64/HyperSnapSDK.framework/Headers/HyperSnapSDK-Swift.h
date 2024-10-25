@@ -303,6 +303,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+
 @class NSCoder;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK17AdaptiveStackView")
@@ -464,6 +465,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, NSArray<NSString *> *> * _Nonnull gestureLivenessImageUrls;
 @property (nonatomic, readonly) double latitude;
 @property (nonatomic, readonly) double longitude;
+@property (nonatomic, readonly) int64_t submittedTimestamp;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

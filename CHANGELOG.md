@@ -1,3 +1,11 @@
+
+#### 4.25.0 [21 Aug 2024]
+- Enhancements:
+    - Add support for `submittedTimestamp` in HVResponse for doc & face capture
+    - Add support for fallback cameraDevice when discoverSession fails
+- Bug Fixes 
+    - Fix retry message label image alignment in retake screens
+
 #### 4.24.0 [21 Aug 2024]
 - Enhancements:
     - Add UI config support for custom background image for non-capture screens
