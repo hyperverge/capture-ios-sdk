@@ -240,6 +240,8 @@ public class EncryptedMessage : HyperSnapSDK.Message {
   public static let EVENT_BRANDING_CHECK_API_ERROR: Swift.String
   public static let EVENT_REMOTE_CONFIG_API_SUCCESSFUL: Swift.String
   public static let EVENT_REMOTE_CONFIG_API_ERROR: Swift.String
+  public static let EVENT_CAMERA_DEVICE_DISCOVERY_SESSION_USED: Swift.String
+  public static let EVENT_CAMERA_DEVICE_DEFAULT_USED: Swift.String
   @objc deinit
 }
 extension UIKit.UIColor {
@@ -472,6 +474,9 @@ public enum HVAnyValueProviderStorage {
     get
   }
   @objc public var longitude: Swift.Double {
+    get
+  }
+  @objc public var submittedTimestamp: Swift.Int64 {
     get
   }
   @objc deinit
@@ -2587,6 +2592,7 @@ extension HyperSnapSDK.Key {
   public static let DISTINCT_ID: Swift.String
   public static let TIME: Swift.String
   public static let CURRENT_TIME: Swift.String
+  public static let CAMERA_DEVICE_TYPE: Swift.String
   @objc deinit
 }
 extension QuartzCore.CALayer {
