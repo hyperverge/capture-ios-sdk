@@ -1,4 +1,7 @@
 
+#### 4.26.0 [5 Nov 2024]
+- Enhancements:
+    - Add uiConfig support for `processingTitleLabel`, `processingHintLabel`
 #### 4.25.0 [25 Oct 2024]
 - Enhancements:
     - Add support for `submittedTimestamp` in HVResponse for doc & face capture

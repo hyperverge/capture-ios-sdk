@@ -1929,6 +1929,12 @@ public struct HVUIAlignment : Swift.Codable {
   public var nfcStatusTextAlignment: Swift.String {
     get
   }
+  public var processingTitleLabelAlignment: Swift.String {
+    get
+  }
+  public var processingHintLabelAlignment: Swift.String {
+    get
+  }
   public init()
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -2005,6 +2011,12 @@ public struct HVUICharSpacing : Swift.Codable {
   public var alertTextBoxTextCharSpacing: Swift.Float {
     get
   }
+  public var processingTitleLabelCharSpacing: Swift.Float {
+    get
+  }
+  public var processingHintLabelCharSpacing: Swift.Float {
+    get
+  }
   public var pickerTextCharSpacing: Swift.Float {
     get
   }
@@ -2047,6 +2059,12 @@ public struct HVUIColor : Swift.Codable {
     get
   }
   public var captureScreenStatusTextColor: Swift.String {
+    get
+  }
+  public var processingTitleLabelColor: Swift.String {
+    get
+  }
+  public var processingHintLabelColor: Swift.String {
     get
   }
   public var statementHelperTextColor: Swift.String {
@@ -2182,6 +2200,12 @@ public struct HVUIFont : Swift.Codable {
   public var alertTextBoxTextFont: Swift.String {
     get
   }
+  public var processingTitleLabelFont: Swift.String {
+    get
+  }
+  public var processingHintLabelFont: Swift.String {
+    get
+  }
   public var pickerTextFont: Swift.String {
     get
   }
@@ -2233,6 +2257,12 @@ public struct HVUIFontSize : Swift.Codable {
     get
   }
   public var alertTextBoxTextSize: Swift.Float {
+    get
+  }
+  public var processingTitleLabelSize: Swift.Float {
+    get
+  }
+  public var processingHintLabelSize: Swift.Float {
     get
   }
   public var pickerTextSize: Swift.Float {
@@ -2298,6 +2328,12 @@ public struct HVUIFontWeight : Swift.Codable {
     get
   }
   public var nfcStatusTextWeight: Swift.String {
+    get
+  }
+  public var processingTitleLabelWeight: Swift.String {
+    get
+  }
+  public var processingHintLabelWeight: Swift.String {
     get
   }
   public init()
@@ -2376,6 +2412,12 @@ public struct HVUILineHeight : Swift.Codable {
     get
   }
   public var nfcStatusTextLineHeight: Swift.Float {
+    get
+  }
+  public var processingTitleLabelLineHeight: Swift.Float {
+    get
+  }
+  public var processingHintLabelLineHeight: Swift.Float {
     get
   }
   public init()
