@@ -40,6 +40,17 @@ public typealias LottieCompletionBlock = (Swift.Bool) -> Swift.Void
 public typealias AnimationFrameTime = CoreFoundation.CGFloat
 public typealias AnimationProgressTime = CoreFoundation.CGFloat
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class HVBrandingLayout : UIKit.UIStackView {
+  @_Concurrency.MainActor(unsafe) public var labelColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public var shieldLogoColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public var label: UIKit.UILabel {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var shieldLogo: UIKit.UIImageView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public func updateUI()
   @objc @_Concurrency.MainActor(unsafe) public func showBranding(show: Swift.Bool)
   @objc deinit
 }
@@ -732,7 +743,7 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
     @objc get
   }
-  @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ vcNew: UIKit.UIViewController) -> Swift.Void
+  @objc @_Concurrency.MainActor(unsafe) public var completionHandler: (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?, UIKit.UIViewController) -> Swift.Void
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc @_Concurrency.MainActor(unsafe) public static func start(_ callingVC: UIKit.UIViewController, hvDocConfig: HyperSnapSDK.HVDocConfig, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ viewController: UIKit.UIViewController) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
@@ -1476,6 +1487,7 @@ final public class HVPointValueProvider {
 }
 extension HyperSnapSDK.HVQRViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
@@ -2089,6 +2101,12 @@ public struct HVUIColor : Swift.Codable {
     get
   }
   public var captureButtonColor: Swift.String {
+    get
+  }
+  public var brandingColor: Swift.String {
+    get
+  }
+  public var shieldColor: Swift.String {
     get
   }
   public var retakeMessageColor: Swift.String {

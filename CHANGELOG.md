@@ -1,4 +1,9 @@
 
+#### 4.27.0 [20 Nov 2024]
+- Enhancements:
+    - Add support for solid background for capture screens
+    - Add support for color customisations to branding 
+
 #### 4.26.0 [5 Nov 2024]
 - Enhancements:
     - Add uiConfig support for `processingTitleLabel`, `processingHintLabel`
