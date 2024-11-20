@@ -1408,6 +1408,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 
 @interface HVQRViewController (SWIFT_EXTENSION(HyperSnapSDK))
 - (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
