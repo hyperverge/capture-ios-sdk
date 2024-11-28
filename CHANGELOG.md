@@ -1,4 +1,8 @@
 
+#### 4.28.0 [28 Nov 2024]
+- Enhancements:
+    - Add support for gradient backgrounds on buttons.
+    
 #### 4.27.0 [20 Nov 2024]
 - Enhancements:
     - Add support for solid background for capture screens

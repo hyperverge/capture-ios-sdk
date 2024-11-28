@@ -2174,6 +2174,7 @@ public struct HVUIConfig : Swift.Codable {
   public var icons: HyperSnapSDK.HVUIIcons?
   public var lineHeight: HyperSnapSDK.HVUILineHeight?
   public var charSpacing: HyperSnapSDK.HVUICharSpacing?
+  public var gradient: HyperSnapSDK.HVUIGradient?
   public init()
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -2346,6 +2347,37 @@ public struct HVUIFontWeight : Swift.Codable {
     get
   }
   public var processingHintLabelWeight: Swift.String {
+    get
+  }
+  public init()
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct HVUIGradient : Swift.Codable {
+  public var primaryButtonEnabledGradient: HyperSnapSDK.HVUIGradientProperties {
+    get
+  }
+  public var primaryButtonDisabledGradient: HyperSnapSDK.HVUIGradientProperties {
+    get
+  }
+  public var secondaryButtonEnabledGradient: HyperSnapSDK.HVUIGradientProperties {
+    get
+  }
+  public var secondaryButtonDisabledGradient: HyperSnapSDK.HVUIGradientProperties {
+    get
+  }
+  public var captureScreenEnabledButtonGradient: HyperSnapSDK.HVUIGradientProperties {
+    get
+  }
+  public var captureScreenDisabledButtonGradient: HyperSnapSDK.HVUIGradientProperties {
+    get
+  }
+  public init()
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct HVUIGradientProperties : Swift.Codable {
+  public var imageUrl: Swift.String {
     get
   }
   public init()
