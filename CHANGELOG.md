@@ -1,4 +1,10 @@
 
+#### 4.28.1 [17 Dec 2024]
+- Enhancements:
+    - Enable private access folder for images saved within app's directory
+- Bug Fixes:
+    - Fix crash happening when metadata is attached to face camera
+    
 #### 4.28.0 [28 Nov 2024]
 - Enhancements:
     - Add support for gradient backgrounds on buttons.
