@@ -736,6 +736,7 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
     @objc override dynamic public init()
     @objc deinit
   }
+  @objc public func setModuleId(moduleId: Swift.String)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -883,6 +884,7 @@ public protocol HVDotLottieCacheProvider {
     @objc override dynamic public init()
     @objc deinit
   }
+  @objc public func setModuleId(moduleId: Swift.String)
   @objc override dynamic public init()
   @objc deinit
 }
