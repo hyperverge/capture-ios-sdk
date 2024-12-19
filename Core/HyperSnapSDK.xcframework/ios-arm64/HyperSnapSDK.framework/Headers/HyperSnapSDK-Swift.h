@@ -709,6 +709,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setEnableDocumentUpload:(BOOL)enable;
 - (void)setUploadFileTypes:(NSArray<NSString *> * _Nullable)fileTypes;
 - (void)setOCRAPIDetails:(NSString * _Nonnull)endpoint documentSide:(enum DocumentSide)documentSide params:(NSDictionary<NSString *, id> * _Nullable)params headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers;
+- (void)setModuleIdWithModuleId:(NSString * _Nonnull)moduleId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1025,6 +1026,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setNavigationController:(UINavigationController * _Nonnull)navVC SWIFT_DEPRECATED_MSG("This function is not necessary anymore");
 - (void)setShouldDismissVCAutomatically:(BOOL)shouldDismiss;
 - (void)setShouldRejectFaceNotStraight:(BOOL)shouldReject;
+- (void)setModuleIdWithModuleId:(NSString * _Nonnull)moduleId;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
