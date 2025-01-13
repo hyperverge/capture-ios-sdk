@@ -1,7 +1,7 @@
 
 #### 4.29.1 [13 Jan 2025]
 - Enhancements:
-    - Addsupport for additional data to enhance security during face capture.
+    - Add support for additional data to enhance security during face capture.
     - Fix the black padding issue during video recording.
     
 #### 4.29.0 [19 Dec 2024]
