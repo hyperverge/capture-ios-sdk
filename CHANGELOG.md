@@ -1,4 +1,11 @@
 
+#### 4.29.2 [21 Jan 2025]
+- Enhancements:
+    - Optimise camera load time for face capture screens
+- Bug Fixes:
+    - Fix document capture aspect ratio bug for a4 
+
+
 #### 4.29.1 [13 Jan 2025]
 - Enhancements:
     - Add support for additional data to enhance security during face capture.
