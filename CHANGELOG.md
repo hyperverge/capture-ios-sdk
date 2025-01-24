@@ -1,4 +1,8 @@
 
+#### 4.30.0 [24 Jan 2025]
+- Enhancements:
+    - Add support for consent screen before selfie capture
+
 #### 4.29.2 [21 Jan 2025]
 - Enhancements:
     - Optimise camera load time for face capture screens

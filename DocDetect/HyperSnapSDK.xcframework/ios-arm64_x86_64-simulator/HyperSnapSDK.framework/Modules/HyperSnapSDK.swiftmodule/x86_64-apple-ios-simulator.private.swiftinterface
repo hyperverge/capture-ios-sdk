@@ -810,6 +810,17 @@ public protocol HVDotLottieCacheProvider {
   @objc public func getErrorCode() -> Swift.Int
   @objc deinit
 }
+@_inheritsConvenienceInitializers @objc public class HVExternalConfigs : ObjectiveC.NSObject {
+  @objc public var metadataMap: [Swift.String : Swift.String]?
+  @objc override dynamic public init()
+  @_inheritsConvenienceInitializers @objc public class Builder : ObjectiveC.NSObject {
+    @objc public func withMetadataMap(_ metadataMap: [Swift.String : Swift.String]?) -> HyperSnapSDK.HVExternalConfigs.Builder
+    @objc public func build() -> HyperSnapSDK.HVExternalConfigs
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @objc public class HVFaceConfig : HyperSnapSDK.HVBaseConfig {
   @objc public func setShouldEnableOverlay(_ enableOverlay: Swift.Bool)
   @objc public var textConfig: HyperSnapSDK.HVFaceConfig.FaceTextConfig
@@ -2500,6 +2511,7 @@ public struct HVUILogos : Swift.Codable {
   @objc public static func setTimeoutIntervalForRequest(_ timeout: Swift.Double)
   @objc public static func setShouldSecure(_ shouldSecure: Swift.Bool)
   @objc public static func setShouldUseLocation(_ shouldUseLocation: Swift.Bool)
+  @objc public static func setExternalConfigs(_ externalConfigs: HyperSnapSDK.HVExternalConfigs)
   public static func setUiConfig(_ uiConfig: HyperSnapSDK.HVUIConfig?)
   public static func getUiConfig() -> HyperSnapSDK.HVUIConfig
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)

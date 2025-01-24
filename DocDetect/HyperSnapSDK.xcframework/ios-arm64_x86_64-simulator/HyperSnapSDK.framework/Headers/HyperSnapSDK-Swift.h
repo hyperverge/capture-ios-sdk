@@ -967,6 +967,23 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVErrorRetakeLabel") SWIFT_DEPRECATED_MSG("Use 
 @end
 
 
+/// Metadata object to be used to pass custom metadata from any wrapper SDK or app
+SWIFT_CLASS("_TtC12HyperSnapSDK17HVExternalConfigs")
+@interface HVExternalConfigs : NSObject
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable metadataMap;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// Builder for HVExternalConfigs
+SWIFT_CLASS("_TtCC12HyperSnapSDK17HVExternalConfigs7Builder")
+@interface Builder : NSObject
+- (Builder * _Nonnull)withMetadataMap:(NSDictionary<NSString *, NSString *> * _Nullable)metadataMap SWIFT_WARN_UNUSED_RESULT;
+- (HVExternalConfigs * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK23HVFaceActivityIndicator") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVFaceActivityIndicator : UIActivityIndicatorView
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -1598,6 +1615,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setShouldSecure:(BOOL)shouldSecure;
 + (void)setShouldUseLocation:(BOOL)shouldUseLocation;
++ (void)setExternalConfigs:(HVExternalConfigs * _Nonnull)externalConfigs;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -1622,11 +1640,13 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 
 
 
+
 @interface UINavigationController (SWIFT_EXTENSION(HyperSnapSDK))
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @end
+
 
 
 
@@ -2724,6 +2744,23 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVErrorRetakeLabel") SWIFT_DEPRECATED_MSG("Use 
 @end
 
 
+/// Metadata object to be used to pass custom metadata from any wrapper SDK or app
+SWIFT_CLASS("_TtC12HyperSnapSDK17HVExternalConfigs")
+@interface HVExternalConfigs : NSObject
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable metadataMap;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// Builder for HVExternalConfigs
+SWIFT_CLASS("_TtCC12HyperSnapSDK17HVExternalConfigs7Builder")
+@interface Builder : NSObject
+- (Builder * _Nonnull)withMetadataMap:(NSDictionary<NSString *, NSString *> * _Nullable)metadataMap SWIFT_WARN_UNUSED_RESULT;
+- (HVExternalConfigs * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC12HyperSnapSDK23HVFaceActivityIndicator") SWIFT_DEPRECATED_MSG("Use UIConfig for UI cusomtisation")
 @interface HVFaceActivityIndicator : UIActivityIndicatorView
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -3355,6 +3392,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setShouldSecure:(BOOL)shouldSecure;
 + (void)setShouldUseLocation:(BOOL)shouldUseLocation;
++ (void)setExternalConfigs:(HVExternalConfigs * _Nonnull)externalConfigs;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;
@@ -3379,11 +3417,13 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 
 
 
+
 @interface UINavigationController (SWIFT_EXTENSION(HyperSnapSDK))
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @end
+
 
 
 
