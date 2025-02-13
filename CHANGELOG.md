@@ -1,4 +1,8 @@
 
+#### 4.30.1 [13 Feb 2025]
+- Bug Fixes:
+    - Fix camera bug with selfie retake flow
+    
 #### 4.30.0 [24 Jan 2025]
 - Enhancements:
     - Add support for consent screen before selfie capture
