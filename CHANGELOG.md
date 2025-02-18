@@ -1,4 +1,7 @@
-
+#### 4.31.0 [18 Feb 2025]
+- Enhancements:
+    - Security enhancements for face module
+    
 #### 4.30.1 [13 Feb 2025]
 - Bug Fixes:
     - Fix camera bug with selfie retake flow
