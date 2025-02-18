@@ -15,6 +15,7 @@ import CoreMIDI
 import CoreMedia
 import CoreMotion
 import CoreText
+import CryptoKit
 import Darwin
 import Dispatch
 import Foundation
@@ -54,16 +55,6 @@ public typealias AnimationProgressTime = CoreFoundation.CGFloat
   }
   @_Concurrency.MainActor(unsafe) public func updateUI()
   @objc @_Concurrency.MainActor(unsafe) public func showBranding(show: Swift.Bool)
-  @objc deinit
-}
-public class ClearMessage : HyperSnapSDK.Message {
-  final public let data: Foundation.Data
-  required public init(data: Foundation.Data)
-  convenience public init(string: Swift.String, using encoding: Swift.String.Encoding) throws
-  public func string(encoding: Swift.String.Encoding) throws -> Swift.String
-  public func encrypted(with key: HyperSnapSDK.PublicKey, padding: HyperSnapSDK.Padding) throws -> HyperSnapSDK.EncryptedMessage
-  public func signed(with key: HyperSnapSDK.PrivateKey, digestType: HyperSnapSDK.Signature.DigestType) throws -> HyperSnapSDK.Signature
-  public func verify(with key: HyperSnapSDK.PublicKey, signature: HyperSnapSDK.Signature, digestType: HyperSnapSDK.Signature.DigestType) throws -> Swift.Bool
   @objc deinit
 }
 extension HyperSnapSDK.HVLottieColor : Swift.Codable {
@@ -126,12 +117,6 @@ public enum DotLottieError : Swift.Error {
   case invalidData
   @available(*, deprecated, message: "Unused")
   case animationNotAvailable
-}
-public class EncryptedMessage : HyperSnapSDK.Message {
-  final public let data: Foundation.Data
-  required public init(data: Foundation.Data)
-  public func decrypted(with key: HyperSnapSDK.PrivateKey, padding: HyperSnapSDK.Padding) throws -> HyperSnapSDK.ClearMessage
-  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class Events {
   public static let EVENT_HYPERSNAPSDK_INITIALISED: Swift.String
@@ -514,6 +499,16 @@ public class HVBundleImageProvider : HyperSnapSDK.HVAnimationImageProvider {
     get
   }
 }
+public class HVClearMessage : HyperSnapSDK.HVMessage {
+  final public let data: Foundation.Data
+  required public init(data: Foundation.Data)
+  convenience public init(string: Swift.String, using encoding: Swift.String.Encoding) throws
+  public func string(encoding: Swift.String.Encoding) throws -> Swift.String
+  public func encrypted(with key: HyperSnapSDK.HVPublicKey, padding: HyperSnapSDK.HVRSAPadding) throws -> HyperSnapSDK.HVEncryptedMessage
+  public func signed(with key: HyperSnapSDK.HVPrivateKey, digestType: HyperSnapSDK.HVSignature.HVDigestType) throws -> HyperSnapSDK.HVSignature
+  public func verify(with key: HyperSnapSDK.HVPublicKey, signature: HyperSnapSDK.HVSignature, digestType: HyperSnapSDK.HVSignature.HVDigestType) throws -> Swift.Bool
+  @objc deinit
+}
 final public class HVColorValueProvider {
   public init(block: @escaping HyperSnapSDK.HVColorValueProvider.ColorValueBlock)
   public init(_ color: HyperSnapSDK.HVLottieColor)
@@ -799,6 +794,12 @@ public protocol HVDotLottieCacheProvider {
 @_hasMissingDesignatedInitializers final public class HVDotLottieFile {
   @objc deinit
 }
+public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
+  final public let data: Foundation.Data
+  required public init(data: Foundation.Data)
+  public func decrypted(with key: HyperSnapSDK.HVPrivateKey, padding: HyperSnapSDK.HVRSAPadding) throws -> HyperSnapSDK.HVClearMessage
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers @objc public class HVError : ObjectiveC.NSObject {
   public var errorMessage: Swift.String {
     get
@@ -826,6 +827,7 @@ public protocol HVDotLottieCacheProvider {
   @objc public var textConfig: HyperSnapSDK.HVFaceConfig.FaceTextConfig
   @objc public func setLivenessMode(_ livenessMode: HyperSnapSDK.HyperSnapParams.LivenessMode)
   @objc public func setShouldRecordVideo(_ shouldRecordvideo: Swift.Bool)
+  @objc public func setEncryptPayload(_ encryptPayload: Swift.Bool)
   @objc public func setFps(_ fps: Swift.Int)
   @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
   @objc public func setAutoCaptureDuration(_ duration: Swift.Int)
@@ -1421,6 +1423,18 @@ extension HyperSnapSDK.HVLottieLogger {
 }
 @available(*, deprecated, message: "Use DefaultAnimationCache instead, which is thread-safe and automatically responds to memory pressure.")
 public typealias HVLRUAnimationCache = HyperSnapSDK.HVDefaultAnimationCache
+public protocol HVMessage {
+  var data: Foundation.Data { get }
+  var base64String: Swift.String { get }
+  init(data: Foundation.Data)
+  init(base64Encoded base64String: Swift.String) throws
+}
+extension HyperSnapSDK.HVMessage {
+  public var base64String: Swift.String {
+    get
+  }
+  public init(base64Encoded base64String: Swift.String) throws
+}
 @objc @_inheritsConvenienceInitializers public class HVNetworkHelper : ObjectiveC.NSObject {
   @objc public static func makeOCRAPICall(endpoint: Swift.String, documentUri: Swift.String, qrCroppedImageUri: Swift.String? = nil, hvDocConfig: HyperSnapSDK.HVDocConfig? = nil, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
   @objc public static func makeFaceMatchCall(faceUri: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
@@ -1444,6 +1458,23 @@ final public class HVPointValueProvider {
     get
   }
   final public func hasUpdate(frame _: CoreFoundation.CGFloat) -> Swift.Bool
+  @objc deinit
+}
+public class HVPrivateKey : HyperSnapSDK.HVRSAKey {
+  final public let reference: Security.SecKey
+  final public let originalData: Foundation.Data?
+  public func pemString() throws -> Swift.String
+  required public init(reference: Security.SecKey) throws
+  required public init(data: Foundation.Data) throws
+  @objc deinit
+}
+public class HVPublicKey : HyperSnapSDK.HVRSAKey {
+  final public let reference: Security.SecKey
+  final public let originalData: Foundation.Data?
+  public func pemString() throws -> Swift.String
+  required public init(reference: Security.SecKey) throws
+  required public init(data: Foundation.Data) throws
+  public static func publicKeys(pemEncoded pemString: Swift.String) -> [HyperSnapSDK.HVPublicKey]
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class HVQRConfig : HyperSnapSDK.HVBaseConfig {
@@ -1529,6 +1560,27 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
   }
   @objc deinit
 }
+public protocol HVRSAKey : AnyObject {
+  var reference: Security.SecKey { get }
+  var originalData: Foundation.Data? { get }
+  init(data: Foundation.Data) throws
+  init(reference: Security.SecKey) throws
+  init(base64Encoded base64String: Swift.String) throws
+  init(pemEncoded pemString: Swift.String) throws
+  init(pemNamed pemName: Swift.String, in bundle: Foundation.Bundle) throws
+  init(derNamed derName: Swift.String, in bundle: Foundation.Bundle) throws
+  func pemString() throws -> Swift.String
+  func data() throws -> Foundation.Data
+  func base64String() throws -> Swift.String
+}
+extension HyperSnapSDK.HVRSAKey {
+  public func base64String() throws -> Swift.String
+  public func data() throws -> Foundation.Data
+  public init(base64Encoded base64String: Swift.String) throws
+  public init(pemEncoded pemString: Swift.String) throws
+  public init(pemNamed pemName: Swift.String, in bundle: Foundation.Bundle = Bundle.main) throws
+  public init(derNamed derName: Swift.String, in bundle: Foundation.Bundle = Bundle.main) throws
+}
 @_inheritsConvenienceInitializers @objc public class HVSessionResponse : ObjectiveC.NSObject {
   @objc public var hvError: HyperSnapSDK.HVError? {
     get
@@ -1536,6 +1588,27 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
   @objc public func isSuccess() -> Swift.Bool
   @objc public func getHVError() -> HyperSnapSDK.HVError?
   @objc override dynamic public init()
+  @objc deinit
+}
+public class HVSignature {
+  public enum HVDigestType {
+    case sha1
+    case sha224
+    case sha256
+    case sha384
+    case sha512
+    public static func == (a: HyperSnapSDK.HVSignature.HVDigestType, b: HyperSnapSDK.HVSignature.HVDigestType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  final public let data: Foundation.Data
+  public init(data: Foundation.Data)
+  convenience public init(base64Encoded base64String: Swift.String) throws
+  public var base64String: Swift.String {
+    get
+  }
   @objc deinit
 }
 final public class HVSizeValueProvider {
@@ -1934,6 +2007,145 @@ final public class HVSizeValueProvider {
 @objc @_Concurrency.MainActor(unsafe) public class AdaptiveStackView : UIKit.UIStackView {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init(coder aDecoder: Foundation.NSCoder)
   @objc deinit
+}
+public typealias HVRSAPadding = Security.SecPadding
+@_hasMissingDesignatedInitializers @objc(HVKeyPair) public class _objc_HVKeyPair : ObjectiveC.NSObject {
+  @objc final public let privateKey: HyperSnapSDK._objc_HVPrivateKey
+  @objc final public let publicKey: HyperSnapSDK._objc_HVPublicKey
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(HVSwiftyRSA) public class _objc_HVSwiftyRSA : ObjectiveC.NSObject {
+  @available(iOS 10.0, watchOS 3.0, tvOS 10.0, *)
+  @objc public class func generateRSAKeyPair(sizeInBits size: Swift.Int) throws -> HyperSnapSDK._objc_HVKeyPair
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(HVPublicKey) public class _objc_HVPublicKey : ObjectiveC.NSObject, HyperSnapSDK.HVRSAKey {
+  @objc public var reference: Security.SecKey {
+    @objc get
+  }
+  @objc public var originalData: Foundation.Data? {
+    @objc get
+  }
+  @objc public func pemString() throws -> Swift.String
+  @objc public func data() throws -> Foundation.Data
+  @objc public func base64String() throws -> Swift.String
+  required public init(swiftValue: HyperSnapSDK.HVPublicKey)
+  @objc required public init(data: Foundation.Data) throws
+  @objc required public init(reference: Security.SecKey) throws
+  @objc required public init(base64Encoded base64String: Swift.String) throws
+  @objc required public init(pemEncoded pemString: Swift.String) throws
+  @objc required public init(pemNamed pemName: Swift.String, in bundle: Foundation.Bundle) throws
+  @objc required public init(derNamed derName: Swift.String, in bundle: Foundation.Bundle) throws
+  @objc public static func publicKeys(pemEncoded pemString: Swift.String) -> [HyperSnapSDK._objc_HVPublicKey]
+  @objc deinit
+}
+@objc(HVPrivateKey) public class _objc_HVPrivateKey : ObjectiveC.NSObject, HyperSnapSDK.HVRSAKey {
+  @objc public var reference: Security.SecKey {
+    @objc get
+  }
+  @objc public var originalData: Foundation.Data? {
+    @objc get
+  }
+  @objc public func pemString() throws -> Swift.String
+  @objc public func data() throws -> Foundation.Data
+  @objc public func base64String() throws -> Swift.String
+  required public init(swiftValue: HyperSnapSDK.HVPrivateKey)
+  @objc required public init(data: Foundation.Data) throws
+  @objc required public init(reference: Security.SecKey) throws
+  @objc required public init(base64Encoded base64String: Swift.String) throws
+  @objc required public init(pemEncoded pemString: Swift.String) throws
+  @objc required public init(pemNamed pemName: Swift.String, in bundle: Foundation.Bundle) throws
+  @objc required public init(derNamed derName: Swift.String, in bundle: Foundation.Bundle) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(HVVerificationResult) public class _objc_HVVerificationResult : ObjectiveC.NSObject {
+  @objc final public let isSuccessful: Swift.Bool
+  @objc deinit
+}
+@objc(HVClearMessage) public class _objc_HVClearMessage : ObjectiveC.NSObject, HyperSnapSDK.HVMessage {
+  @objc public var base64String: Swift.String {
+    @objc get
+  }
+  @objc public var data: Foundation.Data {
+    @objc get
+  }
+  required public init(swiftValue: HyperSnapSDK.HVClearMessage)
+  @objc required public init(data: Foundation.Data)
+  @objc required public init(string: Swift.String, using rawEncoding: Swift.UInt) throws
+  @objc required public init(base64Encoded base64String: Swift.String) throws
+  @objc public func string(encoding rawEncoding: Swift.UInt) throws -> Swift.String
+  @objc public func encrypted(with key: HyperSnapSDK._objc_HVPublicKey, padding: HyperSnapSDK.HVRSAPadding) throws -> HyperSnapSDK._objc_HVEncryptedMessage
+  @objc public func signed(with key: HyperSnapSDK._objc_HVPrivateKey, digestType: HyperSnapSDK._objc_HVSignature.HVDigestType) throws -> HyperSnapSDK._objc_HVSignature
+  @objc public func verify(with key: HyperSnapSDK._objc_HVPublicKey, signature: HyperSnapSDK._objc_HVSignature, digestType: HyperSnapSDK._objc_HVSignature.HVDigestType) throws -> HyperSnapSDK._objc_HVVerificationResult
+  @objc deinit
+}
+@objc(HVEncryptedMessage) public class _objc_HVEncryptedMessage : ObjectiveC.NSObject, HyperSnapSDK.HVMessage {
+  @objc public var base64String: Swift.String {
+    @objc get
+  }
+  @objc public var data: Foundation.Data {
+    @objc get
+  }
+  required public init(swiftValue: HyperSnapSDK.HVEncryptedMessage)
+  @objc required public init(data: Foundation.Data)
+  @objc required public init(base64Encoded base64String: Swift.String) throws
+  @objc public func decrypted(with key: HyperSnapSDK._objc_HVPrivateKey, padding: HyperSnapSDK.HVRSAPadding) throws -> HyperSnapSDK._objc_HVClearMessage
+  @objc deinit
+}
+@objc(HVSignature) public class _objc_HVSignature : ObjectiveC.NSObject {
+  @objc public enum HVDigestType : Swift.Int {
+    case sha1
+    case sha224
+    case sha256
+    case sha384
+    case sha512
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public var base64String: Swift.String {
+    @objc get
+  }
+  @objc public var data: Foundation.Data {
+    @objc get
+  }
+  required public init(swiftValue: HyperSnapSDK.HVSignature)
+  @objc public init(data: Foundation.Data)
+  @objc required public init(base64Encoded base64String: Swift.String) throws
+  @objc deinit
+}
+public enum HVSwiftyRSAError : Swift.Error {
+  case pemDoesNotContainKey
+  case keyRepresentationFailed(error: CoreFoundation.CFError?)
+  case keyGenerationFailed(error: CoreFoundation.CFError?)
+  case keyCreateFailed(error: CoreFoundation.CFError?)
+  case keyAddFailed(status: Darwin.OSStatus)
+  case keyCopyFailed(status: Darwin.OSStatus)
+  case tagEncodingFailed
+  case asn1ParsingFailed
+  case invalidAsn1RootNode
+  case invalidAsn1Structure
+  case invalidBase64String
+  case chunkDecryptFailed(index: Swift.Int)
+  case chunkEncryptFailed(index: Swift.Int)
+  case stringToDataConversionFailed
+  case dataToStringConversionFailed
+  case invalidDigestSize(digestSize: Swift.Int, maxChunkSize: Swift.Int)
+  case signatureCreateFailed(status: Darwin.OSStatus)
+  case signatureVerifyFailed(status: Darwin.OSStatus)
+  case pemFileNotFound(name: Swift.String)
+  case derFileNotFound(name: Swift.String)
+  case notAPublicKey
+  case notAPrivateKey
+  case x509CertificateFailed
+}
+extension HyperSnapSDK.HVSwiftyRSAError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 public struct HVUIAlignment : Swift.Codable {
   public var titleTextAlignment: Swift.String {
@@ -2498,6 +2710,11 @@ public struct HVUILogos : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+extension Foundation.Data {
+  public func prependx509Header() -> Foundation.Data
+  public func hasX509Header() throws -> Swift.Bool
+  public func isAnHeaderlessKey() throws -> Swift.Bool
+}
 @_inheritsConvenienceInitializers @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
@@ -2512,6 +2729,7 @@ public struct HVUILogos : Swift.Codable {
   @objc public static func setShouldSecure(_ shouldSecure: Swift.Bool)
   @objc public static func setShouldUseLocation(_ shouldUseLocation: Swift.Bool)
   @objc public static func setExternalConfigs(_ externalConfigs: HyperSnapSDK.HVExternalConfigs)
+  @objc public static func setEncryptionMetadata(_ encryptionMetadata: Swift.String)
   public static func setUiConfig(_ uiConfig: HyperSnapSDK.HVUIConfig?)
   public static func getUiConfig() -> HyperSnapSDK.HVUIConfig
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
@@ -2642,27 +2860,6 @@ extension HyperSnapSDK.InterpreterError : Swift.CustomStringConvertible {
   public var description: Swift.String {
     get
   }
-}
-public protocol Key : AnyObject {
-  var reference: Security.SecKey { get }
-  var originalData: Foundation.Data? { get }
-  init(data: Foundation.Data) throws
-  init(reference: Security.SecKey) throws
-  init(base64Encoded base64String: Swift.String) throws
-  init(pemEncoded pemString: Swift.String) throws
-  init(pemNamed pemName: Swift.String, in bundle: Foundation.Bundle) throws
-  init(derNamed derName: Swift.String, in bundle: Foundation.Bundle) throws
-  func pemString() throws -> Swift.String
-  func data() throws -> Foundation.Data
-  func base64String() throws -> Swift.String
-}
-extension HyperSnapSDK.Key {
-  public func base64String() throws -> Swift.String
-  public func data() throws -> Foundation.Data
-  public init(base64Encoded base64String: Swift.String) throws
-  public init(pemEncoded pemString: Swift.String) throws
-  public init(pemNamed pemName: Swift.String, in bundle: Foundation.Bundle = Bundle.main) throws
-  public init(derNamed derName: Swift.String, in bundle: Foundation.Bundle = Bundle.main) throws
 }
 @_hasMissingDesignatedInitializers public class Keys {
   public static let HV_EVENT: Swift.String
@@ -2838,35 +3035,6 @@ extension HyperSnapSDK.HVLottieAnimationView {
 }
 infix operator +| : DefaultPrecedence
 infix operator +- : DefaultPrecedence
-public protocol Message {
-  var data: Foundation.Data { get }
-  var base64String: Swift.String { get }
-  init(data: Foundation.Data)
-  init(base64Encoded base64String: Swift.String) throws
-}
-extension HyperSnapSDK.Message {
-  public var base64String: Swift.String {
-    get
-  }
-  public init(base64Encoded base64String: Swift.String) throws
-}
-public class PrivateKey : HyperSnapSDK.Key {
-  final public let reference: Security.SecKey
-  final public let originalData: Foundation.Data?
-  public func pemString() throws -> Swift.String
-  required public init(reference: Security.SecKey) throws
-  required public init(data: Foundation.Data) throws
-  @objc deinit
-}
-public class PublicKey : HyperSnapSDK.Key {
-  final public let reference: Security.SecKey
-  final public let originalData: Foundation.Data?
-  public func pemString() throws -> Swift.String
-  required public init(reference: Security.SecKey) throws
-  required public init(data: Foundation.Data) throws
-  public static func publicKeys(pemEncoded pemString: Swift.String) -> [HyperSnapSDK.PublicKey]
-  @objc deinit
-}
 public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
   public let scale: Swift.Float
   public let zeroPoint: Swift.Int
@@ -2875,27 +3043,6 @@ public struct QuantizationParameters : Swift.Equatable, Swift.Hashable {
   public var hashValue: Swift.Int {
     get
   }
-}
-public class Signature {
-  public enum DigestType {
-    case sha1
-    case sha224
-    case sha256
-    case sha384
-    case sha512
-    public static func == (a: HyperSnapSDK.Signature.DigestType, b: HyperSnapSDK.Signature.DigestType) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  final public let data: Foundation.Data
-  public init(data: Foundation.Data)
-  convenience public init(base64Encoded base64String: Swift.String) throws
-  public var base64String: Swift.String {
-    get
-  }
-  @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class SignatureRunner {
   final public let signatureKey: Swift.String
@@ -2936,149 +3083,6 @@ extension HyperSnapSDK.SignatureRunnerError : Foundation.LocalizedError {
 }
 extension HyperSnapSDK.SignatureRunnerError : Swift.CustomStringConvertible {
   public var description: Swift.String {
-    get
-  }
-}
-public typealias Padding = Security.SecPadding
-public enum SwiftyRSA {
-  @available(iOS 10.0, watchOS 3.0, tvOS 10.0, *)
-  public static func generateRSAKeyPair(sizeInBits size: Swift.Int) throws -> (privateKey: HyperSnapSDK.PrivateKey, publicKey: HyperSnapSDK.PublicKey)
-}
-@_hasMissingDesignatedInitializers @objc(KeyPair) public class _objc_KeyPair : ObjectiveC.NSObject {
-  @objc final public let privateKey: HyperSnapSDK._objc_PrivateKey
-  @objc final public let publicKey: HyperSnapSDK._objc_PublicKey
-  @objc deinit
-}
-@_inheritsConvenienceInitializers @objc(SwiftyRSA) public class _objc_SwiftyRSA : ObjectiveC.NSObject {
-  @available(iOS 10.0, watchOS 3.0, tvOS 10.0, *)
-  @objc public class func generateRSAKeyPair(sizeInBits size: Swift.Int) throws -> HyperSnapSDK._objc_KeyPair
-  @objc override dynamic public init()
-  @objc deinit
-}
-@objc(PublicKey) public class _objc_PublicKey : ObjectiveC.NSObject, HyperSnapSDK.Key {
-  @objc public var reference: Security.SecKey {
-    @objc get
-  }
-  @objc public var originalData: Foundation.Data? {
-    @objc get
-  }
-  @objc public func pemString() throws -> Swift.String
-  @objc public func data() throws -> Foundation.Data
-  @objc public func base64String() throws -> Swift.String
-  required public init(swiftValue: HyperSnapSDK.PublicKey)
-  @objc required public init(data: Foundation.Data) throws
-  @objc required public init(reference: Security.SecKey) throws
-  @objc required public init(base64Encoded base64String: Swift.String) throws
-  @objc required public init(pemEncoded pemString: Swift.String) throws
-  @objc required public init(pemNamed pemName: Swift.String, in bundle: Foundation.Bundle) throws
-  @objc required public init(derNamed derName: Swift.String, in bundle: Foundation.Bundle) throws
-  @objc public static func publicKeys(pemEncoded pemString: Swift.String) -> [HyperSnapSDK._objc_PublicKey]
-  @objc deinit
-}
-@objc(PrivateKey) public class _objc_PrivateKey : ObjectiveC.NSObject, HyperSnapSDK.Key {
-  @objc public var reference: Security.SecKey {
-    @objc get
-  }
-  @objc public var originalData: Foundation.Data? {
-    @objc get
-  }
-  @objc public func pemString() throws -> Swift.String
-  @objc public func data() throws -> Foundation.Data
-  @objc public func base64String() throws -> Swift.String
-  required public init(swiftValue: HyperSnapSDK.PrivateKey)
-  @objc required public init(data: Foundation.Data) throws
-  @objc required public init(reference: Security.SecKey) throws
-  @objc required public init(base64Encoded base64String: Swift.String) throws
-  @objc required public init(pemEncoded pemString: Swift.String) throws
-  @objc required public init(pemNamed pemName: Swift.String, in bundle: Foundation.Bundle) throws
-  @objc required public init(derNamed derName: Swift.String, in bundle: Foundation.Bundle) throws
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers @objc(VerificationResult) public class _objc_VerificationResult : ObjectiveC.NSObject {
-  @objc final public let isSuccessful: Swift.Bool
-  @objc deinit
-}
-@objc(ClearMessage) public class _objc_ClearMessage : ObjectiveC.NSObject, HyperSnapSDK.Message {
-  @objc public var base64String: Swift.String {
-    @objc get
-  }
-  @objc public var data: Foundation.Data {
-    @objc get
-  }
-  required public init(swiftValue: HyperSnapSDK.ClearMessage)
-  @objc required public init(data: Foundation.Data)
-  @objc required public init(string: Swift.String, using rawEncoding: Swift.UInt) throws
-  @objc required public init(base64Encoded base64String: Swift.String) throws
-  @objc public func string(encoding rawEncoding: Swift.UInt) throws -> Swift.String
-  @objc public func encrypted(with key: HyperSnapSDK._objc_PublicKey, padding: HyperSnapSDK.Padding) throws -> HyperSnapSDK._objc_EncryptedMessage
-  @objc public func signed(with key: HyperSnapSDK._objc_PrivateKey, digestType: HyperSnapSDK._objc_Signature.DigestType) throws -> HyperSnapSDK._objc_Signature
-  @objc public func verify(with key: HyperSnapSDK._objc_PublicKey, signature: HyperSnapSDK._objc_Signature, digestType: HyperSnapSDK._objc_Signature.DigestType) throws -> HyperSnapSDK._objc_VerificationResult
-  @objc deinit
-}
-@objc(EncryptedMessage) public class _objc_EncryptedMessage : ObjectiveC.NSObject, HyperSnapSDK.Message {
-  @objc public var base64String: Swift.String {
-    @objc get
-  }
-  @objc public var data: Foundation.Data {
-    @objc get
-  }
-  required public init(swiftValue: HyperSnapSDK.EncryptedMessage)
-  @objc required public init(data: Foundation.Data)
-  @objc required public init(base64Encoded base64String: Swift.String) throws
-  @objc public func decrypted(with key: HyperSnapSDK._objc_PrivateKey, padding: HyperSnapSDK.Padding) throws -> HyperSnapSDK._objc_ClearMessage
-  @objc deinit
-}
-@objc(Signature) public class _objc_Signature : ObjectiveC.NSObject {
-  @objc public enum DigestType : Swift.Int {
-    case sha1
-    case sha224
-    case sha256
-    case sha384
-    case sha512
-    public init?(rawValue: Swift.Int)
-    public typealias RawValue = Swift.Int
-    public var rawValue: Swift.Int {
-      get
-    }
-  }
-  @objc public var base64String: Swift.String {
-    @objc get
-  }
-  @objc public var data: Foundation.Data {
-    @objc get
-  }
-  required public init(swiftValue: HyperSnapSDK.Signature)
-  @objc public init(data: Foundation.Data)
-  @objc required public init(base64Encoded base64String: Swift.String) throws
-  @objc deinit
-}
-public enum SwiftyRSAError : Swift.Error {
-  case pemDoesNotContainKey
-  case keyRepresentationFailed(error: CoreFoundation.CFError?)
-  case keyGenerationFailed(error: CoreFoundation.CFError?)
-  case keyCreateFailed(error: CoreFoundation.CFError?)
-  case keyAddFailed(status: Darwin.OSStatus)
-  case keyCopyFailed(status: Darwin.OSStatus)
-  case tagEncodingFailed
-  case asn1ParsingFailed
-  case invalidAsn1RootNode
-  case invalidAsn1Structure
-  case invalidBase64String
-  case chunkDecryptFailed(index: Swift.Int)
-  case chunkEncryptFailed(index: Swift.Int)
-  case stringToDataConversionFailed
-  case dataToStringConversionFailed
-  case invalidDigestSize(digestSize: Swift.Int, maxChunkSize: Swift.Int)
-  case signatureCreateFailed(status: Darwin.OSStatus)
-  case signatureVerifyFailed(status: Darwin.OSStatus)
-  case pemFileNotFound(name: Swift.String)
-  case derFileNotFound(name: Swift.String)
-  case notAPublicKey
-  case notAPrivateKey
-  case x509CertificateFailed
-}
-extension HyperSnapSDK.SwiftyRSAError : Foundation.LocalizedError {
-  public var errorDescription: Swift.String? {
     get
   }
 }
@@ -3190,11 +3194,6 @@ extension HyperSnapSDK.HVLottieVector3D {
     get
   }
 }
-extension Foundation.Data {
-  public func prependx509Header() -> Foundation.Data
-  public func hasX509Header() throws -> Swift.Bool
-  public func isAnHeaderlessKey() throws -> Swift.Bool
-}
 extension HyperSnapSDK.BlendMode : Swift.Equatable {}
 extension HyperSnapSDK.BlendMode : Swift.Hashable {}
 extension HyperSnapSDK.BlendMode : Swift.RawRepresentable {}
@@ -3233,7 +3232,12 @@ extension HyperSnapSDK.HVCoordinateSpace : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVLottieBackgroundBehavior : Swift.Equatable {}
 extension HyperSnapSDK.HVLottieBackgroundBehavior : Swift.Hashable {}
 extension HyperSnapSDK.HVPointValueProvider : HyperSnapSDK.HVAnyValueProvider {}
+extension HyperSnapSDK.HVSignature.HVDigestType : Swift.Equatable {}
+extension HyperSnapSDK.HVSignature.HVDigestType : Swift.Hashable {}
 extension HyperSnapSDK.HVSizeValueProvider : HyperSnapSDK.HVAnyValueProvider {}
+extension HyperSnapSDK._objc_HVSignature.HVDigestType : Swift.Equatable {}
+extension HyperSnapSDK._objc_HVSignature.HVDigestType : Swift.Hashable {}
+extension HyperSnapSDK._objc_HVSignature.HVDigestType : Swift.RawRepresentable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Equatable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Hashable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.RawRepresentable {}
@@ -3255,8 +3259,3 @@ extension HyperSnapSDK.LayerType : Swift.RawRepresentable {}
 extension HyperSnapSDK.MatteType : Swift.Equatable {}
 extension HyperSnapSDK.MatteType : Swift.Hashable {}
 extension HyperSnapSDK.MatteType : Swift.RawRepresentable {}
-extension HyperSnapSDK.Signature.DigestType : Swift.Equatable {}
-extension HyperSnapSDK.Signature.DigestType : Swift.Hashable {}
-extension HyperSnapSDK._objc_Signature.DigestType : Swift.Equatable {}
-extension HyperSnapSDK._objc_Signature.DigestType : Swift.Hashable {}
-extension HyperSnapSDK._objc_Signature.DigestType : Swift.RawRepresentable {}
