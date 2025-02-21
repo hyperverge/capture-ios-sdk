@@ -1,3 +1,8 @@
+#### 4.31.1 [21 Feb 2025]
+- Bug Fixes:
+    - Fix logic to display "Powered By Hyperverge" branding layout in Consent Screen
+
+
 #### 4.31.0 [18 Feb 2025]
 - Enhancements:
     - Security enhancements for face module
