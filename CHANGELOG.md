@@ -1,3 +1,8 @@
+#### 4.32.0 [17 Mar 2025]
+- Enhancements:
+    - Security enhancements for doc module
+    - Add support for `setShowConsent` for selfie capture module
+
 #### 4.31.1 [21 Feb 2025]
 - Bug Fixes:
     - Fix logic to display "Powered By Hyperverge" branding layout in Consent Screen

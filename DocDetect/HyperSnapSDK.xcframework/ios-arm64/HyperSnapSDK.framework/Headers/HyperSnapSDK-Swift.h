@@ -686,6 +686,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setAspectRatio:(double)aspectRatio;
 - (void)setShouldShowReviewPage:(BOOL)shouldShow;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
+- (void)setEncryptPayload:(BOOL)encryptPayload;
 - (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setShouldShowFlashButton:(BOOL)shouldShow;
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
@@ -1010,6 +1011,7 @@ enum LivenessMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : HVBaseConfig
+- (void)setShowConsent:(BOOL)show;
 - (void)setShouldEnableOverlay:(BOOL)enableOverlay;
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
