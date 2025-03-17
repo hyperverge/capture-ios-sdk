@@ -665,6 +665,7 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setAspectRatio(_ aspectRatio: Swift.Double)
   @objc public func setShouldShowReviewPage(_ shouldShow: Swift.Bool)
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
+  @objc public func setEncryptPayload(_ encryptPayload: Swift.Bool)
   @objc public func setCustomLoadingScreen(_ vc: UIKit.UIViewController)
   @objc public func setShouldShowFlashButton(_ shouldShow: Swift.Bool)
   @objc public func setShouldAddPadding(_ shouldAdd: Swift.Bool)
@@ -817,6 +818,7 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class HVFaceConfig : HyperSnapSDK.HVBaseConfig {
+  @objc public func setShowConsent(_ show: Swift.Bool)
   @objc public func setShouldEnableOverlay(_ enableOverlay: Swift.Bool)
   @objc public var textConfig: HyperSnapSDK.HVFaceConfig.FaceTextConfig
   @objc public func setLivenessMode(_ livenessMode: HyperSnapSDK.HyperSnapParams.LivenessMode)
