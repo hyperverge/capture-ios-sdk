@@ -1,3 +1,6 @@
+#### 4.33.0 [26 Mar 2025]
+- Enhancements:
+    - Add support for `prefetchConfigs` method 
 #### 4.32.0 [17 Mar 2025]
 - Enhancements:
     - Security enhancements for doc module
