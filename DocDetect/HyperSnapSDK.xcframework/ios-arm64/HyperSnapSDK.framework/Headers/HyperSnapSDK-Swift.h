@@ -491,6 +491,7 @@ typedef SWIFT_ENUM(NSInteger, HVCardUIState, open) {
   HVCardUIStateCardNotDetected = 1,
   HVCardUIStateMoveCloser = 2,
   HVCardUIStateMoveAway = 3,
+  HVCardUIStateMoveAwayFromEdge = 4,
 };
 
 
@@ -705,6 +706,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldReadNIDQR:(BOOL)shouldRead;
 - (void)setShouldReadBarcode:(BOOL)shouldRead;
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
+- (void)setShouldPerformAssistiveCapture:(BOOL)shouldPerformAssistiveCapture;
 - (void)setAutoCaptureDurationWithDurationInMS:(NSInteger)durationInMS;
 - (void)setShowModuleBackButton:(BOOL)allow;
 - (void)setEnableDocumentUpload:(BOOL)enable;
