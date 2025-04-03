@@ -1,3 +1,6 @@
+#### 4.34.0 [3 Apr 2025]
+- Enhancements:
+  - Add support for `assistiveCapture` property in document module in WebCore mode
 #### 4.33.0 [26 Mar 2025]
 - Enhancements:
     - Add support for `prefetchConfigs` method 

@@ -487,6 +487,7 @@ public class HVBundleImageProvider : HyperSnapSDK.HVAnimationImageProvider {
   case cardNotDetected
   case moveCloser
   case moveAway
+  case moveAwayFromEdge
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -686,6 +687,7 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setShouldReadNIDQR(_ shouldRead: Swift.Bool)
   @objc public func setShouldReadBarcode(_ shouldRead: Swift.Bool)
   @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
+  @objc public func setShouldPerformAssistiveCapture(_ shouldPerformAssistiveCapture: Swift.Bool)
   @objc public func setAutoCaptureDuration(durationInMS: Swift.Int)
   @objc public func setShowModuleBackButton(_ allow: Swift.Bool)
   @objc public func setEnableDocumentUpload(_ enable: Swift.Bool)
