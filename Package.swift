@@ -6,14 +6,21 @@ let package = Package(
     platforms: [.iOS(.v11)],
     products: [
         .library(
-            name: "HyperSnapSDK", // 👈 The name shown to clients
-            targets: ["HyperSnapSDK"]
+            name: "HyperSnapSDK",
+            targets: ["HyperSnapSDK", "HyperSnapResources"]
         )
     ],
     targets: [
         .binaryTarget(
-            name: "HyperSnapSDK", // 👈 Must match the .xcframework name exactly
+            name: "HyperSnapSDK",
             path: "Core/HyperSnapSDK.xcframework"
+        ),
+        .target(
+            name: "HyperSnapResources",
+            path: "Sources/HVResources",
+            resources: [
+                .process(".")
+            ]
         )
     ]
 )
