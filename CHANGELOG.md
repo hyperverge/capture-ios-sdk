@@ -1,3 +1,6 @@
+#### 4.35.0 [17 Apr 2025]
+- Enhancements:
+  - Add support for `parallel session` for doc and face
 #### 4.34.0 [3 Apr 2025]
 - Enhancements:
   - Add support for `assistiveCapture` property in document module in WebCore mode
