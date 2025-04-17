@@ -688,6 +688,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldShowReviewPage:(BOOL)shouldShow;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setEncryptPayload:(BOOL)encryptPayload;
+- (void)setCPRCheckSessionHeaders:(NSDictionary<NSString *, NSString *> * _Nullable)checkSessionHeaders;
 - (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setShouldShowFlashButton:(BOOL)shouldShow;
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
@@ -1019,6 +1020,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
 - (void)setEncryptPayload:(BOOL)encryptPayload;
+- (void)setCPRCheckSessionHeaders:(NSDictionary<NSString *, NSString *> * _Nullable)checkSessionHeaders;
 - (void)setFps:(NSInteger)fps;
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
 - (void)setAutoCaptureDuration:(NSInteger)duration;
@@ -2472,6 +2474,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldShowReviewPage:(BOOL)shouldShow;
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setEncryptPayload:(BOOL)encryptPayload;
+- (void)setCPRCheckSessionHeaders:(NSDictionary<NSString *, NSString *> * _Nullable)checkSessionHeaders;
 - (void)setCustomLoadingScreen:(UIViewController * _Nonnull)vc;
 - (void)setShouldShowFlashButton:(BOOL)shouldShow;
 - (void)setShouldAddPadding:(BOOL)shouldAdd;
@@ -2803,6 +2806,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
 - (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
 - (void)setEncryptPayload:(BOOL)encryptPayload;
+- (void)setCPRCheckSessionHeaders:(NSDictionary<NSString *, NSString *> * _Nullable)checkSessionHeaders;
 - (void)setFps:(NSInteger)fps;
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
 - (void)setAutoCaptureDuration:(NSInteger)duration;
