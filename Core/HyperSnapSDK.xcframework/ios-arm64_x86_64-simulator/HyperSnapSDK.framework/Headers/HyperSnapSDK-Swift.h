@@ -709,6 +709,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
 - (void)setShouldPerformAssistiveCapture:(BOOL)shouldPerformAssistiveCapture;
 - (void)setAutoCaptureDurationWithDurationInMS:(NSInteger)durationInMS;
+- (void)setShowCloseIcon:(BOOL)showCloseIcon;
 - (void)setShowModuleBackButton:(BOOL)allow;
 - (void)setEnableDocumentUpload:(BOOL)enable;
 - (void)setUploadFileTypes:(NSArray<NSString *> * _Nullable)fileTypes;
@@ -1026,6 +1027,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setAutoCaptureDuration:(NSInteger)duration;
 - (void)setShowAlertBox:(BOOL)shouldShowAlertLabel;
 - (void)setShowModuleBackButton:(BOOL)allow;
+- (void)setShowCloseIcon:(BOOL)showCloseIcon;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
 - (void)setShouldCheckForActiveLiveness:(BOOL)shouldCheck;
 - (void)setTotalGestures:(NSInteger)totalGestures;
@@ -1338,6 +1340,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK10HVQRConfig")
 @interface HVQRConfig : HVBaseConfig
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setSkipButtonDelay:(NSInteger)skipDelay;
+- (void)setShowCloseIcon:(BOOL)showCloseIcon;
 - (void)setShowModuleBackButton:(BOOL)allow;
 @property (nonatomic, strong) HVQRTextConfig * _Nonnull textConfig;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -2495,6 +2498,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK11HVDocConfig")
 - (void)setShouldAutoCapture:(BOOL)shouldAutoCapture;
 - (void)setShouldPerformAssistiveCapture:(BOOL)shouldPerformAssistiveCapture;
 - (void)setAutoCaptureDurationWithDurationInMS:(NSInteger)durationInMS;
+- (void)setShowCloseIcon:(BOOL)showCloseIcon;
 - (void)setShowModuleBackButton:(BOOL)allow;
 - (void)setEnableDocumentUpload:(BOOL)enable;
 - (void)setUploadFileTypes:(NSArray<NSString *> * _Nullable)fileTypes;
@@ -2812,6 +2816,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setAutoCaptureDuration:(NSInteger)duration;
 - (void)setShowAlertBox:(BOOL)shouldShowAlertLabel;
 - (void)setShowModuleBackButton:(BOOL)allow;
+- (void)setShowCloseIcon:(BOOL)showCloseIcon;
 - (void)setNumberOfFrames:(NSInteger)numberOfFrames;
 - (void)setShouldCheckForActiveLiveness:(BOOL)shouldCheck;
 - (void)setTotalGestures:(NSInteger)totalGestures;
@@ -3124,6 +3129,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK10HVQRConfig")
 @interface HVQRConfig : HVBaseConfig
 - (void)setShouldShowInstructionsPage:(BOOL)shouldShow;
 - (void)setSkipButtonDelay:(NSInteger)skipDelay;
+- (void)setShowCloseIcon:(BOOL)showCloseIcon;
 - (void)setShowModuleBackButton:(BOOL)allow;
 @property (nonatomic, strong) HVQRTextConfig * _Nonnull textConfig;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

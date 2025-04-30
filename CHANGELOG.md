@@ -1,3 +1,7 @@
+
+#### 4.36.0 [30 Apr 2025]
+- Enhancements:
+    - Add support for enabling SDK close button via `<config>.setShowCloseIcon(true)` 
 #### 4.35.0 [17 Apr 2025]
 - Enhancements:
   - Add support for `parallel session` for doc and face
