@@ -690,6 +690,7 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
   @objc public func setShouldPerformAssistiveCapture(_ shouldPerformAssistiveCapture: Swift.Bool)
   @objc public func setAutoCaptureDuration(durationInMS: Swift.Int)
+  @objc public func setShowCloseIcon(_ showCloseIcon: Swift.Bool)
   @objc public func setShowModuleBackButton(_ allow: Swift.Bool)
   @objc public func setEnableDocumentUpload(_ enable: Swift.Bool)
   @objc public func setUploadFileTypes(_ fileTypes: [Swift.String]?)
@@ -833,6 +834,7 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
   @objc public func setAutoCaptureDuration(_ duration: Swift.Int)
   @objc public func setShowAlertBox(_ shouldShowAlertLabel: Swift.Bool)
   @objc public func setShowModuleBackButton(_ allow: Swift.Bool)
+  @objc public func setShowCloseIcon(_ showCloseIcon: Swift.Bool)
   @objc public func setNumberOfFrames(_ numberOfFrames: Swift.Int)
   @objc public func setShouldCheckForActiveLiveness(_ shouldCheck: Swift.Bool)
   @objc public func setTotalGestures(_ totalGestures: Swift.Int)
@@ -1480,6 +1482,7 @@ public class HVPublicKey : HyperSnapSDK.HVRSAKey {
 @_inheritsConvenienceInitializers @objc public class HVQRConfig : HyperSnapSDK.HVBaseConfig {
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
   @objc public func setSkipButtonDelay(_ skipDelay: Swift.Int)
+  @objc public func setShowCloseIcon(_ showCloseIcon: Swift.Bool)
   @objc public func setShowModuleBackButton(_ allow: Swift.Bool)
   @objc public var textConfig: HyperSnapSDK.HVQRConfig.HVQRTextConfig
   @_inheritsConvenienceInitializers @objc public class HVQRTextConfig : ObjectiveC.NSObject {
@@ -2623,6 +2626,9 @@ public struct HVUIIcons : Swift.Codable {
     get
   }
   public var captureScreenBackButtonIcon: HyperSnapSDK.HVUIIconProperties {
+    get
+  }
+  public var closeButtonIcon: HyperSnapSDK.HVUIIconProperties {
     get
   }
   public init()
