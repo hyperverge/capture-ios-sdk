@@ -1548,6 +1548,7 @@ extension HyperSnapSDK.HVQRViewController {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
