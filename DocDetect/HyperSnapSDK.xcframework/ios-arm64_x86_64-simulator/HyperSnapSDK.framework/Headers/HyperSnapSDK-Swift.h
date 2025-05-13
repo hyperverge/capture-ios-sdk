@@ -1439,6 +1439,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
@@ -3228,6 +3229,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
