@@ -1,4 +1,7 @@
 
+#### 4.36.1 [13 May 2025]
+- Bug Fixes:
+    - Fix multiple callbacks fired from QR capture module
 #### 4.36.0 [30 Apr 2025]
 - Enhancements:
     - Add support for enabling SDK close button via `<config>.setShowCloseIcon(true)` 
