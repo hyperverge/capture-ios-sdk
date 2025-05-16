@@ -1,4 +1,6 @@
-
+#### 4.37.0 [16 May 2025]
+- Bug Fixes:
+    - Fix memory leaks and retained resources for face capture module
 #### 4.36.1 [13 May 2025]
 - Bug Fixes:
     - Fix multiple callbacks fired from QR capture module
