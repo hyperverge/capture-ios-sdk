@@ -1,3 +1,7 @@
+#### 4.37.1 [14 June 2025]
+- Bug Fixes:
+    - Fix document capture screen ui issues
+
 #### 4.37.0 [16 May 2025]
 - Bug Fixes:
     - Fix memory leaks and retained resources for face capture module
