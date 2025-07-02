@@ -4,61 +4,29 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>HVResources.bundle/Animations/id_back_instructions.json</key>
+		<key>HVResources.bundle/Animations/hv_doc_instruction_back.lottie</key>
 		<data>
-		3rdaKeHjOq54DLKFsCDn7/qO1Ro=
+		MnLohc+i4/YVhCwFL/SwSN18qQ4=
 		</data>
-		<key>HVResources.bundle/Animations/id_failure.json</key>
+		<key>HVResources.bundle/Animations/hv_doc_instruction_front.lottie</key>
 		<data>
-		mwsNTj3F+uqEkHG0Rf1qF9odrbQ=
+		8hyZKWoqSxiXpxtSNLe/gDFVI+0=
 		</data>
-		<key>HVResources.bundle/Animations/id_front_instructions.json</key>
+		<key>HVResources.bundle/Animations/hv_face_instruction.lottie</key>
 		<data>
-		g4YzYIYou5Knh1RoobnoyW/f220=
+		NLY14yf0tMsPeVLBz+q9lQ81ZAM=
 		</data>
-		<key>HVResources.bundle/Animations/id_instructions.json</key>
+		<key>HVResources.bundle/Animations/hv_processing.lottie</key>
 		<data>
-		UILl58W3a17DXgLxuXq5QTXtoD4=
+		nhtoXk4VlaFG26Ls9BkobzYIFxg=
 		</data>
-		<key>HVResources.bundle/Animations/id_success.json</key>
+		<key>HVResources.bundle/Animations/hv_qr_instruction.lottie</key>
 		<data>
-		+6Qgxv78PArqSAfQigXzB/YH2f0=
-		</data>
-		<key>HVResources.bundle/Animations/id_upload_processing.json</key>
-		<data>
-		A4oy3C8rgySbnjIruhF5CXngTVo=
-		</data>
-		<key>HVResources.bundle/Animations/loader.json</key>
-		<data>
-		5T++zJeYSlxOYjDeVvHTo26VzsY=
-		</data>
-		<key>HVResources.bundle/Animations/qr_instruction.json</key>
-		<data>
-		OsW4agtG0dDnCjvmCah9Byi074o=
-		</data>
-		<key>HVResources.bundle/Animations/selfie_failure.json</key>
-		<data>
-		L2Xcjf5wRnhBrQvkF12k4xOOjs0=
-		</data>
-		<key>HVResources.bundle/Animations/selfie_instruction.json</key>
-		<data>
-		+xuyhhBTkFMe8aWGoWvcK5P+l8w=
-		</data>
-		<key>HVResources.bundle/Animations/selfie_success.json</key>
-		<data>
-		dBgKBphZWXYQhXzChkU7j5a33B0=
-		</data>
-		<key>HVResources.bundle/Animations/selfie_verification_processing.json</key>
-		<data>
-		s0yt76CwvAde7FSQW/vb0s5rG54=
-		</data>
-		<key>HVResources.bundle/Animations/upload_failure.json</key>
-		<data>
-		aUAccqWpXiozh452VpOVEtfAjX4=
+		t+0xhrjgYwZIQy+3kxjNUr3alsM=
 		</data>
 		<key>HVResources.bundle/Assets.car</key>
 		<data>
-		WleMWsbLhmODbgx/ViZiJk+uacE=
+		sbjtyla3Ud5lRDie54IGuYEUcNY=
 		</data>
 		<key>HVResources.bundle/Fonts/Mulish-Bold.ttf</key>
 		<data>
@@ -174,7 +142,7 @@
 		</data>
 		<key>HVResources.bundle/Info.plist</key>
 		<data>
-		2oUhEV+9AdsjMbIFdPdpH8F1TQ0=
+		UlrhXJZGTS64NBIPWZM3yuE0vAE=
 		</data>
 		<key>HVResources.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -198,11 +166,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		45nzP9FNMiUC3AR9eXuv1dThrEo=
+		E7hl7TmTXHPpjCeSzXYcLm1ZOqo=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		j2aj+Ilqsi42QCAD0vZ+v9x72I4=
+		LBzfaItSye1wUNp/FdmNhoPzr7M=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -218,11 +186,11 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		LNPBBtZ4ZwDlJ3LDoojLxd3PFUs=
+		21p8Qvu62ijZmHc3zPH6ocyO7RM=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		fVf3PivHsfLjpZUS4OAxHaQzWhU=
+		T0XfgwJR68ZJRESRuINusPpSk2A=
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -238,7 +206,7 @@
 		</data>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		t5HRkuEKA/6EMrplYXc0k+okW/Y=
+		hnnprU0N/dPP58dgAbGOF7Y/h7k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -247,158 +215,70 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>HVResources.bundle/Animations/id_back_instructions.json</key>
+		<key>HVResources.bundle/Animations/hv_doc_instruction_back.lottie</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3rdaKeHjOq54DLKFsCDn7/qO1Ro=
+			MnLohc+i4/YVhCwFL/SwSN18qQ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			MPUgIR+fG+SDn31KWW1U9KBMXvRrqxTiGA79h+qgMeU=
+			7SjTFiTey1dleTxMNK4gqKrrHcfUcwv1bBnw7JhnxoQ=
 			</data>
 		</dict>
-		<key>HVResources.bundle/Animations/id_failure.json</key>
+		<key>HVResources.bundle/Animations/hv_doc_instruction_front.lottie</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mwsNTj3F+uqEkHG0Rf1qF9odrbQ=
+			8hyZKWoqSxiXpxtSNLe/gDFVI+0=
 			</data>
 			<key>hash2</key>
 			<data>
-			WxFfHimBOpfsEGWSIEi84c7oxMIdvXdbkr4Eq7wNFZw=
+			fCOnQ8CpsHWrUkZHRgrGZ4X3Q5QEUVgXbW/jo2abX2s=
 			</data>
 		</dict>
-		<key>HVResources.bundle/Animations/id_front_instructions.json</key>
+		<key>HVResources.bundle/Animations/hv_face_instruction.lottie</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			g4YzYIYou5Knh1RoobnoyW/f220=
+			NLY14yf0tMsPeVLBz+q9lQ81ZAM=
 			</data>
 			<key>hash2</key>
 			<data>
-			nJxjL23wjPSKJMplr6l1Nw+axKZXdC8S1C356A1t704=
+			6dw+cp/imHA8CQMZYRbKoFZ2WV4DgeZckOsLrDNQDiE=
 			</data>
 		</dict>
-		<key>HVResources.bundle/Animations/id_instructions.json</key>
+		<key>HVResources.bundle/Animations/hv_processing.lottie</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UILl58W3a17DXgLxuXq5QTXtoD4=
+			nhtoXk4VlaFG26Ls9BkobzYIFxg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Y5yhBOsh+S3/N9eG1sTJJcaAmZy+QBUrLxmuxmFwRHI=
+			Cz/Oee0hPladtNNcaUgVLBr1IUsO9rEBviIMzvZ338s=
 			</data>
 		</dict>
-		<key>HVResources.bundle/Animations/id_success.json</key>
+		<key>HVResources.bundle/Animations/hv_qr_instruction.lottie</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+6Qgxv78PArqSAfQigXzB/YH2f0=
+			t+0xhrjgYwZIQy+3kxjNUr3alsM=
 			</data>
 			<key>hash2</key>
 			<data>
-			bOBkhFI3gJ9lZqZ+inldygNhzokuYlISp2tkbA+eV7g=
-			</data>
-		</dict>
-		<key>HVResources.bundle/Animations/id_upload_processing.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			A4oy3C8rgySbnjIruhF5CXngTVo=
-			</data>
-			<key>hash2</key>
-			<data>
-			BjNf8DaPEgA8s+OlDd8fndJ3KeKiCYIlCgd43h/84uo=
-			</data>
-		</dict>
-		<key>HVResources.bundle/Animations/loader.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			5T++zJeYSlxOYjDeVvHTo26VzsY=
-			</data>
-			<key>hash2</key>
-			<data>
-			FwynwCkXbUbkjItcdFO1aoglL2RGRYJB5B8vFkbn2cU=
-			</data>
-		</dict>
-		<key>HVResources.bundle/Animations/qr_instruction.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OsW4agtG0dDnCjvmCah9Byi074o=
-			</data>
-			<key>hash2</key>
-			<data>
-			T+WEtpKzYxJLhzP/PrU9mI1CMu/X9VwdtYomcmbkvVY=
-			</data>
-		</dict>
-		<key>HVResources.bundle/Animations/selfie_failure.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			L2Xcjf5wRnhBrQvkF12k4xOOjs0=
-			</data>
-			<key>hash2</key>
-			<data>
-			VYdsNG/yRijT8iIUwRd7QcFgWMi5nM1gQD/UR151SBs=
-			</data>
-		</dict>
-		<key>HVResources.bundle/Animations/selfie_instruction.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+xuyhhBTkFMe8aWGoWvcK5P+l8w=
-			</data>
-			<key>hash2</key>
-			<data>
-			CO5/NI7UGQE1SHN0Isd89cZ/yY6SMUo5apAALvRM5iI=
-			</data>
-		</dict>
-		<key>HVResources.bundle/Animations/selfie_success.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			dBgKBphZWXYQhXzChkU7j5a33B0=
-			</data>
-			<key>hash2</key>
-			<data>
-			qnhXrEnUvKH3HkI7pKr4/SRx2+EYCzEkvNpCHTTRYEE=
-			</data>
-		</dict>
-		<key>HVResources.bundle/Animations/selfie_verification_processing.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			s0yt76CwvAde7FSQW/vb0s5rG54=
-			</data>
-			<key>hash2</key>
-			<data>
-			ti2vTXkpZtjiEr4woocqncGSI6yq+I/wCr/bfZb7I/E=
-			</data>
-		</dict>
-		<key>HVResources.bundle/Animations/upload_failure.json</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			aUAccqWpXiozh452VpOVEtfAjX4=
-			</data>
-			<key>hash2</key>
-			<data>
-			vvlG58fOC79PlwzmKtm3Tt0eIS7yLW+KeftRHqzgADA=
+			5BAnScSk28Ygt8cr93Q5geFDb0Yz7zWZoATRw2rXyIo=
 			</data>
 		</dict>
 		<key>HVResources.bundle/Assets.car</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WleMWsbLhmODbgx/ViZiJk+uacE=
+			sbjtyla3Ud5lRDie54IGuYEUcNY=
 			</data>
 			<key>hash2</key>
 			<data>
-			tid4qLCJyEiGpFw80RGFmEK3hNwo+Ib7gKCFjXd62L8=
+			ypvoQfqU7OdSFdVkH41Srmxots25ooH7RmYzJG2sKl0=
 			</data>
 		</dict>
 		<key>HVResources.bundle/Fonts/Mulish-Bold.ttf</key>
@@ -713,11 +593,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2oUhEV+9AdsjMbIFdPdpH8F1TQ0=
+			UlrhXJZGTS64NBIPWZM3yuE0vAE=
 			</data>
 			<key>hash2</key>
 			<data>
-			3W9P/ZUT7JhlrlU8YafnjB5vIU2i2r+zlSzS9TVY2f0=
+			2Zbixx+Ss+dUXksPq/L3WmtmfcpPvPNiBQV9l6amtfw=
 			</data>
 		</dict>
 		<key>HVResources.bundle/PrivacyInfo.xcprivacy</key>
@@ -779,11 +659,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			j2aj+Ilqsi42QCAD0vZ+v9x72I4=
+			LBzfaItSye1wUNp/FdmNhoPzr7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			Lysz77W+8v5oO9e9aYBfFk1Q3cOkenSRCJyi/TzvK1Y=
+			OVu5X2ayK4XRtLR/p0X2Ndyjv9kvBgWzv+f8Uil8vrs=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -823,22 +703,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LNPBBtZ4ZwDlJ3LDoojLxd3PFUs=
+			21p8Qvu62ijZmHc3zPH6ocyO7RM=
 			</data>
 			<key>hash2</key>
 			<data>
-			In21ieUmxRoOtdh9iSqKYRIgGD5NFam1Dv/Mqq6Ivbg=
+			Y9wZEUv1RA8rNvDGgEDinCFx29eLIsnO/wulmoHoJdo=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fVf3PivHsfLjpZUS4OAxHaQzWhU=
+			T0XfgwJR68ZJRESRuINusPpSk2A=
 			</data>
 			<key>hash2</key>
 			<data>
-			xANEsUxLZpJyjEECTojjMQEEHS8GibFxopBpVmL6aJg=
+			OlFEynyE3KBYNYxyh8dVm2hDY6JsYzCHkjZvhVCwAyU=
 			</data>
 		</dict>
 		<key>Modules/HyperSnapSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -878,11 +758,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t5HRkuEKA/6EMrplYXc0k+okW/Y=
+			hnnprU0N/dPP58dgAbGOF7Y/h7k=
 			</data>
 			<key>hash2</key>
 			<data>
-			J+yUwZRZ5T/xPk7KcXkUwwtEs9PvLIkMmpD6E4+68V0=
+			dRA96Homjc+Fdp5YoX3BE/JV2XEMn7Bm5HIN9aIt4cc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

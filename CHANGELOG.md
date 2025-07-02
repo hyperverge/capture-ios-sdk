@@ -1,3 +1,7 @@
+#### 4.38.0 [2 Jul 2025]
+- Enhancements
+    - Changed default lottie to .lottie for size optimisations
+
 #### 4.37.1 [14 June 2025]
 - Bug Fixes:
     - Fix document capture screen ui issues
