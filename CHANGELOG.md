@@ -1,3 +1,8 @@
+#### 4.39.0 [11 Jul 2025]
+- Enhancements
+    - Added fallback face detector support for iOS 26 via remote config
+
+
 #### 4.38.0 [2 Jul 2025]
 - Enhancements
     - Changed default lottie to .lottie for size optimisations
