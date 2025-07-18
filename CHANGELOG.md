@@ -1,6 +1,6 @@
 #### 4.39.1 [18 Jul 2025]
 - Bug Fixes
-    - Fixed app crash on iOS 26 devices when liveness mode is set to .none
+    - Fix app crash on iOS 26 devices when liveness mode is set to .none
 
 #### 4.39.0 [11 Jul 2025]
 - Enhancements
