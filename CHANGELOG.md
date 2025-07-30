@@ -1,3 +1,8 @@
+#### 4.39.2 [30 Jul 2025]
+- Bug Fixes
+    - Fix bug with `setShouldEnableOverlay` for document capture
+    - Fix crash happening when race condition occurs with camera opening
+    
 #### 4.39.1 [18 Jul 2025]
 - Bug Fixes
     - Fix app crash on iOS 26 devices when liveness mode is set to .none
