@@ -31,6 +31,7 @@ import Security
 import Swift
 import SystemConfiguration
 import UIKit
+import UniformTypeIdentifiers
 import VideoToolbox
 import Vision
 import _Concurrency
@@ -146,6 +147,12 @@ public enum DotLottieError : Swift.Error {
   public static let EVENT_SELFIE_VIDEO_RECORD_SUCCESSFUL: Swift.String
   public static let EVENT_SELFIE_VIDEO_RECORD_FAILED: Swift.String
   public static let EVENT_FLIP_CAMERA_BUTTON_CLICKED: Swift.String
+  public static let EVENT_SELFIE_FIRST_FRAME_RECEIVED: Swift.String
+  public static let EVENT_SELFIE_FIRST_FRAME_SENT_FOR_PROCESSING: Swift.String
+  public static let EVENT_SELFIE_FIRST_FRAME_PROCESSED: Swift.String
+  public static let EVENT_SELFIE_FIRST_FACE_DETECTED: Swift.String
+  public static let EVENT_SELFIE_FIRST_MEANINGFUL_FACE_DETECTED: Swift.String
+  public static let EVENT_SELFIE_EXITED_WITHOUT_COMPLETION: Swift.String
   public static let EVENT_DOC_FLOW_STARTED: Swift.String
   public static let EVENT_DOCUMENT_INSTRUCTIONS_SCREEN_ENABLED: Swift.String
   public static let EVENT_DOCUMENT_PICKER_SCREEN_LOAD_SUCCESS: Swift.String
