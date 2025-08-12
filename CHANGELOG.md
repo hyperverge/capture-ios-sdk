@@ -1,3 +1,9 @@
+#### 5.0.0 [12 Aug 2025]
+- Enhancements
+    - Improvements to face detection algorithm for face capture
+- Bug Fixes
+    - Fix force unwrap crash in document picker screen
+    
 #### 4.39.2 [30 Jul 2025]
 - Bug Fixes
     - Fix bug with `setShouldEnableOverlay` for document capture
