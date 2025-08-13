@@ -1,6 +1,7 @@
 #### 5.0.0 [12 Aug 2025]
 - Enhancements
     - Improvements to face detection algorithm for face capture
+    - Add support to save files within a private folder in the app's directory
 - Bug Fixes
     - Fix force unwrap crash in document picker screen
     
