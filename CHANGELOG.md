@@ -1,3 +1,40 @@
+#### 5.0.0 [12 Aug 2025]
+- Enhancements
+    - Improvements to face detection algorithm for face capture
+    - Add support to save files within a private folder in the app's directory
+- Bug Fixes
+    - Fix force unwrap crash in document picker screen
+    
+#### 4.39.2 [30 Jul 2025]
+- Bug Fixes
+    - Fix bug with `setShouldEnableOverlay` for document capture
+    - Fix crash happening when race condition occurs with camera opening
+    
+#### 4.39.1 [11 Jul 2025]
+- Bug Fixes
+    - Fix app crash on iOS 26 devices when liveness mode is set to .none
+#### 4.39.0 [11 Jul 2025]
+- Enhancements
+    - Added fallback face detector support for iOS 26 via remote config
+
+#### 4.38.0 [2 Jul 2025]
+- Enhancements
+    - Changed default lottie to .lottie for size optimisations
+
+#### 4.37.1 [14 June 2025]
+- Bug Fixes:
+    - Fix document capture screen ui issues
+
+#### 4.37.0 [16 May 2025]
+- Bug Fixes:
+    - Fix memory leaks and retained resources for face capture module
+
+#### 4.36.1 [13 May 2025]
+- Bug Fixes:
+    - Fix multiple callbacks fired from QR capture module
+#### 4.36.0 [30 Apr 2025]
+- Enhancements:
+    - Add support for enabling SDK close button via `<config>.setShowCloseIcon(true)` 
 #### 4.35.0 [17 Apr 2025]
 - Enhancements:
   - Add support for `parallel session` for doc and face
