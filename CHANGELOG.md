@@ -1,3 +1,7 @@
+#### 5.0.1 [25 Aug 2025]
+- Bug Fixes
+    - Fix title UI issues in a4 doc capture screens
+
 #### 5.0.0 [12 Aug 2025]
 - Enhancements
     - Improvements to face detection algorithm for face capture
