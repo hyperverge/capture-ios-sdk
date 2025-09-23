@@ -1,3 +1,7 @@
+#### 5.0.2 [22 Sep 2025]
+- Bug Fixes
+    - Fix subText UI issues in doc capture screens
+    
 #### 5.0.1 [25 Aug 2025]
 - Bug Fixes
     - Fix title UI issues in a4 doc capture screens
