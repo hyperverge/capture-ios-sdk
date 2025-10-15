@@ -1,3 +1,8 @@
+#### 5.0.3 [15 Oct 2025]
+- Bug Fixes
+    - Fix crash after capture when videoRecording is enabled
+    - Fix looping issues happening when videoRecording is enabled
+    
 #### 5.0.2 [22 Sep 2025]
 - Bug Fixes
     - Fix subText UI issues in doc capture screens
