@@ -251,6 +251,7 @@ public enum DotLottieError : Swift.Error {
   public static let EVENT_REMOTE_CONFIG_API_ERROR: Swift.String
   public static let EVENT_CAMERA_DEVICE_DISCOVERY_SESSION_USED: Swift.String
   public static let EVENT_CAMERA_DEVICE_DEFAULT_USED: Swift.String
+  public static let EVENT_INTERNAL_SDK_OCCURRED: Swift.String
   @objc deinit
 }
 extension UIKit.UIColor {
