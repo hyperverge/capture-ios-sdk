@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   
   s.static_framework = true
   s.platform     = :ios
-  s.ios.deployment_target = "11.0"
+  s.ios.deployment_target = "12.0"
   s.swift_version = '5.0'
   s.default_subspecs = "Core"
   
