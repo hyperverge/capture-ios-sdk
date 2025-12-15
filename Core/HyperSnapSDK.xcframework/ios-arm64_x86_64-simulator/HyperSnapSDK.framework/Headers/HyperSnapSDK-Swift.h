@@ -1257,7 +1257,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 ///     headers: An object of type [String:String]?. It is null unless there were any special headers sent by the HyperVerge’s backend.
 ///   </li>
 /// </ul>
-+ (void)makeOCRAPICallWithEndpoint:(NSString * _Nonnull)endpoint documentUri:(NSString * _Nonnull)documentUri qrCroppedImageUri:(NSString * _Nullable)qrCroppedImageUri hvDocConfig:(HVDocConfig * _Nullable)hvDocConfig parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers allowedStatusCodes:(NSArray<NSNumber *> * _Nullable)allowedStatusCodes completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeOCRAPICallWithEndpoint:(NSString * _Nonnull)endpoint documentData:(NSData * _Nonnull)documentData qrCroppedImageUri:(NSString * _Nullable)qrCroppedImageUri hvDocConfig:(HVDocConfig * _Nullable)hvDocConfig parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers allowedStatusCodes:(NSArray<NSNumber *> * _Nullable)allowedStatusCodes completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
 /// Helper method to make Face Match calls to HyperVerge’s Backend.
 /// The face match call compares face in an ID card and the face in a user photo and gives a match score.
 /// <ul>
@@ -3007,7 +3007,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVNetworkHelper")
 ///     headers: An object of type [String:String]?. It is null unless there were any special headers sent by the HyperVerge’s backend.
 ///   </li>
 /// </ul>
-+ (void)makeOCRAPICallWithEndpoint:(NSString * _Nonnull)endpoint documentUri:(NSString * _Nonnull)documentUri qrCroppedImageUri:(NSString * _Nullable)qrCroppedImageUri hvDocConfig:(HVDocConfig * _Nullable)hvDocConfig parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers allowedStatusCodes:(NSArray<NSNumber *> * _Nullable)allowedStatusCodes completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
++ (void)makeOCRAPICallWithEndpoint:(NSString * _Nonnull)endpoint documentData:(NSData * _Nonnull)documentData qrCroppedImageUri:(NSString * _Nullable)qrCroppedImageUri hvDocConfig:(HVDocConfig * _Nullable)hvDocConfig parameters:(NSDictionary<NSString *, id> * _Nullable)parameters headers:(NSDictionary<NSString *, NSString *> * _Nullable)headers allowedStatusCodes:(NSArray<NSNumber *> * _Nullable)allowedStatusCodes completionHandler:(void (^ _Nonnull)(HVError * _Nullable, HVResponse * _Nullable))completionHandler;
 /// Helper method to make Face Match calls to HyperVerge’s Backend.
 /// The face match call compares face in an ID card and the face in a user photo and gives a match score.
 /// <ul>
