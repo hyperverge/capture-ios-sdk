@@ -1,11 +1,6 @@
 framework module HyperSnapSDK {
-  umbrella header "HyperSnapSDK-umbrella.h"
-
+  umbrella header "HyperSnapSDK.h"
   export *
-  module * { export * }
-}
 
-module HyperSnapSDK.Swift {
-  header "HyperSnapSDK-Swift.h"
-  requires objc
+  module * { export * }
 }
