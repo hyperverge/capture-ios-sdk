@@ -2,6 +2,7 @@
 - Enhancements
     - Improved document auto capture flow 
     - Removed TensorFlowLite dependency
+    - Updated min deployment target to iOS 13.0
     
 #### 5.0.3 [15 Oct 2025]
 - Bug Fixes

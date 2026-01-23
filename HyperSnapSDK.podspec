@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name         = "HyperSnapSDK"
-  s.version      = "5.0.3"
+  s.version      = "6.0.0"
   s.summary      = "HyperVerge's iOS Framework for capturing documents and faces to be used with our AI Engines"
   s.description  = "HyperSnapSDK is HyperVerge’s documents + face capture framework that captures images at a resolution appropriate for our proprietary Deep Learning OCR and Face Recognition Engines.The framework provides a liveness feature that uses our advanced AI Engines to tell if a captured image is that of a real person or a photograph."
   s.homepage     = "https://github.com/hyperverge/capture-ios-sdk"
@@ -12,19 +12,13 @@ Pod::Spec.new do |s|
   
   s.static_framework = true
   s.platform     = :ios
-  s.ios.deployment_target = "11.0"
+  s.ios.deployment_target = "13.0"
   s.swift_version = '5.0'
   s.default_subspecs = "Core"
   
   s.subspec 'Core' do |cs|
     cs.vendored_frameworks = 'Core/HyperSnapSDK.xcframework'
     cs.ios.resource = 'Core/HVResources.bundle'
-  end
-  
-  s.subspec 'DocDetect' do |dds|
-    dds.dependency 'TensorFlowLiteSwift', '2.11.0'
-    dds.vendored_frameworks = 'DocDetect/HyperSnapSDK.xcframework'
-    dds.ios.resource = 'DocDetect/HVResources.bundle'
   end
 
 end
