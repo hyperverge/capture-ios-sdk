@@ -1,3 +1,9 @@
+#### 6.0.0 [23 Jan 2026]
+- Enhancements
+    - Improved document auto capture flow 
+    - Removed TensorFlowLite dependency
+    - Updated min deployment target to iOS 13.0
+    
 #### 5.0.3 [15 Oct 2025]
 - Bug Fixes
     - Fix crash after capture when videoRecording is enabled
