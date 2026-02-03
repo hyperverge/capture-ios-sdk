@@ -1,3 +1,7 @@
+#### 6.0.1 [3 Feb 2026]
+ - Enhancements
+    - Added logic to make the retake message card background colour customisable by using the key `retakeMessageCardBackgroundColor`
+    - Added changes to make retake message card corners round to have same consistent design across all sdks
 #### 6.0.0 [23 Jan 2026]
 - Enhancements
     - Improved document auto capture flow 

@@ -2310,6 +2310,9 @@ public struct HVUIColor : Swift.Codable {
   public var retakeMessageColor: Swift.String {
     get
   }
+  public var retakeMessageCardBackgroundColor: Swift.String {
+    get
+  }
   public var alertTextBoxTextColor: Swift.String {
     get
   }
