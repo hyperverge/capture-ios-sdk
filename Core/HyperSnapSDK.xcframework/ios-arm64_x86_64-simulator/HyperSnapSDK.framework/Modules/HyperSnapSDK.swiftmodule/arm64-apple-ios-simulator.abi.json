@@ -75595,6 +75595,46 @@
           },
           {
             "kind": "Var",
+            "name": "retakeMessageCardBackgroundColor",
+            "printedName": "retakeMessageCardBackgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:12HyperSnapSDK9HVUIColorV32retakeMessageCardBackgroundColorSSvp",
+            "mangledName": "$s12HyperSnapSDK9HVUIColorV32retakeMessageCardBackgroundColorSSvp",
+            "moduleName": "HyperSnapSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:12HyperSnapSDK9HVUIColorV32retakeMessageCardBackgroundColorSSvg",
+                "mangledName": "$s12HyperSnapSDK9HVUIColorV32retakeMessageCardBackgroundColorSSvg",
+                "moduleName": "HyperSnapSDK",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "alertTextBoxTextColor",
             "printedName": "alertTextBoxTextColor",
             "children": [
@@ -104009,63 +104049,63 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Docs\/HVDocRetakeViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1944,
+      "offset": 1999,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Docs\/HVDocRetakeViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2079,
+      "offset": 2134,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Docs\/HVDocRetakeViewController.swift",
       "kind": "Array",
-      "offset": 2162,
+      "offset": 2217,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Docs\/HVDocRetakeViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2191,
+      "offset": 2246,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Docs\/HVDocRetakeViewController.swift",
       "kind": "StringLiteral",
-      "offset": 2287,
+      "offset": 2342,
       "length": 22,
       "value": "\"ID card not detected\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Docs\/HVDocRetakeViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2346,
+      "offset": 2401,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Docs\/HVDocRetakeViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2378,
+      "offset": 2433,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Docs\/HVDocRetakeViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2545,
+      "offset": 2600,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Docs\/HVDocRetakeViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2742,
+      "offset": 2797,
       "length": 5,
       "value": "false"
     },
@@ -105269,21 +105309,21 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceRetakeViewController.swift",
       "kind": "StringLiteral",
-      "offset": 1066,
+      "offset": 1121,
       "length": 22,
       "value": "\"Please Capture Again\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceRetakeViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 11517,
+      "offset": 11733,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceRetakeViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 11714,
+      "offset": 11930,
       "length": 5,
       "value": "false"
     },
@@ -108391,252 +108431,259 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 5786,
+      "offset": 5959,
       "length": 16,
       "value": "\"titleTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 5840,
+      "offset": 6013,
       "length": 22,
       "value": "\"descriptionTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 5905,
+      "offset": 6078,
       "length": 27,
       "value": "\"documentSideHintTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 5965,
+      "offset": 6138,
       "length": 17,
       "value": "\"statusTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6027,
+      "offset": 6200,
       "length": 29,
       "value": "\"captureScreenTitleTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6107,
+      "offset": 6280,
       "length": 35,
       "value": "\"captureScreenDescriptionTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6188,
+      "offset": 6361,
       "length": 30,
       "value": "\"captureScreenStatusTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6260,
+      "offset": 6433,
       "length": 26,
       "value": "\"statementHelperTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6322,
+      "offset": 6495,
       "length": 20,
       "value": "\"statementTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6375,
+      "offset": 6548,
       "length": 17,
       "value": "\"loaderTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6438,
+      "offset": 6611,
       "length": 30,
       "value": "\"primaryButtonBackgroundColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6508,
+      "offset": 6681,
       "length": 24,
       "value": "\"primaryButtonTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6574,
+      "offset": 6747,
       "length": 26,
       "value": "\"primaryButtonBorderColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6648,
+      "offset": 6821,
       "length": 32,
       "value": "\"secondaryButtonBackgroundColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6722,
+      "offset": 6895,
       "length": 26,
       "value": "\"secondaryButtonTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6792,
+      "offset": 6965,
       "length": 28,
       "value": "\"secondaryButtonBorderColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6856,
+      "offset": 7029,
       "length": 20,
       "value": "\"captureButtonColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6907,
+      "offset": 7080,
       "length": 15,
       "value": "\"brandingColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 6958,
+      "offset": 7131,
       "length": 20,
       "value": "\"retakeMessageColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7017,
+      "offset": 7201,
+      "length": 34,
+      "value": "\"retakeMessageCardBackgroundColor\""
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
+      "kind": "StringLiteral",
+      "offset": 7274,
       "length": 23,
       "value": "\"alertTextBoxTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7081,
+      "offset": 7338,
       "length": 25,
       "value": "\"alertTextBoxBorderColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7151,
+      "offset": 7408,
       "length": 29,
       "value": "\"alertTextBoxBackgroundColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7222,
+      "offset": 7479,
       "length": 26,
       "value": "\"formPlaceHolderTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7281,
+      "offset": 7538,
       "length": 17,
       "value": "\"pickerTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7331,
+      "offset": 7588,
       "length": 17,
       "value": "\"pickerIconColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7387,
+      "offset": 7644,
       "length": 23,
       "value": "\"pickerBackgroundColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7445,
+      "offset": 7702,
       "length": 19,
       "value": "\"pickerBorderColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7506,
+      "offset": 7763,
       "length": 26,
       "value": "\"countryListItemTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7572,
+      "offset": 7829,
       "length": 24,
       "value": "\"countrySearchTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7632,
+      "offset": 7889,
       "length": 20,
       "value": "\"nfcStatusTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7693,
+      "offset": 7950,
       "length": 25,
       "value": "\"nfcStatusErrorTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7757,
+      "offset": 8014,
       "length": 23,
       "value": "\"animationPrimaryColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7824,
+      "offset": 8081,
       "length": 28,
       "value": "\"errorAnimationPrimaryColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7898,
+      "offset": 8155,
       "length": 30,
       "value": "\"successAnimationPrimaryColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 7971,
+      "offset": 8228,
       "length": 26,
       "value": "\"apiLoadingTitleTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVUIObjects\/HVUIColor.swift",
       "kind": "StringLiteral",
-      "offset": 8039,
+      "offset": 8296,
       "length": 25,
       "value": "\"apiLoadingHintTextColor\""
     },
@@ -109268,7 +109315,7 @@
       "kind": "StringLiteral",
       "offset": 341,
       "length": 7,
-      "value": "\"6.0.0\""
+      "value": "\"6.0.1\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
@@ -113788,133 +113835,133 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 24566,
+      "offset": 25268,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 24594,
+      "offset": 25296,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "BooleanLiteral",
-      "offset": 24780,
+      "offset": 25482,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 25200,
+      "offset": 25902,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 25228,
+      "offset": 25930,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "BooleanLiteral",
-      "offset": 25416,
+      "offset": 26118,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "StringLiteral",
-      "offset": 26462,
+      "offset": 27164,
       "length": 22,
       "value": "\"hvRightArrowWithTail\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "StringLiteral",
-      "offset": 26754,
+      "offset": 27456,
       "length": 22,
       "value": "\"hvRightArrowWithTail\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 27044,
+      "offset": 27746,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 27128,
+      "offset": 27830,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 28248,
+      "offset": 28950,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 28276,
+      "offset": 28978,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "BooleanLiteral",
-      "offset": 28466,
+      "offset": 29168,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 28886,
+      "offset": 29588,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 28914,
+      "offset": 29616,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "BooleanLiteral",
-      "offset": 29106,
+      "offset": 29808,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 29779,
+      "offset": 30481,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "IntegerLiteral",
-      "offset": 29867,
+      "offset": 30569,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/UIUtilities\/UIUtilities.swift",
       "kind": "BooleanLiteral",
-      "offset": 32012,
+      "offset": 32714,
       "length": 5,
       "value": "false"
     },
