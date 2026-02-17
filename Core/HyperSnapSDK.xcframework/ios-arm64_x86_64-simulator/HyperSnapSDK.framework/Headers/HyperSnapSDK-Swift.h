@@ -455,6 +455,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @property (nonatomic, readonly, copy) NSString * _Nullable statusCode;
 @property (nonatomic, readonly, copy) NSString * _Nullable statusMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable videoUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable backendVideoUrl;
 @property (nonatomic, readonly) NSInteger attemptsCount;
 @property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable rawBarcode;
@@ -999,6 +1000,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel") SWIFT_DEPRECATED_MSG("Use
 
 @class FaceTextConfig;
 enum LivenessMode : NSInteger;
+enum VideoRecordingMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : HVBaseConfig
@@ -1006,7 +1008,9 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setShouldEnableOverlay:(BOOL)enableOverlay;
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
-- (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
+- (void)setShouldRecordVideo:(BOOL)shouldRecordvideo SWIFT_DEPRECATED_MSG("Use setShouldRecordVideo(_:mode:) instead");
+- (void)setShouldRecordVideo:(BOOL)shouldRecordvideo mode:(enum VideoRecordingMode)mode;
+- (enum VideoRecordingMode)getVideoRecordingMode SWIFT_WARN_UNUSED_RESULT;
 - (void)setEncryptPayload:(BOOL)encryptPayload;
 - (void)setCPRCheckSessionHeaders:(NSDictionary<NSString *, NSString *> * _Nullable)checkSessionHeaders;
 - (void)setFps:(NSInteger)fps;
@@ -1625,6 +1629,11 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 
 
 
+
+typedef SWIFT_ENUM(NSInteger, VideoRecordingMode, open) {
+  VideoRecordingModeFrontend = 0,
+  VideoRecordingModeBackend = 1,
+};
 
 @class HVPublicKey;
 @class HVEncryptedMessage;
@@ -2205,6 +2214,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVBaseResponse")
 @property (nonatomic, readonly, copy) NSString * _Nullable statusCode;
 @property (nonatomic, readonly, copy) NSString * _Nullable statusMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable videoUri;
+@property (nonatomic, readonly, copy) NSString * _Nullable backendVideoUrl;
 @property (nonatomic, readonly) NSInteger attemptsCount;
 @property (nonatomic, readonly, copy) NSString * _Nullable retakeMessage;
 @property (nonatomic, readonly, copy) NSString * _Nullable rawBarcode;
@@ -2749,6 +2759,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK19HVFaceActivityLabel") SWIFT_DEPRECATED_MSG("Use
 
 @class FaceTextConfig;
 enum LivenessMode : NSInteger;
+enum VideoRecordingMode : NSInteger;
 
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 @interface HVFaceConfig : HVBaseConfig
@@ -2756,7 +2767,9 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setShouldEnableOverlay:(BOOL)enableOverlay;
 @property (nonatomic, strong) FaceTextConfig * _Nonnull textConfig;
 - (void)setLivenessMode:(enum LivenessMode)livenessMode;
-- (void)setShouldRecordVideo:(BOOL)shouldRecordvideo;
+- (void)setShouldRecordVideo:(BOOL)shouldRecordvideo SWIFT_DEPRECATED_MSG("Use setShouldRecordVideo(_:mode:) instead");
+- (void)setShouldRecordVideo:(BOOL)shouldRecordvideo mode:(enum VideoRecordingMode)mode;
+- (enum VideoRecordingMode)getVideoRecordingMode SWIFT_WARN_UNUSED_RESULT;
 - (void)setEncryptPayload:(BOOL)encryptPayload;
 - (void)setCPRCheckSessionHeaders:(NSDictionary<NSString *, NSString *> * _Nullable)checkSessionHeaders;
 - (void)setFps:(NSInteger)fps;
@@ -3375,6 +3388,11 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 
 
 
+
+typedef SWIFT_ENUM(NSInteger, VideoRecordingMode, open) {
+  VideoRecordingModeFrontend = 0,
+  VideoRecordingModeBackend = 1,
+};
 
 @class HVPublicKey;
 @class HVEncryptedMessage;

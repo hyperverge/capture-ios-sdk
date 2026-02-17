@@ -460,6 +460,9 @@ public enum HVAnyValueProviderStorage {
   @objc public var videoUri: Swift.String? {
     get
   }
+  @objc public var backendVideoUrl: Swift.String? {
+    get
+  }
   @objc public var attemptsCount: Swift.Int {
     get
   }
@@ -827,12 +830,24 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
   }
   @objc deinit
 }
+@objc public enum VideoRecordingMode : Swift.Int {
+  case frontend
+  case backend
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @objc public class HVFaceConfig : HyperSnapSDK.HVBaseConfig {
   @objc public func setShowConsent(_ show: Swift.Bool)
   @objc public func setShouldEnableOverlay(_ enableOverlay: Swift.Bool)
   @objc public var textConfig: HyperSnapSDK.HVFaceConfig.FaceTextConfig
   @objc public func setLivenessMode(_ livenessMode: HyperSnapSDK.HyperSnapParams.LivenessMode)
+  @available(*, deprecated, message: "Use setShouldRecordVideo(_:mode:) instead")
   @objc public func setShouldRecordVideo(_ shouldRecordvideo: Swift.Bool)
+  @objc public func setShouldRecordVideo(_ shouldRecordvideo: Swift.Bool, mode: HyperSnapSDK.VideoRecordingMode)
+  @objc public func getVideoRecordingMode() -> HyperSnapSDK.VideoRecordingMode
   @objc public func setEncryptPayload(_ encryptPayload: Swift.Bool)
   @objc public func setCPRCheckSessionHeaders(_ checkSessionHeaders: [Swift.String : Swift.String]?)
   @objc public func setFps(_ fps: Swift.Int)
@@ -3021,6 +3036,9 @@ extension HyperSnapSDK.HVCompatibleBackgroundBehavior : Swift.RawRepresentable {
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Equatable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.Hashable {}
 extension HyperSnapSDK.HVDocConfig.DocumentSide : Swift.RawRepresentable {}
+extension HyperSnapSDK.VideoRecordingMode : Swift.Equatable {}
+extension HyperSnapSDK.VideoRecordingMode : Swift.Hashable {}
+extension HyperSnapSDK.VideoRecordingMode : Swift.RawRepresentable {}
 extension HyperSnapSDK.HVFloatValueProvider : HyperSnapSDK.HVAnyValueProvider {}
 extension HyperSnapSDK.HVGesturePose.FacePose : Swift.Equatable {}
 extension HyperSnapSDK.HVGesturePose.FacePose : Swift.Hashable {}
