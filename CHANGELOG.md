@@ -1,3 +1,7 @@
+#### 6.1.0 [17 Feb 2026]
+ - Enhancements
+    - Add support for backend video recording via `HVFaceConfig.setShouldRecordVideo()` 
+    
 #### 6.0.1 [3 Feb 2026]
  - Enhancements
     - Added logic to make the retake message card background colour customisable by using the key `retakeMessageCardBackgroundColor`
