@@ -1,3 +1,7 @@
+#### 6.2.0 [23 Mar 2026]
+ - Enhancements
+    - Add `lightProbe` check for injection detection when `cameraProbeConfig.lightProbe.enable` is set as `true` in appId remote config
+    
 #### 6.1.0 [17 Feb 2026]
  - Enhancements
     - Add support for backend video recording via `HVFaceConfig.setShouldRecordVideo()` 
