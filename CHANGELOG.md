@@ -1,3 +1,7 @@
+#### 6.3.0 [31 Mar 2026]
+ - Enhancements
+    - Add support for dark and light themes via `setHVThemeMode(HVThemeMode.system)`
+    
 #### 6.2.0 [23 Mar 2026]
  - Enhancements
     - Add `lightProbe` check for injection detection when `cameraProbeConfig.lightProbe.enable` is set as `true` in appId remote config

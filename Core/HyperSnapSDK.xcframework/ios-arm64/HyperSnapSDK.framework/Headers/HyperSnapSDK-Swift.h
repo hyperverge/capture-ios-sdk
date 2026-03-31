@@ -1510,6 +1510,27 @@ SWIFT_CLASS("_TtC12HyperSnapSDK15HVSubtitleLabel") SWIFT_DEPRECATED_MSG("Use UIC
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+/// Enum to specify the theme mode for the SDK.
+/// <ul>
+///   <li>
+///     <code>light</code>: Explicit light mode (regardless of system theme)
+///   </li>
+///   <li>
+///     <code>dark</code>: Explicit dark mode (regardless of system theme)
+///   </li>
+///   <li>
+///     <code>system</code>: Follow system theme settings
+///   </li>
+/// </ul>
+typedef SWIFT_ENUM(NSInteger, HVThemeMode, open) {
+/// Light theme mode - forces light theme regardless of system settings [Default]
+  HVThemeModeLight = 0,
+/// Dark theme mode - forces dark theme regardless of system settings
+  HVThemeModeDark = 1,
+/// System theme mode - follows the device’s system theme settings
+  HVThemeModeSystem = 2,
+};
+
 
 IB_DESIGNABLE
 SWIFT_CLASS("_TtC12HyperSnapSDK12HVTitleLabel")
@@ -1592,6 +1613,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setShouldUseLocation:(BOOL)shouldUseLocation;
 + (void)setExternalConfigs:(HVExternalConfigs * _Nonnull)externalConfigs;
 + (void)setEncryptionMetadata:(NSString * _Nonnull)encryptionMetadata;
+/// Sets the theme mode for the SDK.
+/// \param themeMode The theme mode to apply (light, dark, or system)
+///
++ (void)setHVThemeMode:(enum HVThemeMode)themeMode;
 + (void)setBrandingCheck:(BOOL)shouldCheck completionHandler:(void (^ _Nonnull)(HVError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
 + (void)setShouldReturnRawResponse:(BOOL)shouldReturn;
 + (void)deleteImageAtUri:(NSString * _Nonnull)imageUri;

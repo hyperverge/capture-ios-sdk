@@ -2130,6 +2130,16 @@ extension HyperSnapSDK.HVSwiftyRSAError : Foundation.LocalizedError {
     get
   }
 }
+@objc public enum HVThemeMode : Swift.Int {
+  case light
+  case dark
+  case system
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 public struct HVUIAlignment : Swift.Codable {
   public var titleTextAlignment: Swift.String {
     get
@@ -2375,6 +2385,7 @@ public struct HVUIColor : Swift.Codable {
     get
   }
   public init()
+  public func getSdkBackgroundColor(isDarkMode: Swift.Bool) -> Swift.String
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -2392,6 +2403,24 @@ public struct HVUIConfig : Swift.Codable {
   public var lineHeight: HyperSnapSDK.HVUILineHeight?
   public var charSpacing: HyperSnapSDK.HVUICharSpacing?
   public var gradient: HyperSnapSDK.HVUIGradient?
+  public var dark: HyperSnapSDK.HVDarkModeConfig?
+  public init()
+  public func effectiveConfig(isDarkMode: Swift.Bool) -> HyperSnapSDK.HVUIConfig
+  public func getSdkBackgroundColor(isDarkMode: Swift.Bool) -> Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct HVDarkModeConfig : Swift.Codable {
+  public var colors: HyperSnapSDK.HVUIColor?
+  public var font: HyperSnapSDK.HVUIFont?
+  public var fontWeight: HyperSnapSDK.HVUIFontWeight?
+  public var fontSize: HyperSnapSDK.HVUIFontSize?
+  public var icons: HyperSnapSDK.HVUIIcons?
+  public var logos: HyperSnapSDK.HVUILogos?
+  public var animation: HyperSnapSDK.HVUIAnimation?
+  public var gradient: HyperSnapSDK.HVUIGradient?
+  public var borderRadius: HyperSnapSDK.HVUIBorderRadius?
+  public var backgroundImage: Swift.String?
   public init()
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -2720,6 +2749,7 @@ extension Foundation.Data {
   @objc public static func setShouldUseLocation(_ shouldUseLocation: Swift.Bool)
   @objc public static func setExternalConfigs(_ externalConfigs: HyperSnapSDK.HVExternalConfigs)
   @objc public static func setEncryptionMetadata(_ encryptionMetadata: Swift.String)
+  @objc public static func setHVThemeMode(_ themeMode: HyperSnapSDK.HVThemeMode)
   public static func setUiConfig(_ uiConfig: HyperSnapSDK.HVUIConfig?)
   public static func getUiConfig() -> HyperSnapSDK.HVUIConfig
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
@@ -3066,6 +3096,9 @@ extension HyperSnapSDK.HVSizeValueProvider : HyperSnapSDK.HVAnyValueProvider {}
 extension HyperSnapSDK._objc_HVSignature.HVDigestType : Swift.Equatable {}
 extension HyperSnapSDK._objc_HVSignature.HVDigestType : Swift.Hashable {}
 extension HyperSnapSDK._objc_HVSignature.HVDigestType : Swift.RawRepresentable {}
+extension HyperSnapSDK.HVThemeMode : Swift.Equatable {}
+extension HyperSnapSDK.HVThemeMode : Swift.Hashable {}
+extension HyperSnapSDK.HVThemeMode : Swift.RawRepresentable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Equatable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.Hashable {}
 extension HyperSnapSDK.HyperSnapParams.DocumentType : Swift.RawRepresentable {}
