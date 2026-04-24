@@ -1,3 +1,6 @@
+#### 6.3.1 [24 Apr 2026]
+ - Enhancements
+    - Add support for laminated card in document auto capture
 #### 6.3.0 [31 Mar 2026]
  - Enhancements
     - Add support for dark and light themes via `setHVThemeMode(HVThemeMode.system)`
