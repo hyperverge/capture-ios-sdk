@@ -111710,7 +111710,7 @@
       "kind": "StringLiteral",
       "offset": 341,
       "length": 7,
-      "value": "\"6.3.0\""
+      "value": "\"6.3.1\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
