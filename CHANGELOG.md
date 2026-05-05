@@ -1,3 +1,10 @@
+#### 6.4.0 [5 May 2026]
+- Enhancements
+  - Added support to disable orientation checks via remoteConfig and featureConfig
+- Bug Fixes
+  - Fixed crashes occurring on a background thread
+  - Fixed an issue where location permission being turned off during the selfie capture flow caused failures
+  
 #### 6.3.1 [24 Apr 2026]
  - Enhancements
     - Add support for laminated card in document auto capture

@@ -101943,462 +101943,483 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3750,
+      "offset": 3778,
+      "length": 35,
+      "value": "\"faceCapture_locationServicesTitle\""
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 3871,
+      "length": 34,
+      "value": "\"faceCapture_locationServicesDesc\""
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 3965,
+      "length": 36,
+      "value": "\"faceCapture_locationServicesButton\""
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 4065,
       "length": 23,
       "value": "\"faceCapture_faceFound\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3818,
+      "offset": 4133,
       "length": 26,
       "value": "\"faceCapture_faceNotFound\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3891,
+      "offset": 4206,
       "length": 24,
       "value": "\"faceCapture_moveCloser\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3965,
+      "offset": 4280,
       "length": 27,
       "value": "\"faceCapture_multipleFaces\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4041,
+      "offset": 4356,
       "length": 26,
       "value": "\"faceCapture_lookStraight\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4112,
+      "offset": 4427,
       "length": 22,
       "value": "\"faceCapture_moveAway\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4194,
+      "offset": 4509,
       "length": 36,
       "value": "\"faceCapture_deviceWrongOrientation\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4302,
+      "offset": 4617,
       "length": 22,
       "value": "\"faceGesture_lookLeft\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4376,
+      "offset": 4691,
       "length": 26,
       "value": "\"faceGesture_lookStraight\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4451,
+      "offset": 4766,
       "length": 23,
       "value": "\"faceGesture_lookRight\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4548,
+      "offset": 4863,
       "length": 27,
       "value": "\"faceAutoCapture_stayStill\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4630,
+      "offset": 4945,
       "length": 29,
       "value": "\"faceAutoCapture_labelChange\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4734,
+      "offset": 5049,
       "length": 23,
       "value": "\"faceCapture_alertText\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4845,
+      "offset": 5160,
       "length": 18,
       "value": "\"faceLoader_title\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4910,
+      "offset": 5225,
       "length": 17,
       "value": "\"faceLoader_desc\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5015,
+      "offset": 5330,
       "length": 18,
       "value": "\"faceRetake_title\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5082,
+      "offset": 5397,
       "length": 19,
       "value": "\"faceRetake_button\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5210,
+      "offset": 5525,
       "length": 22,
       "value": "\"qrInstructions_title\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5283,
+      "offset": 5598,
       "length": 21,
       "value": "\"qrInstructions_desc\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5357,
+      "offset": 5672,
       "length": 23,
       "value": "\"qrInstructions_button\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5464,
+      "offset": 5779,
       "length": 17,
       "value": "\"qrCapture_title\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5527,
+      "offset": 5842,
       "length": 16,
       "value": "\"qrCapture_desc\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5592,
+      "offset": 5907,
       "length": 19,
       "value": "\"qrCapture_subText\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5661,
+      "offset": 5976,
       "length": 20,
       "value": "\"qrCapture_skipText\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5771,
+      "offset": 6086,
       "length": 29,
       "value": "\"qrCapture_cameraAccessTitle\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5856,
+      "offset": 6171,
       "length": 28,
       "value": "\"qrCapture_cameraAccessDesc\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5942,
+      "offset": 6257,
       "length": 30,
       "value": "\"qrCapture_cameraAccessButton\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6032,
+      "offset": 6347,
       "length": 20,
       "value": "\"primaryButtonColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6093,
+      "offset": 6408,
       "length": 22,
       "value": "\"secondaryButtonColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6150,
+      "offset": 6465,
       "length": 16,
       "value": "\"titleTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6207,
+      "offset": 6522,
       "length": 22,
       "value": "\"descriptionTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6268,
+      "offset": 6583,
       "length": 20,
       "value": "\"retakeMessageColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6327,
+      "offset": 6642,
       "length": 20,
       "value": "\"captureButtonColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6380,
+      "offset": 6695,
       "length": 15,
       "value": "\"brandingColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6439,
+      "offset": 6754,
       "length": 23,
       "value": "\"alertTextBoxTextColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6503,
+      "offset": 6818,
       "length": 25,
       "value": "\"alertTextBoxBorderColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6573,
+      "offset": 6888,
       "length": 29,
       "value": "\"alertTextBoxBackgroundColor\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6660,
+      "offset": 6975,
       "length": 9,
       "value": "\"#564EF1\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6724,
+      "offset": 7039,
       "length": 9,
       "value": "\"#564EF1\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6782,
+      "offset": 7097,
       "length": 9,
       "value": "\"#050451\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6846,
+      "offset": 7161,
       "length": 9,
       "value": "\"#6F729B\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6908,
+      "offset": 7223,
       "length": 9,
       "value": "\"#564EF1\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6971,
+      "offset": 7286,
       "length": 9,
       "value": "\"#050451\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7034,
+      "offset": 7349,
       "length": 9,
       "value": "\"#FFFFFF\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7096,
+      "offset": 7411,
       "length": 9,
       "value": "\"#0F0F0F\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7177,
+      "offset": 7492,
       "length": 23,
       "value": "\"sensorDataZipFileName\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7237,
+      "offset": 7552,
       "length": 20,
       "value": "\"isDocumentUploaded\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7295,
+      "offset": 7610,
       "length": 21,
       "value": "\"Screenshot detected\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7360,
+      "offset": 7675,
       "length": 27,
       "value": "\"Screen recording detected\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7426,
+      "offset": 7741,
       "length": 20,
       "value": "\"videoRecordingData\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7488,
+      "offset": 7803,
       "length": 9,
       "value": "\"enabled\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7544,
+      "offset": 7859,
       "length": 13,
       "value": "\"colorFormat\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7661,
+      "offset": 7976,
       "length": 8,
       "value": "\"planar\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7778,
+      "offset": 8093,
       "length": 12,
       "value": "\"semiplanar\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7898,
+      "offset": 8213,
       "length": 23,
       "value": "\"completeVideoDuration\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8020,
+      "offset": 8335,
       "length": 15,
       "value": "\"videoDuration\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8080,
+      "offset": 8395,
       "length": 11,
       "value": "\"videoSize\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8131,
+      "offset": 8446,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8176,
+      "offset": 8491,
       "length": 20,
       "value": "\"additionalMetadata\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8257,
+      "offset": 8572,
       "length": 11,
       "value": "\"publicKey\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8309,
+      "offset": 8624,
       "length": 12,
       "value": "\"keyVersion\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8394,
+      "offset": 8709,
       "length": 19,
       "value": "\"\/v1\/checkLiveness\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8457,
+      "offset": 8772,
       "length": 5,
       "value": "\"yes\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8526,
+      "offset": 8841,
       "length": 22,
       "value": "\"returnInputImageUrls\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 8610,
+      "offset": 8925,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 8654,
+      "offset": 8969,
       "length": 3,
       "value": "0.8"
     },
@@ -103238,28 +103259,28 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/DeviceInfoUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 24678,
+      "offset": 25233,
       "length": 2,
       "value": "-2"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/DeviceInfoUtils.swift",
       "kind": "StringLiteral",
-      "offset": 24725,
+      "offset": 25280,
       "length": 6,
       "value": "\"fork\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/DeviceInfoUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 24908,
+      "offset": 25463,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/DeviceInfoUtils.swift",
       "kind": "IntegerLiteral",
-      "offset": 24940,
+      "offset": 25495,
       "length": 1,
       "value": "0"
     },
@@ -104539,22 +104560,36 @@
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
+      "kind": "StringLiteral",
+      "offset": 733,
+      "length": 33,
+      "value": "\"enable-device-orientation-check\""
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 748,
+      "offset": 843,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 768,
+      "offset": 863,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 899,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
       "kind": "StringLiteral",
-      "offset": 898,
+      "offset": 1029,
       "length": 74,
       "value": "\"https:\/\/s3.ap-south-1.amazonaws.com\/hv-sdk-device-configs\/hypersnap\/ios\/\""
     },
@@ -106290,28 +106325,28 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVDocConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12323,
+      "offset": 12315,
       "length": 16,
       "value": "\"Cancel Capture\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVDocConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12378,
+      "offset": 12370,
       "length": 49,
       "value": "\"Are you sure you want to cancel this operation?\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVDocConfig.swift",
       "kind": "Dictionary",
-      "offset": 12485,
+      "offset": 12477,
       "length": 8,
       "value": "[(\"\", \"\")]"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVDocConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 19871,
+      "offset": 19851,
       "length": 4,
       "value": "true"
     },
@@ -106962,56 +106997,63 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1158,
+      "offset": 1160,
+      "length": 2,
+      "value": "33"
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1188,
       "length": 2,
       "value": "41"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1186,
+      "offset": 1216,
       "length": 2,
       "value": "42"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1216,
+      "offset": 1246,
       "length": 2,
       "value": "43"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1249,
+      "offset": 1279,
       "length": 2,
       "value": "44"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1284,
+      "offset": 1314,
       "length": 3,
       "value": "300"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1313,
+      "offset": 1343,
       "length": 3,
       "value": "401"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVError.swift",
       "kind": "IntegerLiteral",
-      "offset": 1352,
+      "offset": 1382,
       "length": 3,
       "value": "151"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVError.swift",
       "kind": "StringLiteral",
-      "offset": 1418,
+      "offset": 1448,
       "length": 2,
       "value": "\"\""
     },
@@ -107179,441 +107221,469 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 1610,
+      "offset": 1627,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 1639,
+      "offset": 1668,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1697,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 1824,
+      "offset": 1882,
       "length": 4,
       "value": "3000"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 2073,
+      "offset": 2131,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 2121,
+      "offset": 2179,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 2156,
+      "offset": 2214,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 2229,
+      "offset": 2287,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 2320,
+      "offset": 2378,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2920,
+      "offset": 2978,
       "length": 2,
       "value": "39"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 2923,
+      "offset": 2981,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2937,
+      "offset": 2995,
       "length": 3,
       "value": "174"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 2941,
+      "offset": 2999,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2954,
+      "offset": 3012,
       "length": 2,
       "value": "96"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 2957,
+      "offset": 3015,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2971,
+      "offset": 3029,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 3036,
+      "offset": 3094,
       "length": 3,
       "value": "235"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 3040,
+      "offset": 3098,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 3054,
+      "offset": 3112,
       "length": 2,
       "value": "87"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 3057,
+      "offset": 3115,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 3070,
+      "offset": 3128,
       "length": 2,
       "value": "87"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 3073,
+      "offset": 3131,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 3087,
+      "offset": 3145,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "Dictionary",
-      "offset": 11242,
+      "offset": 11759,
       "length": 7,
       "value": "[(\"\", \"\")]"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 11286,
+      "offset": 11803,
       "length": 13,
       "value": "\"Selfie Tips\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 11351,
+      "offset": 11868,
       "length": 89,
       "value": "\"Please remove Spectacles, Hats and masks. A clearly visible face will get approved fast\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 11556,
+      "offset": 12073,
       "length": 28,
       "value": "\"Good lighting on your face\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 11700,
+      "offset": 12217,
       "length": 28,
       "value": "\"Hold phone in front of you\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 11849,
+      "offset": 12366,
       "length": 12,
       "value": "\"No Glasses\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 11984,
+      "offset": 12501,
       "length": 14,
       "value": "\"Bright Light\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12115,
+      "offset": 12632,
       "length": 8,
       "value": "\"No Hat\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12171,
+      "offset": 12688,
       "length": 24,
       "value": "\"Proceed to Take Selfie\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12250,
+      "offset": 12767,
       "length": 20,
       "value": "\"Proceed to Capture\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12311,
+      "offset": 12828,
       "length": 16,
       "value": "\"Selfie Capture\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12369,
+      "offset": 12886,
       "length": 15,
       "value": "\"Take a selfie\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12428,
+      "offset": 12945,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12480,
+      "offset": 12997,
       "length": 25,
       "value": "\"Multiple Faces Detected\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12561,
+      "offset": 13078,
       "length": 31,
       "value": "\"Please hold the phone upright\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12644,
+      "offset": 13161,
       "length": 22,
       "value": "\"Please Look Straight\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12715,
+      "offset": 13232,
       "length": 13,
       "value": "\"Capture Now\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12776,
+      "offset": 13293,
       "length": 34,
       "value": "\"Please move away from the screen\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12859,
+      "offset": 13376,
       "length": 30,
       "value": "\"Face too close to the screen\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 12966,
+      "offset": 13483,
       "length": 34,
       "value": "\"Please move closer to the screen\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13051,
+      "offset": 13568,
       "length": 30,
       "value": "\"Face too far from the screen\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13160,
+      "offset": 13677,
       "length": 30,
       "value": "\"Place face inside the circle\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13243,
+      "offset": 13760,
       "length": 35,
       "value": "\"Place your face inside the circle\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13362,
+      "offset": 13879,
       "length": 37,
       "value": "\"Face not detected. Please try again\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13447,
+      "offset": 13964,
       "length": 12,
       "value": "\"Stay Still\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13509,
+      "offset": 14026,
       "length": 8,
       "value": "\"Great!\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13562,
+      "offset": 14079,
       "length": 14,
       "value": "\"Verifying...\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13627,
+      "offset": 14144,
       "length": 22,
       "value": "\"checking your selfie\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13697,
+      "offset": 14214,
       "length": 12,
       "value": "\"Processing\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13754,
+      "offset": 14271,
       "length": 15,
       "value": "\"Retake Selfie\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13813,
+      "offset": 14330,
       "length": 14,
       "value": "\"Retake Photo\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13881,
+      "offset": 14398,
       "length": 27,
       "value": "\"Not able to access camera\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 13968,
+      "offset": 14477,
       "length": 90,
       "value": "\"Camera access is needed to capture photos of your ID and Selfie. Please grant the access\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 14113,
+      "offset": 14614,
       "length": 22,
       "value": "\"Enable Camera Access\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 14175,
+      "offset": 14682,
+      "length": 28,
+      "value": "\"Location Services Disabled\""
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 14762,
+      "length": 145,
+      "value": "\"Location services are turned off on this device. Please go to Settings → Privacy & Security → Location Services and turn it on to continue.\""
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 14954,
+      "length": 15,
+      "value": "\"Open Settings\""
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 15009,
       "length": 16,
       "value": "\"Cancel Capture\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 14230,
+      "offset": 15064,
       "length": 49,
       "value": "\"Are you sure you want to cancel this operation?\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 14316,
+      "offset": 15150,
       "length": 117,
       "value": "\"You are taking a selfie to Activate your debit mastercard. Do not share card info with anyone to avoid losing money\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 14514,
+      "offset": 15348,
       "length": 11,
       "value": "\"Look Left\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 14557,
+      "offset": 15391,
       "length": 12,
       "value": "\"Look Right\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "StringLiteral",
-      "offset": 14604,
+      "offset": 15438,
       "length": 15,
       "value": "\"Look Straight\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HVFaceConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 24552,
+      "offset": 25832,
       "length": 4,
       "value": "true"
     },
@@ -107676,112 +107746,112 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2340,
+      "offset": 2401,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2376,
+      "offset": 2437,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 2417,
+      "offset": 2478,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 28137,
+      "offset": 31154,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 28771,
+      "offset": 31788,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 32753,
+      "offset": 35770,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 32783,
+      "offset": 35800,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 38065,
+      "offset": 41082,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 38246,
+      "offset": 41263,
       "length": 4,
       "value": "1000"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 46094,
+      "offset": 49170,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 46291,
+      "offset": 49367,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 69552,
+      "offset": 72628,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 69581,
+      "offset": 72657,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 69616,
+      "offset": 72692,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 69653,
+      "offset": 72729,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/VCs\/Face\/HVFaceViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 69685,
+      "offset": 72761,
       "length": 4,
       "value": "true"
     },
@@ -108390,126 +108460,126 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 48384,
+      "offset": 48502,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 48399,
+      "offset": 48517,
       "length": 3,
       "value": "128"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 48416,
+      "offset": 48534,
       "length": 3,
       "value": "235"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 48435,
+      "offset": 48553,
       "length": 3,
       "value": "240"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 48447,
+      "offset": 48565,
       "length": 3,
       "value": "235"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 48459,
+      "offset": 48577,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 48472,
+      "offset": 48590,
       "length": 3,
       "value": "240"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 48486,
+      "offset": 48604,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "BooleanLiteral",
-      "offset": 84482,
+      "offset": 84600,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "BooleanLiteral",
-      "offset": 84520,
+      "offset": 84638,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "BooleanLiteral",
-      "offset": 84564,
+      "offset": 84682,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "BooleanLiteral",
-      "offset": 84610,
+      "offset": 84728,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "BooleanLiteral",
-      "offset": 84651,
+      "offset": 84769,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 85296,
+      "offset": 85414,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 85374,
+      "offset": 85492,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 85775,
+      "offset": 85893,
       "length": 3,
       "value": "180"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 85861,
+      "offset": 85979,
       "length": 3,
       "value": "180"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Cameras\/HVFrCameraParent.swift",
       "kind": "IntegerLiteral",
-      "offset": 85914,
+      "offset": 86032,
       "length": 3,
       "value": "180"
     },
@@ -111710,7 +111780,7 @@
       "kind": "StringLiteral",
       "offset": 341,
       "length": 7,
-      "value": "\"6.3.1\""
+      "value": "\"6.4.0\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
@@ -111792,105 +111862,105 @@
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 17811,
+      "offset": 17854,
       "length": 2,
       "value": "1"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 17867,
+      "offset": 17910,
       "length": 8,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 17928,
+      "offset": 17971,
       "length": 5,
       "value": "3"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 18351,
+      "offset": 18394,
       "length": 12,
       "value": "1"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 18377,
+      "offset": 18420,
       "length": 5,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 18396,
+      "offset": 18439,
       "length": 6,
       "value": "3"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 18847,
+      "offset": 18890,
       "length": 3,
       "value": "1"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 18965,
+      "offset": 19008,
       "length": 15,
       "value": "1"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 19480,
+      "offset": 19523,
       "length": 9,
       "value": "1"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 19503,
+      "offset": 19546,
       "length": 17,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 19534,
+      "offset": 19577,
       "length": 7,
       "value": "3"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "StringLiteral",
-      "offset": 20139,
+      "offset": 20182,
       "length": 14,
       "value": "\"HyperSnapSDK\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "StringLiteral",
-      "offset": 20170,
+      "offset": 20213,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "StringLiteral",
-      "offset": 20190,
+      "offset": 20233,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
       "kind": "StringLiteral",
-      "offset": 20215,
+      "offset": 20258,
       "length": 2,
       "value": "\"\""
     },
@@ -114080,22 +114150,29 @@
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2494,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "Dictionary",
-      "offset": 2554,
+      "offset": 2617,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "Dictionary",
-      "offset": 2626,
+      "offset": 2689,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/admin\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "Dictionary",
-      "offset": 2687,
+      "offset": 2750,
       "length": 3,
       "value": "[]"
     },
