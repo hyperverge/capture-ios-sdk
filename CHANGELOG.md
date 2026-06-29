@@ -1,3 +1,11 @@
+#### 6.5.0 [26 Jun 2026]
+  - Enhancements
+    - Added support for Super Module changes for selfie capture.
+  - Bug Fixes
+    - Fixed image rotation issue after selfie capture.
+    - Fixed UI clipping issue on iOS 26 during document capture.
+    - Fixed timeout issue during video recording in selfie capture.
+    
 #### 6.4.0 [5 May 2026]
 - Enhancements
   - Added support to disable orientation checks via remoteConfig and featureConfig

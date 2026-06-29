@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name HyperSnapSDK
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name HyperSnapSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import AVFoundation
 import AVKit
 import Accelerate
@@ -71,7 +71,9 @@ extension HyperSnapSDK.HVLottieColor : Swift.Codable {
 }
 public enum HVDeviceModel : Swift.String {
   case simulator, iPod1, iPod2, iPod3, iPod4, iPod5, iPod6, iPod7, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPad5, iPad6, iPad7, iPad8, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, AppleWatch1, AppleWatchS1, AppleWatchS2, AppleWatchS3, AppleWatchS4, AppleWatchS5, AppleWatchSE, AppleWatchS6, AppleTV1, AppleTV2, AppleTV3, AppleTV4, AppleTV_4K, unrecognized
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -84,21 +86,41 @@ extension UIKit.UIDevice {
 }
 extension HyperSnapSDK.HVDotLottieFile {
   public enum HVSynchronouslyBlockingCurrentThread {
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func loadedFrom(filepath: Swift.String, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache) -> Swift.Result<HyperSnapSDK.HVDotLottieFile, any Swift.Error>
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
     public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache) -> Swift.Result<HyperSnapSDK.HVDotLottieFile, any Swift.Error>
+    #endif
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
   public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache) async throws -> HyperSnapSDK.HVDotLottieFile
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache, dispatchQueue: Dispatch.DispatchQueue = .global(), handleResult: @escaping (Swift.Result<HyperSnapSDK.HVDotLottieFile, any Swift.Error>) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
   public static func loadedFrom(filepath: Swift.String, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache) async throws -> HyperSnapSDK.HVDotLottieFile
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func loadedFrom(filepath: Swift.String, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache, dispatchQueue: Dispatch.DispatchQueue = .global(), handleResult: @escaping (Swift.Result<HyperSnapSDK.HVDotLottieFile, any Swift.Error>) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
   public static func asset(named name: Swift.String, bundle: Foundation.Bundle = Bundle.main, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache) async throws -> HyperSnapSDK.HVDotLottieFile
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func asset(named name: Swift.String, bundle: Foundation.Bundle = Bundle.main, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache, dispatchQueue: Dispatch.DispatchQueue = .global(), handleResult: @escaping (Swift.Result<HyperSnapSDK.HVDotLottieFile, any Swift.Error>) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
   public static func loadedFrom(url: Foundation.URL, session: Foundation.URLSession = .shared, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache) async throws -> HyperSnapSDK.HVDotLottieFile
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func loadedFrom(url: Foundation.URL, session: Foundation.URLSession = .shared, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache, handleResult: @escaping (Swift.Result<HyperSnapSDK.HVDotLottieFile, any Swift.Error>) -> Swift.Void)
+  #endif
 }
 public enum DotLottieError : Swift.Error {
   case noDataLoaded
@@ -142,6 +164,8 @@ public enum DotLottieError : Swift.Error {
   public static let EVENT_SELFIE_CAPTURE_SUCCESSFUL: Swift.String
   public static let EVENT_SELFIE_CAPTURE_FAILED: Swift.String
   public static let EVENT_SELFIE_CAPTURE_SAVED: Swift.String
+  public static let EVENT_SELFIE_VIDEO_STITCHING_STARTED: Swift.String
+  public static let EVENT_SELFIE_VIDEO_STITCH_DISPATCH_STARTED: Swift.String
   public static let EVENT_SELFIE_VIDEO_RECORD_SUCCESSFUL: Swift.String
   public static let EVENT_SELFIE_VIDEO_RECORD_FAILED: Swift.String
   public static let EVENT_FLIP_CAMERA_BUTTON_CLICKED: Swift.String
@@ -262,11 +286,15 @@ extension UIKit.UINavigationController {
   }
 }
 extension UIKit.UIFont {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle?)
+  #endif
 }
 @objc @_inheritsConvenienceInitializers public class GKYCSignatureHelper : ObjectiveC.NSObject {
   @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   public func setInputs(queryParams: [Swift.String : Swift.String]?, fileHashDictionary: [Swift.String : Swift.String]?, requestBody: [Swift.String : Swift.AnyObject], responseBody: [Swift.String : Swift.AnyObject]?, responseHeaders: [Swift.String : Swift.String]?)
+  #endif
   public func getMD5HashOfData(_ data: Foundation.Data) -> Swift.String
   public func verifySignature() -> Swift.Bool
   @objc deinit
@@ -278,9 +306,15 @@ extension UIKit.UIFont {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class HVAnimatedButton : HyperSnapSDK.HVAnimatedControl {
   @_Concurrency.MainActor @preconcurrency override public init(animation: HyperSnapSDK.HVLottieAnimation, configuration: HyperSnapSDK.HVLottieConfiguration = .shared)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var accessibilityTraits: UIKit.UIAccessibilityTraits {
     @objc get
     @objc set
@@ -292,7 +326,9 @@ extension UIKit.UIFont {
 @objc @_Concurrency.MainActor @preconcurrency open class HVAnimatedControl : UIKit.UIControl {
   @_Concurrency.MainActor @preconcurrency public init(animation: HyperSnapSDK.HVLottieAnimation, configuration: HyperSnapSDK.HVLottieConfiguration = .shared)
   @_Concurrency.MainActor @preconcurrency @objc dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var isEnabled: Swift.Bool {
     @objc get
     @objc set
@@ -308,10 +344,18 @@ extension UIKit.UIFont {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func beginTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func continueTracking(_ touch: UIKit.UITouch, with event: UIKit.UIEvent?) -> Swift.Bool
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func cancelTracking(with event: UIKit.UIEvent?)
+  #endif
   @_Concurrency.MainActor @preconcurrency open func animationDidSet()
   @_Concurrency.MainActor @preconcurrency final public let animationView: HyperSnapSDK.HVLottieAnimationView
   @_Concurrency.MainActor @preconcurrency public var animation: HyperSnapSDK.HVLottieAnimation? {
@@ -329,9 +373,13 @@ extension UIKit.UIFont {
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class HVAnimatedSwitch : HyperSnapSDK.HVAnimatedControl {
   @_Concurrency.MainActor @preconcurrency override public init(animation: HyperSnapSDK.HVLottieAnimation, configuration: HyperSnapSDK.HVLottieConfiguration = .shared)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency override open func animationDidSet()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func endTracking(_ touch: UIKit.UITouch?, with event: UIKit.UIEvent?)
+  #endif
   public enum HVCancelBehavior {
     case reverse
     case none
@@ -356,37 +404,47 @@ extension UIKit.UIFont {
   @objc deinit
 }
 public protocol HVAnimationCacheProvider : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   func animation(forKey: Swift.String) -> HyperSnapSDK.HVLottieAnimation?
+  #endif
   func setAnimation(_ animation: HyperSnapSDK.HVLottieAnimation, forKey: Swift.String)
   func clearCache()
 }
 public protocol HVAnimationFontProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   func fontFor(family: Swift.String, size: CoreFoundation.CGFloat) -> CoreText.CTFont?
+  #endif
 }
 final public class HVDefaultFontProvider : HyperSnapSDK.HVAnimationFontProvider {
   public init()
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func fontFor(family: Swift.String, size: CoreFoundation.CGFloat) -> CoreText.CTFont?
+  #endif
   @objc deinit
 }
 public protocol HVAnimationImageProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   func imageForAsset(asset: HyperSnapSDK.ImageAsset) -> CoreGraphics.CGImage?
+  #endif
 }
 public struct HVAnimationKeypath : Swift.Hashable, Swift.ExpressibleByStringLiteral {
   public init(keypath: Swift.String)
   public init(stringLiteral: Swift.String)
   public init(keys: [Swift.String])
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: HyperSnapSDK.HVAnimationKeypath, b: HyperSnapSDK.HVAnimationKeypath) -> Swift.Bool
   public typealias ExtendedGraphemeClusterLiteralType = Swift.String
   public typealias StringLiteralType = Swift.String
   public typealias UnicodeScalarLiteralType = Swift.String
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class HVAnimationSubview : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 public protocol HVAnimationTextProvider : AnyObject {
@@ -485,11 +543,18 @@ public enum HVAnyValueProviderStorage {
   @objc public var submittedTimestamp: Swift.Int64 {
     get
   }
+  @objc public var requestData: HyperSnapSDK.HVRequestData? {
+    get
+  }
   @objc deinit
 }
 public class HVBundleImageProvider : HyperSnapSDK.HVAnimationImageProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(bundle: Foundation.Bundle, searchPath: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func imageForAsset(asset: HyperSnapSDK.ImageAsset) -> CoreGraphics.CGImage?
+  #endif
   @objc deinit
 }
 @objc public enum HVCardUIState : Swift.Int {
@@ -498,7 +563,9 @@ public class HVBundleImageProvider : HyperSnapSDK.HVAnimationImageProvider {
   case moveCloser
   case moveAway
   case moveAwayFromEdge
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -539,7 +606,9 @@ final public class HVColorValueProvider {
   @objc deinit
 }
 @objc final public class HVCompatibleAnimation : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public init(name: Swift.String, subdirectory: Swift.String? = nil, bundle: Foundation.Bundle = Bundle.main)
+  #endif
   @objc deinit
 }
 @objc public enum HVCompatibleRenderingEngineOption : Swift.Int {
@@ -549,7 +618,9 @@ final public class HVColorValueProvider {
   case mainThread
   case coreAnimation
   public static func generateLottieConfiguration(_ configuration: HyperSnapSDK.HVCompatibleRenderingEngineOption) -> HyperSnapSDK.HVLottieConfiguration
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -561,7 +632,9 @@ final public class HVColorValueProvider {
   case pauseAndRestore
   case forceFinish
   case continuePlaying
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -632,22 +705,40 @@ final public class HVColorValueProvider {
     @objc set
   }
   @objc @_Concurrency.MainActor @preconcurrency final public func play()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency final public func play(completion: ((Swift.Bool) -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency final public func play(fromProgress: CoreFoundation.CGFloat, toProgress: CoreFoundation.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency final public func play(fromFrame: CoreFoundation.CGFloat, toFrame: CoreFoundation.CGFloat, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency final public func play(fromMarker: Swift.String, toMarker: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency final public func play(marker: Swift.String, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency final public func stop()
   @objc @_Concurrency.MainActor @preconcurrency final public func pause()
   @objc @_Concurrency.MainActor @preconcurrency final public func reloadImages()
   @objc @_Concurrency.MainActor @preconcurrency final public func forceDisplayUpdate()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency final public func getValue(for keypath: HyperSnapSDK.HVCompatibleAnimationKeypath, atFrame: CoreFoundation.CGFloat) -> Any?
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency final public func logHierarchyKeypaths()
   @objc @_Concurrency.MainActor @preconcurrency final public func setColorValue(_ color: UIKit.UIColor, forKeypath keypath: HyperSnapSDK.HVCompatibleAnimationKeypath)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency final public func getColorValue(for keypath: HyperSnapSDK.HVCompatibleAnimationKeypath, atFrame: CoreFoundation.CGFloat) -> UIKit.UIColor?
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency final public func addSubview(_ subview: HyperSnapSDK.HVAnimationSubview, forLayerAt keypath: HyperSnapSDK.HVCompatibleAnimationKeypath)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency final public func convert(rect: CoreFoundation.CGRect, toLayerAt keypath: HyperSnapSDK.HVCompatibleAnimationKeypath?) -> CoreFoundation.CGRect
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency final public func convert(point: CoreFoundation.CGPoint, toLayerAt keypath: HyperSnapSDK.HVCompatibleAnimationKeypath?) -> CoreFoundation.CGPoint
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency final public func progressTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
   @objc @_Concurrency.MainActor @preconcurrency final public func frameTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
   @objc @_Concurrency.MainActor @preconcurrency final public func durationFrameTime(forMarker named: Swift.String) -> CoreFoundation.CGFloat
@@ -665,7 +756,9 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
     set
   }
   public func clearCache()
+  #if compiler(>=5.3) && $NonescapableTypes
   public func animation(forKey key: Swift.String) -> HyperSnapSDK.HVLottieAnimation?
+  #endif
   public func setAnimation(_ animation: HyperSnapSDK.HVLottieAnimation, forKey key: Swift.String)
   @objc deinit
 }
@@ -677,7 +770,9 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setShouldShowReviewPage(_ shouldShow: Swift.Bool)
   @objc public func setShouldShowInstructionsPage(_ shouldShow: Swift.Bool)
   @objc public func setEncryptPayload(_ encryptPayload: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setCPRCheckSessionHeaders(_ checkSessionHeaders: [Swift.String : Swift.String]?)
+  #endif
   @objc public func setCustomLoadingScreen(_ vc: UIKit.UIViewController)
   @objc public func setShouldShowFlashButton(_ shouldShow: Swift.Bool)
   @objc public func setShouldAddPadding(_ shouldAdd: Swift.Bool)
@@ -703,12 +798,18 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
   @objc public func setShowCloseIcon(_ showCloseIcon: Swift.Bool)
   @objc public func setShowModuleBackButton(_ allow: Swift.Bool)
   @objc public func setEnableDocumentUpload(_ enable: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setUploadFileTypes(_ fileTypes: [Swift.String]?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setOCRAPIDetails(_ endpoint: Swift.String, documentSide: HyperSnapSDK.HVDocConfig.DocumentSide, params: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?)
+  #endif
   @objc public enum DocumentSide : Swift.Int {
     case front
     case back
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -755,8 +856,12 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
     @objc get
   }
   @objc @_Concurrency.MainActor @preconcurrency public var completionHandler: (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?, UIKit.UIViewController) -> Swift.Void
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func start(_ callingVC: UIKit.UIViewController, hvDocConfig: HyperSnapSDK.HVDocConfig, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ viewController: UIKit.UIViewController) -> Swift.Void)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
     @objc get
   }
@@ -771,7 +876,9 @@ public class HVDefaultAnimationCache : HyperSnapSDK.HVAnimationCacheProvider {
 }
 extension HyperSnapSDK.HVDocsViewController {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLayoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
@@ -791,12 +898,16 @@ public class HVDotLottieCache : HyperSnapSDK.HVDotLottieCacheProvider {
     set
   }
   public func clearCache()
+  #if compiler(>=5.3) && $NonescapableTypes
   public func file(forKey key: Swift.String) -> HyperSnapSDK.HVDotLottieFile?
+  #endif
   public func setFile(_ lottie: HyperSnapSDK.HVDotLottieFile, forKey key: Swift.String)
   @objc deinit
 }
 public protocol HVDotLottieCacheProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   func file(forKey: Swift.String) -> HyperSnapSDK.HVDotLottieFile?
+  #endif
   func setFile(_ lottie: HyperSnapSDK.HVDotLottieFile, forKey: Swift.String)
   func clearCache()
 }
@@ -824,7 +935,9 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
   @objc public var metadataMap: [Swift.String : Swift.String]?
   @objc override dynamic public init()
   @_inheritsConvenienceInitializers @objc public class Builder : ObjectiveC.NSObject {
+    #if compiler(>=5.3) && $NonescapableTypes
     @objc public func withMetadataMap(_ metadataMap: [Swift.String : Swift.String]?) -> HyperSnapSDK.HVExternalConfigs.Builder
+    #endif
     @objc public func build() -> HyperSnapSDK.HVExternalConfigs
     @objc override dynamic public init()
     @objc deinit
@@ -834,7 +947,9 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
 @objc public enum VideoRecordingMode : Swift.Int {
   case frontend
   case backend
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -850,7 +965,11 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
   @objc public func setShouldRecordVideo(_ shouldRecordvideo: Swift.Bool, mode: HyperSnapSDK.VideoRecordingMode)
   @objc public func getVideoRecordingMode() -> HyperSnapSDK.VideoRecordingMode
   @objc public func setEncryptPayload(_ encryptPayload: Swift.Bool)
+  @objc public func shouldStoreAdditionalModuleData() -> Swift.Bool
+  @objc public func setStoreAdditionalModuleData(_ storeAdditionalModuleData: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func setCPRCheckSessionHeaders(_ checkSessionHeaders: [Swift.String : Swift.String]?)
+  #endif
   @objc public func setFps(_ fps: Swift.Int)
   @objc public func setShouldAutoCapture(_ shouldAutoCapture: Swift.Bool)
   @objc public func setAutoCaptureDuration(_ duration: Swift.Int)
@@ -933,7 +1052,9 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class HVFaceInstructionsViewController : UIKit.UIViewController {
   @objc @_Concurrency.MainActor @preconcurrency public var completionHandler: (HyperSnapSDK.HVError?, HyperSnapSDK.HVResponse?, UIKit.UIViewController) -> Swift.Void
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig?)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
     @objc get
   }
@@ -953,14 +1074,20 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class HVFaceViewController : UIKit.UIViewController, UIKit.UIViewControllerTransitioningDelegate {
   @objc @_Concurrency.MainActor @preconcurrency public var completionHandler: ((_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ viewController: UIKit.UIViewController) -> Swift.Void)?
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func start(_ callingVC: UIKit.UIViewController, hvFaceConfig: HyperSnapSDK.HVFaceConfig, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?, _ viewController: UIKit.UIViewController) -> Swift.Void)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredContentSize: CoreFoundation.CGSize {
     @objc get
@@ -984,17 +1111,25 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
     @objc get
   }
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 extension HyperSnapSDK.HVFaceViewController {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  #endif
 }
 public class HVFilepathImageProvider : HyperSnapSDK.HVAnimationImageProvider {
   public init(filepath: Swift.String)
   public init(filepath: Foundation.URL)
+  #if compiler(>=5.3) && $NonescapableTypes
   public func imageForAsset(asset: HyperSnapSDK.ImageAsset) -> CoreGraphics.CGImage?
+  #endif
   @objc deinit
 }
 final public class HVFloatValueProvider {
@@ -1023,7 +1158,9 @@ final public class HVFloatValueProvider {
     case lookRight
     case lookStraight
     case none
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -1036,7 +1173,9 @@ final public class HVFloatValueProvider {
     case poseMatches
     case poseDoesNotMatch
     case captureInProgress
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -1049,7 +1188,9 @@ final public class HVFloatValueProvider {
     case stablePose
     case faceNotDetected
     case authenticatedState
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -1060,7 +1201,9 @@ final public class HVFloatValueProvider {
   @objc deinit
 }
 final public class HVGradientValueProvider {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(block: @escaping HyperSnapSDK.HVGradientValueProvider.ColorsValueBlock, locations: HyperSnapSDK.HVGradientValueProvider.ColorLocationsBlock? = nil)
+  #endif
   public init(_ colors: [HyperSnapSDK.HVLottieColor], locations: [Swift.Double] = [])
   public typealias ColorsValueBlock = (CoreFoundation.CGFloat) -> [HyperSnapSDK.HVLottieColor]
   public typealias ColorLocationsBlock = (CoreFoundation.CGFloat) -> [Swift.Double]
@@ -1098,17 +1241,25 @@ public protocol HVInterpolatable : HyperSnapSDK.AnyInterpolatable {
   func interpolate(to: Self, amount: CoreFoundation.CGFloat) -> Self
 }
 public protocol SpatialInterpolatable : HyperSnapSDK.AnyInterpolatable {
+  #if compiler(>=5.3) && $NonescapableTypes
   func interpolate(to: Self, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> Self
+  #endif
 }
 public protocol AnyInterpolatable {
+  #if compiler(>=5.3) && $NonescapableTypes
   func _interpolate(to: Self, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> Self
+  #endif
 }
 extension HyperSnapSDK.HVInterpolatable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func _interpolate(to: Self, amount: CoreFoundation.CGFloat, spatialOutTangent _: CoreFoundation.CGPoint?, spatialInTangent _: CoreFoundation.CGPoint?) -> Self
+  #endif
 }
 extension HyperSnapSDK.SpatialInterpolatable {
   public func interpolate(to: Self, amount: CoreFoundation.CGFloat) -> Self
+  #if compiler(>=5.3) && $NonescapableTypes
   public func _interpolate(to: Self, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> Self
+  #endif
 }
 extension Swift.Double : HyperSnapSDK.HVInterpolatable {
 }
@@ -1126,7 +1277,9 @@ extension CoreFoundation.CGSize : HyperSnapSDK.HVInterpolatable {
   public func interpolate(to: CoreFoundation.CGSize, amount: CoreFoundation.CGFloat) -> CoreFoundation.CGSize
 }
 extension CoreFoundation.CGPoint : HyperSnapSDK.SpatialInterpolatable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func interpolate(to: CoreFoundation.CGPoint, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> CoreFoundation.CGPoint
+  #endif
 }
 extension HyperSnapSDK.HVLottieColor : HyperSnapSDK.HVInterpolatable {
   public func interpolate(to: HyperSnapSDK.HVLottieColor, amount: CoreFoundation.CGFloat) -> HyperSnapSDK.HVLottieColor
@@ -1135,10 +1288,14 @@ extension HyperSnapSDK.HVLottieVector1D : HyperSnapSDK.HVInterpolatable {
   public func interpolate(to: HyperSnapSDK.HVLottieVector1D, amount: CoreFoundation.CGFloat) -> HyperSnapSDK.HVLottieVector1D
 }
 extension HyperSnapSDK.LottieVector2D : HyperSnapSDK.SpatialInterpolatable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func interpolate(to: HyperSnapSDK.LottieVector2D, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> HyperSnapSDK.LottieVector2D
+  #endif
 }
 extension HyperSnapSDK.HVLottieVector3D : HyperSnapSDK.SpatialInterpolatable {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func interpolate(to: HyperSnapSDK.HVLottieVector3D, amount: CoreFoundation.CGFloat, spatialOutTangent: CoreFoundation.CGPoint?, spatialInTangent: CoreFoundation.CGPoint?) -> HyperSnapSDK.HVLottieVector3D
+  #endif
 }
 extension Swift.Array : HyperSnapSDK.HVInterpolatable, HyperSnapSDK.AnyInterpolatable where Element : HyperSnapSDK.HVInterpolatable {
   public func interpolate(to: [Element], amount: CoreFoundation.CGFloat) -> [Element]
@@ -1147,8 +1304,12 @@ extension Swift.Array : HyperSnapSDK.HVInterpolatable, HyperSnapSDK.AnyInterpola
   @objc deinit
 }
 final public class HVKeyframe<T> {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(_ value: T, spatialInTangent: HyperSnapSDK.HVLottieVector3D? = nil, spatialOutTangent: HyperSnapSDK.HVLottieVector3D? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(value: T, time: HyperSnapSDK.AnimationFrameTime, isHold: Swift.Bool = false, inTangent: HyperSnapSDK.LottieVector2D? = nil, outTangent: HyperSnapSDK.LottieVector2D? = nil, spatialInTangent: HyperSnapSDK.HVLottieVector3D? = nil, spatialOutTangent: HyperSnapSDK.HVLottieVector3D? = nil)
+  #endif
   final public let value: T
   final public let time: HyperSnapSDK.AnimationFrameTime
   final public let isHold: Swift.Bool
@@ -1170,7 +1331,9 @@ extension HyperSnapSDK.HVKeyframe : Swift.Hashable where T : Swift.Hashable {
 public enum HVCoordinateSpace : Swift.Int, Swift.Codable {
   case type2d
   case type3d
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1215,16 +1378,32 @@ extension HyperSnapSDK.HVLottieLoopMode : Swift.Equatable {
   public static func == (lhs: HyperSnapSDK.HVLottieLoopMode, rhs: HyperSnapSDK.HVLottieLoopMode) -> Swift.Bool
 }
 @objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor @preconcurrency open class HVLottieAnimationView : HyperSnapSDK.HVLottieAnimationViewBase {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public init(animation: HyperSnapSDK.HVLottieAnimation?, imageProvider: (any HyperSnapSDK.HVAnimationImageProvider)? = nil, textProvider: any HyperSnapSDK.HVAnimationTextProvider = HVDefaultTextProvider(), fontProvider: any HyperSnapSDK.HVAnimationFontProvider = HVDefaultFontProvider(), configuration: HyperSnapSDK.HVLottieConfiguration = .shared, logger: HyperSnapSDK.HVLottieLogger = .shared)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public init(dotLottie: HyperSnapSDK.HVDotLottieFile?, animationId: Swift.String? = nil, textProvider: any HyperSnapSDK.HVAnimationTextProvider = HVDefaultTextProvider(), fontProvider: any HyperSnapSDK.HVAnimationFontProvider = HVDefaultFontProvider(), configuration: HyperSnapSDK.HVLottieConfiguration = .shared, logger: HyperSnapSDK.HVLottieLogger = .shared)
+  #endif
   @_Concurrency.MainActor @preconcurrency public init(configuration: HyperSnapSDK.HVLottieConfiguration = .shared, logger: HyperSnapSDK.HVLottieLogger = .shared)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency open func play(completion: HyperSnapSDK.LottieCompletionBlock? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency open func play(fromProgress: HyperSnapSDK.AnimationProgressTime? = nil, toProgress: HyperSnapSDK.AnimationProgressTime, loopMode: HyperSnapSDK.HVLottieLoopMode? = nil, completion: HyperSnapSDK.LottieCompletionBlock? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency open func play(fromFrame: HyperSnapSDK.AnimationFrameTime? = nil, toFrame: HyperSnapSDK.AnimationFrameTime, loopMode: HyperSnapSDK.HVLottieLoopMode? = nil, completion: HyperSnapSDK.LottieCompletionBlock? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency open func play(fromMarker: Swift.String? = nil, toMarker: Swift.String, playEndMarkerFrame: Swift.Bool = true, loopMode: HyperSnapSDK.HVLottieLoopMode? = nil, completion: HyperSnapSDK.LottieCompletionBlock? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency open func play(marker: Swift.String, loopMode: HyperSnapSDK.HVLottieLoopMode? = nil, completion: HyperSnapSDK.LottieCompletionBlock? = nil)
+  #endif
   @_Concurrency.MainActor @preconcurrency open func stop()
   @_Concurrency.MainActor @preconcurrency open func pause()
   @_Concurrency.MainActor @preconcurrency final public let configuration: HyperSnapSDK.HVLottieConfiguration
@@ -1306,24 +1485,42 @@ extension HyperSnapSDK.HVLottieLoopMode : Swift.Equatable {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public var currentRenderingEngine: HyperSnapSDK.HVRenderingEngine? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func loadAnimation(_ animationId: Swift.String? = nil, from dotLottieFile: HyperSnapSDK.HVDotLottieFile)
+  #endif
   @_Concurrency.MainActor @preconcurrency public func reloadImages()
   @_Concurrency.MainActor @preconcurrency public func forceDisplayUpdate()
   @_Concurrency.MainActor @preconcurrency public func setValueProvider(_ valueProvider: any HyperSnapSDK.HVAnyValueProvider, keypath: HyperSnapSDK.HVAnimationKeypath)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func getValue(for keypath: HyperSnapSDK.HVAnimationKeypath, atFrame: HyperSnapSDK.AnimationFrameTime?) -> Any?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func getOriginalValue(for keypath: HyperSnapSDK.HVAnimationKeypath, atFrame: HyperSnapSDK.AnimationFrameTime?) -> Any?
+  #endif
   @_Concurrency.MainActor @preconcurrency public func logHierarchyKeypaths()
   @_Concurrency.MainActor @preconcurrency public func allHierarchyKeypaths() -> [Swift.String]
   @_Concurrency.MainActor @preconcurrency public func addSubview(_ subview: HyperSnapSDK.HVAnimationSubview, forLayerAt keypath: HyperSnapSDK.HVAnimationKeypath)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func convert(_ rect: CoreFoundation.CGRect, toLayerAt keypath: HyperSnapSDK.HVAnimationKeypath?) -> CoreFoundation.CGRect?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func convert(_ point: CoreFoundation.CGPoint, toLayerAt keypath: HyperSnapSDK.HVAnimationKeypath?) -> CoreFoundation.CGPoint?
+  #endif
   @_Concurrency.MainActor @preconcurrency public func setNodeIsEnabled(isEnabled: Swift.Bool, keypath: HyperSnapSDK.HVAnimationKeypath)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func progressTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationProgressTime?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func frameTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationFrameTime?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public func durationFrameTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationFrameTime?
+  #endif
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class HVLottieAnimationViewBase : UIKit.UIView {
@@ -1334,7 +1531,9 @@ extension HyperSnapSDK.HVLottieLoopMode : Swift.Equatable {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func didMoveToWindow()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 public enum HVColorFormatDenominator : Swift.Hashable {
@@ -1353,8 +1552,8 @@ public struct HVLottieColor : Swift.Hashable {
   public var b: Swift.Double
   public var a: Swift.Double
   public init(r: Swift.Double, g: Swift.Double, b: Swift.Double, a: Swift.Double, denominator: HyperSnapSDK.HVColorFormatDenominator = .One)
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: HyperSnapSDK.HVLottieColor, b: HyperSnapSDK.HVLottieColor) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -1365,8 +1564,8 @@ public struct HVLottieConfiguration : Swift.Hashable {
   public var renderingEngine: HyperSnapSDK.HVRenderingEngineOption
   public var decodingStrategy: HyperSnapSDK.HVDecodingStrategy
   public var colorSpace: CoreGraphics.CGColorSpace
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: HyperSnapSDK.HVLottieConfiguration, b: HyperSnapSDK.HVLottieConfiguration) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -1386,7 +1585,9 @@ public enum HVRenderingEngine : Swift.Hashable {
   case coreAnimation
 }
 extension HyperSnapSDK.HVRenderingEngineOption : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public var rawValue: Swift.String {
     get
   }
@@ -1396,7 +1597,9 @@ extension HyperSnapSDK.HVRenderingEngineOption : Swift.RawRepresentable, Swift.C
   public typealias RawValue = Swift.String
 }
 extension HyperSnapSDK.HVRenderingEngine : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public var rawValue: Swift.String {
     get
   }
@@ -1460,10 +1663,18 @@ extension HyperSnapSDK.HVMessage {
   public init(base64Encoded base64String: Swift.String) throws
 }
 @objc @_inheritsConvenienceInitializers public class HVNetworkHelper : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func makeOCRAPICall(endpoint: Swift.String, documentUri: Swift.String, qrCroppedImageUri: Swift.String? = nil, hvDocConfig: HyperSnapSDK.HVDocConfig? = nil, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func makeFaceMatchCall(faceUri: Swift.String, documentUri: Swift.String, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func makeFaceMatchAPICall(endpoint: Swift.String, image1: Swift.String, image2: Swift.String, faceMatchMode: HyperSnapSDK.HyperSnapParams.FaceMatchMode, parameters: [Swift.String : Swift.AnyObject]?, headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func makeTextMatchAPICall(endpoint: Swift.String, parameters: [Swift.String : Swift.AnyObject], headers: [Swift.String : Swift.String]?, allowedStatusCodes: [Swift.Int]? = nil, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ response: HyperSnapSDK.HVResponse?) -> Swift.Void)
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1544,20 +1755,30 @@ public class HVPublicKey : HyperSnapSDK.HVRSAKey {
   }
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency open class HVQRViewController : UIKit.UIViewController {
   @objc @_Concurrency.MainActor @preconcurrency public var completionHandler: (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func start(_ callingVC: UIKit.UIViewController, hvQRConfig: HyperSnapSDK.HVQRConfig, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
+  #endif
   @_Concurrency.MainActor @preconcurrency public func setHVQRConfig(hvQRConfig: HyperSnapSDK.HVQRConfig)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredContentSize: CoreFoundation.CGSize {
     @objc get
     @objc set
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 extension HyperSnapSDK.HVQRViewController {
@@ -1578,7 +1799,18 @@ extension HyperSnapSDK.HVQRViewController {
   }
 }
 extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningDelegate {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  #endif
+}
+@_hasMissingDesignatedInitializers @objc public class HVRequestData : ObjectiveC.NSObject {
+  @objc public var headers: [Swift.String : Swift.String] {
+    get
+  }
+  @objc public var bodyParams: [Swift.String : Swift.String] {
+    get
+  }
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class HVResponse : HyperSnapSDK.HVBaseResponse {
   @objc public var retakeAttemptResponses: [HyperSnapSDK.HVBaseResponse] {
@@ -1588,7 +1820,9 @@ extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningD
 }
 public protocol HVRSAKey : AnyObject {
   var reference: Security.SecKey { get }
+  #if compiler(>=5.3) && $NonescapableTypes
   var originalData: Foundation.Data? { get }
+  #endif
   init(data: Foundation.Data) throws
   init(reference: Security.SecKey) throws
   init(base64Encoded base64String: Swift.String) throws
@@ -1612,7 +1846,9 @@ extension HyperSnapSDK.HVRSAKey {
     get
   }
   @objc public func isSuccess() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public func getHVError() -> HyperSnapSDK.HVError?
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }
@@ -1659,25 +1895,35 @@ final public class HVSizeValueProvider {
     @objc get
     @objc set
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency public class HVPrimaryButton : UIKit.UIButton {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency public class HVSecondaryButton : UIKit.UIButton {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @objc @_Concurrency.MainActor @preconcurrency public class HVCameraButton : UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @objc @_Concurrency.MainActor @preconcurrency public class HVQRSkipButton : UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
@@ -1685,8 +1931,12 @@ final public class HVSizeValueProvider {
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderWidth(_ width: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
@@ -1696,7 +1946,9 @@ final public class HVSizeValueProvider {
     @objc get
     @objc set
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency public func updateUI()
   @objc deinit
 }
@@ -1705,11 +1957,15 @@ final public class HVSizeValueProvider {
     @objc get
     @objc set
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @objc @_Concurrency.MainActor @preconcurrency public class HVAlertTextLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func drawText(in rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
@@ -1717,7 +1973,9 @@ final public class HVSizeValueProvider {
   @objc deinit
 }
 @objc @_Concurrency.MainActor @preconcurrency public class HVRetakeMessageLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @objc @IBDesignable @_Concurrency.MainActor @preconcurrency public class HVStatusLabel : UIKit.UILabel {
@@ -1725,7 +1983,9 @@ final public class HVSizeValueProvider {
     @objc get
     @objc set
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func drawText(in rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
@@ -1733,7 +1993,9 @@ final public class HVSizeValueProvider {
   @objc deinit
 }
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocumentAutoCaptureStatusLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func drawText(in rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
@@ -1746,7 +2008,9 @@ final public class HVSizeValueProvider {
   @objc deinit
 }
 @objc @_Concurrency.MainActor @preconcurrency public class HVSubTextLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func drawText(in rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
@@ -1759,96 +2023,142 @@ final public class HVSizeValueProvider {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency public class HVBackgroundImageView : UIKit.UIImageView {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVRetakeButton : UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderWidth(_ width: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVErrorRetakeButton : UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderWidth(_ width: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocReviewRetakeButton : UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderWidth(_ width: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocReviewContinueButton : UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderWidth(_ width: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocInstructionsProceedButton : UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderWidth(_ width: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocInstructionsUploadButton : UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderWidth(_ width: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVInstructionsProceedButton : UIKit.UIButton {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBackgroundColor(_ color: CoreGraphics.CGColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setBorderWidth(_ width: CoreFoundation.CGFloat)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowColor(_ color: UIKit.UIColor?, for state: UIKit.UIControl.State)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleShadowOffset(_ offset: CoreFoundation.CGSize)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTitleFont(_ font: UIKit.UIFont)
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocReviewTitleLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setShadowColor(_ color: UIKit.UIColor)
@@ -1857,7 +2167,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocReviewDescriptionLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
@@ -1867,7 +2179,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVPageNumberLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setShadowColor(_ color: UIKit.UIColor)
@@ -1876,7 +2190,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVSubtitleLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setShadowColor(_ color: UIKit.UIColor)
@@ -1885,7 +2201,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVFaceDescriptionLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
@@ -1895,7 +2213,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVFaceInstructionTopLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setShadowColor(_ color: UIKit.UIColor)
@@ -1904,7 +2224,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVFaceInstructionBottomLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor @preconcurrency public static func setShadowColor(_ color: UIKit.UIColor)
@@ -1913,7 +2235,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocInstructionsLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
@@ -1923,7 +2247,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocSubTextLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func drawText(in rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
@@ -1937,7 +2263,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocDescriptionLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
@@ -1947,7 +2275,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVDocDescriptionA4Label : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
@@ -1957,7 +2287,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVFaceActivityLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc deinit
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
@@ -1969,7 +2301,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVErrorRetakeLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
@@ -1979,7 +2313,9 @@ final public class HVSizeValueProvider {
 }
 @available(*, deprecated, message: "Use UIConfig for UI cusomtisation")
 @objc @_Concurrency.MainActor @preconcurrency public class HVQRDescriptionLabel : UIKit.UILabel {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  #endif
   @objc @_Concurrency.MainActor @preconcurrency public static func setFont(_ font: UIKit.UIFont)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextAlignment(_ alignment: UIKit.NSTextAlignment)
   @objc @_Concurrency.MainActor @preconcurrency public static func setTextColor(_ color: UIKit.UIColor)
@@ -2007,9 +2343,11 @@ public typealias HVRSAPadding = Security.SecPadding
   @objc public var reference: Security.SecKey {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public var originalData: Foundation.Data? {
     @objc get
   }
+  #endif
   @objc public func pemString() throws -> Swift.String
   @objc public func data() throws -> Foundation.Data
   @objc public func base64String() throws -> Swift.String
@@ -2027,9 +2365,11 @@ public typealias HVRSAPadding = Security.SecPadding
   @objc public var reference: Security.SecKey {
     @objc get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public var originalData: Foundation.Data? {
     @objc get
   }
+  #endif
   @objc public func pemString() throws -> Swift.String
   @objc public func data() throws -> Foundation.Data
   @objc public func base64String() throws -> Swift.String
@@ -2083,7 +2423,9 @@ public typealias HVRSAPadding = Security.SecPadding
     case sha256
     case sha384
     case sha512
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -2126,15 +2468,19 @@ public enum HVSwiftyRSAError : Swift.Error {
   case x509CertificateFailed
 }
 extension HyperSnapSDK.HVSwiftyRSAError : Foundation.LocalizedError {
+  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
+  #endif
 }
 @objc public enum HVThemeMode : Swift.Int {
   case light
   case dark
   case system
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -2375,15 +2721,21 @@ public struct HVUIColor : Swift.Codable {
   public var nfcStatusErrorTextColor: Swift.String {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public var animationPrimaryColor: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var errorAnimationPrimaryColor: Swift.String? {
     get
   }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public var successAnimationPrimaryColor: Swift.String? {
     get
   }
+  #endif
   public init()
   public func getSdkBackgroundColor(isDarkMode: Swift.Bool) -> Swift.String
   public func encode(to encoder: any Swift.Encoder) throws
@@ -2736,8 +3088,12 @@ extension Foundation.Data {
 @_inheritsConvenienceInitializers @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: ((HyperSnapSDK.HVError?) -> Swift.Void)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: ((_ error: HyperSnapSDK.HVError?) -> Swift.Void)?)
+  #endif
   @objc public static func prefetchConfigs(appIds: [Swift.String])
   @objc public static func logEvent(_ name: Swift.String, _ properties: [Swift.String : Any])
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
@@ -2750,13 +3106,19 @@ extension Foundation.Data {
   @objc public static func setExternalConfigs(_ externalConfigs: HyperSnapSDK.HVExternalConfigs)
   @objc public static func setEncryptionMetadata(_ encryptionMetadata: Swift.String)
   @objc public static func setHVThemeMode(_ themeMode: HyperSnapSDK.HVThemeMode)
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func setUiConfig(_ uiConfig: HyperSnapSDK.HVUIConfig?)
+  #endif
   public static func getUiConfig() -> HyperSnapSDK.HVUIConfig
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func setBrandingCheck(_ shouldCheck: Swift.Bool, completionHandler: @escaping (_ error: HyperSnapSDK.HVError?, _ result: [Swift.String : Swift.AnyObject]?) -> Swift.Void)
+  #endif
   @objc public static func setShouldReturnRawResponse(_ shouldReturn: Swift.Bool)
   @objc public static func deleteImageAtUri(_ imageUri: Swift.String)
   @objc public static func sortDictionaryAlphabetically(_ dictionary: [Swift.String : Swift.AnyObject]) -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
   @objc public static func startUserSession(_ transactionId: Swift.String? = nil) -> HyperSnapSDK.HVSessionResponse
+  #endif
   @objc public static func endUserSession()
   @objc public static func endHyperSnapFlow()
   @objc override dynamic public init()
@@ -2768,7 +3130,9 @@ extension Foundation.Data {
     case a4
     case passport
     case other
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -2779,7 +3143,9 @@ extension Foundation.Data {
     case UnitedStates
     case India
     case Africa
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -2788,7 +3154,9 @@ extension Foundation.Data {
   @objc public enum Product : Swift.Int {
     case faceID
     case IAM
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -2797,7 +3165,9 @@ extension Foundation.Data {
   @objc public enum LivenessMode : Swift.Int {
     case none
     case textureLiveness
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -2808,7 +3178,9 @@ extension Foundation.Data {
     case Face_Face
     case Face_IdFaceString
     case Generic
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.Int)
+    #endif
     public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
@@ -2835,6 +3207,9 @@ extension Foundation.Data {
   public static let VIDEO_SIZE: Swift.String
   public static let VIDEO_FORMAT: Swift.String
   public static let VIDEO_DURATION: Swift.String
+  public static let NUMBER_OF_FRAMES: Swift.String
+  public static let VIDEO_WIDTH: Swift.String
+  public static let VIDEO_HEIGHT: Swift.String
   public static let NUMBER_OF_FACE_RETRY_ATTEMPTS: Swift.String
   public static let NUMBER_OF_DOCUMENT_RETAKE_ATTEMPTS: Swift.String
   public static let NUMBER_OF_DOCUMENT_RETRY_ATTEMPTS: Swift.String
@@ -2911,7 +3286,9 @@ public enum LayerType : Swift.Int, Swift.Codable {
   case shape
   case text
   public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -2922,7 +3299,9 @@ public enum MatteType : Swift.Int, Swift.Codable {
   case add
   case invert
   case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -2945,7 +3324,9 @@ public enum BlendMode : Swift.Int, Swift.Codable {
   case saturation
   case color
   case luminosity
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -2962,16 +3343,32 @@ extension HyperSnapSDK.HVLottieAnimation {
   final public var size: CoreFoundation.CGSize {
     get
   }
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func named(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, animationCache: (any HyperSnapSDK.HVAnimationCacheProvider)? = HVLottieAnimationCache.shared) -> HyperSnapSDK.HVLottieAnimation?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func filepath(_ filepath: Swift.String, animationCache: (any HyperSnapSDK.HVAnimationCacheProvider)? = HVLottieAnimationCache.shared) -> HyperSnapSDK.HVLottieAnimation?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func asset(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, animationCache: (any HyperSnapSDK.HVAnimationCacheProvider)? = HVLottieAnimationCache.shared) -> HyperSnapSDK.HVLottieAnimation?
+  #endif
   public static func from(data: Foundation.Data, strategy: HyperSnapSDK.HVDecodingStrategy = HVLottieConfiguration.shared.decodingStrategy) throws -> HyperSnapSDK.HVLottieAnimation
+  #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
   public static func loadedFrom(url: Foundation.URL, session: Foundation.URLSession = .shared, animationCache: (any HyperSnapSDK.HVAnimationCacheProvider)? = HVLottieAnimationCache.shared) async -> HyperSnapSDK.HVLottieAnimation?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func loadedFrom(url: Foundation.URL, session: Foundation.URLSession = .shared, closure: @escaping HyperSnapSDK.HVLottieAnimation.DownloadClosure, animationCache: (any HyperSnapSDK.HVAnimationCacheProvider)? = HVLottieAnimationCache.shared)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func progressTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationProgressTime?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func frameTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationFrameTime?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   final public func durationFrameTime(forMarker named: Swift.String) -> HyperSnapSDK.AnimationFrameTime?
+  #endif
   final public func progressTime(forFrame frameTime: HyperSnapSDK.AnimationFrameTime, clamped: Swift.Bool = true) -> HyperSnapSDK.AnimationProgressTime
   final public func frameTime(forProgress progressTime: HyperSnapSDK.AnimationProgressTime) -> HyperSnapSDK.AnimationFrameTime
   final public func time(forFrame frameTime: HyperSnapSDK.AnimationFrameTime) -> Foundation.TimeInterval
@@ -2980,14 +3377,30 @@ extension HyperSnapSDK.HVLottieAnimation {
 extension Foundation.Bundle : @unchecked Swift.Sendable {
 }
 extension HyperSnapSDK.HVLottieAnimationView {
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency convenience public init(name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, imageProvider: (any HyperSnapSDK.HVAnimationImageProvider)? = nil, animationCache: (any HyperSnapSDK.HVAnimationCacheProvider)? = HVLottieAnimationCache.shared, configuration: HyperSnapSDK.HVLottieConfiguration = .shared)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency convenience public init(filePath: Swift.String, imageProvider: (any HyperSnapSDK.HVAnimationImageProvider)? = nil, animationCache: (any HyperSnapSDK.HVAnimationCacheProvider)? = HVLottieAnimationCache.shared, configuration: HyperSnapSDK.HVLottieConfiguration = .shared)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency convenience public init(url: Foundation.URL, imageProvider: (any HyperSnapSDK.HVAnimationImageProvider)? = nil, session: Foundation.URLSession = .shared, closure: @escaping HyperSnapSDK.HVLottieAnimationView.DownloadClosure, animationCache: (any HyperSnapSDK.HVAnimationCacheProvider)? = HVLottieAnimationCache.shared, configuration: HyperSnapSDK.HVLottieConfiguration = .shared)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency convenience public init(asset name: Swift.String, bundle: Foundation.Bundle = Bundle.main, imageProvider: (any HyperSnapSDK.HVAnimationImageProvider)? = nil, animationCache: (any HyperSnapSDK.HVAnimationCacheProvider)? = HVLottieAnimationCache.shared, configuration: HyperSnapSDK.HVLottieConfiguration = .shared)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency convenience public init(dotLottieName name: Swift.String, bundle: Foundation.Bundle = Bundle.main, subdirectory: Swift.String? = nil, animationId: Swift.String? = nil, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache, configuration: HyperSnapSDK.HVLottieConfiguration = .shared, completion: ((HyperSnapSDK.HVLottieAnimationView, (any Swift.Error)?) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency convenience public init(dotLottieFilePath filePath: Swift.String, animationId: Swift.String? = nil, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache, configuration: HyperSnapSDK.HVLottieConfiguration = .shared, completion: ((HyperSnapSDK.HVLottieAnimationView, (any Swift.Error)?) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency convenience public init(dotLottieUrl url: Foundation.URL, animationId: Swift.String? = nil, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache, configuration: HyperSnapSDK.HVLottieConfiguration = .shared, session: Foundation.URLSession = .shared, completion: ((HyperSnapSDK.HVLottieAnimationView, (any Swift.Error)?) -> Swift.Void)? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency convenience public init(dotLottieAsset name: Swift.String, bundle: Foundation.Bundle = Bundle.main, animationId: Swift.String? = nil, dotLottieCache: (any HyperSnapSDK.HVDotLottieCacheProvider)? = HVDotLottieCache.sharedCache, configuration: HyperSnapSDK.HVLottieConfiguration = .shared, completion: ((HyperSnapSDK.HVLottieAnimationView, (any Swift.Error)?) -> Swift.Void)? = nil)
+  #endif
   public typealias DownloadClosure = ((any Swift.Error)?) -> Swift.Void
 }
 infix operator +| : DefaultPrecedence
@@ -3007,8 +3420,8 @@ extension UIKit.UIColor {
 public struct HVLottieVector1D : Swift.Hashable {
   public init(_ value: Swift.Double)
   public let value: Swift.Double
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: HyperSnapSDK.HVLottieVector1D, b: HyperSnapSDK.HVLottieVector1D) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -3018,8 +3431,8 @@ public struct HVLottieVector3D : Swift.Hashable {
   public let y: Swift.Double
   public let z: Swift.Double
   public init(x: Swift.Double, y: Swift.Double, z: Swift.Double)
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: HyperSnapSDK.HVLottieVector3D, b: HyperSnapSDK.HVLottieVector3D) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -3031,8 +3444,8 @@ extension HyperSnapSDK.HVLottieVector1D : Swift.Codable {
 public struct LottieVector2D : Swift.Codable, Swift.Hashable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: HyperSnapSDK.LottieVector2D, b: HyperSnapSDK.LottieVector2D) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
