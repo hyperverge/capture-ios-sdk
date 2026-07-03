@@ -3095,6 +3095,11 @@ extension Foundation.Data {
   @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: ((_ error: HyperSnapSDK.HVError?) -> Swift.Void)?)
   #endif
   @objc public static func prefetchConfigs(appIds: [Swift.String])
+  @objc public static func isLocationServicesEnabled(completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public static func isLocationPermissionGranted() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public static func fetchLocation(completion: @escaping (_ latitude: Foundation.NSNumber?, _ longitude: Foundation.NSNumber?) -> Swift.Void)
+  #endif
   @objc public static func logEvent(_ name: Swift.String, _ properties: [Swift.String : Any])
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)

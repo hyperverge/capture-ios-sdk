@@ -1484,6 +1484,7 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
   FaceMatchModeGeneric = 3,
 };
 
+@class NSNumber;
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
@@ -1505,6 +1506,15 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region initializerCallback:(void (^ _Nullable)(HVError * _Nullable))initializerCallback;
 + (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region initializerCallback:(void (^ _Nullable)(HVError * _Nullable))initializerCallback;
 + (void)prefetchConfigsWithAppIds:(NSArray<NSString *> * _Nonnull)appIds;
+/// Whether the device Location Services toggle is on. Async because
+/// <code>CLLocationManager.locationServicesEnabled()</code> should not be called on the main thread.
++ (void)isLocationServicesEnabledWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+/// Whether location authorization is granted (When-In-Use or Always).
++ (BOOL)isLocationPermissionGranted SWIFT_WARN_UNUSED_RESULT;
+/// Actively fetches a fresh location fix. Delivers <code>latitude</code>/<code>longitude</code> on success, or
+/// <code>nil, nil</code> when permission is missing, the request fails, or it times out. Also stored on
+/// <code>HVLocationManager</code> so the capture EXIF/response picks up the same fresh fix.
++ (void)fetchLocationWithCompletion:(void (^ _Nonnull)(NSNumber * _Nullable, NSNumber * _Nullable))completion;
 + (void)logEvent:(NSString * _Nonnull)name :(NSDictionary<NSString *, id> * _Nonnull)properties;
 + (void)setShouldUseSignature:(BOOL)shouldUseSignature;
 + (void)setShouldEnableSSLPinning:(BOOL)shouldEnableSSLPinning;
