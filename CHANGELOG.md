@@ -1,3 +1,7 @@
+#### 6.6.0 [31 Jul 2026]
+  - Enhancements
+    - Added PWD accessibility support (voiceover, large text, and minimum touch target sizes)
+
 #### 6.5.0 [26 Jun 2026]
   - Enhancements
     - Added support for Super Module changes for selfie capture.

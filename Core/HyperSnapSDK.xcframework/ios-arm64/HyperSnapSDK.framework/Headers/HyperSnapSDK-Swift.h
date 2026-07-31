@@ -441,6 +441,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK16HVBrandingLayout")
 
 SWIFT_CLASS("_TtC12HyperSnapSDK14HVCameraButton")
 @interface HVCameraButton : UIButton
+@property (nonatomic, getter=isEnabled) BOOL enabled;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
@@ -852,6 +853,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVDocsViewController")
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
+- (BOOL)accessibilityPerformEscape SWIFT_WARN_UNUSED_RESULT;
 - (void)viewDidAppear:(BOOL)animated;
 @property (nonatomic) CGSize preferredContentSize;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -1061,6 +1063,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK32HVFaceInstructionsViewController")
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 @property (nonatomic) CGSize preferredContentSize;
 - (void)viewDidLoad;
+- (BOOL)accessibilityPerformEscape SWIFT_WARN_UNUSED_RESULT;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -1084,6 +1087,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK20HVFaceViewController")
 - (void)viewWillAppear:(BOOL)animated;
 @property (nonatomic) CGSize preferredContentSize;
 - (void)viewDidLayoutSubviews;
+- (BOOL)accessibilityPerformEscape SWIFT_WARN_UNUSED_RESULT;
 - (void)viewDidDisappear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillLayoutSubviews;
@@ -1227,10 +1231,14 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVPageNumberLabel") SWIFT_DEPRECATED_MSG("Use U
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
+@class UITraitCollection;
 SWIFT_CLASS("_TtC12HyperSnapSDK15HVPrimaryButton")
 @interface HVPrimaryButton : UIButton
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previous;
 @end
 
 @class HVQRTextConfig;
@@ -1277,6 +1285,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK30HVQRInstructionsViewController")
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
 - (void)viewDidLoad;
 @property (nonatomic) CGSize preferredContentSize;
+- (BOOL)accessibilityPerformEscape SWIFT_WARN_UNUSED_RESULT;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -1334,6 +1343,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HVQRViewController")
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+- (BOOL)accessibilityPerformEscape SWIFT_WARN_UNUSED_RESULT;
 @end
 
 SWIFT_CLASS("_TtC12HyperSnapSDK13HVRequestData")
@@ -1372,6 +1382,9 @@ SWIFT_CLASS("_TtC12HyperSnapSDK17HVSecondaryButton")
 @interface HVSecondaryButton : UIButton
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previous;
 @end
 
 SWIFT_CLASS("_TtC12HyperSnapSDK17HVSessionResponse")
@@ -1513,6 +1526,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 + (void)setTimeoutIntervalForRequest:(double)timeout;
 + (void)setShouldSecure:(BOOL)shouldSecure;
 + (void)setShouldUseLocation:(BOOL)shouldUseLocation;
+/// Expands the hit area of the SDK’s icon buttons to the 44x44pt HIG minimum without
+/// changing where any glyph is drawn. Recommended for accessibility compliance; defaults
+/// to <code>false</code> because it alters hit geometry that some clients assert on in UI tests.
++ (void)setShouldUseAccessibleTouchTargets:(BOOL)shouldUseAccessibleTouchTargets;
 + (void)setExternalConfigs:(HVExternalConfigs * _Nonnull)externalConfigs;
 + (void)setEncryptionMetadata:(NSString * _Nonnull)encryptionMetadata;
 /// Sets the theme mode for the SDK.
