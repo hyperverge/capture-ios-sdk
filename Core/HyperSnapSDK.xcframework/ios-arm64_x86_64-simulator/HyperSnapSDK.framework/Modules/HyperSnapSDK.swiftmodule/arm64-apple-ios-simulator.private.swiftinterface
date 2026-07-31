@@ -883,6 +883,7 @@ extension HyperSnapSDK.HVDocsViewController {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLayoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func accessibilityPerformEscape() -> Swift.Bool
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredContentSize: CoreFoundation.CGSize {
     @objc get
@@ -1072,6 +1073,7 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
     @objc set
   }
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func accessibilityPerformEscape() -> Swift.Bool
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
   #if compiler(>=5.3) && $NonescapableTypes
@@ -1094,6 +1096,7 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
     @objc set
   }
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func accessibilityPerformEscape() -> Swift.Bool
   @_Concurrency.MainActor @preconcurrency public func setHVFaceConfig(_ hvFaceConfig: HyperSnapSDK.HVFaceConfig)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
@@ -1753,6 +1756,7 @@ public class HVPublicKey : HyperSnapSDK.HVRSAKey {
     @objc get
     @objc set
   }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func accessibilityPerformEscape() -> Swift.Bool
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillLayoutSubviews()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
   #if compiler(>=5.3) && $NonescapableTypes
@@ -1797,6 +1801,7 @@ extension HyperSnapSDK.HVQRViewController {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
     @objc get
   }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func accessibilityPerformEscape() -> Swift.Bool
 }
 extension HyperSnapSDK.HVQRViewController : UIKit.UIViewControllerTransitioningDelegate {
   #if compiler(>=5.3) && $NonescapableTypes
@@ -1905,6 +1910,13 @@ final public class HVSizeValueProvider {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   #endif
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func traitCollectionDidChange(_ previous: UIKit.UITraitCollection?)
+  #endif
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency public class HVSecondaryButton : UIKit.UIButton {
@@ -1912,9 +1924,20 @@ final public class HVSizeValueProvider {
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   #endif
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func traitCollectionDidChange(_ previous: UIKit.UITraitCollection?)
+  #endif
   @objc deinit
 }
 @objc @_Concurrency.MainActor @preconcurrency public class HVCameraButton : UIKit.UIButton {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   #endif
@@ -3103,6 +3126,7 @@ extension Foundation.Data {
   @objc public static func setTimeoutIntervalForRequest(_ timeout: Swift.Double)
   @objc public static func setShouldSecure(_ shouldSecure: Swift.Bool)
   @objc public static func setShouldUseLocation(_ shouldUseLocation: Swift.Bool)
+  @objc public static func setShouldUseAccessibleTouchTargets(_ shouldUseAccessibleTouchTargets: Swift.Bool)
   @objc public static func setExternalConfigs(_ externalConfigs: HyperSnapSDK.HVExternalConfigs)
   @objc public static func setEncryptionMetadata(_ encryptionMetadata: Swift.String)
   @objc public static func setHVThemeMode(_ themeMode: HyperSnapSDK.HVThemeMode)
