@@ -1,3 +1,11 @@
+#### 6.6.1 [25 Aug 2026]
+- Enhancements
+    - Moved doc camera initialization to a background thread to speed up camera startup
+    - Added checks and analytics for black preview issues in selfie camera
+- Bug Fixes
+    - Fixed the top bar not staying pinned to the top of the screen
+
+
 #### 6.6.0 [31 Jul 2026]
   - Enhancements
     - Added PWD accessibility support (voiceover, large text, and minimum touch target sizes)

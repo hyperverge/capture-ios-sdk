@@ -1375,6 +1375,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVRetakeButton") SWIFT_DEPRECATED_MSG("Use UICo
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVRetakeMessageLabel")
 @interface HVRetakeMessageLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -1409,6 +1411,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVSubTextLabel")
 @interface HVSubTextLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)drawTextInRect:(CGRect)rect;
+- (void)layoutSubviews;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 + (void)setFont:(UIFont * _Nonnull)font;
 + (void)setTextAlignment:(NSTextAlignment)alignment;
@@ -3048,6 +3051,8 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVRetakeButton") SWIFT_DEPRECATED_MSG("Use UICo
 SWIFT_CLASS("_TtC12HyperSnapSDK20HVRetakeMessageLabel")
 @interface HVRetakeMessageLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)drawTextInRect:(CGRect)rect;
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -3082,6 +3087,7 @@ SWIFT_CLASS("_TtC12HyperSnapSDK14HVSubTextLabel")
 @interface HVSubTextLabel : UILabel
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)drawTextInRect:(CGRect)rect;
+- (void)layoutSubviews;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 + (void)setFont:(UIFont * _Nonnull)font;
 + (void)setTextAlignment:(NSTextAlignment)alignment;
