@@ -4,6 +4,7 @@
     - Added checks and analytics for black preview issues in selfie camera
 - Bug Fixes
     - Fixed the top bar not staying pinned to the top of the screen
+    - Fixed text in containers overflowing when larger text is enabled and font size is set to max
 
 
 #### 6.6.0 [31 Jul 2026]
