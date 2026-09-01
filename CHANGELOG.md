@@ -1,3 +1,9 @@
+#### 6.7.0 [31 Aug 2026]
+- Enhancements
+    - Added support for backend video recording
+    - Added additional selfie capture-screen analytics, gated by the remote-config flag `mobilesdk.enableDetailedSelfieAnalytics` (disabled by default).
+    - Added support for batch analytics API call
+    
 #### 6.6.1 [25 Aug 2026]
 - Enhancements
     - Moved doc camera initialization to a background thread to speed up camera startup
