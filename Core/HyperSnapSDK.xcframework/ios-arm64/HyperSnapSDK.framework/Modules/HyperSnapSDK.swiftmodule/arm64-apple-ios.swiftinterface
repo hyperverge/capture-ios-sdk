@@ -10,6 +10,7 @@ import CommonCrypto
 import Compression
 import CoreFoundation
 import CoreGraphics
+import CoreImage
 import CoreLocation
 import CoreMedia
 import CoreMotion
@@ -271,6 +272,11 @@ public enum DotLottieError : Swift.Error {
   public static let EVENT_CAMERA_INPUT_CONFIGURED: Swift.String
   public static let EVENT_INTERNAL_SDK_OCCURRED: Swift.String
   public static let EVENT_LIGHT_PROBE_RESULT: Swift.String
+  public static let EVENT_CAMERA_PERMISSION_PROMPT_SHOWN: Swift.String
+  public static let EVENT_CAMERA_ACCESS_ALREADY_PRESENT: Swift.String
+  public static let EVENT_TIME_TAKEN_CAPTURE_TO_API: Swift.String
+  public static let EVENT_SELFIE_CAPTURE_SCREEN_BACK_PRESSED: Swift.String
+  public static let EVENT_SELFIE_CAMERA_FRAME_DIFF: Swift.String
   @objc deinit
 }
 extension UIKit.UIColor {
@@ -3126,6 +3132,7 @@ extension Foundation.Data {
   #endif
   @objc public static func prefetchConfigs(appIds: [Swift.String])
   @objc public static func logEvent(_ name: Swift.String, _ properties: [Swift.String : Any])
+  @objc public static func flushAnalytics()
   @objc public static func setShouldUseSignature(_ shouldUseSignature: Swift.Bool)
   @objc public static func setShouldEnableSSLPinning(_ shouldEnableSSLPinning: Swift.Bool)
   @objc public static func setShouldUseAnalytics(_ shouldUse: Swift.Bool)
@@ -3225,6 +3232,12 @@ extension Foundation.Data {
   public static let SDK_INITIALISATION_TIMESTAMP: Swift.String
   public static let IP_ADDRESS: Swift.String
   public static let TIME_SPENT: Swift.String
+  public static let SOURCE: Swift.String
+  public static let MODULE: Swift.String
+  public static let FRAME_DIFFS: Swift.String
+  public static let IMAGE_WIDTH: Swift.String
+  public static let IMAGE_HEIGHT: Swift.String
+  public static let IMAGE_RESOLUTION: Swift.String
   public static let IMAGE_BASE_64: Swift.String
   public static let TRANSACTION_ID: Swift.String
   public static let STATE: Swift.String
