@@ -36266,6 +36266,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "HyperSnapSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "HVGesturePose",
         "printedName": "HVGesturePose",
@@ -112318,8 +112328,8 @@
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/HVIPToGeoService.swift",
       "kind": "StringLiteral",
       "offset": 655,
-      "length": 53,
-      "value": "\"https:\/\/hypersnapweb.hyperverge.co\/api\/proxy\/geoIP\/\""
+      "length": 50,
+      "value": "\"https:\/\/ind-engine.thomas.hyperverge.co\/v1\/geoIp\""
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/ThirdParty\/Lottie\/Sources\/Public\/Keyframes\/HVKeyframe.swift",
@@ -115385,7 +115395,7 @@
       "kind": "StringLiteral",
       "offset": 341,
       "length": 7,
-      "value": "\"6.7.0\""
+      "value": "\"6.8.0\""
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Objects\/HyperSnapSDKConfig.swift",
