@@ -1,3 +1,7 @@
+#### 6.8.0 [8 Sept 2026]
+- Enhancements
+  - Migrate proxy geoIp api to thomas api
+  
 #### 6.7.0 [31 Aug 2026]
 - Enhancements
     - Added support for backend video recording
