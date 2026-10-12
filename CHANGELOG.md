@@ -1,3 +1,8 @@
+
+#### 6.9.0 [12 Oct 2026]
+- Enhancements
+  - Add support for injection checks in document module
+  
 #### 6.8.0 [8 Sept 2026]
 - Enhancements
   - Migrate proxy geoIp api to thomas api
