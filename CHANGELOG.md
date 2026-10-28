@@ -1,4 +1,9 @@
 
+#### 6.9.1 [28 Oct 2026]
+- Bug Fixes
+  - Fix crash on back press before the preview loads
+  - Fix crash in auto capture flows on back press before capture is done
+
 #### 6.9.0 [12 Oct 2026]
 - Enhancements
   - Add support for injection checks in document module
