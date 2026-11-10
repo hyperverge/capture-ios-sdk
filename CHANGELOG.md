@@ -1,3 +1,6 @@
+#### 6.10.0 [10 Nov 2026]
+- Enhancements 
+  - Add backend checks for ligh ptobe checks
 #### 6.9.1 [28 Oct 2026]
 - Bug Fixes
   - Fix crash on back press before the preview loads
