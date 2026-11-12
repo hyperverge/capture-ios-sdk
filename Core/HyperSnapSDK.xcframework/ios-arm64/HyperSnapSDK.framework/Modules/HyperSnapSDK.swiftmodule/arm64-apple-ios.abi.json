@@ -107726,36 +107726,43 @@
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
+      "kind": "StringLiteral",
+      "offset": 916,
+      "length": 14,
+      "value": "\"camera-probe\""
+    },
+    {
+      "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 843,
+      "offset": 1007,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 863,
+      "offset": 1027,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 899,
+      "offset": 1063,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
       "kind": "StringLiteral",
-      "offset": 1029,
+      "offset": 1193,
       "length": 74,
       "value": "\"https:\/\/s3.ap-south-1.amazonaws.com\/hv-sdk-device-configs\/hypersnap\/ios\/\""
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Services\/RemoteConfig\/FeatureConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1184,
+      "offset": 1688,
       "length": 5,
       "value": "false"
     },
@@ -118030,64 +118037,78 @@
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 679,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 745,
+      "length": 4,
+      "value": "1000"
+    },
+    {
+      "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2577,
+      "offset": 3378,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2624,
+      "offset": 3425,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2682,
+      "offset": 3483,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2741,
+      "offset": 3542,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2804,
+      "offset": 3605,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3498,
+      "offset": 4299,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "Dictionary",
-      "offset": 3934,
+      "offset": 5472,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "Dictionary",
-      "offset": 4006,
+      "offset": 5544,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/niveditamuthusubramanian\/iOS\/HyperSnapSDK\/HyperSnapSDK\/Sources\/HyperSnapSDK\/Classes\/Utilities\/SDKConfigManager.swift",
       "kind": "Dictionary",
-      "offset": 4067,
+      "offset": 5605,
       "length": 3,
       "value": "[]"
     },
