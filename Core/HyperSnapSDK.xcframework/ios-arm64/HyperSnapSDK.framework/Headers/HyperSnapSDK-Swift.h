@@ -967,6 +967,24 @@ SWIFT_CLASS("_TtC12HyperSnapSDK12HVFaceConfig")
 - (void)setLivenessEndpoint:(NSString * _Nonnull)endpoint;
 - (void)setShouldReturnFullImageUri:(BOOL)shouldReturn;
 - (void)setShouldHandleRetries:(BOOL)shouldHandle;
+/// Shows the retake screen when the captured image has no detectable face (“Face not clear”, error 22),
+/// instead of returning the error straight away. Default <code>false</code>.
+/// note:
+/// Has no effect when auto capture is on; the camera then just keeps looking for a face.
+- (void)setRetryIfFaceNotPresent:(BOOL)retry;
+/// The number of captures with no face allowed before giving up. Default 3. The last one is not retried:
+/// with 3, captures 1 and 2 show the retake screen and capture 3 ends the flow (or goes on to liveness, see
+/// <code>setLivenessOnMaxFaceNotPresent</code>).
+/// note:
+/// Values below 1 are raised to 1, so the first no-face capture is already the last. To turn
+/// retries off use <code>setRetryIfFaceNotPresent(false)</code>.
+- (void)setMaxAttemptsForFaceNotPresent:(NSInteger)maxAttempts;
+/// On the last allowed no-face capture, call liveness with the captured image instead of returning the error.
+/// Default <code>false</code>.
+/// note:
+/// There is no face to crop, so <code>imageUri</code> is then the whole photo scaled to 300 px wide, not a face
+/// crop, and the result looks like a normal capture. <code>fullImageUri</code> is the full photo.
+- (void)setLivenessOnMaxFaceNotPresent:(BOOL)enabled;
 - (void)setShouldUseBackCamera:(BOOL)shouldUse;
 - (void)setShouldShowCameraSwitchButton:(BOOL)shouldShow;
 - (void)setFaceCaptureCircleSuccessColor:(UIColor * _Nonnull)color;
@@ -1016,6 +1034,10 @@ SWIFT_CLASS("_TtCC12HyperSnapSDK12HVFaceConfig14FaceTextConfig")
 - (void)setFaceLoadingDescriptionText:(NSString * _Nonnull)text;
 - (void)setFaceCaptureActivityText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeButtonText:(NSString * _Nonnull)text;
+/// The message shown on the retake screen after a capture with no face (“Face not clear”). Can also be set
+/// with the <code>faceRetake_faceNotClear</code> text-config key or a <code>faceNotClearRetakeText</code> entry in the app’s
+/// Localizable.strings.
+- (void)setFaceNotClearRetakeText:(NSString * _Nonnull)text;
 - (void)setFaceRetakeTitleText:(NSString * _Nonnull)text;
 - (void)setCloseAlertTitle:(NSString * _Nonnull)text;
 - (void)setCloseAlertDesc:(NSString * _Nonnull)text;
@@ -1503,13 +1525,15 @@ typedef SWIFT_ENUM(NSInteger, FaceMatchMode, open) {
 SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 @interface HyperSnapSDKConfig : NSObject
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
+/// note:
+/// Deprecated. Use <code>initialize(appId:accessToken:region:)</code>, with an access token from HyperVerge’s /login API.
 /// \param appId Provided by HyperVerge
 ///
 /// \param appKey Provided by HyperVerge
 ///
 /// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
 ///
-+ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region;
++ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region SWIFT_DEPRECATED_MSG("Use initialize(appId:accessToken:region:) with an access token obtained from HyperVerge's /login API instead of an appKey.");
 /// Initialization method for the SDK. Should be called before any of the SDK’s ViewControllers.
 /// \param appId Provided by HyperVerge
 ///
@@ -1518,7 +1542,10 @@ SWIFT_CLASS("_TtC12HyperSnapSDK18HyperSnapSDKConfig")
 /// \param region It is of type ‘HyperSnapParams.Region’. This enum has 3 values - AsiaPacific, India and UnitedStates
 ///
 + (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region;
-+ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region initializerCallback:(void (^ _Nullable)(HVError * _Nullable))initializerCallback;
+/// Initialization method for the SDK with a completion callback. Should be called before any of the SDK’s ViewControllers.
+/// note:
+/// Deprecated. Use <code>initialize(appId:accessToken:region:initializerCallback:)</code>, with an access token from HyperVerge’s /login API.
++ (void)initializeWithAppId:(NSString * _Nonnull)appId appKey:(NSString * _Nonnull)appKey region:(enum Region)region initializerCallback:(void (^ _Nullable)(HVError * _Nullable))initializerCallback SWIFT_DEPRECATED_MSG("Use initialize(appId:accessToken:region:initializerCallback:) with an access token obtained from HyperVerge's /login API instead of an appKey.");
 + (void)initializeWithAppId:(NSString * _Nonnull)appId accessToken:(NSString * _Nonnull)accessToken region:(enum Region)region initializerCallback:(void (^ _Nullable)(HVError * _Nullable))initializerCallback;
 + (void)prefetchConfigsWithAppIds:(NSArray<NSString *> * _Nonnull)appIds;
 + (void)logEvent:(NSString * _Nonnull)name :(NSDictionary<NSString *, id> * _Nonnull)properties;

@@ -1,3 +1,9 @@
+#### 6.11.0 [27 Nov 2026]
+- Enhancements
+  - Added support for `retakeIfFaceNotPresent` on error code 22 (face not present)
+- Bug Fixes
+  - Fixed slow frames in selfie capture on iOS 27
+  - Fixed corrupted analytics timestamps when the device uses a 12-hour clock
 #### 6.10.0 [10 Nov 2026]
 - Enhancements
   - Add backend checks for light probe checks
