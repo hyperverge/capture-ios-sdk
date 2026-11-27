@@ -996,6 +996,9 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
   @objc public func setLivenessEndpoint(_ endpoint: Swift.String)
   @objc public func setShouldReturnFullImageUri(_ shouldReturn: Swift.Bool)
   @objc public func setShouldHandleRetries(_ shouldHandle: Swift.Bool)
+  @objc public func setRetryIfFaceNotPresent(_ retry: Swift.Bool)
+  @objc public func setMaxAttemptsForFaceNotPresent(_ maxAttempts: Swift.Int)
+  @objc public func setLivenessOnMaxFaceNotPresent(_ enabled: Swift.Bool)
   @objc public func setShouldUseBackCamera(_ shouldUse: Swift.Bool)
   @objc public func setShouldShowCameraSwitchButton(_ shouldShow: Swift.Bool)
   @objc public func setFaceCaptureCircleSuccessColor(_ color: UIKit.UIColor)
@@ -1048,6 +1051,7 @@ public class HVEncryptedMessage : HyperSnapSDK.HVMessage {
     @objc public func setFaceLoadingDescriptionText(_ text: Swift.String)
     @objc public func setFaceCaptureActivityText(_ text: Swift.String)
     @objc public func setFaceRetakeButtonText(_ text: Swift.String)
+    @objc public func setFaceNotClearRetakeText(_ text: Swift.String)
     @objc public func setFaceRetakeTitleText(_ text: Swift.String)
     @objc public func setCloseAlertTitle(_ text: Swift.String)
     @objc public func setCloseAlertDesc(_ text: Swift.String)
@@ -3122,9 +3126,11 @@ extension Foundation.Data {
   public func isAnHeaderlessKey() throws -> Swift.Bool
 }
 @_inheritsConvenienceInitializers @objc public class HyperSnapSDKConfig : ObjectiveC.NSObject {
+  @available(*, deprecated, message: "Use initialize(appId:accessToken:region:) with an access token obtained from HyperVerge's /login API instead of an appKey.")
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   @objc public static func initialize(appId: Swift.String, accessToken: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region)
   #if compiler(>=5.3) && $NonescapableTypes
+  @available(*, deprecated, message: "Use initialize(appId:accessToken:region:initializerCallback:) with an access token obtained from HyperVerge's /login API instead of an appKey.")
   @objc public static func initialize(appId: Swift.String, appKey: Swift.String, region: HyperSnapSDK.HyperSnapParams.Region, initializerCallback: ((HyperSnapSDK.HVError?) -> Swift.Void)?)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
@@ -3285,6 +3291,8 @@ extension Foundation.Data {
   public static let ATTEMPTS: Swift.String
   public static let ERROR_CODE: Swift.String
   public static let ERROR_MESSAGE: Swift.String
+  public static let FACE_NOT_PRESENT_ATTEMPT: Swift.String
+  public static let MAX_FACE_NOT_PRESENT_ATTEMPTS: Swift.String
   public static let DATA_LOGGING: Swift.String
   public static let REQUEST_ID: Swift.String
   public static let TIME_TAKEN_FOR_API_CALL: Swift.String
